@@ -36,7 +36,7 @@ $ npm run package
 
 Running this command will build and minify the theme's assets and place a .zip archive of the theme in the `packaged` directory. This excludes the developer files/directories from your theme like `/node_modules`, `/src`, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
 
-### 4. Configuration [Copied from FoundationPress](https://github.com/olefredrik/FoundationPress)
+### 4. Configuration ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
 #### YAML config file
 The `config.yml` file is ignored by git so that each environment can use a different configuration with the same git repo.
@@ -49,7 +49,7 @@ If you want to take advantage of [Browsersync](https://www.browsersync.io/), sim
 #### Static asset hashing / cache breaker
 If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your `config.yml`, set ``REVISIONING: true;``. Hashing will work on the ``npm run build`` and ``npm run dev`` commands. It will not be applied on the start command with browsersync. This is by design.  Hashing will only change if there are actual changes in the files.
 
-### Project structure [Copied from FoundationPress](https://github.com/olefredrik/FoundationPress)
+### Project structure ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
 In the `/src` folder you will the working files for all your assets. Every time you make a change to a file that is watched by Gulp, the output will be saved to the `/dist` folder. The contents of this folder is the compiled code that you should not touch (unless you have a good reason for it).
 
@@ -69,7 +69,7 @@ The `/page-templates` folder contains templates that can be selected in the Page
 
 If you're new to Sass, please note that you need to have Gulp running in the background (``npm start``), for any changes in your scss files to be compiled to `app.css`.
 
-### JavaScript Compilation [Copied from FoundationPress](https://github.com/olefredrik/FoundationPress)
+### JavaScript Compilation ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
 All JavaScript files, including Foundation's modules, are imported through the `src/assets/js/app.js` file. The files are imported using module dependency with [webpack](https://webpack.js.org/) as the module bundler.
 
@@ -83,7 +83,7 @@ If you need to output additional JavaScript files separate from `app.js`, do the
 * Build (`npm start`)
 * You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
 
-## Requirements [Copied from FoundationPress(https://github.com/olefredrik/FoundationPress)]
+## Requirements ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
 **This project requires [Node.js](http://nodejs.org) v4.x.x to v6.11.x to be installed on your machine.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
 
