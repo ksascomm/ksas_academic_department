@@ -1,0 +1,419 @@
+.widget {
+	margin-bottom: 2rem;
+}
+
+//Job Market Candidate
+.widget_job_candidate {
+	background: $blue;
+	color: $white;
+	padding: 1rem;
+	background: url('../images/bg-lightDotsOnDkBlue.jpg') top center;
+	.widget_title {
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			text-align: center;
+			margin-bottom: .5rem;
+		}
+	}
+	img {
+		float: left;
+		margin-right: 1rem;
+		@include breakpoint (medium down) {
+			width: 4.5rem;
+		}
+		width: 6rem;
+	}
+	h4, h5 {
+		a {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+			color: $white;
+		}
+	}
+	article.row {
+		//margin-bottom: 0rem;
+	}
+	p {
+		font-size: 1rem;
+		margin-bottom: .75rem;
+		strong {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+		}
+		&.jmc-archive-link {
+			a {
+				color: $white;
+				text-transform: uppercase;
+				font-family: $font-stack-semibold;
+				font-weight: $font-stack-semibold-weight;
+				font-size: .9rem;
+			}
+		}
+	}
+}
+
+//Event Calendar
+.widget_ai1ec_agenda_widget {
+	background: $gray;
+	.widget_title {
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			text-align: center;
+			padding: .75rem .75rem 0 .75rem;
+			margin-bottom: 0;
+		}
+	}
+	.ai1ec-agenda-widget-view .ai1ec-date-title, .ai1ec-agenda-view .ai1ec-date-title {
+		background-image: none;
+		background: $blue;
+		color: $white;
+		border: none;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-month, .ai1ec-agenda-view .ai1ec-month {
+		font-family: $font-stack-semibold;
+		font-weight: $font-stack-semibold-weight;
+		color: $white;
+		text-align: center;
+		padding: 0;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-day, .ai1ec-agenda-view .ai1ec-day {
+		font-family: $font-stack-semibold;
+		font-weight: $font-stack-semibold-weight;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-weekday, .ai1ec-agenda-view .ai1ec-weekday {
+		text-transform: uppercase;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-date-title:hover, .ai1ec-agenda-view .ai1ec-date-title:hover {
+    	color: $white !important;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-event > a:hover {
+    	border-color: #808080;
+    	color: $blue;
+	}
+	.ai1ec-date {
+    	padding: 0 .75rem;
+	}
+	span.ai1ec-event-title, span.ai1ec-event-location {
+		font-family: $font-stack !important;
+		font-weight: $font-stack-weight;
+	}
+	a.ai1ec-btn.ai1ec-btn-default.ai1ec-btn-xs.ai1ec-pull-right.ai1ec-calendar-link {
+		margin-right: .75rem;
+		margin-bottom: .75rem;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-date, .ai1ec-agenda-view .ai1ec-date {
+		border: none;
+	}
+}
+
+.ai1ec-allday-badge {
+	background: $blue;
+}
+
+//Profile & Testimonial Widget
+.widget.ksas_profile, .widget.ksas_testimonial {
+	background: $powderblue;
+	background: url('../images/bg-radialWhiteLtBlue.jpg') bottom center;
+	.widget_title {
+		background: $skyblue;
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			text-align: center;
+			color: $white;
+			margin-bottom: 0;
+		}
+		padding: .75rem;
+	}
+	article {
+		padding: 1rem;
+	}
+	img {
+		float: left;
+		margin-right: 1rem;
+		@include breakpoint (medium down) {
+			width: 4.5rem;
+		}
+		width: 6rem;
+		&.alignleft {
+			padding-right: 0;
+		}
+	}
+	.spotlight-profile-title,.testimonial-bio-details {
+	    font-size: 1.0625rem;
+	    line-height: 1.5;
+	    margin-top: 0;
+	    margin-bottom: .5rem;
+		a {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+			color: $black;
+		}
+	}
+	p {
+		a {
+			color: $black;
+			text-transform: uppercase;
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+			font-size: .9rem;
+		}
+	}
+	.testimonial-job-details, .testimonial-internship-details, {
+		line-height: 1.5;
+		font-size: .9em;
+		strong {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+			font-weight: normal;
+			line-height: 1.3;
+		}
+	}
+	.spotlight-profile-content, .testimonial-quote {
+		font-size: .9em;
+		margin-bottom: 0;
+		line-height: 1.5;
+	}
+	.view-more-link {
+		font-size: .9rem;
+		@include breakpoint(medium) {
+			margin-top: -1rem;
+			margin-bottom: -1rem;
+		}
+	}
+}
+
+//Text & Visual Studio & Nav Menu Widgets
+.widget.widget_text, .widget.widget_black_studio_tinymce,.widget.widget_nav_menu {
+	&:nth-of-type(even) {
+		background: $blue url('../images/whiteInBlue_corner.svg') no-repeat right bottom;
+		background-size: 2.666666666666667rem auto;
+		color: $white;
+		.widget_title {
+			h4, h5 {
+				font-size: 1.25rem;
+				font-family: $font-header-extrabold;
+				font-weight: $font-header-extrabold-weight;
+				color: $white;
+				margin-bottom: 0;
+			}
+			padding: .75rem;
+		}
+		.textwidget {
+			p {
+				a {
+					color: $white;
+				    border-bottom: .0625rem solid;
+				    border-bottom-color: $light-gray;
+				    background-color: transparent;
+				    border-radius: 0;
+				    transition: border-color,background-color,color;
+				    transition-duration: 250ms,250ms,250ms;
+				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+				    &:hover, &:active {
+				        color: $black;
+				    }   
+				}
+			}
+		}
+		ul {
+			li {
+				a {
+					color: $white;
+				    border-bottom: .0625rem solid;
+				    border-bottom-color: $light-gray;
+				    background-color: transparent;
+				    border-radius: 0;
+				    transition: border-color,background-color,color;
+				    transition-duration: 250ms,250ms,250ms;
+				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+				    &:hover {
+				      border-bottom: .0625rem solid;
+				      border-bottom-color: $dark-gray;
+				    } 				
+				}
+			}
+		}		
+	}
+	&:nth-of-type(odd) {
+		background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
+	    background-color: $white;
+	    background-size: 2.666666666666667rem auto;
+		border: .06667rem solid $skyblue;
+		border-bottom: none;
+    	box-shadow: 0 0.4rem 0 0 $blue;
+		.widget_title {
+			h4, h5 {
+				font-size: 1.25rem;
+				font-family: $font-header-extrabold;
+				font-weight: $font-header-extrabold-weight;
+				color: $black;
+				margin-bottom: 0;
+			}
+			padding: .75rem;
+		}
+		.textwidget {
+			p {
+				a {
+				    border-bottom: .0625rem solid;
+				    border-bottom-color: $medium-gray;
+				    background-color: transparent;
+				    border-radius: 0;
+				    transition: border-color,background-color,color;
+				    transition-duration: 250ms,250ms,250ms;
+				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+				    &:hover {
+				      border-bottom: .0625rem solid;
+				      border-bottom-color: $dark-gray;
+				    } 
+				}
+			}
+		}
+	}
+	.textwidget {
+		padding: .75rem;
+		p, ul {
+			font-size: .9em;
+			line-height: 1.25;
+		}
+	}
+}
+
+//Page Custom Sidebar Meta Field
+.widget.ecpt-page-sidebar {
+	background: $blue url('../images/whiteInBlue_corner.svg') no-repeat right bottom;
+	background-size: 2.666666666666667rem auto;
+	color: $white;
+	.widget_title {
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			color: $white;
+			margin-bottom: 0;
+		}
+		padding: .75rem;
+	}
+	ul {
+		font-size: .9em;
+		margin-left: 1.75rem;
+		li {
+			a {
+				color: $white;
+			    border-bottom: .0625rem solid;
+			    border-bottom-color: $light-gray;
+			    background-color: transparent;
+			    border-radius: 0;
+			    transition: border-color,background-color,color;
+			    transition-duration: 250ms,250ms,250ms;
+			    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+			    &:hover {
+			      border-bottom: .0625rem solid;
+			      border-bottom-color: $dark-gray;
+			    }
+			}
+		}
+	}
+	p {
+		font-size: .9em;
+		padding: .75rem;
+	}
+}
+
+//Faculty Books & Bulletins
+.widget.ksas_books,.widget.ksas_bulletin {
+	background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
+    background-color: $white;
+    background-size: 2.666666666666667rem auto;	
+	border: .06667rem solid $skyblue;
+	border-bottom: none;
+	border-top: none;
+	box-shadow: 0 0.4rem 0 0 $blue;
+	.widget_title {
+		background: $blue;
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			text-align: center;
+			color: $white;
+			margin-bottom: 0;
+		}
+		padding: .75rem;
+	}
+	article {
+		padding: 1rem;
+		img {
+			float: left;
+			margin-right: 1rem;
+			@include breakpoint (medium down) {
+				display: block;
+				max-width: 5rem;
+			}			
+		}
+		h4 {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+			text-transform: uppercase;
+			font-size: 1rem;
+			margin-bottom: 0rem;
+			line-height: 1.1;
+		}		
+		h5 {
+			font-size: 1.125rem;
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+		}
+		p {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+			font-size: 1rem;
+			strong {
+				font-weight: normal;
+			}
+			a {
+				font-family: $font-stack-semibold;
+				font-weight: $font-stack-semibold-weight;
+				text-transform: uppercase;
+				font-size: .9rem;
+				span.fa {
+					color: $black;
+				}
+			}			
+		}
+	}
+}
+
+//Specific Bulletin
+.widget.ksas_bulletin {
+	article {
+		padding-bottom: 0rem;
+		p {
+			font-family: $font-stack;
+			font-weight: $font-stack-weight;
+		}
+	}
+}
+
+//Video
+.widget.widget_media_video {
+	background: $gray;
+	.widget_title {
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			color: $black;
+			margin-bottom: 0;
+		}
+		padding: .75rem;
+	}
+	.wp-video {
+	    padding-bottom: 1rem;
+	}
+}

@@ -1,0 +1,532 @@
+// Prevent FOUC
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+  .nav-shield {
+    display: none;
+  }
+}
+
+// Navigation breakpoints
+.mobile-menu,
+.site-title-bar {
+  @include hide-for(medium);
+}
+
+.desktop-menu,
+.site-information .top-bar-left {
+  @include show-for(medium);
+}
+
+// Site title
+.site-desktop-title a {
+  
+}
+
+// Mobile menu
+.mobile-menu {
+  display: none; // prevents repaint caused by JS hiding menu onload
+}
+
+.title-bar {
+  background: $black;
+}
+
+.off-canvas {
+  background: $black;
+  > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+
+    a {
+      color: $white;
+      font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
+      font-size: rem-calc(15);
+      &:hover {
+        background: $dark-gray;
+      }
+    }
+  }
+
+  .menu .active > a { background-color: #ccc; }
+
+}
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+}
+
+.mobile-menu,
+.mobile-off-canvas-menu {
+
+  .menu .is-active > a {
+    background-color: lighten($dark-nav-color, 5%);
+  }
+}
+
+// Tablet and desktop menu
+
+.top-bar {
+  @include xy-grid;
+  &.main-navigation {
+    @include breakpoint(medium) { 
+      border-top: solid;
+      border-color: #4b88b1;
+      border-width: 1px;
+    }
+  }
+  .top-bar-title a {
+    @include breakpoint(small only) {
+      font-size: 1.5rem;
+    }
+    font-size: 2rem;
+    letter-spacing: 0px;
+    //color: #B9B9B9;
+    //padding-left: 1rem;
+    //line-height: 1.8;
+  }
+
+  .menu {
+    //color: #e6e6e6;
+    //padding-top: 0;
+    //padding-bottom: 0;
+    //font-weight: bold;
+    //font-size: 0.8rem;
+    //line-height: 1;
+
+    //&:hover:not(.button) {
+    //  background-color: #42525D;
+    //}
+  }
+
+  .menu .active > a { background-color: #ccc; }
+
+  .menu>li:not(.menu-text)>a { padding: 1rem; }
+  //.menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+
+  //.dropdown.menu .submenu { border: 0; }
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+
+  .nav-shield {
+    @include breakpoint(small only) {
+      @include xy-cell(12);
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          width: 70%;
+        }
+    }
+    @include breakpoint(medium) {  
+      @include xy-cell(4);
+      img {
+        padding: 0rem 1rem .75rem;
+      }
+    }
+    @include breakpoint(large) {  
+      @include xy-cell(3);
+    }
+
+  }
+  .site-desktop-title {
+    @include breakpoint(small only) {  
+      width: 100%;
+      text-align: center;
+      .top-bar-title {
+        @include breakpoint (small only) {
+          @include xy-cell(12);
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    @include breakpoint(medium) {  
+      @include xy-cell(8);
+      text-align: left;
+    }
+    @include breakpoint(large) {  
+      @include xy-cell(9);
+    }
+  }
+  .menu {
+    font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
+    a {
+      font-size: 1.125rem;
+      color: $white;
+      &:hover:not(.button) {
+        background: darken($blue, 10%);
+      }
+      li:not(:last-child) {
+        border-right: none;
+      }
+    }
+    li.external {
+      //hack: float psuedo ::before element to right so it doesn't mess with F6's ::after dropdown arrows
+      a::before {
+        content: "\ecf6";
+        font-family: $flagship-icon;
+        font-weight: 300;
+        float:right;
+        font-size:85%;
+        padding-left:4px;
+      }
+    }
+    .current_page_parent.current_page_ancestor, {
+      background: darken($blue, 10%);
+    }
+  }
+  .dropdown {
+    .current_page_item {
+      background: darken($blue, 10%);
+    }
+    .current_page_ancestor {
+      .menu {
+        .current_page_item {
+          background: $skyblue;
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    @include breakpoint(medium) {
+      font-size: 2rem;
+      line-height: 1.1em;
+    }
+    @include breakpoint(large) {
+      font-size: 2.35rem;
+      line-height: 1.1em;
+    }      
+    small {
+      font-size: 50%;
+      color: #fff;
+      margin-bottom: 1px;
+      display: block;
+      line-height: 1.3;
+    }
+    a, a:visited {
+      color: #fff;
+        &:hover, &:focus {
+          color: #fff;
+        }
+    }        
+  }
+  .input-group {
+    margin-bottom: 0;
+  }
+  form {
+     @include breakpoint (small only) {
+      margin: auto;
+      width: 50%;
+      padding-bottom:1rem;
+    }
+     @include breakpoint (medium) {
+      width: 200px;
+      margin-right: 1.125rem;
+    }
+  }
+  input {
+    height: 2rem;
+    margin-right: 0;
+    &[type='text'] {
+      margin: 0;
+    }
+    &[type="submit"] {
+      font-family: $font-awesome;
+    }
+  }
+  .top-bar-left {
+    padding-left: 2rem;
+  } 
+  ul li ul.submenu {
+    background-color: $white;
+    li {
+      a {
+        color: $black;
+        font-family: $font-stack-semibold;
+        font-weight: $font-stack-semibold-weight;
+        &:hover:not(.button) {
+          background-color: $skyblue;
+          color: $white;
+        }
+      }
+      &:hover {
+        background-color: $skyblue;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray;
+      }
+    }
+  }  
+}
+
+.site-information {
+  @include breakpoint(small only) {
+    padding: 0; // prevents container visibility on small screens
+    background: $white;
+  }
+  background: $blue;
+}
+
+.roof-header-top, .main-navigation, .top-bar ul {
+  background: $blue;
+}
+
+.site-desktop-title {
+  @include breakpoint(small only) {
+    background: $blue;
+  }
+}
+
+.top-bar-title {
+  img {
+    padding: .25rem 1rem .75rem;
+    //this is when menu breaks line
+    @include breakpoint (small) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      //max-width: 375px;
+    }
+    @include breakpoint (medium) {
+      max-width: 400px;
+    }
+    @include breakpoint (large) {
+      max-width: 350px;
+    }
+  }
+}
+
+// WP post navigation
+.post-navigation {
+  @include clearfix;
+}
+
+.nav-previous {
+  float:left;
+}
+
+.nav-next {
+  float:right;
+}
+
+//Explore KSAS area
+
+.roof-header-top {
+  width: 100%;
+  height: 40px;
+  padding: 8px 20px 10px 20px;
+  li.bar {
+    &:after { 
+      font-family: $font-stack-semibold;
+      content: "|";
+      color: $black;
+      }
+  }
+  .button {
+    background-color: $skyblue;
+  }
+  .roof-menu {
+    font-size: 1rem;
+  }
+  .menu.simple {
+    a.button {
+      padding: 0.7rem 1rem;
+    }
+  }
+  .roof-header-top-links {
+    ul li {
+      display: inline;
+    }
+    a {
+      font-family: $font-stack-semibold;
+      font-weight: $font-stack-semibold-weight;
+      color: $white;
+      transition: color 0.5s ease;
+      &:hover {
+        color: $black;
+        transition: color 0.5s ease; 
+      }
+    }
+  }
+  .off-canvas {
+    background: $white;
+    .menu > li > a {
+      color: $white;
+      &:hover {
+        background: $dark-gray;
+      }
+    }    
+  }
+  #global-links {
+    h2 {
+      font-size: 1.25rem;
+      color: $black;
+      font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
+    }
+    .menu {
+    display: inherit;
+      li {
+        display: list-item;
+        a {
+          padding: 0.35rem 1rem; 
+          font-family: $font-stack-bold;
+          font-weight: $font-stack-bold-weight;
+          color: $blue;
+          &:hover, &:active {
+              color: $black;
+          }
+        }      
+      }
+    }
+  }  
+}
+
+//Breadcrumbs
+
+.secondary {
+  background-color: $white;
+  border-bottom: 1px solid $gray;
+  a {
+    color: $black;
+  }
+  .breadcrumbs {
+    padding-left: 2rem;
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
+    margin: inherit;
+    line-height: 1;
+    li {
+      padding: 0.5rem 0;
+      color: $dark-gray;
+      position: relative;
+      font-size: .85rem;
+    }
+    li:first-child a {
+      margin-left: 1rem;
+    }
+
+    li.current_page_item > a {
+      background-color: transparent;
+    }
+    @include breakpoint (small only) {
+      li { 
+          font-size: .85rem;
+        }
+      }
+    a {
+        color: $blue;
+        &:hover {
+          color: $black;
+        }
+    }
+    }
+}
+
+.pagination {
+  margin-top: 2rem;
+  .current {
+    background: $blue;
+  }
+}
+
+//Sidebar Navigation
+
+.sidebar {
+  padding-left: 1rem;
+  .sidebar-menu {
+    padding: .5rem;
+    h1.sidebar-menu-title {
+      font-family: $font-stack-semibold;
+      font-weight: $font-stack-semibold-weight;
+      font-size: 1.15rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    margin-bottom: 1rem;
+    ul.nav {
+      padding: 0 0 0 0.5rem;
+      margin-left: 0;
+      border-left: .2rem solid $blue;
+      font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
+      li:not(.current_page_item, .current_page_parent, .current_page_ancestor) {
+        ul.sub-menu {
+          display: none;
+        }
+      }
+      li {
+        font-size: 1rem;
+        a {
+          line-height: 110%;
+          display: block;
+          margin-bottom: 1rem;
+        }
+        //reduce bold on grandchild and greatgrandchild pages
+        &.current_page_parent.current_page_ancestor, &.current_page_item {
+          ul.sub-menu {
+            li {
+              font-family: $font-stack-semibold;
+              font-weight: $font-stack-semibold-weight;
+              a {
+                margin-top: -.25rem;
+              }
+            }
+          }
+        }
+      }
+      li.external {
+      a::after {
+        content: "\ecf6";
+        font-family: $flagship-icon;
+        font-weight: 300;
+        font-size:85%;
+        padding-left:4px;
+      }
+    }
+    }
+    ul.nav, ul.sub-menu {
+      list-style: none;
+    }
+    ul.sub-menu {
+      li {
+        a {
+          //margin-top: -1rem;
+        }
+      }
+    }
+    &.faculty-bio-jump {
+      background-color: $white;
+      background-size: 2.666666666666667rem auto;
+      border: .06667rem solid $medium-gray;
+      border-bottom: none;
+      box-shadow: 0 0.4rem 0 0 $blue;
+      margin-bottom: 1rem;
+      padding: .5rem;
+    }
+    &.widow {
+      display: none;
+    }
+  } 
+}

@@ -1,0 +1,23 @@
+.bulletins {
+	padding-left: 1rem;
+	.bulletin {
+		a.accordion-title {
+			color: $blue;
+			font-family: $font-stack-bold;
+			font-weight: $font-stack-bold-weight;
+			font-size: 1.25rem;
+		}
+		h3 {
+			font-size: 1.25rem;
+		}
+		h4 {
+			a {
+				font-size: 1.125rem;
+			}
+		}
+	}
+}
+
+.bulletin-category-title {
+	margin: 1.5rem 0;
+}

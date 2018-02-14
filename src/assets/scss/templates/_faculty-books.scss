@@ -1,0 +1,30 @@
+.faculty-book {
+	h2 {
+		font-family: $font-stack-bold;
+		font-weight: $font-stack-bold-weight;
+		font-size: 1.25rem;
+	}
+	img {
+		@include image-float-left;
+		@include breakpoint(medium down) {
+			float: inherit;
+		    width: 40%;
+		}
+		@include breakpoint(large) {
+			width: 250px;
+		}
+  	}
+}
+
+.book-entry {
+height: 100%;
+padding: 10px 25px 10px;
+	hr { 
+		width: 90%;
+		margin: 1rem auto;
+	}
+  	img {
+    	margin-bottom: 25px;
+		@include image-float-left;
+  	}
+}

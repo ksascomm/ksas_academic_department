@@ -1,0 +1,284 @@
+a {
+  color: $blue;
+  &:hover {
+    color: $skyblue;
+  }
+}
+
+@mixin link {
+  //box-shadow: inset 0 -2px 0 $blue;
+    //transition: color 0.1s ease-out;
+    //text-decoration: none;
+    //&:hover, &:active {
+    //    color: $black;
+    //    box-shadow: inset 0 -2px 0 $black;
+    //}
+    color: $blue;
+    border-bottom: .125em dotted;
+    border-bottom-color: rgba(0,0,0,.2);
+    &:hover, &:active {
+        color: $black;
+        border-bottom-style: solid;
+    }  
+}
+
+body {
+  font-family: $font-stack;
+  font-weight: $font-stack-weight;
+  font-size: $global-font-size * 1.125
+}
+
+h1 {
+  font-family: $font-header;
+  font-weight: $font-header-weight;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
+}
+
+ul {
+  list-style-type: square;
+}
+
+p {
+  line-height: 1.5;
+  strong {
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
+  }
+}
+
+.main-container {
+  @include xy-grid-container;
+}
+
+.main-grid {
+  @include xy-grid();
+  margin-top: 1rem;
+  @include breakpoint(medium) {
+    margin-top: 1.5rem;
+  }
+  @include breakpoint(medium) {
+    .main-content { order: 1; }
+    .sidebar { order: 2; }
+  }
+  @include breakpoint(large) {
+    .main-content { order: 2; }
+    .sidebar { order: 1; }
+  }
+  &.sidebar-right {
+    // Place the sidebar below main content on small screens ...
+    @include breakpoint(small) {
+      .main-content { order: 1; }
+      .sidebar { order: 2; }
+    }
+
+    // ... and to the left on medium-up screens, when using the sidebar-right template
+    @include breakpoint(medium) {
+      .main-content { order: 1; }
+      .sidebar { order: 2; }
+    }
+  }
+
+  // Full width template
+  .main-content-full-width {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(8);
+    }
+  }
+
+  // Default template
+  .main-content {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(8);
+    }
+  }
+
+  .sidebar {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(4);
+      margin-top: 1rem;
+    }
+
+    @include breakpoint(large) {
+      @include xy-cell(3.25);
+      margin-top: 1rem;
+    }
+
+  }
+}
+
+.main-content-full-width, .main-content {
+  h1 {
+    font-size: 2rem;
+  }
+  .entry-title h1, h1.entry-title {
+    font-size: 1.75rem;
+    font-family: $font-header-extrabold;
+    font-weight: $font-header-extrabold-weight;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1.15rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  .entry-content {
+    p {
+      line-height: 1.45;
+      letter-spacing: -.2px;
+      a {
+        border: none;
+        border-bottom: .125em solid;
+        border-bottom-color: $medium-gray;
+        background-color: transparent;
+        border-radius: 0;
+        transition: border-color,background-color,color;
+        transition-duration: 250ms,250ms,250ms;
+        transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+        &:hover {
+          border-bottom: .125em solid;
+          border-bottom-color: $dark-gray;
+        }
+      }      
+    }
+  }
+}
+
+.news-thumb {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.post-singular, .post-listing {
+  h1, h2 {
+    font-size: 1.75rem;
+    font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
+    small {
+      text-transform: uppercase;
+      font-size: 55%;
+      color: $dark-gray;
+    }
+    a {
+      .icon-new-tab2 {
+        font-size: 1.25rem;
+      }
+    }
+    }
+  time.updated {
+    font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
+  }
+  .entry-content {
+    margin-top: .5rem;
+  }
+}
+.post-singular {  
+  &.category-books {
+    img {
+      @include image-float-left;
+    }
+  }
+  &.event {
+    //event formatting
+  }
+  &.profile {
+    img {
+        float: left;
+        margin-right: 1rem;
+    }
+  }
+  .entry-content {
+    img {
+      max-width: 500px;
+      padding-bottom: 1rem;
+    }
+  &.single-book {
+    img {
+      padding-bottom: 0rem;
+    }
+  }
+  }
+}
+.no-bullets {
+  list-style: none;
+  margin-left: 0;
+}
+.news-article {
+  border-bottom: 1px solid $gray;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+.single-search-result {
+  margin-bottom: 1rem;
+}
+
+.single-post {
+  .entry-title {
+    font-family: $font-header;
+    font-weight: $font-header-weight;
+    font-size: 1.75rem;
+  }
+  .meta {
+    strong {
+      font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
+    }
+  }
+  .image-left {
+    float: left;
+    box-sizing: content-box;
+    width: 20rem;
+    height: auto;
+    padding: 0 2rem 2rem 0;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+article.page a[href$= ".pdf"]:after,article.page a[href$= ".doc"]:after,article.page a[href$= ".docx"]:after,article.page a[href$= ".xls"]:after,article.page a[href$= ".xlsx"]:after,article.page a[href$= ".ppt"]:after,article.page a[href$= ".pptx"]:after{
+font-family: 'FontAwesome';
+color: $black;
+font-size: 1.125rem;
+padding-left:.2rem;       
+}
+article.page a[href$= ".pdf"]:after{
+content: '\f1c1';
+}
+article.page a[href$= ".doc"]:after,article.page a[href$= ".docx"]:after{
+content: '\f1c2';
+}
+article.page a[href$= ".xls"]:after,article.page a[href$= ".xlsx"]:after{
+content: '\f1c3';
+}
+article.page a[href$= ".ppt"]:after,article.page a[href$= ".pptx"]:after{
+content: '\f1c4';
+}

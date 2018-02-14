@@ -1,0 +1,99 @@
+.footer {
+  background-color: $black;
+  margin: 0 auto;
+  border-top: 1px solid $medium-gray;
+  margin-top: rem-calc(60);
+}
+
+.footer-container {
+  text-align:center;
+  @include xy-grid-container;
+  //@include xy-grid;
+  padding: rem-calc(30) 0;
+
+  section {
+    @include xy-cell(auto);
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    color: $white;
+    font-size: .75rem;
+  }
+  .quicklinks {
+    .menu-quicklinks-container {
+      @include breakpoint(large) {
+        padding-left: 5rem;
+      }
+    }
+    .drilldown a {
+      background: inherit;
+      color: $white;
+    }
+    .is-drilldown-submenu-parent{
+      background: $skyblue;
+      font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
+    }
+    .drilldown .is-drilldown-submenu-parent > a::after {
+      display: none;
+    }
+    .is-drilldown-submenu {
+      .js-drilldown-back, .is-drilldown-submenu-item {
+        background: $black;
+        a {
+          text-align: left;
+          font-size: .95rem;
+          font-family: $font-stack-bold;
+          font-weight: $font-stack-bold-weight;
+          color: $white;          
+        }
+      }
+    }
+  }
+  #menu-footer-links {
+    padding-top: 1rem;
+    @include breakpoint(large) {
+      padding-left: 11rem;
+      @include menu-align(center);
+    }
+    @media screen and (min-width: 64em) and (max-width: 1238px) {
+      padding-left: 4rem;
+    }
+    @include breakpoint(medium down) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    a { 
+      font-size: .95rem;
+      font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
+      color: $white;
+    }
+  }  
+  .social-media {
+    a {
+      @include breakpoint(medium down) {
+        float: left;
+        margin-top: 1rem;
+      }
+      .fa {
+        padding: 0 .5rem;
+        color: $white;
+      }
+    }
+  }  
+  .jhushield {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1.5rem;
+  }
+  .copydate {
+     margin-top: 2rem;
+  }
+}

@@ -1,0 +1,59 @@
+.frm_forms {
+	label {
+		font-family: $font-stack-semibold;
+		font-weight: $font-stack-semibold-weight;
+		font-size: 1rem;
+	}
+	span.frm_required {
+		color: $fireengine;
+	}
+	.frm_final_submit {
+		@include button(false, $button-background, $button-background-hover, $button-color, solid);
+	}
+	.frm_error_style {
+		@include callout-base;
+		@include callout-style(get-color(alert));
+	}
+	.frm_hidden {
+    	display: none;
+	}
+	.frm_blank_field {
+	  input {
+	    &[type=text], &[type=password], &[type=url], &[type=tel], &[type=number], &[type=email] {
+	      color: $black;
+	      background-color: $white;
+	      border-color: $fireengine;
+	      border-width: 1px;
+	      border-style: solid;
+	    }
+	  }
+	  textarea, select {
+	    color: $black;
+	    background-color: $white;
+	    border-color: $fireengine;
+	    border-width: 1px;
+	    border-style: solid;
+	  }
+	  .g-recaptcha iframe, .chosen-container-multi .chosen-choices {
+	    color: $black;
+	    background-color: $white;
+	    border-color: $fireengine;
+	    border-width: 1px;
+	    border-style: solid;
+	  }
+	}
+	.frm_error {
+		color: $fireengine;
+		font-family: $font-stack-bold;
+		font-weight: $font-stack-bold-weight;
+		margin-bottom: 1rem;
+		margin-top: -.5rem;
+	}	  
+	.frm_form_fields_error_style {
+	  color: $black;
+	  background-color: $white;
+	  border-color: $fireengine;
+	  border-width: 1px;
+	  border-style: solid;
+	}
+}

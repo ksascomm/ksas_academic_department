@@ -1,0 +1,9 @@
+.tabs-title > a {
+  font-size: 1rem;
+  font-family: $font-stack-bold;
+  font-weight: $font-stack-bold-weight;
+  color: $blue;
+  &:focus, &[aria-selected='true'] {
+    color: $blue;
+  }
+}

@@ -1,0 +1,20 @@
+.exhibition {
+    background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
+    background-color: $white;
+    background-size: 2.666666666666667rem auto;
+    border: .06667rem solid $medium-gray;
+    border-bottom: none;
+    box-shadow: 0 0.4rem 0 0 $blue;
+    margin-bottom: 1.5rem;
+    padding: .5rem;
+    @include breakpoint(large down) {
+    	img {
+    		max-width: 12.5rem;
+    	}
+    }
+    h1 {
+        font-family: $font-stack-semibold;
+        font-weight: $font-stack-semibold-weight;
+        font-size: 1.35rem;
+    }
+}

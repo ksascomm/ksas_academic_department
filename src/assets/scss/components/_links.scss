@@ -1,0 +1,44 @@
+// Apply outline styles only when input method is keyboard
+// remove :focus style via What Input using progressive enhancement
+// so :focus isn't left broken if JavaScript fails
+
+[data-whatinput="mouse"] a:focus, button:focus
+[data-whatinput="touch"] a:focus, button:focus {
+  outline: none;
+  color: $skyblue;
+}
+
+
+.search-404 {
+  list-style: none;
+  form {
+    margin-top: 1rem;
+    width: 50%;
+    input {
+      &[type="text"] {
+        margin-bottom: 0rem;
+      }
+      &[type="submit"] {
+        font-family: $font-awesome;
+      }
+    }
+  }
+}
+
+
+footer.timely.ai1ec-event-footer {
+  a {
+    border-bottom: .125em solid ;
+    border-bottom-color: $medium-gray;
+    background-color: transparent;
+    border-radius: 0;
+    transition: border-color,background-color,color;
+    transition-duration: 250ms,250ms,250ms;
+    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+    &:hover {
+      color: $skyblue;
+      border-bottom: .125em solid;
+      border-bottom-color: $dark-gray;
+    }
+  } 
+}

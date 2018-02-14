@@ -1,0 +1,76 @@
+.course-listings {
+	font-size: 1rem;
+	border: none;
+	div.dataTables_wrapper div.dataTables_info {
+ 		padding: 8px;
+	}
+	div.dataTables_wrapper div.dataTables_length label {
+		margin: .5rem;
+	}
+	div.dataTables_wrapper div.dataTables_filter label {
+		//padding-top: 2.5rem;
+	}
+	.dataTables_filter {
+    	//float: inherit !important; 
+	}
+	.dataTables_info {
+    	float: inherit !important; 
+    	clear: none;
+	}
+	.course-table {
+		th {
+			font-family: $font-stack-semibold;
+			font-weight: $font-stack-semibold-weight;
+		}
+		td {
+			font-size: .9rem;
+		}
+	}
+}
+
+#courses-tabs {
+	border: none;
+	.tabs-title > a {
+		font-size: 1rem;
+		font-family: $font-stack-bold;
+		font-weight: $font-stack-bold-weight;
+	}
+}
+
+.course-description {
+	h1 {
+		font-family: $font-stack-bold;
+		font-weight: $font-stack-bold-weight;
+		font-size: 1.5rem;
+		padding-right: 1rem;
+	}
+	p {
+		padding-right: 1rem;
+		font-size: 1rem;
+	}
+}
+
+
+.courses-cpt-title {
+	font-size: 1.5rem;
+}
+
+.courses-cpt {
+	li.course-cpt {
+		a.accordion-title {
+			color: $blue;
+			font-family: $font-stack-bold;
+			font-weight: $font-stack-bold-weight;
+			font-size: 1.25rem;
+		}
+		h3 {
+			font-size: 1.25rem;
+		}
+		h4 {
+			a {
+				font-size: 1.125rem;
+			}
+		}
+	}
+}
+
