@@ -30,6 +30,9 @@
 			font-family: $font-stack-semibold;
 			font-weight: $font-stack-semibold-weight;
 			color: $white;
+		    &:hover, &:active {
+		        color: $medium-gray;
+		    }  			
 		}
 	}
 	article.row {
@@ -49,6 +52,9 @@
 				font-family: $font-stack-semibold;
 				font-weight: $font-stack-semibold-weight;
 				font-size: .9rem;
+			    &:hover, &:active {
+			        color: $medium-gray;
+			    } 				
 			}
 		}
 	}
@@ -153,6 +159,9 @@
 			font-family: $font-stack-semibold;
 			font-weight: $font-stack-semibold-weight;
 			color: $black;
+				&:hover, &:active {
+			        color: lighten($dark-gray,10%);
+			    }
 		}
 	}
 	p {
@@ -184,6 +193,11 @@
 		@include breakpoint(medium) {
 			margin-top: -1rem;
 			margin-bottom: -1rem;
+		}
+		a {
+			&:hover, &:active {
+	        	color: lighten($dark-gray,10%);
+	    	}
 		}
 	}
 }

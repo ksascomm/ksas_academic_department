@@ -73,6 +73,10 @@
       font-family: $font-stack-bold;
       font-weight: $font-stack-bold-weight;
       color: $white;
+      &:hover {
+        border-bottom: 0.0625rem dashed;
+        transition: color 0.5s ease; 
+      }
     }
   }  
   .social-media {
