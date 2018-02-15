@@ -191,6 +191,16 @@ function flagship_sub_options_page_fields() {
 	$options[18] =
 	array(		
 		'section' => 'homepage_section',
+		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_topic_keyword',
+		'title'   => __( 'Hub Topic or Keywords?', 'flagship_sub_textdomain' ),
+		'desc'    => __( 'Do you want to display Hub articles via topic or keyword? You may only select one.' ),
+		'type'    => 'select',
+		'choices' => array(' ', 'topic','keyword'),
+		'std'    => ' ',
+);	
+	$options[19] =
+	array(		
+		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_keywords',
 		'title'   => __( 'Hub Keywords', 'flagship_sub_textdomain' ),
 		'desc'    => __( 'Enter keywords. Use hyphens instead of spaces (comma separated, no spaces) ie. physics,arts-and-sciences.', 'flagship_sub_textdomain' ),
@@ -198,6 +208,17 @@ function flagship_sub_options_page_fields() {
 		'class'   => 'nohtml',
 		'std'    => '',
 );
+	$options[20] =
+	array(		
+		'section' => 'homepage_section',
+		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_topic',
+		'title'   => __( 'Hub Topics', 'flagship_sub_textdomain' ),
+		'desc'    => __( 'Choose a relevant Hub Topic from the list above' ),
+		'type'    => 'select',
+		'choices' => array(' ', 'arts-culture','at-work','health','politics-society','science-technology','student-life','university-news','voices-opinion'),
+		'std'    => ' ',
+);
+
 	return $options;
 }
 
