@@ -13,7 +13,7 @@
 <article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article'); ?>>
 	<header>
 		<h2 itemprop="headline">
-			<small>
+			<small aria-hidden="true">
 				<?php $categories = get_the_category();
 				$separator = ', ';
 				$output = '';
