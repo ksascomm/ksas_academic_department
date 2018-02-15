@@ -25,7 +25,7 @@ get_header(); ?>
 				<ul class="orbit-container">
 				<?php while ($slider_query->have_posts() ) : $slider_query->the_post(); ?>
 					<li class="orbit-slide">	
-						<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
+						<img class="orbit-image hide-for-print" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
 					    <figcaption class="orbit-caption" aria-hidden="true">
 					      <h1><?php the_title(); ?></h1>
 					      <p><?php echo get_the_content(); ?></p>
@@ -46,7 +46,7 @@ get_header(); ?>
 		'orderby' => 'rand',
 	));
 		if ( $slider_mobile_query->have_posts() ) : while ($slider_mobile_query->have_posts() ) : $slider_mobile_query->the_post(); ?>
-	<div class="front-hero-featured-image show-for-small-only" role="banner" aria-label="Mobile Hero Image">
+	<div class="front-hero-featured-image show-for-small-only hide-for-print" role="banner" aria-label="Mobile Hero Image">
 		<img class="featured-small" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
 	</div>
 	<?php endwhile; endif;?>

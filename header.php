@@ -56,6 +56,10 @@
 	<div role="navigation" aria-label="Skip to main content">
 		<a class="skip-main show-on-focus" href="#page" >Skip to main content</a>
 	</div>
+	<div class="show-for-print">
+		<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/krieger.blue.svg" alt="krieger logo">
+		<h1><?php echo get_bloginfo ( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
+	</div>
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
@@ -71,7 +75,7 @@
 			</div>
 		</div>
 
-		<div class="roof-header-top show-for-large">
+		<div class="roof-header-top show-for-large hide-for-print">
 			<div class="row align-justify">
 		    	<div class="roof-header-top-links">
 		        	<?php get_template_part( 'template-parts/roof' ); ?>
@@ -79,7 +83,7 @@
 		    </div>
 		</div>
 
-		<div class="top-bar site-information">
+		<div class="top-bar site-information hide-for-print">
 				<div class="nav-shield">
 					<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
 						<img data-interchange="[<?php echo get_template_directory_uri() ?>/dist/assets/images/krieger.blue.svg, small], [<?php echo get_template_directory_uri() ?>/dist/assets/images/ksas-horizontal-md.png, medium], [<?php echo get_template_directory_uri() ?>/dist/assets/images/ksas-horizontal-lg.png, large]" alt="Krieger School of Arts & Sciences">
@@ -98,7 +102,7 @@
 					</div>
 				</div>
 		</div>
-		<nav class="top-bar main-navigation" aria-label="Main Menu">
+		<nav class="top-bar main-navigation hide-for-print" aria-label="Main Menu">
 			<div class="top-bar-left">
 				<?php foundationpress_top_bar_r(); ?>
 			</div>

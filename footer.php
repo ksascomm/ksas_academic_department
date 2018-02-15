@@ -12,7 +12,7 @@
 
 <footer class="footer">
 	<div class="footer-container">
-		<div class="grid-x grid-padding-x">
+		<div class="grid-x grid-padding-x hide-for-print">
 			<div class="small-12 large-3 cell quicklinks">
 			<?php //Check Theme Options for Quicklinks setting 
 		  		$theme_option = flagship_sub_get_global_options(); 
@@ -55,7 +55,7 @@
 		</div>
 		<div class="grid-x">	
 			<div class="small-12 cell copydate">
-				<a href="https://www.jhu.edu/">
+				<a href="https://www.jhu.edu/" class="hide-for-print">
 					<img class="jhushield" src="<?php echo get_template_directory_uri() ?>/dist/assets/images/jhu-horizontal.png" alt="Johns Hopkins University">
 				</a>					
 				<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, Zanvyl Krieger School of Arts & Sciences, 3400 N. Charles St, Baltimore, MD 21218</p>

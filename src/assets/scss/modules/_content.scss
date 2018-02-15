@@ -118,7 +118,11 @@ p {
       @include xy-cell(3.25);
       margin-top: 1rem;
     }
-
+  }
+    //print everything as 1 column
+  @media print {
+    .main-content { order: 1;  @include xy-cell(12); }
+    .sidebar { order: 2;  @include xy-cell(12); }
   }
 }
 
