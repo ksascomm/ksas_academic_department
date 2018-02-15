@@ -81,7 +81,6 @@
 
 		<div class="top-bar site-information">
 				<div class="nav-shield">
-					<h1><span class="screen-reader-text"><?php echo get_bloginfo( 'title' ); ?></span></h1>
 					<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
 						<img data-interchange="[<?php echo get_template_directory_uri() ?>/dist/assets/images/krieger.blue.svg, small], [<?php echo get_template_directory_uri() ?>/dist/assets/images/ksas-horizontal-md.png, medium], [<?php echo get_template_directory_uri() ?>/dist/assets/images/ksas-horizontal-lg.png, large]" alt="Krieger School of Arts & Sciences">
 					</a>
