@@ -172,7 +172,7 @@
       font-size: 1.125rem;
       color: $white;
       &:hover:not(.button) {
-        background: darken($blue, 10%);
+        background: $darkblue;
       }
       li:not(:last-child) {
         border-right: none;

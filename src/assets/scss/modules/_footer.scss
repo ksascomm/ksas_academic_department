@@ -38,6 +38,7 @@
       background: $skyblue;
       font-family: $font-stack-bold;
       font-weight: $font-stack-bold-weight;
+      font-size: 1.175rem;
     }
     .drilldown .is-drilldown-submenu-parent > a::after {
       display: none;
@@ -53,6 +54,12 @@
           color: $white;          
         }
       }
+    }
+    .drilldown .is-drilldown-submenu {
+      background: $black;
+    }
+    .drilldown .js-drilldown-back > a::before {
+      border-color: transparent $skyblue transparent transparent;
     }
   }
   #menu-footer-links {
@@ -81,6 +88,7 @@
   }  
   .social-media {
     a {
+      color: $skyblue;
       @include breakpoint(medium down) {
         float: left;
         margin-top: 1rem;
