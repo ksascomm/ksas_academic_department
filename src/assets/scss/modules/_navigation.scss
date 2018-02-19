@@ -158,7 +158,7 @@
       font-size: 1.125rem;
       color: $white;
       &:hover:not(.button) {
-        background: $darkblue;
+        background: $bluejaysblue;
       }
       li:not(:last-child) {
         border-right: none;
@@ -176,17 +176,17 @@
       }
     }
     .current_page_parent.current_page_ancestor, {
-      background: $darkblue;
+      background: $bluejaysblue;
     }
   }
   .dropdown {
     .current_page_item {
-      background: $darkblue;
+      background: $bluejaysblue;
     }
     .current_page_ancestor {
       .menu {
         .current_page_item {
-          background: $darkblue;
+          background: $bluejaysblue;
           a {
             color: $white;
           }
@@ -252,12 +252,12 @@
         font-family: $font-stack-semibold;
         font-weight: $font-stack-semibold-weight;
         &:hover:not(.button) {
-          background-color: $darkblue;
+          background-color: $bluejaysblue;
           color: $white;
         }
       }
       &:hover {
-        background-color: $darkblue;
+        background-color: $bluejaysblue;
       }
       &:not(:last-child) {
         border-bottom: 1px solid $gray;
@@ -463,7 +463,7 @@
         }
         &.is-active {
           a {
-            color: $darkblue;
+            //color: $darkblue;
           }
         }
         //reduce bold on grandchild and greatgrandchild pages
