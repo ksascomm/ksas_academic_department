@@ -42,3 +42,8 @@
     border-left: $size solid transparent;
   }
 }
+
+@mixin button-hover {
+  background-color: $bluejaysblue;
+  transition: color 0.5s ease;
+}

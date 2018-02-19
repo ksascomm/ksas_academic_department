@@ -39,6 +39,10 @@
       font-family: $font-stack-bold;
       font-weight: $font-stack-bold-weight;
       font-size: 1.175rem;
+      &:hover {
+        background-color: $bluejaysblue;
+        transition: color 0.5s ease;
+      }
     }
     .drilldown .is-drilldown-submenu-parent > a::after {
       display: none;
@@ -89,6 +93,10 @@
   .social-media {
     a {
       color: $skyblue;
+      &:hover {
+        color: $bluejaysblue;
+        transition: color 0.5s ease;
+      }
       @include breakpoint(medium down) {
         float: left;
         margin-top: 1rem;

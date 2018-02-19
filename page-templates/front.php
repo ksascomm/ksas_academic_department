@@ -53,7 +53,7 @@ get_header(); ?>
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-		<section class="skyblue-bg" id="page" role="main" tabindex="0" aria-label="Website Introduction">
+		<section class="background-bluejaysblue" id="page" role="main" tabindex="0" aria-label="Website Introduction">
 			<div class="intro">
 				<div class="seo-intro">
 					<div <?php post_class() ?> id="post-<?php the_ID(); ?>">

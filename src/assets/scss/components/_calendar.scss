@@ -1,5 +1,6 @@
 footer.timely.ai1ec-event-footer {
     background: inherit;
+    color: $dark-gray;
 }
 
 .timely p {
@@ -73,4 +74,12 @@ footer.timely.ai1ec-event-footer {
 
 .ai1ec-event-avatar {
   box-shadow: none;
+}
+
+.ai1ec-agenda-view .ai1ec-event:hover .ai1ec-event-title {
+    color: $blue;
+}
+
+.ai1ec-field-label {
+  color: $dark-gray;
 }

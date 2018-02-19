@@ -25,9 +25,9 @@
 }
 
 // Intro
-.skyblue-bg {
+.background-bluejaysblue {
   background: $powderblue;
-  padding-top: 20px;
+  padding-top: 1.25rem;
   padding-bottom: 0px;
 }
 .intro {
@@ -193,13 +193,6 @@
   p {
     font-family: $font-stack-semibold;
     font-weight: $font-stack-semibold-weight;
-  }
-  .button {
-    background-color: $blue;
-    &:hover {
-      color: $black;
-      transition: color 0.5s ease; 
-    }
   }
 }
 
