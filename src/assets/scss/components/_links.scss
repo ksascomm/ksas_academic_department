@@ -42,3 +42,11 @@ footer.timely.ai1ec-event-footer {
     }
   } 
 }
+
+.menu .is-active > a {
+  background: $light-gray;
+}
+
+.dropdown.menu .is-active > a {
+  color: $light-gray;
+}

@@ -157,6 +157,9 @@
     a {
       font-size: 1.125rem;
       color: $white;
+      &:hover, &:visited, &:focus {
+        color: $white;
+      }
       &:hover:not(.button) {
         background: $bluejaysblue;
       }
@@ -507,6 +510,9 @@
       box-shadow: 0 0.4rem 0 0 $blue;
       margin-bottom: 1rem;
       padding: .5rem;
+      h1 {
+        font-size:1.25rem;
+      }
     }
     &.widow {
       display: none;
