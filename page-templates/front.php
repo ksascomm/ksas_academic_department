@@ -71,12 +71,29 @@ get_header(); ?>
 	    <div class="main-grid homepage">
 	        <div class="main-content homepage-news">
 
-				<?php $news_quantity = $theme_option['flagship_sub_news_quantity'];
-				$news_query = new WP_Query(array(
-					'post_type' => 'post',
-					'posts_per_page' => $news_quantity,
-				));?>
-				<?php if ( $news_query->have_posts() ) : ?> 
+				<?php $news_query_cond = $theme_option['flagship_sub_news_query_cond'];
+				$news_quantity = $theme_option['flagship_sub_news_quantity']; 
+					if ( false === ( $news_query = get_transient( 'news_mainpage_query' ) ) ) {
+						if ($news_query_cond === 1) {
+							$news_query = new WP_Query(array(
+								'post_type' => 'post',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'category',
+										'field' => 'slug',
+										'terms' => array( 'books' ),
+										'operator' => 'NOT IN'
+									)
+								),
+								'posts_per_page' => $news_quantity)); 
+						} else {
+							$news_query = new WP_Query(array(
+								'post_type' => 'post',
+								'posts_per_page' => $news_quantity)); 
+						}
+					set_transient( 'news_mainpage_query', $news_query, 2592000 );
+					} 	
+					if ( $news_query->have_posts() ) : ?> 
 
 				<header class="news-title" aria-label="Site Feed">
 					<h2><?php echo $theme_option['flagship_sub_feed_name']; ?></h2>
