@@ -126,7 +126,7 @@ get_header(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
 				
 				<ul class="tabs" data-tabs id="courses-tabs">
-				 	<li class="tabs-title"><a href="#Spring">Spring 2018</a></li>
+				 	<li class="tabs-title is-active"><a href="#Spring">Spring 2018</a></li>
 				</ul>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					 <div class="tabs-panel in-active" id="Spring">
