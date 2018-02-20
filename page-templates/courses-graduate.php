@@ -129,7 +129,7 @@ get_header(); ?>
 				 	<li class="tabs-title is-active"><a href="#Spring">Spring 2018</a></li>
 				</ul>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
-					 <div class="tabs-panel in-active" id="Spring">
+					 <div class="tabs-panel is-active" id="Spring">
 						<p class="show-for-sr" id="tblDesc">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
 					 	<table aria-describedby="tblDesc" class="course-table">
 							<thead>
