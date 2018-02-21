@@ -260,22 +260,3 @@ p {
     }
   }
 }
-
-article.page a[href$= ".pdf"]:after,article.page a[href$= ".doc"]:after,article.page a[href$= ".docx"]:after,article.page a[href$= ".xls"]:after,article.page a[href$= ".xlsx"]:after,article.page a[href$= ".ppt"]:after,article.page a[href$= ".pptx"]:after{
-font-family: 'FontAwesome';
-color: $black;
-font-size: 1.125rem;
-padding-left:.2rem;       
-}
-article.page a[href$= ".pdf"]:after{
-content: '\f1c1';
-}
-article.page a[href$= ".doc"]:after,article.page a[href$= ".docx"]:after{
-content: '\f1c2';
-}
-article.page a[href$= ".xls"]:after,article.page a[href$= ".xlsx"]:after{
-content: '\f1c3';
-}
-article.page a[href$= ".ppt"]:after,article.page a[href$= ".pptx"]:after{
-content: '\f1c4';
-}

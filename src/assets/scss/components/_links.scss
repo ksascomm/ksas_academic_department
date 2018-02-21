@@ -50,3 +50,45 @@ footer.timely.ai1ec-event-footer {
 .dropdown.menu .is-active > a {
   color: $light-gray;
 }
+
+article.page a {
+  &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
+    font-family: 'FontAwesome';
+    color: $black;
+    font-size: 1.125rem;
+    padding-left: .2rem;
+  }
+  &[href$=".pdf"]:after {
+    content: '\f1c1';
+  }
+  &[href$=".doc"]:after, &[href$=".docx"]:after {
+    content: '\f1c2';
+  }
+  &[href$=".xls"]:after, &[href$=".xlsx"]:after {
+    content: '\f1c3';
+  }
+  &[href$=".ppt"]:after, &[href$=".pptx"]:after {
+    content: '\f1c4';
+  }
+}
+
+.textwidget p a {
+  &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
+    font-family: 'FontAwesome';
+    color: $black;
+    font-size: 1.125rem;
+    padding-left: .2rem;
+  }
+  &[href$=".pdf"]:after {
+    content: '\f1c1';
+  }
+  &[href$=".doc"]:after, &[href$=".docx"]:after {
+    content: '\f1c2';
+  }
+  &[href$=".xls"]:after, &[href$=".xlsx"]:after {
+    content: '\f1c3';
+  }
+  &[href$=".ppt"]:after, &[href$=".pptx"]:after {
+    content: '\f1c4';
+  }
+}

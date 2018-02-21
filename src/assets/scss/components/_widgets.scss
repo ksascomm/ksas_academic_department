@@ -30,9 +30,18 @@
 			font-family: $font-stack-semibold;
 			font-weight: $font-stack-semibold-weight;
 			color: $white;
-		    &:hover, &:active {
-		        color: $medium-gray;
-		    }  			
+		    border-bottom: .0625rem solid;
+		    border-bottom-color: $light-gray;
+		    background-color: transparent;
+		    border-radius: 0;
+		    transition: border-color,background-color,color;
+		    transition-duration: 250ms,250ms,250ms;
+		    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+		    &:hover {
+		    	color: $black;
+		    	border-bottom: .0625rem solid;
+		     	border-bottom-color: $dark-gray;
+		    } 			
 		}
 	}
 	article.row {
@@ -52,9 +61,11 @@
 				font-family: $font-stack-semibold;
 				font-weight: $font-stack-semibold-weight;
 				font-size: .9rem;
-			    &:hover, &:active {
-			        color: $medium-gray;
-			    } 				
+			    &:hover {
+			    	color: $black;
+			    	border-bottom: .0625rem solid;
+			     	border-bottom-color: $dark-gray;
+			    } 			
 			}
 		}
 	}
@@ -158,10 +169,15 @@
 		a {
 			font-family: $font-stack-semibold;
 			font-weight: $font-stack-semibold-weight;
-			color: $black;
-				&:hover, &:active {
-			        color: lighten($dark-gray,10%);
-			    }
+			color: $blue;
+		    transition: border-color,background-color,color;
+		    transition-duration: 250ms,250ms,250ms;
+		    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+		    &:hover {
+		    	color: $black;
+		    	border-bottom: .0625rem solid;
+		     	border-bottom-color: $dark-gray;
+		    } 
 		}
 	}
 	p {
@@ -195,9 +211,19 @@
 			margin-bottom: -1rem;
 		}
 		a {
-			&:hover, &:active {
-	        	color: lighten($dark-gray,10%);
-	    	}
+			color: $blue;
+		    border-bottom: .0625rem solid;
+		    border-bottom-color: $light-gray;
+		    background-color: transparent;
+		    border-radius: 0;
+		    transition: border-color,background-color,color;
+		    transition-duration: 250ms,250ms,250ms;
+		    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+		    &:hover {
+		    	color: $black;
+		    	border-bottom: .0625rem solid;
+		     	border-bottom-color: $dark-gray;
+		    } 
 		}
 	}
 }
@@ -247,8 +273,9 @@
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 				    &:hover {
-				      border-bottom: .0625rem solid;
-				      border-bottom-color: $dark-gray;
+				    	color: $black;
+				    	border-bottom: .0625rem solid;
+				    	border-bottom-color: $dark-gray;
 				    } 				
 				}
 			}
@@ -282,8 +309,8 @@
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 				    &:hover {
-				      border-bottom: .0625rem solid;
-				      border-bottom-color: $dark-gray;
+				    	border-bottom: .0625rem solid;
+				    	border-bottom-color: $dark-gray;
 				    } 
 				}
 			}
@@ -294,6 +321,17 @@
 		p, ul {
 			font-size: .9em;
 			line-height: 1.25;
+		}
+		img {
+			padding-bottom: .5rem;
+			&.floatright {
+				float: right;
+				margin-left: 1rem;
+			}
+			&.floatleft {
+				float: left;
+				margin-right: 1rem;
+			}
 		}
 	}
 }
@@ -327,8 +365,9 @@
 			    transition-duration: 250ms,250ms,250ms;
 			    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 			    &:hover {
-			      border-bottom: .0625rem solid;
-			      border-bottom-color: $dark-gray;
+			    	color: $black;
+			    	border-bottom: .0625rem solid;
+			    	border-bottom-color: $dark-gray;
 			    }
 			}
 		}
@@ -382,6 +421,16 @@
 			font-size: 1.125rem;
 			font-family: $font-stack-semibold;
 			font-weight: $font-stack-semibold-weight;
+			a {
+		    	transition: border-color,background-color,color;
+		    	transition-duration: 250ms,250ms,250ms;
+		    	transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+		    &:hover {
+		    	color: $black;
+		    	border-bottom: .0625rem solid;
+		     	border-bottom-color: $dark-gray;
+		    } 
+			}
 		}
 		p {
 			font-family: $font-stack-semibold;
