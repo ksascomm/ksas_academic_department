@@ -1,9 +1,10 @@
-$font-header: 'quadon-medium', 'Helvetica Neue', Roboto, sans-serif;
-$font-header-weight: 400;
+$font-header: 'quadon-bold', 'Helvetica Neue', Roboto, sans-serif;
+$font-header-weight: 500;
 $font-header-extrabold: 'quadon-extrabold', 'Helvetica Neue', Roboto, sans-serif;
 $font-header-extrabold-weight: 700;
 $font-stack: 'gentona-light', 'Helvetica Neue', Roboto,  sans-serif;
 $font-stack-weight: 300;
+$font-stack-italic: 'gentona-lightitalic', 'Helvetica Neue', Roboto,  sans-serif;
 $font-stack-semibold: 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
 $font-stack-semibold-weight: 600;
 $font-stack-bold: 'gentona-bold', 'Helvetica Neue', Roboto, sans-serif;
@@ -11,15 +12,13 @@ $font-stack-bold-weight: 700;
 $flagship-icon: 'icomoon', 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
 $font-awesome: FontAwesome, 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
 
-
-// custom fonts
 @font-face {
-  font-family: 'quadon-medium';
-  src: url('../fonts/quadon/Quadon-Medium.eot');
-  src: url('../fonts/quadon/Quadon-Medium.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/quadon/Quadon-Medium.woff') format('woff'),
-       url('../fonts/quadon/Quadon-Medium.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'quadon-bold';
+  src: url('../fonts/quadon/Quadon-Bold.eot');
+  src: url('../fonts/quadon/Quadon-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/quadon/Quadon-Bold.woff') format('woff'),
+       url('../fonts/quadon/Quadon-Bold.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -33,7 +32,6 @@ $font-awesome: FontAwesome, 'gentona-semibold', 'Helvetica Neue', Roboto, sans-s
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'gentona-light';
   src: url('../fonts/gentona/Gentona-Light.eot');
@@ -42,6 +40,16 @@ $font-awesome: FontAwesome, 'gentona-semibold', 'Helvetica Neue', Roboto, sans-s
        url('../fonts/gentona/Gentona-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'gentona-lightitalic';
+  src: url('../fonts/gentona/Gentona-LightItalic.eot');
+  src: url('../fonts/gentona/Gentona-LightItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-LightItalic.woff') format('woff'),
+       url('../fonts/gentona/Gentona-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
 }
 
 @font-face {

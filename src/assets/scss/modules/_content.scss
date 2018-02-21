@@ -160,7 +160,10 @@ p {
           border-bottom: .125em solid;
           border-bottom-color: $dark-gray;
         }
-      }      
+      }
+      em, i {
+        font-family: $font-stack-italic;
+      }          
     }
   }
 }
@@ -236,11 +239,6 @@ p {
 }
 
 .single-post {
-  .entry-title {
-    font-family: $font-header;
-    font-weight: $font-header-weight;
-    font-size: 1.75rem;
-  }
   .meta {
     strong {
       font-family: $font-stack-bold;
