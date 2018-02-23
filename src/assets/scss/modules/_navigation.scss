@@ -157,7 +157,7 @@
     a {
       font-size: 1.125rem;
       color: $white;
-      &:hover, &:visited, &:focus {
+      &:hover {
         color: $white;
       }
       &:hover:not(.button) {
