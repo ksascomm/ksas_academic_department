@@ -38,8 +38,6 @@ get_header(); ?>
 				<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
-					<?php $theme_option = flagship_sub_get_global_options();?>
-					
 				</div>
 			</article>
 			<?php endwhile;?>
@@ -131,7 +129,6 @@ get_header(); ?>
 			</div>
 		</main>
 		<?php do_action( 'foundationpress_after_content' ); ?>
-		<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_template_part( 'template-parts/script-initiators' );
