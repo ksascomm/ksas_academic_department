@@ -14,14 +14,16 @@
 	<header>
 		<h3 itemprop="headline">
 			<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>">	
-				<?php the_title();?>
+				<?php the_title(); ?>
 			</a>
 		</h3>
 	</header>
 
 	<div class="entry-content" itemprop="text">
-		<?php $content = get_the_content();
-  		$trimmed_content = wp_trim_words( $content, 60, '[...]' ); ?>
+		<?php
+        $content = get_the_content();
+  		$trimmed_content = wp_trim_words( $content, 60, '[...]' );
+        ?>
   		<p><?php echo $trimmed_content; ?></p>
 	</div>	
 </article>

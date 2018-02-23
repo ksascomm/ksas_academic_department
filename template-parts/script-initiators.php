@@ -1,12 +1,11 @@
 <?php
 /**
  * These conditionals run on specific single custom post types or page templates
- *
  */
 
 ?>
 
-<?php if (is_page_template('page-templates/courses-undergrad.php') || is_page_template('page-templates/courses-graduate.php') ) :?>
+<?php if (is_page_template('page-templates/courses-undergrad.php') || is_page_template('page-templates/courses-graduate.php') ) : ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.js"></script>
 <script>
@@ -22,14 +21,14 @@
     } );
 } );
 </script>
-<?php endif;?>
-<?php if (  is_singular('post') ) : ?>
+<?php endif; ?>
+<?php if ( is_singular('post') ) : ?>
   <script>
    $(document).ready(function() {
     $('li[aria-label="About"]').addClass('current_page_parent current_page_ancestor');
    });
   </script>
-<?php elseif (is_singular('bulletinboard')):?>
+<?php elseif (is_singular('bulletinboard') ) : ?>
   <script>
    $(document).ready(function() {
     $('li[aria-label="Undergraduate"]').addClass('current_page_parent current_page_ancestor');
@@ -37,23 +36,23 @@
    });
   </script>
 
-<?php elseif (is_singular('ai1ec_event')):?>
+<?php elseif (is_singular('ai1ec_event') ) : ?>
   <script>
    $(document).ready(function() {
     $('li[aria-label="Events"]').addClass('current_page_parent current_page_ancestor');
    });
   </script>
 
-<?php elseif (is_singular('ksasexhibits')):?>
+<?php elseif (is_singular('ksasexhibits') ) : ?>
   <script>
    $(document).ready(function() {
     $('li[aria-label="Exhibits & Projects"]').addClass('current_page_parent current_page_ancestor');
    });
   </script>
-<?php elseif (is_singular('people')):?>
+<?php elseif (is_singular('people') ) : ?>
 <script>
     $(document).ready(function() {
       $('li[aria-label="People"]').addClass('current_page_item current_page_parent current_page_ancestor');
       });
   </script>
-<?php endif;?>
+<?php endif; ?>

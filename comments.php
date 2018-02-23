@@ -12,7 +12,8 @@
 if ( have_comments() ) :
 	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
-	<section id="comments"><?php
+	<section id="comments">
+    <?php
 
 
 		wp_list_comments(
@@ -53,14 +54,15 @@ endif;
 
 	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
 
-	if ( post_password_required() ) { ?>
+	if ( post_password_required() ) {
+    ?>
 	<section id="comments">
-		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
-		</div>
+	<div class="notice">
+	<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
+	</div>
 	</section>
 	<?php
-		return;
+	return;
 	}
 ?>
 
@@ -83,8 +85,10 @@ if ( comments_open() ) :
 	<p>
 		<?php
 			/* translators: %s: login url */
-			printf( __(
-				'You must be <a href="%s">logged in</a> to post a comment.', 'foundationpress' ),
+			printf(
+                __(
+				'You must be <a href="%s">logged in</a> to post a comment.', 'foundationpress'
+                ),
 				wp_login_url( get_permalink() )
 			);
 		?>
@@ -95,29 +99,44 @@ if ( comments_open() ) :
 		<p>
 			<?php
 				/* translators: %1$s: site url, %2$s: user identity  */
-				printf( __(
-					'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'foundationpress' ),
+				printf(
+                    __(
+					'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'foundationpress'
+                    ),
 					get_option( 'siteurl' ),
 					$user_identity
 				);
-			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a>
+			?>
+             <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a>
 		</p>
 		<?php else : ?>
 		<p>
 			<label for="author">
 				<?php
-					_e( 'Name', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
+					_e( 'Name', 'foundationpress' ); if ( $req ) {
+_e( ' (required)', 'foundationpress' ); }
 				?>
 			</label>
-			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
+			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" 
+                                                                                        <?php
+            if ( $req ) {
+																																						echo "aria-required='true'"; }
+?>
+>
 		</p>
 		<p>
 			<label for="email">
 				<?php
-					_e( 'Email (will not be published)', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
+					_e( 'Email (will not be published)', 'foundationpress' ); if ( $req ) {
+_e( ' (required)', 'foundationpress' ); }
 				?>
 			</label>
-			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
+			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" 
+                                                                                      <?php
+            if ( $req ) {
+																																						echo "aria-required='true'"; }
+?>
+>
 		</p>
 		<p>
 			<label for="url">

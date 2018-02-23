@@ -12,7 +12,7 @@
 
 <article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-singular'); ?>>
 		<header>
-			<h2 id="post-<?php the_ID(); ?>"><?php the_title();?></h2>
+			<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
 		</header>
 		<div class="entry-content">
 			<?php the_post_thumbnail('thumbnail'); ?>

@@ -15,37 +15,37 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); 
+get_header();
 	$home_url = home_url();
-	if(is_tax('bbtype', 'jobs-bb')) {
-		$bbname = "Job Opportunities";
-		$bblink = 'jobs-bb';
+	if (is_tax('bbtype', 'jobs-bb') ) {
+	$bbname = 'Job Opportunities';
+	$bblink = 'jobs-bb';
 	}
-	elseif(is_tax('bbtype', 'research-bb')) {
-		$bbname = "Research Opportunities";
-		$bblink = 'research-bb';
+	elseif (is_tax('bbtype', 'research-bb') ) {
+	$bbname = 'Research Opportunities';
+	$bblink = 'research-bb';
 	}
-	elseif(is_tax('bbtype', 'internships-bb')) {
-		$bbname = "Internship Opportunities";
-		$bblink = 'internships-bb';
+	elseif (is_tax('bbtype', 'internships-bb') ) {
+	$bbname = 'Internship Opportunities';
+	$bblink = 'internships-bb';
 	}
-	elseif(is_tax('bbtype', 'volunteering-bb')){
-		$bbname = "Volunteering Opportunities";
-		$bblink = 'volunteering-bb';
+	elseif (is_tax('bbtype', 'volunteering-bb') ) {
+	$bbname = 'Volunteering Opportunities';
+	$bblink = 'volunteering-bb';
 	}
-	elseif(is_tax('bbtype', 'research-internships')){
-		$bbname ="Research & Internships";
-		$bblink = 'research-internships';
+	elseif (is_tax('bbtype', 'research-internships') ) {
+	$bbname = 'Research & Internships';
+	$bblink = 'research-internships';
 	}
-	elseif(is_tax('bbtype', 'international-programs')){
-		$bbname = "International Travel Grants";
-		$bblink = 'international-programs';
+	elseif (is_tax('bbtype', 'international-programs') ) {
+	$bbname = 'International Travel Grants';
+	$bblink = 'international-programs';
 	}
-	elseif(is_tax('bbtype', 'language-grants')){
-		$bbname = "Language Learning Grants";
-		$bblink = 'language-grants';
+	elseif (is_tax('bbtype', 'language-grants') ) {
+	$bbname = 'Language Learning Grants';
+	$bblink = 'language-grants';
 	} else {
-		$bbname = "Bulletin Board";
+	$bbname = 'Bulletin Board';
 	}
 	?>	
 
@@ -53,13 +53,16 @@ get_header();
     <div class="main-grid sidebar-right">
         <main class="main-content">
 			
-			<h1 class="page-title"><?php echo $bbname;?></h1>
+			<h1 class="page-title"><?php echo $bbname; ?></h1>
 
 		<?php if ( have_posts() ) : ?>
 			<?php /* Start the Loop */ ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<h2><?php the_title();?></h2>
+			<?php
+            while ( have_posts() ) :
+the_post();
+?>
+				<h2><?php the_title(); ?></h2>
 				<h3>Posted: <?php the_time('F j, Y'); ?></h3>
 				<?php the_content(); ?>
 				<hr>
@@ -88,4 +91,5 @@ get_header();
 	</div>
 </div>
 
-<?php get_footer();
+<?php
+get_footer();

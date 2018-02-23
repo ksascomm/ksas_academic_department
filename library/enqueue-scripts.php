@@ -11,24 +11,24 @@
 
 
 // Check to see if rev-manifest exists for CSS and JS static asset revisioning
-//https://github.com/sindresorhus/gulp-rev/blob/master/integration.md
+// https://github.com/sindresorhus/gulp-rev/blob/master/integration.md
 
 if ( ! function_exists( 'foundationpress_asset_path' ) ) :
 function foundationpress_asset_path( $filename ) {
-	$filename_split = explode( '.', $filename );
-	$dir = end( $filename_split );
-	$manifest_path = dirname( dirname(__FILE__) ) . '/dist/assets/' . $dir . '/rev-manifest.json';
-	
-	if ( file_exists($manifest_path ) ) {
-		$manifest = json_decode( file_get_contents( $manifest_path ), TRUE);
-	} else {
-		$manifest = [];
-	}
-	
-	if ( array_key_exists( $filename, $manifest) ) {
-		return $manifest[$filename];
-	}
-	return $filename;
+		$filename_split = explode( '.', $filename );
+		$dir = end( $filename_split );
+		$manifest_path = dirname( dirname(__FILE__) ) . '/dist/assets/' . $dir . '/rev-manifest.json';
+
+		if ( file_exists($manifest_path ) ) {
+			$manifest = json_decode( file_get_contents( $manifest_path ), true);
+			} else {
+			$manifest = [];
+			}
+
+			if ( array_key_exists( $filename, $manifest) ) {
+			return $manifest[ $filename ];
+			}
+			return $filename;
 }
 endif;
 
@@ -50,7 +50,6 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
 		wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', array(), '5.0.6', 'all' );
-
 
 		// Add the comment-reply library on pages where it is necessary
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

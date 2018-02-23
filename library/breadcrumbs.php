@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Adapted for Foundation from http://thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
  *
@@ -33,33 +33,33 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 			}
 
-			if ( is_single() && ! is_attachment() ) { 
+			if ( is_single() && ! is_attachment() ) {
 
 				// Single post (Only display the first category)
 				if ( $separatorclass ) {
 					echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
 				}
-				if (is_singular('bulletinboard')) {
+				if (is_singular('bulletinboard') ) {
 					echo '<li><a href="' . $home_url . '/undergraduate/">Undergraduate</a></li>';
 					echo '<li><a href="' . $home_url . '/bbtype/">Bulletins</a></li>';
-				} elseif (is_singular('ai1ec_event')) {
+				} elseif (is_singular('ai1ec_event') ) {
 					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';
-				} elseif (is_singular('ksasexhibits')) {
+				} elseif (is_singular('ksasexhibits') ) {
 					echo '<li><a href="' . $home_url . '/exhibitions">Exhibitions</a></li>';
-				} elseif (is_singular('profile')) {
-					if(has_term('spotlight', 'profiletype')){
-					 	echo '<li><a href="'.$home_url . '/profiletype/spotlight">Spotlights</a></li>';
-					} elseif(has_term('undergraduate-profile', 'profiletype')) {
-						echo '<li><a href="'.$home_url . '/profiletype/undergraduate-profile/">Undergraduate Profiles</a></li>';
-					} elseif(has_term('graduate-profile', 'profiletype')) {
-						echo '<li><a href="'.$home_url . '/profiletype/graduate-profile/">Graduate Profiles</a></li>';
+				} elseif (is_singular('profile') ) {
+					if (has_term('spotlight', 'profiletype') ) {
+					 	echo '<li><a href="' . $home_url . '/profiletype/spotlight">Spotlights</a></li>';
+					} elseif (has_term('undergraduate-profile', 'profiletype') ) {
+						echo '<li><a href="' . $home_url . '/profiletype/undergraduate-profile/">Undergraduate Profiles</a></li>';
+					} elseif (has_term('graduate-profile', 'profiletype') ) {
+						echo '<li><a href="' . $home_url . '/profiletype/graduate-profile/">Graduate Profiles</a></li>';
 					}
-				} elseif (is_singular('people')) {
+				} elseif (is_singular('people') ) {
 					echo '<li><a href="' . $home_url . '/people/">People</a></li>';
 				} else {
-					echo '<li><a href="' . $home_url . '/about/">About</a></li>'; 	
+					echo '<li><a href="' . $home_url . '/about/">About</a></li>';
 					echo '<li><a href="' . $home_url . '/about/archive/">News Archive</a></li>';
-				} 
+				}
 				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '">' . get_the_title() . '</strong></li>';
 			} elseif ( is_category() ) {
 
@@ -76,7 +76,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				$tax = $queried_object->taxonomy;
 				$term_id = $queried_object->term_id;
 				$parent = $queried_object->parent;
-				if( $parent ) {
+				if ( $parent ) {
 					$parents = [];
 					// Loop through all term ancestors
 					while ( $parent ) {
@@ -91,7 +91,6 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					echo implode( array_reverse( $parents ) );
 				}
 				echo '<li class="item-current item-tax-' . $term_id . ' item-tax-' . $slug . '">' . $name . '</li>';
-				
 
 			} elseif ( is_page() ) {
 

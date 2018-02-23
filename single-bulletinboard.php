@@ -10,10 +10,13 @@ get_header(); ?>
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content">
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+            while ( have_posts() ) :
+the_post();
+?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
-						<h1 class="entry-title"><?php the_title();?>
+						<h1 class="entry-title"><?php the_title(); ?>
 						<h2>Posted: <?php the_date(); ?></h2>
 					</header>
 					<div class="entry-content">
@@ -21,8 +24,9 @@ get_header(); ?>
 						<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 					</div>
 				</article>
-			<?php endwhile;?>
+			<?php endwhile; ?>
 		</main>
 	</div>
 </div>
-<?php get_footer();
+<?php
+get_footer();

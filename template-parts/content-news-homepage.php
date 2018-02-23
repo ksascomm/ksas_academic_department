@@ -17,20 +17,27 @@
 				</a>
 			<?php else : ?>
 				<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a>
-			<?php endif;?>
+			<?php endif; ?>
 		</h2>
 	</header>
 	<div class="entry-content" itemprop="text">
-		<?php if ( has_post_thumbnail()) : ?>
+		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="grid-x">
   				<div class="medium-4 large-3 cell">
-					<?php the_post_thumbnail('medium', array('class'	=> "news-thumb", 'itemprop' => 'image')); ?>
+					<?php
+                    the_post_thumbnail(
+                        'medium', array(
+							'class'    => 'news-thumb',
+							'itemprop' => 'image',
+						)
+                        );
+?>
 				</div>
 				<div class="medium-8 large-9 cell">
 					<?php the_excerpt(); ?>
 				</div>
 			</div>
-		<?php else: ?>
+		<?php else : ?>
 			<?php the_excerpt(); ?>	
 		<?php endif; ?>	 
 	</div>	

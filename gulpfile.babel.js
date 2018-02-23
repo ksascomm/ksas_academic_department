@@ -197,7 +197,7 @@ gulp.task('phpcbf', function () {
     standard: './codesniffer.ruleset.xml',
     warningSeverity: 0
   }))
-  .on('error', $.util.log)
+  //.on('error', $.util.log)
   .pipe(gulp.dest('.'));
 });
 

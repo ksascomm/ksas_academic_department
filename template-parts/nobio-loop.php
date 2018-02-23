@@ -1,4 +1,4 @@
-<li class="item person <?php echo get_the_directory_filters($post);?><?php echo get_the_roles($post); ?>">
+<li class="item person <?php echo get_the_directory_filters($post); ?><?php echo get_the_roles($post); ?>">
 	<div class="media-object">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
@@ -10,7 +10,7 @@
 				<div class="media-object-section hide-for-print">
 					<?php the_post_thumbnail('directory'); ?>
 				</div>
-			<?php endif;?>
+			<?php endif; ?>
 		<?php endif; ?>	
 		<div class="media-object-section">
 			<h3>

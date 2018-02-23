@@ -20,17 +20,20 @@ get_header(); ?>
 <div class="main-container" id="page">
     <div class="main-grid sidebar-right">
         <main class="main-content">
-			<?php if(is_tax('profiletype', 'spotlight')){ ?>
+			<?php if (is_tax('profiletype', 'spotlight') ) { ?>
 				<h1 class="page-title">Spotlights</h1>
-			<?php } elseif(is_tax('profiletype', 'undergraduate-profile')){ ?>
+			<?php } elseif (is_tax('profiletype', 'undergraduate-profile') ) { ?>
 				<h1 class="page-title">Undergraduate Profiles</h1>
-			<?php } elseif(is_tax('profiletype', 'graduate-profile')){ ?>
+			<?php } elseif (is_tax('profiletype', 'graduate-profile') ) { ?>
 				<h1 class="page-title">Graduate Profiles</h1>
 			<?php } ?>
 		<?php if ( have_posts() ) : ?>
 			<?php /* Start the Loop */ ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+            while ( have_posts() ) :
+the_post();
+?>
 				<?php get_template_part( 'template-parts/content', 'profile' ); ?>
 			<?php endwhile; ?>
 
@@ -57,4 +60,5 @@ get_header(); ?>
 	</div>
 </div>
 
-<?php get_footer();
+<?php
+get_footer();

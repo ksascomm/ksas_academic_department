@@ -1,14 +1,14 @@
-<li class="item person <?php echo get_the_directory_filters($post);?> <?php echo get_the_roles($post); ?>">
+<li class="item person <?php echo get_the_directory_filters($post); ?> <?php echo get_the_roles($post); ?>">
 	<div class="media-object">
 		<?php if ( has_post_thumbnail() ) { ?> 
 			<div class="media-object-section hide-for-print">
-				<a href="<?php the_permalink();?>" aria-label="<?php the_title(); ?>'s website"><?php the_post_thumbnail('medium'); ?>
+				<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>'s website"><?php the_post_thumbnail('medium'); ?>
 				</a>							
 			</div>
 		<?php } ?>	
 		<div class="media-object-section">
 			<h3>
-				<a href="<?php the_permalink();?>"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h3>
 			<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
 				<h4><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h4>

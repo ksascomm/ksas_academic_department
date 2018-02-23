@@ -9,9 +9,12 @@ get_header(); ?>
 		<main class="main-content-full-width">
 	<?php do_action( 'foundationpress_before_content' ); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+    while ( have_posts() ) :
+the_post();
+?>
 
-	  <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+	  <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	      <header aria-label="<?php the_title(); ?>">
 	          <h1 class="entry-title"><?php the_title(); ?></h1>
 	      </header>
@@ -21,22 +24,29 @@ get_header(); ?>
 	      </div>
 	  </article>
 
-	<?php endwhile;?>
-	<?php 
-		//if ( false === ( $job_market_query = get_transient( 'job_market_query' ) ) ) {
+	<?php endwhile; ?>
+	<?php
+		// if ( false === ( $job_market_query = get_transient( 'job_market_query' ) ) ) {
 		       // It wasn't there, so regenerate the data and save the transient
-			$job_market_query = new WP_Query(array(
-				'post_type' => 'people',
-				'role' => 'job-market-candidate',
-				'meta_key' => 'ecpt_people_alpha',
-				'orderby' => 'meta_value',
-				'order' => 'ASC',
-				'posts_per_page' => '-1'));        	
-			//set_transient( 'job_market_query', $job_market_query, 2592000 );
-		//}
-		if($job_market_query->have_posts()) : ?>
-		<ul class="directory">
-		<?php while ($job_market_query->have_posts()) : $job_market_query->the_post(); ?>
+			$job_market_query = new WP_Query(
+                array(
+					'post_type' => 'people',
+					'role' => 'job-market-candidate',
+					'meta_key' => 'ecpt_people_alpha',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'posts_per_page' => '100',
+				)
+                );
+			// set_transient( 'job_market_query', $job_market_query, 2592000 );
+		// }
+		if ($job_market_query->have_posts() ) :
+				?>
+				<ul class="directory">
+				<?php
+				while ($job_market_query->have_posts() ) :
+	$job_market_query->the_post();
+	?>
 			<li class="person <?php echo get_the_roles($post); ?>">
 				<div class="media-object">
 					<?php if ( has_post_thumbnail() ) : ?> 
@@ -80,8 +90,15 @@ get_header(); ?>
 								<?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?>
 							</p>
 						<?php endif; ?>
-						<?php if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) : ?><p><strong>Thesis Title: </strong>"<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"<?php endif; ?><?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a></p>
-						<?php endif; ?>
+						<?php
+                        if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) :
+?>
+<p><strong>Thesis Title: </strong>"<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"<?php endif; ?>
+                                              <?php
+if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) :
+																								?>
+																								&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a></p>
+																														<?php endif; ?>
 						<?php if ( get_post_meta($post->ID, 'ecpt_advisor', true) ) : ?>
 							<p><strong>Main Adviser: </strong><?php echo get_post_meta($post->ID, 'ecpt_advisor', true); ?></p>
 						<?php endif; ?>
@@ -92,12 +109,13 @@ get_header(); ?>
 				</div>		
 			</li>
 		<?php endwhile; ?>
-		</ul>
-		<?php endif;?>	 
+																								</ul>
+																								<?php endif; ?>	 
 	</main>		
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php get_sidebar(); ?>
 </div>
 </div>
 
-<?php get_footer();
+<?php
+get_footer();

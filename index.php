@@ -13,8 +13,8 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); 	
-	$theme_option = flagship_sub_get_global_options(); 
+get_header();
+	$theme_option = flagship_sub_get_global_options();
 	$collection_name = $theme_option['flagship_sub_search_collection']; ?>
 	<div class="main-container" id="page">
 		<div class="main-grid">
@@ -23,7 +23,10 @@ get_header();
 			<?php if ( have_posts() ) : ?>
 
 				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+                while ( have_posts() ) :
+the_post();
+?>
 					<?php get_template_part( 'template-parts/content-news', get_post_format() ); ?>
 				<?php endwhile; ?>
 
@@ -48,4 +51,5 @@ get_header();
 			<?php get_sidebar(); ?>
 		</div>
 	</div>
-<?php get_footer();
+<?php
+get_footer();

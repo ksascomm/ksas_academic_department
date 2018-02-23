@@ -18,7 +18,10 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+            while ( have_posts() ) :
+the_post();
+?>
 				<?php get_template_part( 'template-parts/content', 'search-results' ); ?>
 			<?php endwhile; ?>
 
@@ -45,11 +48,12 @@ get_header(); ?>
 					<h5 class="white">Search Krieger Network?</h5>
 				</div>
 				<div class="textwidget">
-					<p>You are currently searching on <strong><?php echo bloginfo('name');?></strong>. Would you like to search the entire <a href="http://krieger.jhu.edu/search/?q=<?php echo esc_attr(get_search_query()); ?>">Kreiger network?</a></p>
+					<p>You are currently searching on <strong><?php echo bloginfo('name'); ?></strong>. Would you like to search the entire <a href="http://krieger.jhu.edu/search/?q=<?php echo esc_attr(get_search_query()); ?>">Kreiger network?</a></p>
 				</div>
 			</div>
 		</aside>
 
 	</div>
 </div>
-<?php get_footer();
+<?php
+get_footer();

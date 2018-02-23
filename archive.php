@@ -15,17 +15,20 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); 
-	$theme_option = flagship_sub_get_global_options(); 
+get_header();
+	$theme_option = flagship_sub_get_global_options();
 	$collection_name = $theme_option['flagship_sub_search_collection']; ?>	
 
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content">
 		<?php if ( have_posts() ) : ?>
-				<?php echo $theme_option['flagship_sub_feed_name']; ?> Archive: <strong><?php single_month_title(' ') ?></strong>
+				<?php echo $theme_option['flagship_sub_feed_name']; ?> Archive: <strong><?php single_month_title(' '); ?></strong>
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+            while ( have_posts() ) :
+the_post();
+?>
 				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 			<?php endwhile; ?>
 
@@ -52,4 +55,5 @@ get_header();
 	</div>
 </div>
 
-<?php get_footer();
+<?php
+get_footer();
