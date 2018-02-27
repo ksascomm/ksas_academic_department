@@ -6,7 +6,7 @@ get_header(); ?>
 
 <div class="main-container" id="page">
 	<div class="main-grid">
-		<main class="main-content-full-width">
+		<main class="main-content">
 	<?php do_action( 'foundationpress_before_content' ); ?>
 
 	<?php

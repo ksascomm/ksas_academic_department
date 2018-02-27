@@ -130,7 +130,6 @@ while ($research_staff_query->have_posts() ) :
 	</div>
 	</main>		
 	<?php do_action( 'foundationpress_after_content' ); ?>
-	<?php get_sidebar(); ?>
 </div>
 </div>
 

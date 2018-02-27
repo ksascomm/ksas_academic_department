@@ -11,7 +11,7 @@ get_header();
 
 <div class="main-container" id="page">
 	<div class="main-grid">
-		<main class="main-content-full-width">
+		<main class="main-content">
 			<?php
             while ( have_posts() ) :
 the_post();
