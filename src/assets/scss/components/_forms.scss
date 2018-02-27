@@ -1,8 +1,8 @@
 .frm_forms {
 	label {
-		font-family: $font-stack-semibold;
-		font-weight: $font-stack-semibold-weight;
-		font-size: 1rem;
+		font-family: $font-stack-semibold !important;
+		font-weight: $font-stack-semibold-weight !important;
+		font-size: 1rem !important;
 	}
 	span.frm_required {
 		color: $fireengine;

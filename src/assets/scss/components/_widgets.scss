@@ -229,7 +229,7 @@
 }
 
 //Text & Visual Studio & Nav Menu Widgets
-.widget.widget_text, .widget.widget_black_studio_tinymce,.widget.widget_nav_menu {
+.widget.widget_text, .widget.widget_black_studio_tinymce,.widget.widget_nav_menu, {
 	&:nth-of-type(even) {
 		background: $blue url('../images/whiteInBlue_corner.svg') no-repeat right bottom;
 		background-size: 2.666666666666667rem auto;
@@ -494,5 +494,28 @@
 	}
 	.wp-video {
 	    padding-bottom: 1rem;
+	}
+}
+
+//Forms
+.widget.widget_frm_show_form {
+	background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
+    background-color: $white;
+    background-size: 2.666666666666667rem auto;
+	border: .06667rem solid $bluejaysblue;
+	border-bottom: none;
+	box-shadow: 0 0.4rem 0 0 $blue;
+	.widget_title {
+		h4, h5 {
+			font-size: 1.25rem;
+			font-family: $font-header-extrabold;
+			font-weight: $font-header-extrabold-weight;
+			color: $black;
+			margin-bottom: 0;
+		}
+		padding: .75rem;
+	}
+	.frm_form_fields {
+		padding: .75rem;
 	}
 }

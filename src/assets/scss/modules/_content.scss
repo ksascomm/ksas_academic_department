@@ -82,7 +82,7 @@ p {
     }
 
     @include breakpoint(medium) {
-      @include xy-cell(8);
+      @include xy-cell(10);
     }
   }
 
@@ -257,4 +257,9 @@ p {
       height: auto;
     }
   }
+}
+
+.category-highlights {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
 }

@@ -21,15 +21,19 @@ get_header();
 
 <div class="main-container" id="page">
 	<div class="main-grid">
-		<main class="main-content">
+		<main class="main-content-full-width">
 		<?php if ( have_posts() ) : ?>
-				<?php echo $theme_option['flagship_sub_feed_name']; ?> Archive: <strong><?php single_month_title(' '); ?></strong>
+			<?php if(is_category('highlights')): ?> 
+        		<h1 class="page-title">Humanities Highlights</h1>
+        	<?php endif;?>
 			<?php /* Start the Loop */ ?>
 			<?php
-            while ( have_posts() ) :
-the_post();
-?>
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+            while ( have_posts() ) : the_post(); ?>
+            	<?php if(is_category('highlights')): 
+            		get_template_part( 'template-parts/content', 'humanities-highlights' );
+            	else:
+					get_template_part( 'template-parts/content', get_post_format() );
+				endif;?>
 			<?php endwhile; ?>
 
 			<?php else : ?>
@@ -50,8 +54,6 @@ the_post();
 			<?php endif; ?>
 
 		</main>
-		<?php get_sidebar(); ?>
-
 	</div>
 </div>
 

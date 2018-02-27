@@ -201,3 +201,55 @@
     width: 350px;
   }
 }
+
+//AGHI Front Page Styles
+.aghi-events {
+  background: $light-gray;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+  .aghi-events-intro {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .ai1ec-agenda-view {
+    .ai1ec-date {
+      background: none;
+    }
+    .ai1ec-event {
+      border: none;
+    }
+  }
+  .ai1ec-pagination, .ai1ec-subscribe-container, .ai1ec-clearfix, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-calendar-toolbar, span.ai1ec-categories {
+    display: none;
+  }
+  .ai1ec-event-time, .ai1ec-event-location {
+    font-size: 1rem !important;
+  }
+  .ai1ec-event-title {
+    font-size: 1.25rem !important;
+  }
+  .ai1ec-time, .ai1ec-location {
+    font-size: 1rem;
+  }
+}
+
+.humanities-highlights{
+  border-bottom: 1px solid $medium-gray;
+  margin-bottom: 1rem;
+  h1{
+    font-size: 1.5rem;
+    small {
+      font-family: $font-stack-semibold;
+      font-weight: $font-stack-semibold-weight;
+      color: $black;
+    }   
+  }
+  h2.archive-link {
+    font-size: 1.25rem;
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
+  }
+}
