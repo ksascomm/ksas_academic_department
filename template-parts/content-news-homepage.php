@@ -12,8 +12,8 @@
 	<header>
 		<?php foundationpress_entry_meta(); ?>
 		<h2 itemprop="headline">
-			<?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
-				<a href="<?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>" target="_blank" title="<?php the_title(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?> <span class="icon-new-tab2" aria-hidden="true"></span>
+			<?php if ( get_post_meta($post->ID, 'ecpt_external_link', true) ) : ?>
+				<a href="<?php echo get_post_meta($post->ID, 'ecpt_external_link', true); ?>" target="_blank" title="<?php the_title(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?> <span class="icon-new-tab2" aria-hidden="true"></span>
 				</a>
 			<?php else : ?>
 				<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a>
