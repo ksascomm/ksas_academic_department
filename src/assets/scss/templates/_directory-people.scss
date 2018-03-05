@@ -5,10 +5,8 @@
     margin-top: 20px;
   }
   li.person {
-  margin-bottom: 15px;
-  width: 90%;
-  min-height: 95px;
-  padding: 3px 10px 0 10px;
+  margin-bottom: 1rem;
+  width: 100%;
     &.sub-head {
       min-height: 1px;
       margin-bottom: 0;
@@ -21,10 +19,8 @@
       }
     }
     img {
-      max-width: 150px;
-      clear: left;
-      float: left;
       margin-right: 1rem;
+      padding-left: 1rem;
     }
     .media-object {
       @include breakpoint(medium) {
