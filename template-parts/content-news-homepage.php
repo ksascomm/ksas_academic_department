@@ -23,17 +23,17 @@
 	<div class="entry-content" itemprop="text">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="grid-x">
-  				<div class="medium-4 large-3 cell">
+  				<div class="small-6 large-4 cell">
 					<?php
                     the_post_thumbnail(
-                        'medium', array(
-							'class'    => 'news-thumb',
+                        'newsthumb', array(
+							'class'    => 'article',
 							'itemprop' => 'image',
 						)
                         );
 ?>
 				</div>
-				<div class="medium-8 large-9 cell">
+				<div class="small-6 large-8 cell">
 					<?php the_excerpt(); ?>
 				</div>
 			</div>
