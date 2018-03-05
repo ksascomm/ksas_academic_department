@@ -45,7 +45,7 @@
   				<div class="small-6 large-4 cell">
 					<?php
                     the_post_thumbnail(
-                        'newsthumb', array(
+                        'article', array(
 							'class'    => 'article',
 							'itemprop' => 'image',
 						)
