@@ -31,9 +31,7 @@ function foundationpress_theme_support() {
 			// Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
 			add_theme_support( 'post-thumbnails' );
 			set_post_thumbnail_size( 250, 250, true );   // default thumb size
-			add_image_size( 'rss', 300, 150, true );
 			add_image_size( 'directory', 180, 260, true );
-			add_image_size( 'exhibits', 253, 150, true );
 			add_image_size( 'article', 360, 240, true );
 
 			// RSS thingy
