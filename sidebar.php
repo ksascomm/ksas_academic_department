@@ -159,12 +159,9 @@ array(
 					</label>
 					<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
 						<?php
-                        if ( have_posts() ) :
-while ( have_posts() ) :
-														the_post();
-														?>
-														<option>---<?php the_title(); ?></option> 
-																				<?php endwhile; endif; ?>
+                        if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+							<option>---<?php the_title(); ?></option> 
+						<?php endwhile; endif; ?>
 						<?php
                         $jump_menu_query = new WP_Query(
                             array(
@@ -178,10 +175,7 @@ while ( have_posts() ) :
                             );
                             ?>
 						<?php
-                        while ($jump_menu_query->have_posts() ) :
-$jump_menu_query->the_post();
-?>
-				
+                        while ($jump_menu_query->have_posts() ) : $jump_menu_query->the_post(); ?>
 							<option value="<?php the_permalink(); ?>"><?php the_title(); ?></option>
 						<?php endwhile; ?>
 					</select>
@@ -218,7 +212,7 @@ while ( have_posts() ) :
 			<?php dynamic_sidebar( 'research-sb' ); ?>
 		<?php elseif ( is_page( 'undergraduate' ) || $ancestor_slug == 'undergraduate' ) : ?>  
 			<?php dynamic_sidebar( 'undergrad-sb' ); ?>
-		<?php else : ?>
+		<?php elseif ( is_page() && !is_page('faculty-books') ) : ?>
 			<?php dynamic_sidebar( 'page-sb' ); ?>
 	<?php endif; ?>
 </aside>
