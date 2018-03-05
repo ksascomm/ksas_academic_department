@@ -53,7 +53,7 @@ footer.timely.ai1ec-event-footer {
 
 article.page a {
   &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
-    font-family: 'FontAwesome';
+    font-family: $font-awesome;
     color: $black;
     font-size: 1.125rem;
     padding-left: .2rem;
@@ -74,7 +74,7 @@ article.page a {
 
 .textwidget p a {
   &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
-    font-family: 'FontAwesome';
+    font-family: $font-awesome;
     color: $black;
     font-size: 1.125rem;
     padding-left: .2rem;

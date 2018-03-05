@@ -512,6 +512,8 @@
       padding: .5rem;
       h1 {
         font-size:1.25rem;
+        font-family: $font-stack-semibold;
+        font-weight: $font-stack-semibold-weight; 
       }
     }
     &.widow {
