@@ -1,0 +1,33 @@
+.tabs-title > a {
+  font-size: 1rem;
+  font-family: $font-stack-bold;
+  font-weight: $font-stack-bold-weight;
+  color: $blue;
+  &:focus, &[aria-selected='true'] {
+    color: $blue;
+  }
+}
+
+table thead {
+	background: $light-gray;
+}
+
+.tablepress {
+	font-size: 1rem;
+	tbody tr:nth-child(even) {
+		background-color: $light-gray!important;
+	}
+	strong {
+    	font-family: $font-stack-semibold;
+    	font-weight: $font-stack-semibold-weight;
+	}
+	td {
+		font-size: .9rem;
+	}
+	.sorting:hover, .sorting_asc, .sorting_desc, .row-hover tr:hover td {
+    	background-color: $medium-gray !important;
+  	}
+  	tfoot th, thead th {
+		background: $light-gray!important;
+	}
+}
