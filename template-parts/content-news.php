@@ -40,24 +40,15 @@
 	</header>
 
 	<div class="entry-content" itemprop="text">
+		<div class="media-object">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="grid-x grid-margin-x">
-  				<div class="small-6 large-4 cell">
-					<?php
-                    the_post_thumbnail(
-                        'article', array(
-							'class'    => 'article',
-							'itemprop' => 'image',
-						)
-                        );
-?>
-				</div>
-				<div class="small-6 large-8 cell">
-					<?php the_excerpt(); ?>
-				</div>
+			<div class="media-object-section">
+				<?php the_post_thumbnail('thumbnail');?>
 			</div>
-		<?php else : ?>
-			<?php the_excerpt(); ?>	
-		<?php endif; ?> 
+		<?php endif; ?>	 	
+			<div class="media-object-section">
+				<?php the_excerpt(); ?>	
+			<div class="media-object-section">
+		</div>
 	</div>	
 </article>
