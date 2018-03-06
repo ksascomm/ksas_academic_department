@@ -24,7 +24,7 @@
 		<div class="media-object">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="media-object-section">
-				<?php the_post_thumbnail('thumbnail');?>
+				<?php the_post_thumbnail( array(200,200));?>
 			</div>
 		<?php endif; ?>	 	
 			<div class="media-object-section">
