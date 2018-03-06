@@ -19,7 +19,7 @@
 		<?php endif; ?>
 			<ul class="no-bullet meta">
 				<li>Posted on: <?php foundationpress_entry_meta(); ?></li>
-				<li>Posted in: <strong> 
+				<li>Posted in: <strong><span class="capitalize"> 
                 <?php
                 $categories = get_the_category();
 						$separator = ', ';
@@ -33,7 +33,7 @@
 						if (has_tag('gallery') ) :
 				?>
 				, Image Gallery<?php endif; ?>
-						</strong>
+						</span></strong>
 				</li>
 			</ul>
 		</header>
@@ -41,7 +41,7 @@
 			<?php if ( ! has_tag('gallery') ) : ?>
 				<?php
                 the_post_thumbnail(
-                    'medium-large', [
+                    'medium', [
 						'class' => 'image-left',
 						'alt' => 'Featured image',
 					]
