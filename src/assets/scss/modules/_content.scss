@@ -171,6 +171,9 @@ p {
 .news-thumb {
   padding-right: 1rem;
   padding-bottom: 1rem;
+  @include breakpoint(small only) {
+    width: 250px;
+  }
 }
 
 .post-singular, .post-listing {
@@ -230,9 +233,7 @@ p {
 }
 .news-article {
   border-bottom: 1px solid $gray;
-  &:last-of-type {
-    border-bottom: none;
-  }
+  margin-bottom: 1rem;
 }
 .single-search-result {
   margin-bottom: 1rem;

@@ -130,14 +130,6 @@
   &:first-of-type{
     border-top: none;
   }
-  img.news-thumb {
-    @include breakpoint(small only) {
-      width: 12.5rem;
-    }
-    @include breakpoint(medium only) {
-      width: 15rem;
-    }
-  }
 }
 .hub-article {
   border-bottom: 1px solid $gray;

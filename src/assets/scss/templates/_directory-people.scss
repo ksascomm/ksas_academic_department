@@ -26,6 +26,14 @@
       @include breakpoint(medium) {
         margin-bottom: 1.75rem;
       }
+    img {
+      @include breakpoint(small only) {
+        max-width: rem-calc(125px);
+      }      
+      @include breakpoint(medium up) {
+        max-width: rem-calc(150px);
+      }
+    }
     }
     h3 {
       font-size: 1.5rem;

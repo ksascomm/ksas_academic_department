@@ -318,12 +318,17 @@
 	}
 	.textwidget {
 		padding: .75rem;
+		height:auto;
+		overflow:auto;
 		p, ul {
 			font-size: .9em;
 			line-height: 1.25;
 		}
 		img {
 			padding-bottom: .5rem;
+			@include breakpoint(small only) {
+				height:auto;
+			}
 			&.floatright {
 				float: right;
 				margin-left: 1rem;
@@ -419,11 +424,19 @@
 		padding: 1rem;
 		img {
 			float: left;
-			margin-right: 1rem;
-			@include breakpoint (medium down) {
-				display: block;
-				max-width: 5rem;
-			}			
+			padding-right: .5rem;
+		      @include breakpoint(small only) {
+		        max-width: rem-calc(150px);
+		      }      
+		      @include breakpoint(medium) {
+		        max-width: rem-calc(75px);
+		      }
+		      @include breakpoint(large) {
+		        max-width: rem-calc(80px);
+		      }
+		      @include breakpoint(xlarge up) {
+		        max-width: rem-calc(100px);
+		      }
 		}
 		h4 {
 			font-family: $font-stack-semibold;

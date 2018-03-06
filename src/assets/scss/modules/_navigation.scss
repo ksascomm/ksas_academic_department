@@ -126,6 +126,9 @@
         padding: 0rem 1rem .75rem;
       }
     }
+    @include breakpoint(medium only) {
+       margin-top: 1rem;
+    }
     @include breakpoint(large) {  
       @include xy-cell(3);
     }

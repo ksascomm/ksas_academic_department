@@ -40,15 +40,19 @@
 	</header>
 
 	<div class="entry-content" itemprop="text">
-		<div class="media-object">
+		<div class="grid-x">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="media-object-section">
-				<?php the_post_thumbnail( array(200,200));?>
+			<div class="cell small-12 medium-6 large-3">
+				<?php the_post_thumbnail(array(200,200), array('class' => 'alignleft news-thumb')); ?>
 			</div>
-		<?php endif; ?>	 	
-			<div class="media-object-section">
+			<div class="cell small-12 medium-6 large-9">
 				<?php the_excerpt(); ?>	
-			<div class="media-object-section">
+			</div>
+		<?php else: ?>
+			<div class="cell small-12">
+				<?php the_excerpt(); ?>	
+			</div>
+		<?php endif;?>
 		</div>
-	</div>	
+	</div>
 </article>
