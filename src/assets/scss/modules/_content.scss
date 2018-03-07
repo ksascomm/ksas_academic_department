@@ -261,8 +261,10 @@ p {
 }
 
 .category-highlights {
-  margin-bottom: 1.25rem;
-  padding-bottom: 1rem;
+  article.category-highlights {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+  }
 }
 
 img.article {

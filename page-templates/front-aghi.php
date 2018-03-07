@@ -70,7 +70,7 @@ if ( has_post_thumbnail( $post->ID ) ) : ?>
 
 						<?php endwhile; endif; ?>			
 					<h2 class="archive-link">
-						<a href="<?php echo site_url();?>/category/highlights/">See all Humanities Highlights
+						<a href="<?php echo site_url();?>/category/highlights/">See all Humanities Highlights <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
 							</a>
 					</h2>
 				</div>

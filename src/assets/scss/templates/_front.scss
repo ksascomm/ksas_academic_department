@@ -243,5 +243,9 @@
     font-size: 1.25rem;
     font-family: $font-stack-semibold;
     font-weight: $font-stack-semibold-weight;
+    padding-bottom: .5rem;
   }
+  .news-article {
+    border-bottom: none;
+  }  
 }

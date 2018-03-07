@@ -208,6 +208,7 @@
 
 //Text & Visual Studio & Nav Menu Widgets
 .widget.widget_text, .widget.widget_black_studio_tinymce,.widget.widget_nav_menu, {
+	//blue background
 	&:nth-of-type(even) {
 		background: $blue url('../images/whiteInBlue_corner.svg') no-repeat right bottom;
 		background-size: 2.666666666666667rem auto;
@@ -259,6 +260,7 @@
 			}
 		}		
 	}
+	//white background
 	&:nth-of-type(odd) {
 		background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
 	    background-color: $white;
@@ -277,7 +279,7 @@
 			padding: .75rem;
 		}
 		.textwidget {
-			p {
+			p, li {
 				a {
 				    border-bottom: .0625rem solid;
 				    border-bottom-color: $medium-gray;
