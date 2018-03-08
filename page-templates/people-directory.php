@@ -48,65 +48,72 @@ the_post();
 				</div>
 			</article>
 			<?php endwhile; ?>
-			<div class="directory-search callout lightgrey" role="region" aria-label="Filters">
-				<?php if ($theme_option['flagship_sub_role_search'] == true ) : ?>
-				<?php
-                $roles = get_terms(
-                    'role', array(
-						'orderby'       => 'ID',
-						'order'         => 'ASC',
-						'hide_empty'    => true,
-						'exclude'       => array('63', '58', '61'), // job-market-candidate
-					)
-                    );
-					$count_roles = count($roles);
-				if ( $count_roles > 0 ) :
-                ?>
-				<p>Filter by Title:</p>
-				<ul class="filter-list menu role-group" data-filter-group="role">
-					<?php foreach ( $roles as $role ) : ?>
-					<li class="role-filter">
-						<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $role->slug; ?>" class="selected"><?php echo $role->name; ?></a>
-					</li>
-					<?php endforeach; ?>
-				</ul>
-				<?php endif; endif; ?>
-				<div class="grid-x search-sort">
-					<div class="large-8 cell">
-						<label for="id_search">
-							<p>Search by name, title, and research interests:</p>
-						</label>
-						<div class="input-group">
-							<span class="input-group-label">
-								<span class="fa fa-search"></span>
-							</span>
-							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search by name, title, and research interests"  />
+			<?php if ($theme_option['flagship_sub_role_search'] == true  || $theme_option['flagship_sub_research_search'] == true || $theme_option['flagship_sub_directory_search']  == '1' ) : ?>
+				<div class="directory-search callout lightgrey" role="region" aria-label="Filters">
+					<?php //ROLE FILTER BUTTONS
+					 if ($theme_option['flagship_sub_role_search'] == true ) : ?>
+					<?php
+	                $roles = get_terms(
+	                    'role', array(
+							'orderby'       => 'ID',
+							'order'         => 'ASC',
+							'hide_empty'    => true,
+							'exclude'       => array('63', '58', '61'), // job-market-candidate
+						)
+	                    );
+						$count_roles = count($roles);
+					if ( $count_roles > 0 ) :
+	                ?>
+					<p>Filter by Title:</p>
+					<ul class="filter-list menu role-group" data-filter-group="role">
+						<?php foreach ( $roles as $role ) : ?>
+						<li class="role-filter">
+							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $role->slug; ?>" class="selected"><?php echo $role->name; ?></a>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+					<?php endif; endif; ?>
+					<?php //SEARCH BOX
+					if ( $theme_option['flagship_sub_directory_search']  == '1' ) :?>
+					<div class="grid-x search-sort">
+						<div class="large-8 cell">
+							<label for="id_search">
+								<p>Search by name, title, and research interests:</p>
+							</label>
+							<div class="input-group">
+								<span class="input-group-label">
+									<span class="fa fa-search"></span>
+								</span>
+								<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search by name, title, and research interests"  />
+							</div>
 						</div>
 					</div>
-				</div>
-				<?php if ($theme_option['flagship_sub_research_search'] == true ) : ?>
-				<p>Filter all by Research Area:</p>
-				<?php
-                $filters = get_terms(
-                    'filter', array(
-						'orderby'       => 'name',
-						'order'         => 'ASC',
-						'hide_empty'    => true,
-					)
-                    );
+					<?php endif;?>
+					<?php //RESEARCH AREA/EXPERTISE FILTER BUTTONS
+					if ($theme_option['flagship_sub_research_search'] == true ) : ?>
+					<p>Filter all by Research Area:</p>
+					<?php
+	                $filters = get_terms(
+	                    'filter', array(
+							'orderby'       => 'name',
+							'order'         => 'ASC',
+							'hide_empty'    => true,
+						)
+	                    );
 
-					$count_filters = count($filters);
-				if ( $count_filters > 0 ) :
-                ?>
-				<ul class="filter-list menu expertise-group" data-filter-group="expertise">
-					<?php foreach ( $filters as $filter ) : ?>
-					<li class="role-filter">
-						<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a>
-					</li>
-					<?php endforeach; ?>
-				</ul>
-				<?php endif; endif; ?>
-			</div>
+						$count_filters = count($filters);
+					if ( $count_filters > 0 ) :
+	                ?>
+					<ul class="filter-list menu expertise-group" data-filter-group="expertise">
+						<?php foreach ( $filters as $filter ) : ?>
+						<li class="role-filter">
+							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+					<?php endif; endif; ?>
+				</div>
+			<?php endif;?>
 			<div id="isotope-list" class="people-directory loading" role="region" aria-label="Results">
 				<ul class="directory">
 					<?php
