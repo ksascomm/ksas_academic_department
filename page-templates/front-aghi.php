@@ -90,7 +90,7 @@ while ($slider_mobile_query->have_posts() ) :
 			   <h1>Upcoming AGHI-sponsored Events</h1>
 				<div class="grid-x">
 					<div class="small-12 columns">
-						<p>A complete calendar of all humanities-related events, including all AGHI-sponsored events, happening at Johns Hopkins are available on our <a href="<?php echo site_url();?>/events/">events page</a>.</p>	
+						<p>A complete calendar of all humanities-related events, including all AGHI-sponsored events, happening at Johns Hopkins is available on our <a href="<?php echo site_url();?>/events/">events page</a>.</p>	
 					</div>
 				</div>
 				<?php echo do_shortcode('[ai1ec view="agenda" cat_name="AGHI" events_limit="4"]');	?>
