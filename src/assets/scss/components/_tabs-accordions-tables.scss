@@ -31,3 +31,10 @@ table thead {
 		background: $light-gray!important;
 	}
 }
+
+.accordion-title {
+	color: $blue;
+	font-family: $font-stack-bold;
+	font-weight: $font-stack-bold-weight;
+	font-size: 1rem;
+}
