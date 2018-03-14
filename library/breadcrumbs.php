@@ -54,6 +54,14 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					} elseif (has_term('graduate-profile', 'profiletype') ) {
 						echo '<li><a href="' . $home_url . '/profiletype/graduate-profile/">Graduate Profiles</a></li>';
 					}
+				} elseif (is_singular('testimonial')) {
+					if (has_term('alumni', 'testimonialtype') ) {
+					 	echo '<li><a href="' . $home_url . '/testimonialtype/alumni-testimonial/">Alumni Testimonials</a></li>';
+					} elseif (has_term('current-students', 'testimonialtype') ) {
+						echo '<li><a href="' . $home_url . '/testimonialtype/current-students/">Undergraduate Testimonials</a></li>';
+					} elseif (has_term('internship', 'testimonialtype') ) {
+						echo '<li><a href="' . $home_url . '/testimonialtype/internship-testimonial/">Undergraduate Testimonials</a></li>';
+					}					
 				} elseif (is_singular('people') ) {
 					echo '<li><a href="' . $home_url . '/people/">People</a></li>';
 				} else {

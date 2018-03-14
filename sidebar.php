@@ -117,7 +117,7 @@ array(
 		</aside>
 	<?php } ?>
 
-	<?php if (is_home() || is_single() && ! is_singular(array( 'studyfields', 'ai1ec_event', 'people' )) ) : ?>
+	<?php if (is_home() || is_single() && ! is_singular(array( 'studyfields', 'ai1ec_event', 'people', 'testimonial' )) ) : ?>
 	<aside class="sidebar-menu-area" aria-labelledby="sidebar-navigation">
 		<div class="sidebar-menu">
 			<h1 class="sidebar-menu-title" id="sidebar-navigation">Also in <a href="<?php echo get_home_url(); ?>/about/" aria-label="Sidebar Menu: About">About</a></h1>
@@ -182,6 +182,28 @@ array(
 				</div>
 			<?php endif; ?>
 		</aside>
+	<?php endif; ?>
+	<?php if ( is_singular('testimonial') ) :?>
+		<div class="sidebar-menu faculty-bio-jump" aria-labelledby="jump-menu">
+			<label for="jump">
+				<h1 id="jump-menu">View Other Testimonials</h1>
+			</label>
+			<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+				<?php
+		        if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+					<option>---<?php the_title(); ?></option> 
+				<?php endwhile; endif; ?>
+				<?php $jump_menu_query = new WP_Query(array(
+					'post-type' => 'testimonial',
+					'testimonialtype' => array('internship-testimonial', 'alumni-testimonial'),
+					'orderby' => 'title',
+					'order' => 'ASC',
+					'posts_per_page' => '-1')); ?>
+				<?php while ($jump_menu_query->have_posts()) : $jump_menu_query->the_post(); ?>				
+					<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
+				<?php endwhile; ?>
+			</select>
+		</div>
 	<?php endif; ?>
 	
 	<!-- Widgetized Sidebars -->
