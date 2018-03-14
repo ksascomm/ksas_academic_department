@@ -72,7 +72,7 @@ article.page a {
   }
 }
 
-.textwidget p a {
+.textwidget p a, .ecpt-page-sidebar a {
   &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
     font-family: $font-awesome;
     font-size: 1.125rem;
@@ -89,5 +89,15 @@ article.page a {
   }
   &[href$=".ppt"]:after, &[href$=".pptx"]:after {
     content: '\f1c4';
+  }
+}
+
+article.page a, .textwidget p a, .ecpt-page-sidebar a {
+  &[href^="https://drive.google.com"]:after {
+    font-family: "Font Awesome 5 Brands";
+    color: $black;
+    font-size: 1.125rem;
+    padding-left: .2rem;
+    content: '\f3aa';
   }
 }
