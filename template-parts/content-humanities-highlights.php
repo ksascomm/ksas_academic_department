@@ -16,7 +16,7 @@
 	<div class="large-6 cell">
 		<?php the_content(); ?>
 	</div>
-	<div class="large-5 cell">
+	<div class="large-6 cell">
 		<header>
 			<h1 itemprop="headline" id="post-<?php the_ID(); ?>">
 				<a href="<?php if ( get_post_meta($post->ID, 'ecpt_highlight_location', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_highlight_location', true); ?><?php else : ?><?php the_permalink();?><?php endif ;?>"><?php the_title();?></a>
