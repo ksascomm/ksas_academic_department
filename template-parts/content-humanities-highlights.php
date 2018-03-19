@@ -10,7 +10,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article grid-x grid-margin-x'); ?>>
+<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article grid-x grid-margin-x'); ?>>
 
 <?php if( has_tag( 'video' ) ) : ?>	
 	<div class="large-6 cell">
@@ -18,7 +18,7 @@
 	</div>
 	<div class="large-5 cell">
 		<header>
-			<h1 itemprop="headline">
+			<h1 itemprop="headline" id="post-<?php the_ID(); ?>">
 				<a href="<?php if ( get_post_meta($post->ID, 'ecpt_highlight_location', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_highlight_location', true); ?><?php else : ?><?php the_permalink();?><?php endif ;?>"><?php the_title();?></a>
 			</h1>
 		</header>
