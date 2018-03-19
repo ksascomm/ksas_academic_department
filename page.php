@@ -27,6 +27,7 @@ the_post();
                      array(
 						 'theme_location' => 'top-bar-r',
 						 'menu_class' => 'vertical',
+                         'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sitemap Menu">%3$s</ul>',
 					 )
                     );
                 ?>
