@@ -48,9 +48,9 @@ restore_current_blog(); }
 				</ul>
 			</div>
 			<div class="small-12 large-4 cell social-media">
-				<a href="http://facebook.com/jhuksas"><span class="fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a>
-				<a href="https://www.instagram.com/jhuksas/"><span class="fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a>
-				<a href="https://twitter.com/JHUKSAS"><span class="fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a>
+				<a href="http://facebook.com/JHUArtsSciences"><span class="fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a>
+				<a href="https://www.instagram.com/JHUArtsSciences/"><span class="fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a>
+				<a href="https://twitter.com/JHUArtsSciences"><span class="fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a>
 				<a href="https://www.youtube.com/user/jhuksas"><span class="fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a>
 			</div>
 		</div>
