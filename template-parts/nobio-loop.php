@@ -3,7 +3,8 @@
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
 				<div class="media-object-section hide-for-print">
-					<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?> 's webpage"><?php the_post_thumbnail('directory'); ?>
+					<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?> 's webpage"><?php $title=get_the_title();
+					the_post_thumbnail('directory', array('class' => 'hide-for-small-only', 'alt' => $title)); ?>
 					</a>							
 				</div>
 			<?php else : ?>

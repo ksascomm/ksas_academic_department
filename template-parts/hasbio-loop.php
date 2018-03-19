@@ -2,7 +2,8 @@
 	<div class="media-object">
 		<?php if ( has_post_thumbnail() ) { ?> 
 			<div class="media-object-section hide-for-print">
-				<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>'s website"><?php the_post_thumbnail('directory'); ?>
+				<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>'s website"><?php $title=get_the_title();
+				the_post_thumbnail('directory', array('class' => 'hide-for-small-only', 'alt' => $title)); ?>
 				</a>							
 			</div>
 		<?php } ?>	
