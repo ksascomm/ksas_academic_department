@@ -47,7 +47,7 @@ array(
 'menu_class' => 'nav',
 'submenu' => $page_name,
 'depth' => 1,
-'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 )
 );
 ?>
@@ -73,7 +73,7 @@ array(
 'menu_class' => 'nav',
 'submenu' => $parent_name,
 'depth' => 2,
-'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 )
 );
 ?>
@@ -108,7 +108,7 @@ array(
 		 'menu_class' => 'nav',
 		 'submenu' => $grandparent_name,
 		 'depth' => 3,
-		 'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+		 'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 	 )
 		);
 		?>
@@ -128,7 +128,7 @@ array(
 					 'menu_class' => 'nav',
 					 'submenu' => 'About',
 					 'depth' => 2,
-					 'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+					 'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 				 )
                 );
             ?>
@@ -147,7 +147,7 @@ array(
 							 'menu_class' => 'nav',
 							 'submenu' => 'People',
 							 'depth' => 2,
-							 'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+							 'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 						 )
                         );
                     ?>
@@ -237,5 +237,4 @@ while ( have_posts() ) :
 		<?php elseif ( is_page() && !is_page('faculty-books') ) : ?>
 			<?php dynamic_sidebar( 'page-sb' ); ?>
 	<?php endif; ?>
-</aside>
 </div>
