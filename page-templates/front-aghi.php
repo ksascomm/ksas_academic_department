@@ -74,12 +74,11 @@ while ($slider_mobile_query->have_posts() ) :
 	<?php while ( have_posts() ) : the_post(); ?>
 		<section class="background-bluejaysblue" id="page" role="main" tabindex="0" aria-label="Website Introduction">
 			<div class="intro">
-				<div class="seo-intro">
-					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-						<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-						<div class="entry-content">
-							<?php the_content(); ?>
-						</div>
+				<div <?php post_class('seo-intro'); ?> id="post-<?php the_ID(); ?>">
+					<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div>
 				</div>
 			</div>
 		</section>
