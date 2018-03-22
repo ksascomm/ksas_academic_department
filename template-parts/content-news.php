@@ -12,7 +12,7 @@
 
 <article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article'); ?>>
 	<header>
-		<h2 itemprop="headline">
+		<h2>
 			<small aria-hidden="true">
 				<?php
                 $categories = get_the_category();
@@ -39,7 +39,7 @@
 		<?php foundationpress_entry_meta(); ?>
 	</header>
 
-	<div class="entry-content" itemprop="text">
+	<div class="entry-content">
 		<div class="grid-x">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="cell small-12 medium-6 large-3">

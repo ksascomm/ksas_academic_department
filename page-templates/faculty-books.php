@@ -24,13 +24,12 @@ the_post();
 					 while ($faculty_book_query->have_posts() ) :
 						$faculty_book_query->the_post();
 						?>
-						<article class="faculty-book" aria-labelledby="post-<?php the_ID(); ?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+						<article class="faculty-book" aria-labelledby="post-<?php the_ID(); ?>">
 						<?php if ( has_post_thumbnail() ) { ?> 
 						<?php
                         the_post_thumbnail(
                             'medium', array(
 								'class'    => 'float-left',
-								'itemprop' => 'image',
 							)
                             );
 ?>

@@ -88,10 +88,10 @@
 				</div>
 				<div class="site-desktop-title">
 					<div class="top-bar-title">
-						<h1 itemprop="headline">
+						<h1>
 							<a id="dept-info" href="<?php echo site_url(); ?>">
 								<?php if ( ! empty( get_bloginfo('description') ) ) : ?>
-									<small itemprop="description" class="hide-for-small-only"><?php echo get_bloginfo( 'description' ); ?></small>
+									<small class="hide-for-small-only"><?php echo get_bloginfo( 'description' ); ?></small>
 								<?php endif; ?>
 							<?php echo get_bloginfo( 'title' ); ?>
 							</a>

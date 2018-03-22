@@ -12,18 +12,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-listing exhibit'); ?>>
 	<header>
-		<h1 itemprop="headline">
+		<h1>
 			<?php the_title(); ?>
 		</h1>
 	</header>
 
-	<div class="entry-content" itemprop="text">
-		<div class="exhibit-body" itemprop="articleBody">						
+	<div class="entry-content">
+		<div class="exhibit-body">						
 				<?php
                 the_post_thumbnail(
                     'medium',
 					array(
-						'itemprop' => 'image',
 						'alt' => trim(strip_tags( $post->post_title )),
 						'aria-label' => 'Click on the featured image to expand it',
 					)

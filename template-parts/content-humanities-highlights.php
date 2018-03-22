@@ -18,11 +18,11 @@
 	</div>
 	<div class="large-6 cell">
 		<header>
-			<h1 itemprop="headline" id="post-<?php the_ID(); ?>">
+			<h1 id="post-<?php the_ID(); ?>">
 				<a href="<?php if ( get_post_meta($post->ID, 'ecpt_highlight_location', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_highlight_location', true); ?><?php else : ?><?php the_permalink();?><?php endif ;?>"><?php the_title();?></a>
 			</h1>
 		</header>
-		<div class="entry-content" itemprop="text">		
+		<div class="entry-content">		
 			<?php the_excerpt(); ?>
 		</div>			
 	</div>
@@ -32,11 +32,11 @@
 	</div>
 	<div class="large-8 cell">		
 		<header>
-			<h1 itemprop="headline" id="post-<?php the_ID(); ?>">
+			<h1 id="post-<?php the_ID(); ?>">
 				<a href="<?php if ( get_post_meta($post->ID, 'ecpt_highlight_location', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_highlight_location', true); ?><?php else : ?><?php the_permalink();?><?php endif ;?>"><?php the_title();?></a>
 			</h1>
 		</header>
-		<div class="entry-content" itemprop="text">
+		<div class="entry-content">
 			<?php the_content(); ?>
 		</div>
 	</div>

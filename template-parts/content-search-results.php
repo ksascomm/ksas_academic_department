@@ -12,14 +12,14 @@
 
 <article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article single-search-result'); ?>>
 	<header>
-		<h3 itemprop="headline">
+		<h3>
 			<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>">	
 				<?php the_title(); ?>
 			</a>
 		</h3>
 	</header>
 
-	<div class="entry-content" itemprop="text">
+	<div class="entry-content">
 		<?php
         $content = get_the_content();
   		$trimmed_content = wp_trim_words( $content, 60, '[...]' );

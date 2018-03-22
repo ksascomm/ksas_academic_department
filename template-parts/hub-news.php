@@ -47,7 +47,7 @@ if ('keyword' === $selection ) {
 		<time class="updated" datetime=""><?php echo date('F d, Y', $date); ?></time>
 		<h2><a href="<?php echo $hub_article['url']; ?>" id="post-<?php echo $hub_article['id']; ?>"><?php echo $hub_article['headline']; ?></a></h2>
 	</header>
-	<div class="entry-content" itemprop="text">
+	<div class="entry-content">
 		<div class="grid-x">
 			<div class="small-6 large-4 cell">
 				<img class="news-thumb" src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub: <?php echo $hub_article['headline']; ?>" />
