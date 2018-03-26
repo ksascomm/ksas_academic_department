@@ -158,7 +158,7 @@ the_post();
 						</table>
 					 </div>
 				</div>
-			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
+				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					 <div class="tabs-panel" id="Summer">
 					 	<p class="show-for-sr" id="tblDesc">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
 					 	<table aria-describedby="tblDesc" class="course-table">
@@ -179,7 +179,7 @@ the_post();
 						</table>
 					 </div>
 				</div>
-			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
+				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					 <div class="tabs-panel" id="Fall">
 					 	<p class="show-for-sr" id="tblDesc">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
 					 	<table aria-describedby="tblDesc" class="course-table">
