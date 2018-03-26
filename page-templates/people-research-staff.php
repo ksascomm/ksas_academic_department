@@ -17,7 +17,7 @@ if ( false === ( $research_staff_query = get_transient( 'research_staff_query' )
 			'posts_per_page' => '250',
 		)
         );
-	set_transient( 'research_staff_query', $research_staff_query, 2592000 );
+	set_transient( 'research_staff_query', $research_staff_query, 345600 );
 endif;
 ?>
 

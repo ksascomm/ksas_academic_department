@@ -90,7 +90,6 @@ the_post();
 				<?php
                 $news_query_cond = $theme_option['flagship_sub_news_query_cond'];
 				$news_quantity = $theme_option['flagship_sub_news_quantity'];
-					if ( false === ( $news_query = get_transient( 'news_mainpage_query' ) ) ) {
 					if ($news_query_cond === 1 ) {
 						$news_query = new WP_Query(
                                 array(
@@ -114,8 +113,6 @@ the_post();
 								)
                                 );
 						}
-					set_transient( 'news_mainpage_query', $news_query, 2592000 );
-					}
 					if ( $news_query->have_posts() ) :
                     ?>
                      

@@ -105,20 +105,11 @@ while ($slider_mobile_query->have_posts() ) :
 					<h1>Humanities Highlights <br>
 						<small>Humanities Stories from Across Hopkins</small>
 					</h1>
-					<?php  if ( false === ( $highlights_query = get_transient( 'highlights_mainpage_query' ) ) ) {	
-						$highlights_query = new WP_Query(array(
+					<?php $highlights_query = new WP_Query(array(
 								'post_type' => 'post',
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'category',
-										'field' => 'slug',
-										'terms' => array( 'highlights' ),
-									)
-								),
+								'category_name' => 'highlights',
 								'posts_per_page' => 1,
 							)); 
-					set_transient( 'highlights_mainpage_query', $highlights_query, 604800 );
-						} 	
 					if ( $highlights_query->have_posts() ) : while ($highlights_query->have_posts()) : $highlights_query->the_post(); ?>
 
 						
@@ -137,8 +128,6 @@ while ($slider_mobile_query->have_posts() ) :
 				<?php
                 $news_query_cond = $theme_option['flagship_sub_news_query_cond'];
 				$news_quantity = $theme_option['flagship_sub_news_quantity'];
-					if ( false === ( $news_query = get_transient( 'news_mainpage_query' ) ) ) {
-					if ($news_query_cond === 1 ) {
 						$news_query = new WP_Query(
                                 array(
 									'post_type' => 'post',
@@ -146,23 +135,13 @@ while ($slider_mobile_query->have_posts() ) :
 										array(
 											'taxonomy' => 'category',
 											'field' => 'slug',
-											'terms' => array( 'books' ),
+											'terms' => 'highlights',
 											'operator' => 'NOT IN',
 										),
 									),
 									'posts_per_page' => $news_quantity,
 								)
                                 );
-					} else {
-						$news_query = new WP_Query(
-                                array(
-									'post_type' => 'post',
-									'posts_per_page' => $news_quantity,
-								)
-                                );
-						}
-					set_transient( 'news_mainpage_query', $news_query, 2592000 );
-					}
 					if ( $news_query->have_posts() ) :
                     ?>
                      

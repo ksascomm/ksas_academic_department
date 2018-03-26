@@ -29,7 +29,7 @@ the_post();
 				'posts_per_page' => 100,
 				)
 			);
-			set_transient( 'ksas_course_undergrad_query', $ksas_course_undergrad_query, 86400 );
+			set_transient( 'ksas_course_undergrad_query', $ksas_course_undergrad_query, 345600 );
 				}
 				?>
 			<?php if ($ksas_course_undergrad_query->have_posts() ) : ?>

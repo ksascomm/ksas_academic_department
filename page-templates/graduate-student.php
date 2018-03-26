@@ -26,7 +26,7 @@ the_post();
 
 	<?php endwhile; ?>
 	<?php
-		// if ( false === ( $graduate_student_query = get_transient( 'graduate_student_query' ) ) ) {
+		if ( false === ( $graduate_student_query = get_transient( 'graduate_student_query' ) ) ) {
 	       // It wasn't there, so regenerate the data and save the transient
 		$graduate_student_query = new WP_Query(
             array(
@@ -38,8 +38,8 @@ the_post();
 				'posts_per_page' => '100',
 			)
             );
-		// set_transient( 'graduate_student_query', $graduate_student_query, 2592000 );
-				// }
+		set_transient( 'graduate_student_query', $graduate_student_query, 345600 );
+				}
 		if ( $graduate_student_query->have_posts() ) :
         ?>
 		<ul class="directory">
