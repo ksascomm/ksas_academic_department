@@ -182,17 +182,17 @@
       }
     }
     .current_page_parent.current_page_ancestor, {
-      background: $bluejaysblue;
+      background: $skyblue;
     }
   }
   .dropdown {
     .current_page_item {
-      background: $bluejaysblue;
+      background: $skyblue;
     }
     .current_page_ancestor {
       .menu {
         .current_page_item {
-          background: $bluejaysblue;
+          background: $skyblue;
           a {
             color: $white;
           }
@@ -298,7 +298,6 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      //max-width: 375px;
     }
     @include breakpoint (medium) {
       max-width: 400px;
@@ -469,7 +468,7 @@
         }
         &.is-active {
           a {
-            //color: $darkblue;
+            
           }
         }
         //reduce bold on grandchild and greatgrandchild pages
@@ -501,7 +500,7 @@
     ul.sub-menu {
       li {
         a {
-          //margin-top: -1rem;
+          
         }
       }
     }
