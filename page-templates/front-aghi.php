@@ -41,7 +41,7 @@ $slider_query->the_post();
 					  	<?php if ( !empty( get_the_content() ) ):?>
 					      <p><?php echo get_the_content(); ?></p>
 						   <?php if (get_post_meta($post->ID, 'ecpt_button', true) ) : ?>
-								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>')" aria-label="<?php the_title(); ?>" class="button">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
+								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>')" aria-label="post-<?php the_ID(); ?>" class="button">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
 							<?php endif; ?>
 						<?php endif;?>
 					    </figcaption>
