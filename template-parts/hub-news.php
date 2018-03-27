@@ -44,7 +44,7 @@ if ('keyword' === $selection ) {
 		$date = $hub_article['publish_date'];
 		// $dt = new DateTime("@$date");
 		?>
-		<time class="updated" datetime=""><?php echo date('F d, Y', $date); ?></time>
+		<time class="updated" datetime="<?php echo $hub_article['publish_date']; ?>"><?php echo date('F d, Y', $date); ?></time>
 		<h2><a href="<?php echo $hub_article['url']; ?>" id="post-<?php echo $hub_article['id']; ?>"><?php echo $hub_article['headline']; ?></a></h2>
 	</header>
 	<div class="entry-content">
