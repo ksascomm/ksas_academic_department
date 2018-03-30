@@ -22,17 +22,17 @@ get_header(); ?>
                     <h1 class="entry-title single-title" itemprop="headline" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
                 </header>
                 <div class="grid-x grid-margin-x bio">
-                    <div class="small-12 medium-4 cell">
-                        <?php if (has_post_thumbnail() ) { ?>
-                        <?php
-                        the_post_thumbnail(
-                            'full', array(
-                            'class' => 'headshot',
-                            )
-                        );
-                        ?>
-                        <?php } ?>
+                    <?php if (has_post_thumbnail() ) : ?>
+                        <div class="small-12 medium-4 cell">
+                            <?php
+                            the_post_thumbnail(
+                                'full', array(
+                                'class' => 'headshot',
+                                )
+                            );
+                            ?>
                         </div>
+                    <?php endif;?>
                         <div class="small-12 medium-8 cell">
                         <?php if (get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
                         <h2><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h2>
