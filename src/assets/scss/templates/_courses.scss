@@ -43,6 +43,9 @@
 		font-weight: $font-stack-bold-weight;
 		font-size: 1.5rem;
 		padding-right: 1rem;
+		small {
+			color: $black;
+		}
 	}
 	p {
 		padding-right: 1rem;

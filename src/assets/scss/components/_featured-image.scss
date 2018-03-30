@@ -11,4 +11,13 @@
   @include breakpoint(xlarge) {
     height: rem-calc(275);
   }
+  &.homepage {
+    height: rem-calc(150);
+    @include breakpoint(medium) {
+      height: rem-calc(250);
+    }
+    @include breakpoint(xlarge) {
+      height: rem-calc(325);
+    }
+  }
 }

@@ -4,7 +4,7 @@ Template Name: Front
 */
 get_header(); ?>
 	<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-		<header class="featured-hero hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image">
+		<header class="featured-hero homepage hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image">
 		</header>
 	<?php endif; ?>
 	<?php get_template_part( 'template-parts/homepage-slider' ); ?>
@@ -71,26 +71,26 @@ $news_query->the_post();
 				<?php get_template_part( 'template-parts/content-news-homepage', get_post_format() ); ?>
 
 				<?php endwhile; ?>
-<div class="homepage-news-archive" role="region" aria-labelledby="region1">         
-<h4 id="region1">
-<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-View <?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
-</a>
-</h4>
-</div>      
+			<div class="homepage-news-archive" role="region" aria-labelledby="region1">         
+				<h4 id="region1">
+					<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+						View <?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
+					</a>
+				</h4>
+			</div>      
 
-		
-<?php endif; ?>
+					
+			<?php endif; ?>
 
 			<?php
             $hub_query_cond = $theme_option['flagship_sub_hub_cond'];
 				if ($hub_query_cond === 1 ) :
                 ?>
 				<header class="hub-title" aria-label="Hub Feed">
-				<h2>Related News from <a href="https://hub.jhu.edu/" aria-label="hub website">The Hub</a></h2>
+					<h2>Related News from <a href="https://hub.jhu.edu/" aria-label="hub website">The Hub</a></h2>
 				</header>
 				<?php
-				get_template_part( 'template-parts/hub-news' );
+					get_template_part( 'template-parts/hub-news' );
 				endif;
                 ?>
 
