@@ -66,16 +66,6 @@ function flagship_sub_options_page_fields() {
 		'class'   => 'numeric',
 		'std'    => '',
 	);
-	$options[2] =
-	array(
-		'section' => 'homepage_section',
-		'id'      => FLAGSHIP_SUB_SHORTNAME . '_slider_style',
-		'title'   => __( 'Homepage slider style', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Choose to have a horizontal or vertical caption on your slider', 'flagship_sub_textdomain' ),
-		'type'    => 'select',
-		'choices' => array('horizontal', 'vertical'),
-		'std'    => 'vertical',
-	);
 	$options[4] =
 	array(
 		'section' => 'directory_section',
