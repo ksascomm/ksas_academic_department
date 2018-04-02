@@ -38,3 +38,11 @@ table thead {
 	font-weight: $font-stack-bold-weight;
 	font-size: 1.125rem;
 }
+
+.entry-content {
+	.accordion {
+		.accordion-title {
+			border-bottom: 1px solid $gray;
+		}
+	}
+}
