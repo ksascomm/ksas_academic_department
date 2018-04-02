@@ -10,7 +10,7 @@ get_header(); ?>
 	<?php get_template_part( 'template-parts/homepage-slider' ); ?>
 	<?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-		<section class="background-bluejaysblue" id="page" role="main" tabindex="0" aria-label="Website Introduction">
+		<main class="background-bluejaysblue" id="page" tabindex="0" aria-label="Website Introduction">
 			<div class="intro">
 				<div <?php post_class('seo-intro'); ?> id="post-<?php the_ID(); ?>">
 					<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-		</section>
+		</main>
 	<?php endwhile; ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 
@@ -71,8 +71,8 @@ $news_query->the_post();
 				<?php get_template_part( 'template-parts/content-news-homepage', get_post_format() ); ?>
 
 				<?php endwhile; ?>
-			<div class="homepage-news-archive" role="region" aria-labelledby="region1">         
-				<h4 id="region1">
+			<div class="homepage-news-archive">         
+				<h4>
 					<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
 						View <?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
 					</a>
