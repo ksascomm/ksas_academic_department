@@ -141,8 +141,8 @@ the_post();
 				</ul>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					 <div class="tabs-panel is-active" id="Spring">
-					 	<p class="show-for-sr" id="tblDesc">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
-					 	<table aria-describedby="tblDesc" class="course-table">
+					 	<p class="show-for-sr" id="tblDescSpring">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+					 	<table aria-describedby="tblDescSpring" class="course-table">
 							<thead>
 								<tr>
 									<th>Course # (Section)</th>
@@ -162,8 +162,8 @@ the_post();
 				</div>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					 <div class="tabs-panel" id="Summer">
-					 	<p class="show-for-sr" id="tblDesc">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
-					 	<table aria-describedby="tblDesc" class="course-table">
+					 	<p class="show-for-sr" id="tblDescSummer">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+					 	<table aria-describedby="tblDescSummer" class="course-table">
 							<thead>
 								<tr>
 									<th>Course # (Section)</th>
@@ -183,8 +183,8 @@ the_post();
 				</div>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					 <div class="tabs-panel" id="Fall">
-					 	<p class="show-for-sr" id="tblDesc">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
-					 	<table aria-describedby="tblDesc" class="course-table">
+					 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+					 	<table aria-describedby="tblDescFall" class="course-table">
 							<thead>
 								<tr>
 									<th>Course # (Section)</th>

@@ -68,7 +68,7 @@ the_post();
 					<ul class="filter-list menu role-group" data-filter-group="role">
 						<?php foreach ( $roles as $role ) : ?>
 						<li class="role-filter">
-							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $role->slug; ?>" class="selected"><?php echo $role->name; ?></a>
+							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $role->slug; ?>" class="selected" aria-label="<?php echo $role->name; ?> Research Area Filter"><?php echo $role->name; ?></a>
 						</li>
 						<?php endforeach; ?>
 					</ul>
