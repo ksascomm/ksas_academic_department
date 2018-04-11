@@ -15,10 +15,7 @@ get_header(); ?>
 <div class="main-container" id="page">
     <div class="main-grid">
         <main class="main-content">
-            <?php
-            while ( have_posts() ) :
-the_post();
-?>
+            <?php while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
             <?php endwhile; ?>
             <?php if (is_page('Sitemap') ) : ?>
