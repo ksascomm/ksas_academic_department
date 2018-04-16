@@ -51,6 +51,11 @@
         }
       } 
     }
+  &.job-market-candidate, &.graduate-student {
+    .media-object {
+      margin-bottom: 1rem;
+    }
+  }  
   }
 }
 
