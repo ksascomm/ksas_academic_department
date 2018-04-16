@@ -21,7 +21,10 @@ require_once( 'library/cleanup.php' );
 require_once( 'library/foundation.php' );
 
 /** Format comments */
-require_once( 'library/class-foundationpress-comments.php' );
+//require_once( 'library/class-foundationpress-comments.php' );
+
+/** Block comments & trackbacks */
+require_once( 'library/block-comments.php' );
 
 /** Register all navigation menus */
 require_once( 'library/navigation.php' );
