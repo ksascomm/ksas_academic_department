@@ -85,17 +85,13 @@ $graduate_student_query->the_post();
 							<?php endif; ?>
 						</ul>
 						<?php
-                        if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) :
-?>
-<p><strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); endif; ?>
-						<?php
-                        if ( get_post_meta($post->ID, 'ecpt_advisor', true) ) :
-?>
-<br><strong>Advisor:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_advisor', true); endif; ?>
-						<?php
-                        if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) :
-?>
-</p><?php endif; ?>				
+                        if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
+							<p><strong>Research Interests:&nbsp;</strong>
+								<?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?>
+                        <?php if ( get_post_meta($post->ID, 'ecpt_advisor', true) ) : ?>
+							<br><strong>Advisor:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_advisor', true); endif; ?>
+							</p>
+						<?php endif; ?>				
 					</div>
 				</div>
 			</li>
