@@ -47,7 +47,7 @@ the_post();
 				while ($job_market_query->have_posts() ) :
 	$job_market_query->the_post();
 	?>
-			<li class="person <?php echo get_the_roles($post); ?>">
+			<li class="callout person <?php echo get_the_roles($post); ?>">
 				<div class="media-object">
 					<?php if ( has_post_thumbnail() ) : ?> 
 						<div class="media-object-section">
@@ -90,15 +90,14 @@ the_post();
 								<?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?>
 							</p>
 						<?php endif; ?>
-						<?php
-                        if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) :
-?>
-<p><strong>Thesis Title: </strong>"<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"<?php endif; ?>
-                                              <?php
-if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) :
-																								?>
-																								&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a></p>
-																														<?php endif; ?>
+						<?php if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) : ?>
+							<p><strong>Thesis Title:</strong> "<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"
+	                        <?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>
+								&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a>
+							<?php endif; ?>
+							</p>
+						<?php endif; ?>
+							
 						<?php if ( get_post_meta($post->ID, 'ecpt_advisor', true) ) : ?>
 							<p><strong>Main Adviser: </strong><?php echo get_post_meta($post->ID, 'ecpt_advisor', true); ?></p>
 						<?php endif; ?>
@@ -109,8 +108,8 @@ if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) :
 				</div>		
 			</li>
 		<?php endwhile; ?>
-																								</ul>
-																								<?php endif; ?>	 
+			</ul>
+		<?php endif; ?>	 
 	</main>		
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php get_sidebar(); ?>
