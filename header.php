@@ -16,16 +16,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="date" content="<?php the_modified_date(); ?>" />
 
-		<meta property="og:site_name" content="<?php echo get_bloginfo( 'title' ); ?>" />
-	    <meta property="og:title" content="<?php echo get_bloginfo( 'title' ); ?> | Krieger School of Arts and Sciences | Johns Hopkins University" />
-	    <meta property="og:url" content="<?php echo site_url(); ?>" />
-	    <meta property="og:description" content="The Zanvyl Krieger School of Arts and Sciences is the core institution of Johns Hopkins University’s Homewood campus" />
-
-	    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/homepage-slider-hero.jpg" />
-		<meta property="og:image:width" content="2400" />
-		<meta property="og:image:height" content="921" />
-
-
 		<title><?php create_page_title(); ?></title>
 
 		<!-- Icons & Favicons -->
