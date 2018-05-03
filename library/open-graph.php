@@ -21,7 +21,7 @@ add_filter('language_attributes', 'add_opengraph_doctype');
         	} 
         	else 
         	{
-            	$excerpt = get_bloginfo('description');
+            	$excerpt = get_bloginfo('title');
 		}
 
 	        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
