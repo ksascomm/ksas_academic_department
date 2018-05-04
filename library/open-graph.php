@@ -24,7 +24,7 @@ add_filter('language_attributes', 'add_opengraph_doctype');
             	$excerpt = get_bloginfo('title');
 		}
 
-	        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+	        echo '<meta property="og:title" content="' . get_the_title() ." | " . get_bloginfo('title')  . '"/>';
 			echo '<meta property="og:description" content="' . $excerpt . '"/>';
 	        echo '<meta property="og:type" content="article"/>';
 	        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
