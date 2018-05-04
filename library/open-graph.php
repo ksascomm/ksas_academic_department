@@ -1,13 +1,5 @@
 <?php 
 
-function add_opengraph_doctype($output) {
-    return $output . '
-    xmlns="https://www.w3.org/1999/xhtml"
-    xmlns:og="https://ogp.me/ns#" 
-    xmlns:fb="http://www.facebook.com/2008/fbml"';
-}
-add_filter('language_attributes', 'add_opengraph_doctype');
-
 //Add Open Graph Meta Info from the actual article data, or customize as necessary
 	function facebook_open_graph() {
 	    global $post;
