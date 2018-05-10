@@ -218,7 +218,7 @@
   }
 }
 
-.humanities-highlights{
+.humanities-highlights, .highlighted-research{
   border-bottom: 1px solid $medium-gray;
   margin-bottom: 1rem;
   h1{
@@ -238,4 +238,36 @@
   .news-article {
     border-bottom: none;
   }  
+}
+
+.highlighted-research {
+   background: $light-gray;
+   border-bottom: none;
+  .intro {
+   
+  }
+  .fa-circle {
+    color: $blue;
+  }
+  h1 {
+    margin: 2rem 0;
+  }
+  .orbit {
+    margin: 1rem;
+  }
+  #caption {
+    padding-left: 2rem;
+    @include breakpoint(large) {
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    h5 {
+      color: $dark-gray;
+    }
+  }
+  .orbit-previous, .orbit-next {
+    color: $black;
+  }
 }
