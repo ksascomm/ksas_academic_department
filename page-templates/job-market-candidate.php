@@ -93,7 +93,7 @@ the_post();
 						<?php if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) : ?>
 							<p><strong>Thesis Title:</strong> "<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"
 	                        <?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>
-								&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a>
+								&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract  <span class="fas fa-file-pdf" aria-hidden="true"></span></a>
 							<?php endif; ?>
 							</p>
 						<?php endif; ?>
