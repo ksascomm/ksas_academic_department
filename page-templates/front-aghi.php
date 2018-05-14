@@ -61,14 +61,12 @@ $slider_query->the_post();
 			'orderby' => 'rand',
 		)
         );
-		if ( $slider_mobile_query->have_posts() ) :
-while ($slider_mobile_query->have_posts() ) :
-				$slider_mobile_query->the_post();
+		if ( $slider_mobile_query->have_posts() ) : while ($slider_mobile_query->have_posts() ) : $slider_mobile_query->the_post();
 				?>
-					<div class="front-hero-featured-image show-for-small-only hide-for-print" role="banner" aria-label="Mobile Hero Image">
-				<img class="featured-small" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
-					</div>
-					<?php endwhile; endif; ?>
+				<div class="front-hero-featured-image show-for-small-only hide-for-print" role="banner" aria-label="Mobile Hero Image">
+					<img class="featured-small" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
+				</div>
+		<?php endwhile; endif; ?>
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -109,6 +107,7 @@ while ($slider_mobile_query->have_posts() ) :
 								'post_type' => 'post',
 								'category_name' => 'highlights',
 								'posts_per_page' => 1,
+								'orderby' => 'rand',
 							)); 
 					if ( $highlights_query->have_posts() ) : while ($highlights_query->have_posts()) : $highlights_query->the_post(); ?>
 
