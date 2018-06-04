@@ -7,10 +7,15 @@
 	        return;
 		if($excerpt = $post->post_content) 
 	        {
- 				$excerpt = strip_tags($post->post_content);
-				$excerpt = str_replace("", "'", $excerpt);
-				$excerpt = wp_trim_words($post->post_content, 25, '...');
-        	} 
+ 				$uglyexcerpt = strip_tags($post->post_content);
+				$uglyexcerpt = str_replace("", "'", $uglyexcerpt);
+				$excerpt = wp_trim_words($uglyexcerpt, 25, '...');
+        	}
+        	elseif (is_singular('people')) {
+        		$longexcerpt = strip_tags(get_post_meta($post->ID, 'ecpt_bio', true));
+        		$longexcerpt = str_replace("", "'", $longexcerpt);
+        		$excerpt = wp_trim_words($longexcerpt, 15, '...');
+        	}
         	else 
         	{
             	$excerpt = get_bloginfo('title');
