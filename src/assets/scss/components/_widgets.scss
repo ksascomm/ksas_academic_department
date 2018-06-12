@@ -211,7 +211,7 @@
 }
 
 //Text & Visual Studio & Nav Menu Widgets
-.widget.widget_text, .widget.widget_black_studio_tinymce,.widget.widget_nav_menu, {
+.widget.widget_text, .widget.widget_black_studio_tinymce,.widget.widget_nav_menu {
 	//blue background
 	&:nth-of-type(even) {
 		background: $blue url('../images/whiteInBlue_corner.svg') no-repeat right bottom;
@@ -300,7 +300,7 @@
 			}
 		}
 	}
-	.textwidget {
+	.textwidget,  {
 		padding: .75rem;
 		height:auto;
 		overflow:auto;
@@ -323,6 +323,7 @@
 			}
 		}
 	}
+	
 }
 
 //Page Custom Sidebar Meta Field
@@ -484,8 +485,9 @@
 	}
 }
 
-//Forms
-.widget.widget_frm_show_form {
+//Formidable Widget
+.frm_form_widget, .widget.widget_frm_show_form {
+	//white background
 	background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
     background-color: $white;
     background-size: 2.666666666666667rem auto;
@@ -501,8 +503,14 @@
 			margin-bottom: 0;
 		}
 		padding: .75rem;
+	}	
+	.frm_forms {
+		padding: 0 .75rem;
+		label {
+			color: $dark-gray !important;
+		}
 	}
-	.frm_form_fields {
-		padding: .75rem;
+	.frm_style_formidable-style.with_frm_style .frm_required {
+		color: $fireengine;
 	}
 }
