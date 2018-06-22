@@ -514,3 +514,11 @@
 		color: $fireengine;
 	}
 }
+
+//Custom HTML widgets
+.widget.widget_text .textwidget.custom-html-widget {
+    overflow: hidden;
+    iframe {
+    	margin-bottom: 1rem;
+	}
+}
