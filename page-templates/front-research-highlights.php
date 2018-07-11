@@ -53,11 +53,13 @@ get_header(); ?>
 					<ul class="orbit-container">
 
 					<?php if ($slider_query->post_count > 1 ) : ?>
-
-					<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-		   			<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+					
+					<div class="hide-for-small-only">
+						<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+		   				<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+		   			</div>	
 					<?php endif;?>
-
+					
 					<?php while ($slider_query->have_posts() ) : $slider_query->the_post(); ?>
 						<li class="orbit-slide">
 							<div class="grid-x">
@@ -79,8 +81,15 @@ get_header(); ?>
 						</li>
 					<?php endwhile;?>
 		  			</ul>
+			  		<nav class="orbit-bullets" aria-label="Slider Buttons">
+						<?php $bullet_counter = 0; while ($slider_query->have_posts() ) : $slider_query->the_post(); ?>
+							<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
+								<span class="show-for-sr">Slide of <?php echo the_title(); ?></span>
+								<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
+							</button>
+						<?php $bullet_counter++; endwhile; ?>
+					</nav>	
 		   		</div>
-
 			</div>
 			<?php endif;?> 		
 
