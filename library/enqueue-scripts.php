@@ -82,3 +82,6 @@ if (!(is_admin() )) {
     }
     add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 }
+
+//remove Tablepress default styles; use Foundation
+add_filter( 'tablepress_use_default_css', '__return_false' );
