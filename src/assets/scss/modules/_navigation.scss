@@ -458,11 +458,6 @@
       border-left: .2rem solid $blue;
       font-family: $font-stack-bold;
       font-weight: $font-stack-bold-weight;
-      li:not(.current_page_item, .current_page_parent, .current_page_ancestor) {
-        ul.sub-menu {
-          display: none;
-        }
-      }
       li {
         font-size: 1rem;
         a {
@@ -475,9 +470,14 @@
             
           }
         }
+        ul.sub-menu {
+          display: none;
+        }
         //reduce bold on grandchild and greatgrandchild pages
         &.current_page_parent.current_page_ancestor, &.current_page_item {
+          //display grandchild and greatgrandchild pages if they exist
           ul.sub-menu {
+            display: inherit;
             li {
               font-family: $font-stack-semibold;
               font-weight: $font-stack-semibold-weight;
@@ -489,14 +489,14 @@
         }
       }
       li.external {
-      a::after {
-        content: "\ecf6";
-        font-family: $flagship-icon;
-        font-weight: 300;
-        font-size:85%;
-        padding-left:4px;
+        a::after {
+          content: "\ecf6";
+          font-family: $flagship-icon;
+          font-weight: 300;
+          font-size:85%;
+          padding-left:4px;
+        }
       }
-    }
     }
     ul.nav, ul.sub-menu {
       list-style: none;
