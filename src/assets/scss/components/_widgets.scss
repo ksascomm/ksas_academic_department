@@ -468,7 +468,7 @@
 }
 
 //Video
-.widget.widget_media_video {
+.widget.widget_media_video, .widget.ksas_video_link_widget {
 	background: $gray;
 	.widget_title {
 		h4, h5 {
@@ -482,6 +482,35 @@
 	}
 	.wp-video {
 	    padding-bottom: 1rem;
+	}
+}
+
+.widget.ksas_video_link_widget {
+	p {
+		font-size: .9em;
+		padding: .75rem;
+	}
+	.video-thumbnail {
+		position: relative;
+		img {
+			padding: .5rem 0rem;
+			width: 100%;
+		}
+		.playbutton {
+		    &:before {
+				font-family: $font-awesome;
+			    font-size: 4rem;
+			    font-style: normal;
+			    font-weight: inherit;
+			    text-decoration: inherit;
+			    position: absolute;
+			 	top: 50%;
+			    left: 50%;
+			    margin-right: -50%;
+			    transform: translate(-50%, -50%);
+			    content: '\f144';
+		    }
+		}
 	}
 }
 
