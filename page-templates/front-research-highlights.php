@@ -65,7 +65,7 @@ get_header(); ?>
 									<img class="card" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="slider <?php the_title(); ?>" />
 								</div>
 								<div class="cell small-12 medium-6 large-4">
-									<div id="caption">
+									<div class="slide-caption">
 									<?php if ( ! the_title( ' ', ' ', false ) == '' ) : ?>
 										<h3><?php the_title(); ?></h3>
 									<?php endif;?>
