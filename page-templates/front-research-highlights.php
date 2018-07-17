@@ -34,19 +34,17 @@ get_header(); ?>
 			<div class="highlighted-research" role="region" aria-label="Faculty Research Highlights">
 				<div class="intro">
 					<div class="media-object">
-						<div class="media-object-section">
-							<h1>
-							<span class="fa-stack fa-lg hide-for-small-only">
+						<div class="media-object-section">			
+							<span class="fa-stack fa-2x hide-for-small-only">
 								<span class="fa fa-circle fa-stack-2x"></span>
 								<span class="fa fa-flask fa-stack-1x fa-inverse" aria-hidden="true"></span>
 							</span>
-							</h1>
 						</div>
-					  <div class="media-object-section">
-						<h1>Faculty Research Highlights <br>
-							<small>Explore the department’s most current findings</small>
-						</h1>
-					  </div>
+						<div class="media-object-section">
+							<h1>Faculty Research Highlights <br>
+								<small>Explore the department’s most current findings</small>
+							</h1>
+					 	</div>
 					</div>
 				</div>
 				<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
