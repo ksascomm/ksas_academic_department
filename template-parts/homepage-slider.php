@@ -24,13 +24,19 @@
                 while ($slider_query->have_posts() ) : $slider_query->the_post(); ?>
 					<li class="orbit-slide">	
 						<img class="orbit-image hide-for-print" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
+					<?php if (get_the_title() || !empty( get_the_content() )) :?>
 					    <figcaption class="orbit-caption" aria-hidden="true">
-					      <h1><?php the_title(); ?></h1>
+					    	<?php if (get_the_title()) :?>
+					      		<h1><?php the_title(); ?></h1>
+					  		<?php endif;?>
+					  	<?php if ( !empty( get_the_content() ) ):?>
 					      <p><?php echo get_the_content(); ?></p>
 						   <?php if (get_post_meta($post->ID, 'ecpt_button', true) ) : ?>
-								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>')" aria-label="<?php the_title(); ?>" class="button">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
+								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>')" aria-label="post-<?php the_ID(); ?>" class="button">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
 							<?php endif; ?>
+						<?php endif;?>
 					    </figcaption>
+					<?php endif;?>
 			   		</li>
 				<?php endwhile; ?>
 				</ul>	
