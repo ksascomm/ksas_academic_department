@@ -56,9 +56,13 @@
     }
 
     .gallery-item {
-      padding: 1rem;
+      padding: .75rem 0;
       &:last-child:not(:first-child) {
         float: left !important;
       }
     }
+    .gallery-caption {
+    font-size: 12px;
+    font-size: 0.857142857rem;
+  }
 }
