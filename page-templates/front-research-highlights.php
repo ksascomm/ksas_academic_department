@@ -31,7 +31,7 @@ get_header(); ?>
 		)
         );
 			if ( $slider_query->have_posts() ) : ?>
-			<div class="highlighted-research" role="region" aria-label="Faculty Research Highlights">
+			<div class="highlighted-research" role="region" aria-hidden="Faculty Research Highlights">
 				<div class="intro">
 					<div class="media-object">
 						<div class="media-object-section">			
@@ -47,7 +47,7 @@ get_header(); ?>
 					 	</div>
 					</div>
 				</div>
-				<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+				<div class="orbit" role="region" aria-label="Highlighted Research by our Faculty" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 					<ul class="orbit-container">
 
 					<?php if ($slider_query->post_count > 1 ) : ?>

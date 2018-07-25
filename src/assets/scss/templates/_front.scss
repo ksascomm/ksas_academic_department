@@ -184,7 +184,7 @@
   }
 }
 
-//AGHI Front Page Styles
+//AGHI Front Page Template
 .aghi-events {
   background: $light-gray;
   padding-top: 1rem;
@@ -240,6 +240,8 @@
   }  
 }
 
+//Research Template
+
 .highlighted-research {
    background: $light-gray;
    border-bottom: none;
@@ -275,7 +277,10 @@
   }
 }
 
+//Video Template
+
 .fullscreen-video {
+  position: relative;
   .hero-video {  
     width: auto;
     height: auto;
@@ -285,4 +290,135 @@
     padding-bottom: 0;
   }
   margin-bottom: -1rem;
+}
+
+/* Style the button used to pause/play the video */
+
+.controls {
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  font-size: 2.5rem;
+
+  .toggle-playback, .caption {
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 2em;
+    z-index: 101;
+    cursor: pointer;
+    display: block;
+    margin-bottom: .25rem;
+    .far, .fas {
+      color: $blue;
+    }
+  }
+  .caption {
+    &.has-tip {
+      border-bottom: none;
+    }
+  }
+}
+
+.tooltip {
+  font-size: 85%;
+  background-color: $white;
+  color: $black;
+  //max-width: 12rem;
+  &.top::before {
+    border-color: $white transparent transparent
+  }
+}
+
+/**
+ * Set default positioning as a fallback for if the plugin fails
+ */
+.jquery-background-video-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+        background-size: cover;
+}
+.jquery-background-video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translate(-50%,-50%);
+     -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+       -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+}
+/**
+ * Fade in videos
+ * Note the .js class - so non js users still
+ * see the video
+ */
+.js .jquery-background-video {
+  opacity: 0;
+  -webkit-transition: opacity 300ms linear;
+      transition: opacity 300ms linear;
+}
+.js .jquery-background-video.is-visible {
+  opacity: 1;
+}
+
+/**
+ * Pause/play button
+ */ 
+.jquery-background-video-pauseplay {
+  position: absolute;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  right: 15px;
+  padding: 0 !important;
+  cursor: pointer;
+  outline: none !important;
+}
+.jquery-background-video-pauseplay span {
+  display: none;
+}
+.jquery-background-video-pauseplay:after,
+.jquery-background-video-pauseplay:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all .3s ease;
+      transition: all .3s ease;
+  font-size:2.5rem;
+}
+
+.jquery-background-video-pauseplay {
+  color: $blue;
+  &:focus {
+    color: $blue;
+  }
+  &.play:before {
+    font-family: $font-awesome;
+    content: '\f144';
+  }
+  &.pause:before {
+    font-family: $font-awesome;
+    content: '\f28b';
+  }
+}
+
+.jquery-background-video-pauseplay.pause:after {
+  left: 10px;
 }

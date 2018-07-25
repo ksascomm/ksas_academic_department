@@ -11,11 +11,14 @@
 		//padding-top: 2.5rem;
 	}
 	.dataTables_filter {
-    	//float: inherit !important; 
+    	float: right;
 	}
 	.dataTables_info {
     	float: inherit !important; 
     	clear: none;
+	}
+	.dataTables_length {
+    	float: left; 
 	}
 	.course-table {
 		th {

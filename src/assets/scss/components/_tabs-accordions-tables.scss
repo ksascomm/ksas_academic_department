@@ -12,6 +12,21 @@ table thead {
 	background: $light-gray;
 }
 
+.accordion-title {
+	color: $blue;
+	font-family: $font-stack-bold;
+	font-weight: $font-stack-bold-weight;
+	font-size: 1.125rem;
+}
+
+.entry-content {
+	.accordion {
+		.accordion-title {
+			border-bottom: 1px solid $gray;
+		}
+	}
+}
+
 .tablepress {
 	font-size: 1rem;
 	tbody tr:nth-child(even) {
@@ -32,17 +47,130 @@ table thead {
 	}
 }
 
-.accordion-title {
-	color: $blue;
-	font-family: $font-stack-bold;
-	font-weight: $font-stack-bold-weight;
-	font-size: 1.125rem;
+.dataTables_wrapper {
+  clear: both;
+  margin-bottom: 1em;
+  .tablepress {
+    clear: both;
+    margin: 0 !important;
+  }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  label {
+    input, select {
+      display: inline;
+      margin: 2px;
+      width: auto;
+    }
+  }  
 }
 
-.entry-content {
-	.accordion {
-		.accordion-title {
-			border-bottom: 1px solid $gray;
-		}
-	}
+.dataTables_length {
+  float: left;
+  white-space: nowrap;
+}
+
+.dataTables_filter {
+  float: right;
+  white-space: nowrap;
+}
+
+.dataTables_length, .dataTables_filter {
+	margin-bottom: .5rem;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  margin-left: 0.5em;
+}
+
+.dataTables_info {
+  clear: both;
+  float: left;
+  margin: 4px 0 0;
+}
+
+.dataTables_paginate {
+  float: right;
+  margin: 4px 0 0;
+  a {
+    color: #111 !important;
+    display: inline-block;
+    outline: 0;
+    position: relative;
+    text-decoration: underline;
+    margin: 0 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &.paging_simple {
+    padding: 0 15px;
+  }
+}
+
+.dataTables_processing {
+  display: none;
+}
+
+.dataTables_scroll {
+  clear: both;
+}
+
+.dataTables_scrollBody {
+  -webkit-overflow-scrolling: touch;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+  td > div.dataTables_sizing, th > div.dataTables_sizing {
+    height: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.dataTables_scrollBody .tablepress thead th:after {
+  content: "";
+}
+
+.dataTables_length {
+  float: right;
+}
+
+.dataTables_filter {
+  float: left;
+  text-align: left;
+}
+
+.paging_simple .paginate_button {
+  &.next:after, &.previous:before {
+    text-align: left;
+    font-size: .8rem;
+    -webkit-font-smoothing: antialiased;
+    font-family: fontawesome;
+    content: "\f053";
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: -14px;
+    margin: auto;
+    height: 14px;
+    width: 14px;
+    line-height: 1.125;
+  }
+  &.next:after {
+    text-align: right;
+    content: "\f054";
+    left: auto;
+  }
 }

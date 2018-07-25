@@ -12,5 +12,6 @@ import './lib/isotope';
 import './lib/directory';
 import './lib/autoplay';
 import './lib/accessibility-fixes';
+import './lib/background-video';
 
 $(document).foundation();

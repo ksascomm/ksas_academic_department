@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready( function($) {
   var screenWidth = $(window).width();
   // if window width is smaller than 640 when page loads remove the autoplay attribute
   // from the video
