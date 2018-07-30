@@ -31,7 +31,7 @@ get_header(); ?>
 		)
         );
 			if ( $slider_query->have_posts() ) : ?>
-			<div class="highlighted-research" role="region" aria-hidden="Faculty Research Highlights">
+			<div class="highlighted-research" role="region" aria-label="Faculty Research Highlights">
 				<div class="intro">
 					<div class="media-object">
 						<div class="media-object-section">			
