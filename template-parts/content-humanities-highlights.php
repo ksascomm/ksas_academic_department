@@ -28,7 +28,7 @@
 	</div>
 <?php else: ?>
 	<div class="large-4 cell">
-		<?php the_post_thumbnail('large', array('class'	=> "floatleft")); ?>
+		<?php the_post_thumbnail('full', array('class'	=> "floatleft")); ?>
 	</div>
 	<div class="large-8 cell">		
 		<header>
