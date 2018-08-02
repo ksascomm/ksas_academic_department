@@ -9,7 +9,8 @@
 				</div>
 			<?php else : ?>
 				<div class="media-object-section hide-for-print">
-					<?php the_post_thumbnail('directory'); ?>
+					<?php $title=get_the_title();
+					the_post_thumbnail('directory', array('class' => 'hide-for-small-only', 'alt' => $title)); ?>
 				</div>
 			<?php endif; ?>
 		<?php endif; ?>	
