@@ -209,6 +209,25 @@ function flagship_sub_options_page_fields() {
 		'choices' => array(' ', 'arts-culture', 'at-work', 'health', 'politics-society', 'science-technology', 'student-life', 'university-news', 'voices-opinion'),
 		'std'    => ' ',
 	);
+	$options[21] =
+	array(
+		'section' => 'select_section',
+		'id'      => FLAGSHIP_SUB_SHORTNAME . '_shield',
+		'title'   => __( 'Shield', 'flagship_sub_textdomain' ),
+		'desc'    => __( 'Which shield should appear in the header?', 'flagship_sub_textdomain' ),
+		'type'    => 'select',
+		'choices' => array('ksas','jhu','custom'),
+		'std'     => 'ksas',
+	);
+	$options[22] =
+	array(
+		'section' => 'select_section',
+		'id'      => FLAGSHIP_SUB_SHORTNAME . '_shield_location',
+		'title'   => __( 'Custom Shield Location', 'flagship_sub_textdomain' ),
+		'desc'    => __( 'Paste the media url for custom JHU shields', 'flagship_sub_textdomain' ),
+		'type'    => 'text',
+		'std'     => '',
+	);	
 
 	return $options;
 }
