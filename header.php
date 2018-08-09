@@ -82,35 +82,39 @@
 		</div>
 
 		<div class="top-bar site-information hide-for-print">
-				<div class="nav-shield">
-					<?php $theme_option = flagship_sub_get_global_options();
-  							$shield = $theme_option['flagship_sub_shield'];
-							if ('jhu' === $shield ) : ?>
+			<div class="nav-shield">
+				<?php $theme_option = flagship_sub_get_global_options();
+					if ( array_key_exists( 'flagship_sub_shield', $theme_option ) ) {
+						$shield = $theme_option['flagship_sub_shield'];
+						} else {
+						    $shield = 'ksas'; // Default value
+						}
+						if ('jhu' === $shield ) : ?>
 					<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-  							<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/jhu-horizontal.png" alt="Johns Hopkins University">
-  						</a>
-  					<?php elseif ('custom' === $shield ) : ?>
-						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo $theme_option['flagship_sub_shield_location']; ?>" alt="Johns Hopkins University">
+							<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/jhu-horizontal.png" alt="Johns Hopkins University">
 						</a>
-					<?php else: ?>
+					<?php elseif ('custom' === $shield ) : ?>
+					<a href="http://www.jhu.edu/" title="Johns Hopkins University">
+						<img src="<?php echo $theme_option['flagship_sub_shield_location']; ?>" alt="Johns Hopkins University">
+					</a>
+				<?php else: ?>
 					<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
 						<img data-interchange="[<?php echo get_template_directory_uri(); ?>/dist/assets/images/krieger.blue.svg, small], [<?php echo get_template_directory_uri(); ?>/dist/assets/images/ksas-horizontal-md.png, medium], [<?php echo get_template_directory_uri(); ?>/dist/assets/images/ksas-horizontal-lg.png, large]" alt="Krieger School of Arts & Sciences">
 					</a>
-					<?php endif; ?>
+				<?php endif; ?>
+			</div>
+			<div class="site-desktop-title">
+				<div class="top-bar-title">
+					<h1>
+						<a id="dept-info" href="<?php echo site_url(); ?>">
+							<?php if ( ! empty( get_bloginfo('description') ) ) : ?>
+								<small class="hide-for-small-only"><?php echo get_bloginfo( 'description' ); ?></small>
+							<?php endif; ?>
+						<?php echo get_bloginfo( 'title' ); ?>
+						</a>
+					</h1>
 				</div>
-				<div class="site-desktop-title">
-					<div class="top-bar-title">
-						<h1>
-							<a id="dept-info" href="<?php echo site_url(); ?>">
-								<?php if ( ! empty( get_bloginfo('description') ) ) : ?>
-									<small class="hide-for-small-only"><?php echo get_bloginfo( 'description' ); ?></small>
-								<?php endif; ?>
-							<?php echo get_bloginfo( 'title' ); ?>
-							</a>
-						</h1>
-					</div>
-				</div>
+			</div>
 		</div>
 		<nav class="top-bar main-navigation hide-for-print" aria-label="Main Menu">
 			<div class="top-bar-left">
