@@ -231,5 +231,3 @@ function flagship_sub_options_page_fields() {
 
 	return $options;
 }
-
-
