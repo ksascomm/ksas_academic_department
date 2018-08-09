@@ -270,3 +270,7 @@ p {
 img.article {
   margin-bottom: 1rem;
 }
+
+blockquote, blockquote p {
+  color: $dark-gray;
+}
