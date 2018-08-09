@@ -63,7 +63,7 @@ the_post_thumbnail(
                         <?php endif; ?>
                     </div>
                     
-                    <button class="button testimonial-button" data-open="post-<?php the_ID(); ?>">Read Full Statement</button>
+                    <button class="button testimonial-button" data-open="post-<?php the_ID(); ?>">Read My Experience</button>
                    
                     <div class="large reveal testimonial-content" id="post-<?php the_ID(); ?>" aria-labelledby="Modal-<?php the_title(); ?>" data-reveal>
                         <h1 id="Modal-<?php the_title(); ?>"><?php the_title(); ?></h1>
