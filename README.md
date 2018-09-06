@@ -9,7 +9,7 @@ This theme is built off [FoundationPress](https://github.com/olefredrik/Foundati
 ### 1. Clone the repository and install with npm
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/ksas_academic_department.git
+$ git clone https://github.com/ksascomm/ksas_academic_department.git
 $ cd ksas_academic_department
 $ npm install
 ```
