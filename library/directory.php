@@ -23,3 +23,18 @@ function get_the_roles( $post ) {
 		endif;
 		return $role_name;
 }
+
+add_action( 'template_redirect', 'redirect_empty_bios' );
+function redirect_empty_bios() {
+	if(is_singular('people') ) {
+		global $post;
+		$bio = get_post_meta($post->ID, 'ecpt_bio', true);
+		$link = get_post_meta($post->ID, 'ecpt_website', true);
+		if (has_term(array('faculty', 'tenured-and-tenure-track-faculty'), 'role')) {
+			if(empty($bio) && isset($link)) {
+			    wp_redirect(esc_url($link), 301);
+			    exit;
+			}
+		}
+	}
+}
