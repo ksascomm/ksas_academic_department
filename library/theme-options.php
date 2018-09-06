@@ -1,23 +1,25 @@
 <?php
 
 // Add Theme Options Page
-if ( ! function_exists( 'create_theme_options' ) ) {
-    function create_theme_options() {
+if (!function_exists('create_theme_options')) {
+    function create_theme_options()
+    {
         require_once('theme-options-init.php');
     }
-	if (is_admin() ) {
-		create_theme_options();
-	}
+    if (is_admin()) {
+        create_theme_options();
+    }
 }
-	// Collect current theme option values
-		function flagship_sub_get_global_options() {
-	$flagship_sub_option = array();
-	$flagship_sub_option    = get_option('flagship_sub_options');
-return $flagship_sub_option;
-		}
+// Collect current theme option values
+function flagship_sub_get_global_options()
+{
+    $flagship_sub_option = array();
+    $flagship_sub_option = get_option('flagship_sub_options');
+    return $flagship_sub_option;
+}
 
-	// Function to call theme options in theme files
-		$flagship_sub_option = flagship_sub_get_global_options();
+// Function to call theme options in theme files
+$flagship_sub_option = flagship_sub_get_global_options();
 
 /**
  * Define our settings sections
