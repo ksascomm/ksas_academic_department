@@ -138,5 +138,5 @@
 		<div class="secondary">
 			 <?php foundationpress_breadcrumb(); ?>
 		</div>
-	<?php endif; ?>
+		<?php endif; ?>
 	</header>
