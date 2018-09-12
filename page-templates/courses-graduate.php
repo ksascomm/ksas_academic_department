@@ -7,7 +7,7 @@ get_header(); ?>
 <?php
 // Load Zebra Curl
 	require_once TEMPLATEPATH . '/library/Zebra_cURL.php';
-	// Set query sting variables
+	// Set query string variables
 		$theme_option = flagship_sub_get_global_options();
 		$department_unclean = $theme_option['flagship_sub_isis_name'];
 		$department = str_replace(' ', '%20', $department_unclean);
@@ -29,7 +29,7 @@ get_header(); ?>
 				CURLOPT_TIMEOUT         => 60,
 				CURLOPT_CONNECTTIMEOUT  => 60,
 			)
-            );
+        );
 
 	// Create API Url calls
 		$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department;
@@ -131,32 +131,31 @@ get_header(); ?>
             <?php
             while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
-				
-				<ul class="tabs" data-tabs id="courses-tabs">
-				 	<li class="tabs-title is-active"><a href="#Fall">Fall 2018</a></li>
-				</ul>
-				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
-					 <div class="tabs-panel is-active" id="Fall">
-					 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
-					 	<table aria-describedby="tblDescFall" class="course-table">
-							<thead>
-								<tr>
-									<th>Course # (Section)</th>
-									<th>Title</th>
-									<th>Day/Times</th>
-									<th>Instructor</th>
-									<th>Room</th>
-									<th>PosTag(s)</th>
-									<th>Info</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $course_curl->get($courses_call_fall, 'parse_courses'); ?>
-							</tbody>
-						</table>
-					 </div>
-				</div>	
-            <?php endwhile; ?>
+			<?php endwhile; ?>	
+			<ul class="tabs" data-tabs id="courses-tabs">
+			 	<li class="tabs-title is-active"><a href="#Fall">Fall 2018</a></li>
+			</ul>
+			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
+				 <div class="tabs-panel is-active" id="Fall">
+				 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+				 	<table aria-describedby="tblDescFall" class="course-table">
+						<thead>
+							<tr>
+								<th>Course # (Section)</th>
+								<th>Title</th>
+								<th>Day/Times</th>
+								<th>Instructor</th>
+								<th>Room</th>
+								<th>PosTag(s)</th>
+								<th>Info</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php $course_curl->get($courses_call_fall, 'parse_courses'); ?>
+						</tbody>
+					</table>
+				 </div>
+			</div>
         </main>
         <?php get_sidebar(); ?>
     </div>

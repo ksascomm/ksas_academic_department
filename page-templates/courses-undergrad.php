@@ -7,14 +7,14 @@ get_header(); ?>
 <?php
 // Load Zebra Curl
 	require_once TEMPLATEPATH . '/library/Zebra_cURL.php';
-	// Set query sting variables
+	// Set query string variables
 		$theme_option = flagship_sub_get_global_options();
 		$department_unclean = $theme_option['flagship_sub_isis_name'];
 		$department = str_replace(' ', '%20', $department_unclean);
 		$department = str_replace('&', '%26', $department);
 		$fall = 'fall%202018';
 		//$spring = 'spring%202018';
-		// $intersession = 'intersession%202018';
+		//$intersession = 'intersession%202018';
 		//$summer = 'summer%202018';
 		$open = 'open';
 		$approval = 'approval%20required';
@@ -29,7 +29,7 @@ get_header(); ?>
 				CURLOPT_TIMEOUT         => 60,
 				CURLOPT_CONNECTTIMEOUT  => 60,
 			)
-            );
+        );
 
 	// Create API Url calls
 		$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department;
@@ -79,24 +79,24 @@ get_header(); ?>
 			echo '<td><button class="button" data-open="course-' . $clean_course_number . $section_number . $clean_term . '">More Info</button></td></tr>';
 			echo '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li><li><strong>PosTag(s):</strong> ' . $print_tags . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
 		}
-	// ISIS Call callback function
+	// SIS Call callback function
 		function parse_courses( $result ) {
-		$key = 'DZkN4QOJGaDKVg6Du1911u45d4TJNp6I';
+			$key = 'DZkN4QOJGaDKVg6Du1911u45d4TJNp6I';
 
-		$result->body = json_decode(html_entity_decode($result->body));
-	    if (( ! is_array($result) && ! is_object($result)) ||
-	        (is_array($result) || count($result) == 0) ||
-	        (json_last_error() != JSON_ERROR_NONE) ) {// only for PHP >= 5.3.0
+			$result->body = json_decode(html_entity_decode($result->body));
+		    if (( ! is_array($result) && ! is_object($result)) ||
+		        (is_array($result) || count($result) == 0) ||
+		        (json_last_error() != JSON_ERROR_NONE) ) {// only for PHP >= 5.3.0
 
-		        // log the error or warning here ...
-		        $input  = $result->body;
-		        $output = print_r($result, true);
+			        // log the error or warning here ...
+			        $input  = $result->body;
+			        $output = print_r($result, true);
 
-		        // Only for PHP >= 5.3.0
-		        // json_last_error();
-		        // json_last_error_msg();
-		        return -1;
-		    }
+			        // Only for PHP >= 5.3.0
+			        // json_last_error();
+			        // json_last_error_msg();
+			        return -1;
+			    }
 
 			$course_data = array();
 				foreach ($result->body as $course ) {
@@ -122,39 +122,37 @@ get_header(); ?>
 			$curl->get($course_data, 'display_courses');
 		}
 ?>
-	
 
 <div class="main-container" id="page">
     <div class="main-grid">
         <main class="main-content">
-            <?php
-            while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
-				<ul class="tabs" data-tabs id="courses-tabs">
-				 	<li class="tabs-title is-active"><a href="#Fall">Fall 2018</a></li>
-				</ul>
-				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
-					 <div class="tabs-panel is-active" id="Fall">
-					 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
-					 	<table aria-describedby="tblDescFall" class="course-table">
-							<thead>
-								<tr>
-									<th>Course # (Section)</th>
-									<th>Title</th>
-									<th>Day/Times</th>
-									<th>Instructor</th>
-									<th>Room</th>
-									<th>PosTag(s)</th>
-									<th>Info</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $course_curl->get($courses_call_fall, 'parse_courses'); ?>
-							</tbody>
-						</table>
-					 </div>
-				</div>					
-            <?php endwhile; ?>
+            <?php endwhile; ?>    
+			<ul class="tabs" data-tabs id="courses-tabs">
+			 	<li class="tabs-title is-active"><a href="#Fall">Fall 2018</a></li>
+			</ul>
+			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
+				 <div class="tabs-panel is-active" id="Fall">
+				 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+				 	<table aria-describedby="tblDescFall" class="course-table">
+						<thead>
+							<tr>
+								<th>Course # (Section)</th>
+								<th>Title</th>
+								<th>Day/Times</th>
+								<th>Instructor</th>
+								<th>Room</th>
+								<th>PosTag(s)</th>
+								<th>Info</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php $course_curl->get($courses_call_fall, 'parse_courses'); ?>
+						</tbody>
+					</table>
+				 </div>
+			</div>
         </main>
         <?php get_sidebar(); ?>
     </div>

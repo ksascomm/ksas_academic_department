@@ -10,9 +10,7 @@ Template Name: Courses - Graduate CPT
     <div class="main-grid">
         <main class="main-content">
             <?php
-            while ( have_posts() ) :
-the_post();
-?>
+            while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
             <?php endwhile; ?>
 
