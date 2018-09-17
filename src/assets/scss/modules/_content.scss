@@ -37,7 +37,7 @@ ul {
 
 p {
   line-height: 1.5;
-  strong {
+  strong, b {
     font-family: $font-stack-semibold;
     font-weight: $font-stack-semibold-weight;
   }
@@ -273,4 +273,12 @@ img.article {
 
 blockquote, blockquote p {
   color: $dark-gray;
+}
+
+cite {
+  color: $skyblue;
+  font-size: 1rem;
+  font-style: inherit;
+  font-family: $font-stack-semibold;
+  font-weight: $font-stack-semibold-weight;
 }
