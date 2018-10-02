@@ -10,7 +10,15 @@
 
 ?>
 
-<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article'); ?>>
+
+
+<article aria-labelledby="post-<?php the_ID(); ?>" 
+<?php if( is_sticky() ) :?>
+	<?php post_class('post-listing news-article wp-sticky'); ?>>
+	<div class="ribbon"><span>FEATURED</span></div>
+<?php else:?>
+	<?php post_class('post-listing news-article'); ?>>
+<?php endif;?>
 	<header>
 		<h2>
 			<small aria-hidden="true">

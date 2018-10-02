@@ -8,9 +8,17 @@
 
 ?>
 
-<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing homepage-article'); ?>>
+<article aria-labelledby="post-<?php the_ID(); ?>" 
+	<?php if( is_sticky() ) :?>
+		<?php post_class('post-listing homepage-article wp-sticky'); ?>>
+		<div class="ribbon"><span>FEATURED</span></div>
+	<?php else:?>
+		<?php post_class('post-listing homepage-article'); ?>>
+	<?php endif;?>
 	<header>
-		<?php foundationpress_entry_meta(); ?>
+		<?php if( !is_sticky() ) :?>
+			<?php foundationpress_entry_meta(); ?>
+		<?php endif;?>
 		<h2>
 			<?php if ( get_post_meta($post->ID, 'ecpt_external_link', true) ) : ?>
 				<a href="<?php echo get_post_meta($post->ID, 'ecpt_external_link', true); ?>" target="_blank" rel="noopener" title="<?php the_title(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?> <span class="icon-new-tab2" aria-hidden="true"></span>
