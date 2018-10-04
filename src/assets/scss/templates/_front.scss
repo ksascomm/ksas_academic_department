@@ -2,12 +2,10 @@
   img {
     max-width: 640px;
     max-height: 200px;
-  }
-  @include breakpoint(small) {
-    //padding: rem-calc(65%) 0;
-    //height: rem-calc(200);
-    //position: relative;
-    //text-align: left;
+    @include breakpoint(small only) {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 
