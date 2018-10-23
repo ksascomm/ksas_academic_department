@@ -50,10 +50,10 @@
 	<div class="entry-content">
 		<div class="grid-x">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="cell small-12 medium-6 large-3">
+			<div class="cell small-12 medium-5 large-3">
 				<?php the_post_thumbnail(array(200,200), array('class' => 'alignleft news-thumb')); ?>
 			</div>
-			<div class="cell small-12 medium-6 large-9">
+			<div class="cell small-12 medium-7 large-9">
 				<?php the_excerpt(); ?>	
 			</div>
 		<?php else: ?>

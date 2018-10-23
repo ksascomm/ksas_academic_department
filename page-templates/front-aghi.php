@@ -21,8 +21,8 @@ get_header(); ?>
 			<div class="orbit-wrapper">	
 				<?php if ($slider_query->post_count > 1 ) : ?>
 				<div class="orbit-controls">
-					<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-					<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+					<button class="orbit-previous show-for-large"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+					<button class="orbit-next show-for-large"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
 				</div>
 				<?php endif; ?>
 
@@ -41,7 +41,7 @@ $slider_query->the_post();
 					  	<?php if ( !empty( get_the_content() ) ):?>
 					      <p><?php echo get_the_content(); ?></p>
 						   <?php if (get_post_meta($post->ID, 'ecpt_button', true) ) : ?>
-								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>')" aria-label="post-<?php the_ID(); ?>" class="button">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
+								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>')" aria-label="post-<?php the_ID(); ?>" class="button show-for-large">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
 							<?php endif; ?>
 						<?php endif;?>
 					    </figcaption>

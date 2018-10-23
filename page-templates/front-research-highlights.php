@@ -53,8 +53,8 @@ get_header(); ?>
 					<?php if ($slider_query->post_count > 1 ) : ?>
 					
 					<div class="hide-for-small-only">
-						<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-		   				<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+						<button class="orbit-previous show-for-large"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+		   				<button class="orbit-next show-for-large"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
 		   			</div>	
 					<?php endif;?>
 					
