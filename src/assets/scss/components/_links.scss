@@ -51,8 +51,8 @@ footer.timely.ai1ec-event-footer {
   color: $light-gray;
 }
 
-article.page a {
-  &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after {
+article.page a, .single-search-result a {
+  &[href$=".pdf"]:after, &[href$=".doc"]:after, &[href$=".docx"]:after, &[href$=".xls"]:after, &[href$=".xlsx"]:after, &[href$=".ppt"]:after, &[href$=".pptx"]:after,&[href$=".jpg"]:after, &[href$=".jpeg"]:after, &[href$=".png"]:after {
     font-family: $font-awesome;
     color: $black;
     font-size: 1.125rem;
@@ -69,6 +69,9 @@ article.page a {
   }
   &[href$=".ppt"]:after, &[href$=".pptx"]:after {
     content: '\f1c4';
+  }
+  &[href$=".jpg"]:after, &[href$=".jpeg"]:after, &[href$=".png"]:after {
+    content: '\f1c5';
   }
 }
 
