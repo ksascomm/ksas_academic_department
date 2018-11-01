@@ -60,6 +60,9 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
+/** SearchWP functions */
+require_once( 'library/searchwp.php');
+
 /** Theme support options */
 require_once( 'library/directory.php');
 require_once( 'library/transients.php');
