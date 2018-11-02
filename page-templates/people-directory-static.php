@@ -5,20 +5,31 @@ Template Name: People Directory (No Search/Filter)
 get_header(); ?>
 <?php
 	$theme_option = flagship_sub_get_global_options();
+	$ids_to_exclude = array();
+	$roles_to_exclude =  get_terms(
+		'role', array(
+	    'fields' => 'ids',
+	    'slug' => array( 'graduate', 'job-market-candidate', 'graduate-student','research' ),
+	));
+	//convert the role slug to corresponding IDs
+	if( !is_wp_error( $roles_to_exclude ) && count($roles_to_exclude) > 0){
+	    $ids_to_exclude = $roles_to_exclude; 
+	}
 	$roles = get_terms(
         'role', array(
 			'orderby'       => 'ID',
 			'order'         => 'ASC',
 			'hide_empty'    => true,
+			'exclude'       => $ids_to_exclude,
 		)
-        );
+    );
 	$filters = get_terms(
         'filter', array(
 			'orderby'       => 'name',
 			'order'         => 'ASC',
 			'hide_empty'    => true,
 		)
-        );
+    );
 	$role_slugs = array();
 	$filter_slugs = array();
 	foreach ($roles as $role ) {
