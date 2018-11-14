@@ -1,3 +1,5 @@
+//function foundationpress_gallery($attr) in foundation.php renders .gallery superfluous
+
 .gallery
  {
   
@@ -64,5 +66,30 @@
     .gallery-caption {
     font-size: 12px;
     font-size: 0.857142857rem;
+  }
+}
+
+.fp-gallery {
+  a {
+    &[href$=".jpg"]:after, &[href$=".jpeg"]:after, &[href$=".png"]:after {
+      display: none;
+    }
+  }
+  .fp-gallery-item {
+    margin-bottom: 1rem;
+    a.thumbnail {
+      margin-bottom: 0;
+    }
+    a.thumbnail:hover, a.thumbnail:focus {
+      box-shadow: 0 0 6px 1px rgba(65, 143, 222, 1);
+    }
+  }
+  .gallery-caption {
+    padding-top: .5rem;
+    font-size: 12px;
+    font-size: 0.857142857rem;
+  }
+  img {
+    padding-bottom: inherit !important;
   }
 }
