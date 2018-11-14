@@ -54,11 +54,11 @@
 				<?php the_post_thumbnail(array(200,200), array('class' => 'alignleft news-thumb')); ?>
 			</div>
 			<div class="cell small-12 medium-7 large-9">
-				<?php the_excerpt(); ?>	
+				<?php echo strip_tags( get_the_excerpt() ); ?>
 			</div>
 		<?php else: ?>
 			<div class="cell small-12">
-				<?php the_excerpt(); ?>	
+				<?php echo strip_tags( get_the_excerpt() ); ?>
 			</div>
 		<?php endif;?>
 		</div>
