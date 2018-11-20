@@ -15,7 +15,8 @@
 </script>
 
 <!-- End Google Analytics -->
-
+<?php $siteimprove_analytics = $theme_option['flagship_sub_siteimprove_analytics'];
+if ($siteimprove_analytics === 1): ?>
 <script type="text/javascript">
 /*<![CDATA[*/
 (function() {
@@ -25,3 +26,5 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 })();
 /*]]>*/
 </script>
+<?php
+endif; ?>

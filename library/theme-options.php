@@ -229,7 +229,15 @@ function flagship_sub_options_page_fields() {
 		'desc'    => __( 'Paste the media url for custom JHU shields', 'flagship_sub_textdomain' ),
 		'type'    => 'text',
 		'std'     => '',
+	);
+	$options[23] =
+	array(
+		'section' => 'technical_section',
+		'id'      => FLAGSHIP_SUB_SHORTNAME . '_siteimprove_analytics',
+		'title'   => __( 'Siteimprove Analytics', 'flagship_sub_textdomain' ),
+		'desc'    => __( 'Do you want to display the Siteimprove Analytics script?', 'flagship_sub_textdomain'  ),
+		'type'    => 'checkbox',
+		'std'    => '0',
 	);	
-
 	return $options;
 }
