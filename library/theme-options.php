@@ -87,16 +87,6 @@ function flagship_sub_options_page_fields() {
 		'class'   => 'nohtml',
 		'std'    => 'UA-40512757-1',
 	);
-	$options[7] =
-	array(
-		'section' => 'technical_section',
-		'id'      => FLAGSHIP_SUB_SHORTNAME . '_search_collection',
-		'title'   => __( 'GSA Collection', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter the name of the google search appliance collection', 'flagship_sub_textdomain' ),
-		'type'    => 'text',
-		'class'   => 'nohtml',
-		'std'    => 'krieger_collection',
-	);
 	$options[9] =
 	array(
 		'section' => 'footer_section',
@@ -161,16 +151,6 @@ function flagship_sub_options_page_fields() {
 		'type'    => 'text',
 		'class'   => 'nohtml',
 		'std'    => '',
-	);
-	$options[16] =
-	array(
-		'section' => 'select_section',
-		'id'      => FLAGSHIP_SUB_SHORTNAME . '_color_scheme',
-		'title'   => __( 'Color Scheme', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Choose your theme color scheme', 'flagship_sub_textdomain' ),
-		'type'    => 'select',
-		'choices' => array('blue', 'black', 'yellow', 'green', 'purple', 'red', 'aqua'),
-		'std'    => 'blue',
 	);
 	$options[17] =
 	array(
