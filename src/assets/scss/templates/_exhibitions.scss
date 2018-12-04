@@ -13,8 +13,7 @@
     	}
     }
     h1 {
-        font-family: $font-stack-semibold;
-        font-weight: $font-stack-semibold-weight;
+        @include font-stack-semibold;
         font-size: 1.35rem;
     }
 }

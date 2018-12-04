@@ -8,8 +8,7 @@
 
 .button {
 	background: $blue;
-	font-family: $font-stack-semibold;
-	font-weight: $font-stack-semibold-weight;
+	@include font-stack-semibold;
 	&:hover {
 		@include button-hover;
     }

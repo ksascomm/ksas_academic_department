@@ -47,3 +47,38 @@
   background-color: $bluejaysblue;
   transition: color 0.5s ease;
 }
+
+@mixin font-header {
+  font-family: $font-header;
+  font-weight: $font-header-weight;
+}
+
+@mixin font-header-extrabold {
+  font-family: $font-header-extrabold;
+  font-weight: $font-header-extrabold-weight;
+}
+
+@mixin font-stack {
+  font-family: $font-stack;
+  font-weight: $font-stack-weight;
+}
+
+@mixin font-stack-italic {
+  font-family: $font-stack-italic;
+  font-style: italic;
+}
+
+@mixin font-stack-semibold {
+  font-family: $font-stack-semibold;
+  font-weight: $font-stack-semibold-weight;
+}
+
+@mixin font-stack-bold {
+  font-family: $font-stack-bold;
+  font-weight: $font-stack-bold-weight; 
+}
+
+@mixin widget-title {
+  font-family: $font-header-extrabold;
+  font-weight: $font-header-extrabold-weight;
+}

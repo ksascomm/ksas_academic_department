@@ -49,8 +49,7 @@
 
     a {
       color: $white;
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+      @include font-stack-bold;
       font-size: rem-calc(15);
       &:hover {
         background: $dark-gray;
@@ -155,8 +154,7 @@
     }
   }
   .menu {
-    font-family: $font-stack-bold;
-    font-weight: $font-stack-bold-weight;
+    @include font-stack-bold;;
     a {
       font-size: 1.125rem;
       color: $white;
@@ -255,8 +253,7 @@
     li {
       a {
         color: $black;
-        font-family: $font-stack-semibold;
-        font-weight: $font-stack-semibold-weight;
+        @include font-stack-bold;
         &:hover:not(.button) {
           background-color: $bluejaysblue;
           color: $white;
@@ -329,7 +326,7 @@
   padding: 8px 20px 10px 20px;
   li.bar {
     &:after { 
-      font-family: $font-stack-semibold;
+      @include font-stack-semibold;
       content: "|";
       color: $black;
       }
@@ -347,8 +344,7 @@
       display: inline;
     }
     a {
-      font-family: $font-stack-semibold;
-      font-weight: $font-stack-semibold-weight;
+      @include font-stack-semibold;
       color: $white;
     }
   }
@@ -365,8 +361,7 @@
     h2 {
       font-size: 1.25rem;
       color: $black;
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+      @include font-stack-bold;
     }
     .menu {
     display: inherit;
@@ -374,8 +369,7 @@
         display: list-item;
         a {
           padding: 0.35rem 1rem; 
-          font-family: $font-stack-bold;
-          font-weight: $font-stack-bold-weight;
+          @include font-stack-bold;
           color: $blue;
           &:hover, &:active {
               color: $black;
@@ -396,8 +390,7 @@
   }
   .breadcrumbs {
     padding-left: 2rem;
-    font-family: $font-stack-semibold;
-    font-weight: $font-stack-semibold-weight;
+    @include font-stack-semibold;
     margin: inherit;
     line-height: 1;
     li {
@@ -449,8 +442,7 @@
   .sidebar-menu {
     padding: .5rem;
     h1.sidebar-menu-title {
-      font-family: $font-stack-semibold;
-      font-weight: $font-stack-semibold-weight;
+      @include font-stack-semibold;
       font-size: 1.15rem;
       line-height: 1;
       margin-bottom: 1rem;
@@ -460,8 +452,7 @@
       padding: 0 0 0 0.5rem;
       margin-left: 0;
       border-left: .2rem solid $blue;
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+      @include font-stack-bold;
       li {
         font-size: 1rem;
         a {
@@ -483,8 +474,7 @@
           ul.sub-menu {
             display: inherit;
             li {
-              font-family: $font-stack-semibold;
-              font-weight: $font-stack-semibold-weight;
+              @include font-stack-semibold;
               a {
                 margin-top: -.25rem;
               }
@@ -522,8 +512,7 @@
       padding: .5rem;
       h1 {
         font-size:1.25rem;
-        font-family: $font-stack-semibold;
-        font-weight: $font-stack-semibold-weight; 
+        @include font-stack-semibold;
       }
     }
     &.widow {

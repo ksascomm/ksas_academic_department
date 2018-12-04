@@ -39,8 +39,7 @@
     }
     .is-drilldown-submenu-parent{
       background: $skyblue;
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+      @include font-stack-bold;
       font-size: 1.175rem;
       &:hover {
         background-color: $bluejaysblue;
@@ -56,8 +55,7 @@
         a {
           text-align: left;
           font-size: 1rem;
-          font-family: $font-stack-bold;
-          font-weight: $font-stack-bold-weight;
+          @include font-stack-bold;
           color: $white;          
         }
       }
@@ -84,8 +82,7 @@
     }
     a { 
       font-size: 1rem;
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+      @include font-stack-bold;
       color: $white;
       &:hover {
         border-bottom: 0.0625rem dashed;
@@ -120,8 +117,7 @@
   .copydate {
      margin-top: 2rem;
      a {
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+      @include font-stack-bold;
       color: $white;
       &:hover {
         border-bottom: 0.0625rem dashed;

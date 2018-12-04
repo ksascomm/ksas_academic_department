@@ -1,7 +1,6 @@
 .tabs-title > a {
   font-size: 1rem;
-  font-family: $font-stack-bold;
-  font-weight: $font-stack-bold-weight;
+  @include font-stack-bold;
   color: $blue;
   &:focus, &[aria-selected='true'] {
     color: $blue;
@@ -14,8 +13,7 @@ table thead {
 
 .accordion-title {
 	color: $blue;
-	font-family: $font-stack-bold;
-	font-weight: $font-stack-bold-weight;
+  @include font-stack-bold;
 	font-size: 1.125rem;
 }
 
@@ -33,8 +31,7 @@ table thead {
 		background-color: $light-gray!important;
 	}
 	strong {
-    	font-family: $font-stack-semibold;
-    	font-weight: $font-stack-semibold-weight;
+    @include font-stack-bold;
 	}
 	td {
 		font-size: .9rem;

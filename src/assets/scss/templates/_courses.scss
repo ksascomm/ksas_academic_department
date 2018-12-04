@@ -22,8 +22,7 @@
 	}
 	.course-table {
 		th {
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 		}
 		td {
 			font-size: .9rem;
@@ -35,15 +34,13 @@
 	border: none;
 	.tabs-title > a {
 		font-size: 1rem;
-		font-family: $font-stack-bold;
-		font-weight: $font-stack-bold-weight;
+		@include font-stack-bold;
 	}
 }
 
 .course-description {
 	h1 {
-		font-family: $font-stack-bold;
-		font-weight: $font-stack-bold-weight;
+		@include font-stack-bold;
 		font-size: 1.5rem;
 		padding-right: 1rem;
 		small {
@@ -65,8 +62,7 @@
 	li.course-cpt {
 		a.accordion-title {
 			color: $blue;
-			font-family: $font-stack-bold;
-			font-weight: $font-stack-bold-weight;
+			@include font-stack-bold;
 			font-size: 1.25rem;
 		}
 		h3 {

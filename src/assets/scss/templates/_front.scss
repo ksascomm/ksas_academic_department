@@ -37,13 +37,11 @@
         margin-bottom: 2rem;
       }
       p {
-        font-family: $font-stack;
-        font-weight: $font-stack-weight;
+        @include font-stack;
         font-size: 1.25rem;
         line-height: 1.45;
           strong {
-            font-family: $font-stack-semibold;
-            font-weight: $font-stack-semibold-weight;
+            @include font-stack-semibold;
           }
       }
     }
@@ -88,8 +86,7 @@
   .news-title, .hub-title {
     h2 {
       font-size: 1.5rem;
-      font-family: $font-header-extrabold;
-      font-weight: $font-header-extrabold-weight;
+      @include font-header-extrabold;
     }
   }
   .post-listing {
@@ -100,8 +97,7 @@
   time.updated {
     color: $dark-gray;
     text-transform: uppercase;
-    font-family: $font-stack-semibold;
-    font-weight: $font-stack-semibold-weight;
+    @include font-stack-semibold;
   }
   .homepage-news-archive {
     font-size: 1.25rem;
@@ -171,8 +167,7 @@
 
 .orbit-caption {
   p {
-    font-family: $font-stack-semibold;
-    font-weight: $font-stack-semibold-weight;
+    @include font-stack-semibold;
   }
 }
 
@@ -222,15 +217,13 @@
   h1{
     font-size: 1.5rem;
     small {
-      font-family: $font-stack-semibold;
-      font-weight: $font-stack-semibold-weight;
+      @include font-stack-semibold;
       color: $black;
     }   
   }
   h2.archive-link {
     font-size: 1.25rem;
-    font-family: $font-stack-semibold;
-    font-weight: $font-stack-semibold-weight;
+    @include font-stack-semibold;
     padding-bottom: .5rem;
   }
   .news-article {

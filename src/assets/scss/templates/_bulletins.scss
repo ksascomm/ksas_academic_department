@@ -3,8 +3,7 @@
 	.bulletin {
 		a.accordion-title {
 			color: $blue;
-			font-family: $font-stack-bold;
-			font-weight: $font-stack-bold-weight;
+			@include font-stack-bold;
 			font-size: 1.25rem;
 		}
 		h3 {

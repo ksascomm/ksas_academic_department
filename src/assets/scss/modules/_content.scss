@@ -16,19 +16,16 @@ a {
 }
 
 body {
-  font-family: $font-stack;
-  font-weight: $font-stack-weight;
+  @include font-stack;
   font-size: $global-font-size * 1.125
 }
 
 h1 {
-  font-family: $font-header;
-  font-weight: $font-header-weight;
+   @include font-header;
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: $font-stack-semibold;
-    font-weight: $font-stack-semibold-weight;
+    @include font-stack-semibold;
 }
 
 ul {
@@ -38,8 +35,7 @@ ul {
 p {
   line-height: 1.5;
   strong, b {
-    font-family: $font-stack-semibold;
-    font-weight: $font-stack-semibold-weight;
+   @include font-stack-semibold;
   }
 }
 
@@ -125,14 +121,13 @@ p {
   }
   .entry-title h1, h1.entry-title {
     font-size: 1.75rem;
-    font-family: $font-header-extrabold;
-    font-weight: $font-header-extrabold-weight;
+    @include font-header-extrabold;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
   }
   h3 {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
   }
   h4 {
     font-size: 1.25rem;
@@ -162,8 +157,24 @@ p {
         }
       }
       em, i {
-        font-family: $font-stack-italic;
+        @include font-stack-italic;
       }          
+    }
+    li {
+      a {
+        border: none;
+        border-bottom: .125em solid;
+        border-bottom-color: $medium-gray;
+        background-color: transparent;
+        border-radius: 0;
+        transition: border-color,background-color,color;
+        transition-duration: 250ms,250ms,250ms;
+        transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+        &:hover {
+          border-bottom: .125em solid;
+          border-bottom-color: $dark-gray;
+        }
+      }
     }
   }
 }
@@ -179,8 +190,7 @@ p {
 .post-singular, .post-listing {
   h1, h2 {
     font-size: 1.75rem;
-    font-family: $font-stack-bold;
-    font-weight: $font-stack-bold-weight;
+    @include font-stack-bold;
     small {
       text-transform: uppercase;
       font-size: 55%;
@@ -193,8 +203,7 @@ p {
     }
     }
   time.updated {
-    font-family: $font-stack-bold;
-    font-weight: $font-stack-bold-weight;
+    @include font-stack-bold;
   }
   .entry-content {
     margin-top: .5rem;
@@ -242,8 +251,7 @@ p {
 .single-post {
   .meta {
     strong {
-      font-family: $font-stack-bold;
-      font-weight: $font-stack-bold-weight;
+    @include font-stack-bold;
     }
   }
   .image-left {
@@ -279,8 +287,7 @@ cite {
   color: $skyblue;
   font-size: 1rem;
   font-style: inherit;
-  font-family: $font-stack-semibold;
-  font-weight: $font-stack-semibold-weight;
+  @include font-stack-semibold;
 }
 
 .wp-sticky {

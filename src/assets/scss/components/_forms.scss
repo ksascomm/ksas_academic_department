@@ -44,8 +44,7 @@
 	}
 	.frm_error {
 		color: $fireengine;
-		font-family: $font-stack-bold;
-		font-weight: $font-stack-bold-weight;
+		@include font-stack-bold;
 		margin-bottom: 1rem;
 		margin-top: -.5rem;
 	}	  

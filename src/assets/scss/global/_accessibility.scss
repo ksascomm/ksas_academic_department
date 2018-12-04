@@ -29,8 +29,7 @@
 }
 
 a.skip-main {
-  font-family: $font-stack-bold;
-  font-weight: $font-stack-bold-weight;
+  @include font-stack-bold;
   left: -999px;
   position: absolute;
   top: auto;

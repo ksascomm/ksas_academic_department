@@ -1,7 +1,6 @@
 .faculty-book {
 	h2 {
-		font-family: $font-stack-bold;
-		font-weight: $font-stack-bold-weight;
+		@include font-stack-bold;
 		font-size: 1.25rem;
 	}
 	img {
@@ -17,8 +16,8 @@
 }
 
 .book-entry {
-height: 100%;
-padding: 10px 25px 10px;
+	height: 100%;
+	padding: 10px 25px 10px;
 	hr { 
 		width: 90%;
 		margin: 1rem auto;

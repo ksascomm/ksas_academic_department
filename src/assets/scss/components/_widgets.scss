@@ -11,8 +11,7 @@
 	.widget_title {
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			text-align: center;
 			margin-bottom: .5rem;
 		}
@@ -27,8 +26,7 @@
 	}
 	h4, h5 {
 		a {
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 			color: $white;
 		    border-bottom: .0625rem solid;
 		    border-bottom-color: $light-gray;
@@ -51,15 +49,13 @@
 		font-size: 1rem;
 		margin-bottom: .75rem;
 		strong {
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 		}
 		&.jmc-archive-link {
 			a {
 				color: $white;
 				text-transform: uppercase;
-				font-family: $font-stack-semibold;
-				font-weight: $font-stack-semibold-weight;
+				@include font-stack-semibold;
 				font-size: .9rem;
 			    &:hover {
 			    	color: $black;
@@ -77,8 +73,7 @@
 	.widget_title {
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			text-align: center;
 			padding: .75rem .75rem 0 .75rem;
 			margin-bottom: 0;
@@ -91,15 +86,13 @@
 		border: none;
 	}
 	.ai1ec-agenda-widget-view .ai1ec-month, .ai1ec-agenda-view .ai1ec-month {
-		font-family: $font-stack-semibold;
-		font-weight: $font-stack-semibold-weight;
+		@include font-stack-semibold;
 		color: $white;
 		text-align: center;
 		padding: 0;
 	}
 	.ai1ec-agenda-widget-view .ai1ec-day, .ai1ec-agenda-view .ai1ec-day {
-		font-family: $font-stack-semibold;
-		font-weight: $font-stack-semibold-weight;
+		@include font-stack-semibold;
 	}
 	.ai1ec-agenda-widget-view .ai1ec-weekday, .ai1ec-agenda-view .ai1ec-weekday {
 		text-transform: uppercase;
@@ -143,8 +136,7 @@
 		background: $bluejaysblue;
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			text-align: center;
 			color: $white;
 			margin-bottom: 0;
@@ -175,8 +167,7 @@
 		a {
 			color: $black;
 			text-transform: uppercase;
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 			font-size: .9rem;
 		}
 	}
@@ -184,8 +175,7 @@
 		line-height: 1.5;
 		font-size: .9em;
 		strong {
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 			font-weight: normal;
 			line-height: 1.3;
 		}
@@ -220,8 +210,7 @@
 		.widget_title {
 			h4, h5 {
 				font-size: 1.25rem;
-				font-family: $font-header-extrabold;
-				font-weight: $font-header-extrabold-weight;
+				@include widget-title;
 				color: $white;
 				margin-bottom: 0;
 			}
@@ -275,8 +264,7 @@
 		.widget_title {
 			h4, h5 {
 				font-size: 1.25rem;
-				font-family: $font-header-extrabold;
-				font-weight: $font-header-extrabold-weight;
+				@include widget-title;
 				color: $black;
 				margin-bottom: 0;
 			}
@@ -335,8 +323,7 @@
 	.widget_title {
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			color: $white;
 			margin-bottom: 0;
 		}
@@ -397,8 +384,7 @@
 		background: $blue;
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			text-align: center;
 			color: $white;
 			margin-bottom: 0;
@@ -424,8 +410,7 @@
 		      }
 		}
 		h4 {
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 			text-transform: uppercase;
 			font-size: 1rem;
 			margin-bottom: 0rem;
@@ -433,19 +418,16 @@
 		}		
 		h5 {
 			font-size: 1.125rem;
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 		}
 		p {
-			font-family: $font-stack-semibold;
-			font-weight: $font-stack-semibold-weight;
+			@include font-stack-semibold;
 			font-size: 1rem;
 			strong {
 				font-weight: normal;
 			}
 			a {
-				font-family: $font-stack-semibold;
-				font-weight: $font-stack-semibold-weight;
+				@include font-stack-semibold;
 				text-transform: uppercase;
 				font-size: .9rem;
 				span.fa {
@@ -461,8 +443,7 @@
 	article {
 		padding-bottom: 0rem;
 		p {
-			font-family: $font-stack;
-			font-weight: $font-stack-weight;
+			@include font-stack;
 		}
 	}
 }
@@ -473,8 +454,7 @@
 	.widget_title {
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			color: $black;
 			margin-bottom: 0;
 		}
@@ -526,8 +506,7 @@
 	.widget_title {
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			color: $black;
 			margin-bottom: 0;
 		}
@@ -563,8 +542,7 @@
 	.widget_title {
 		h4, h5 {
 			font-size: 1.25rem;
-			font-family: $font-header-extrabold;
-			font-weight: $font-header-extrabold-weight;
+			@include widget-title;
 			color: $black;
 			margin-bottom: 0;
 		}
