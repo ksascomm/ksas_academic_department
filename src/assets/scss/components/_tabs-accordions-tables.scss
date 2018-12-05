@@ -19,9 +19,11 @@ table thead {
 
 .entry-content {
 	.accordion {
-		.accordion-title {
-			border-bottom: 1px solid $gray;
-		}
+    .accordion-item {
+      .accordion-title {
+      border: 1px solid $gray;
+      }
+    }
 	}
 }
 
