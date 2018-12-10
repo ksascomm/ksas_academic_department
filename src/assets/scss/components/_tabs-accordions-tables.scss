@@ -2,8 +2,10 @@
   font-size: 1rem;
   @include font-stack-bold;
   color: $blue;
+  border-bottom: none !important;
   &:focus, &[aria-selected='true'] {
     color: $blue;
+    background: #e6e6e6 !important;
   }
 }
 
