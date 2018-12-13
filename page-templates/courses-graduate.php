@@ -137,7 +137,7 @@ get_header(); ?>
 			</ul>
 			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 				 <div class="tabs-panel is-active" id="Fall">
-				 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+				 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another program, and a option to view additional course information in a pop-up window.</p>
 				 	<table aria-describedby="tblDescFall" class="course-table">
 						<thead>
 							<tr>
@@ -156,7 +156,7 @@ get_header(); ?>
 					</table>
 				 </div>
 				 <div class="tabs-panel" id="Spring">
-				 	<p class="show-for-sr" id="tblDescSpring">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another pogram, and a option to view additional course information in a pop-up window.</p>
+				 	<p class="show-for-sr" id="tblDescSpring">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another program, and a option to view additional course information in a pop-up window.</p>
 				 	<table aria-describedby="tblDescSpring" class="course-table">
 						<thead>
 							<tr>
