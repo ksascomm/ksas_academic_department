@@ -62,6 +62,11 @@ the_post();
 						<?php else : ?>	    
 							<h3><?php the_title(); ?></h3>
 						<?php endif; ?>
+						<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
+							<h4>
+								<?php echo get_post_meta($post->ID, 'ecpt_position', true); ?>
+							</h4>
+						<?php endif; ?>
 						<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
 							<h4>
 								<?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?>
