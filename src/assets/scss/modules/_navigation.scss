@@ -179,7 +179,7 @@
         padding-left:4px;
       }
     }
-    .current_page_parent.current_page_ancestor, {
+    .current_page_parent.current_page_ancestor, .current_page_ancestor.is-dropdown-submenu-parent {
       background: $skyblue;
     }
   }
