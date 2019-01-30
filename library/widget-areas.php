@@ -63,7 +63,7 @@ function foundationpress_sidebar_widgets() {
 				'description'   => 'This sidebar will only appear on the homepage',
 				'before_widget' => '<aside aria-label="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
-				'before_title'  => '<div class="widget_title" role="heading"><h4>',
+				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
 			)
 			);
