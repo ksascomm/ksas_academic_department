@@ -65,6 +65,21 @@ the_post();
 				</div>
 			</article>
 			<?php endwhile; ?>
+			<div class="study-fields callout lightgrey" role="region" aria-label="Filters
+			">
+				<?php //SEARCH BOX
+					if ( $theme_option['flagship_sub_directory_search']  == '1' ) :?>					
+					<label for="id_search">
+						<h4>Search our Faculty:</h4>
+					</label>
+					<div class="input-group">
+						<span class="input-group-label">
+							<span class="fa fa-search"></span>
+						</span>
+						<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search by name, title, and research interests" placeholder="Search by name, title, and research interests"  />
+					</div>
+				<?php endif;?>
+			</div>
 			<div id="isotope-list" class="people-directory" role="region" aria-label="Results">
 				<ul class="directory">
 					<?php
@@ -81,14 +96,91 @@ the_post();
 							);
 						if ($people_query_alpha->have_posts() ) : while ($people_query_alpha->have_posts() ) : $people_query_alpha->the_post(); ?>
 					
-							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) :
-									get_template_part( 'template-parts/hasbio-loop' );
-								else :
-									get_template_part( 'template-parts/nobio-loop' );
-							endif; ?>
+							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
+								<li class="item person">
+									<div class="media-object">
+										<div class="media-object-section">
+											<h3>
+												<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+											</h3>
+											<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
+												<h4><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h4>
+											<?php endif; ?>	
+											<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
+												<h5><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?></h5>
+											<?php endif; ?>
+											<ul class="contact">
+												<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
+													<li><span class="fa fa-phone-square"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
+													<li><span class="fa fa-fax"></span> <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?>
+													<li><span class="fa fa-envelope"></span> <a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
+													<li><span class="fa fa-map-marker-alt"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_lab_website', true) ) : ?>
+													<li><span class="fa fa-globe"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>')" target="_blank">Group/Lab Website</a></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
+													<li><strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?></li>
+												<?php endif; ?>			
+											</ul>
+										</div>
+									</div>
+								</li>
+							<?php else : ?>
+								<li class="item person">
+									<div class="media-object">
+										<div class="media-object-section">
+											<h3>
+											<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
+												<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?>'s webpage" target="_blank">
+													<?php the_title(); ?>
+												</a>
+											<?php else : ?>
+												<?php the_title(); ?>
+											<?php endif; ?>
+											</h3>
+											<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
+												<h4><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h4>
+											<?php endif; ?>	
+											<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
+												<h5><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?></h5>
+											<?php endif; ?>
+											<ul class="contact">
+												<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
+													<li><span class="fa fa-phone-square"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
+													<li><span class="fa fa-fax"></span> <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?>
+													<li><span class="fa fa-envelope"></span> <a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
+													<li><span class="fa fa-map-marker-alt"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></li>
+												<?php endif; ?>
+												<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
+													<li><strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?></li>
+												<?php endif; ?>				
+											</ul>
+										</div>
+									</div>
+								</li>
+						<?php endif; ?>
 						<?php endwhile; endif; 
 					} 
 					wp_reset_postdata(); ?>
+					<div id="noResult">
+						<div class="callout warning">
+					  		<h5>Sorry, No Results Found</h5>
+					 		<p>Try changing your search terms</a></p>
+						</div>
+					</div>
 				</ul>
 			</div>
 		</main>
