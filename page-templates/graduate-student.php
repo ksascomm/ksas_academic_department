@@ -51,7 +51,9 @@ $graduate_student_query->the_post();
 				<div class="media-object">
 					<?php if ( has_post_thumbnail() ) : ?> 
 						<div class="media-object-section">
-							<?php the_post_thumbnail('directory'); ?>						
+							<?php $title=get_the_title();
+								the_post_thumbnail('directory', array( 'alt' => $title ) ); 
+							?>						
 						</div>
 					<?php endif; ?>
 					<div class="media-object-section">	
