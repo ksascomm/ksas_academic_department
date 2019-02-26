@@ -45,6 +45,7 @@ restore_current_blog(); }
 					<li role="menuitem"><a href="<?php echo get_site_url(); ?>/sitemap/">Sitemap</a></li>
 					<li role="menuitem"><a href="https://jobs.jhu.edu/">Employment</a></li>	
 					<li role="menuitem"><a href="https://www.jhu.edu/alert/">Emergency Alerts</a></li>
+					<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement">Privacy Statement</a></li>
 				</ul>
 			</div>
 			<div class="small-12 large-4 cell social-media">
