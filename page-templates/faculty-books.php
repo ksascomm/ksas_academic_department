@@ -27,11 +27,12 @@ the_post();
 						<article class="faculty-book" aria-labelledby="post-<?php the_ID(); ?>">
 						<?php if ( has_post_thumbnail() ) { ?> 
 						<?php
-                        the_post_thumbnail(
-                            'medium', array(
-								'class'    => 'float-left',
+						the_post_thumbnail(
+							'medium', array(
+								'class'   => 'float-left',
+								'alt' => esc_html ( get_the_title() ),
 							)
-                            );
+						);
 ?>
 					<?php } ?>
  <?php

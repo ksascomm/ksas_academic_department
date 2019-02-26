@@ -48,6 +48,7 @@ $ksas_alumni_testimonial_query->the_post();
 the_post_thumbnail(
     'thumbnail', array(
 		'class'   => 'testimonial-image',
+        'alt' => esc_html ( get_the_title() ),
 	)
     );  }
 ?>

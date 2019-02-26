@@ -32,6 +32,7 @@
 					the_post_thumbnail(
 						'directory', array(
 							'class'   => 'float-left',
+							'alt' => esc_html ( get_the_title() ),
 						)
 						);  }
 		?>

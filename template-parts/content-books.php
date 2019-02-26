@@ -19,7 +19,9 @@ $faculty_post_id = get_post_meta($post->ID, 'ecpt_pub_author', true);
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 		<div class="entry-content single-book">
-			<?php the_post_thumbnail('medium'); ?>
+				<?php $title=get_the_title();
+					the_post_thumbnail('medium', array( 'alt' => $title ) ); 
+				?>	
 				<ul class="no-bullet">
 					<li>
 					<?php if ( get_post_meta($post->ID, 'ecpt_pub_date', true) ) : ?> 

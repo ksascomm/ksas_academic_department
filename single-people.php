@@ -26,10 +26,11 @@ get_header(); ?>
                     <?php if (has_post_thumbnail() ) : ?>
                     <div class="small-12 medium-4 cell">
                         <?php
-                        the_post_thumbnail(
-                            'full', array(
-                            'class' => 'headshot',
-                            )
+                    the_post_thumbnail(
+                        'full', array(
+                            'class'   => 'headshot',
+                            'alt' => esc_html ( get_the_title() ),
+                        )
                         );
                         ?>
                     </div>

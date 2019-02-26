@@ -28,7 +28,7 @@
 	</div>
 <?php else: ?>
 	<div class="large-4 cell">
-		<?php the_post_thumbnail('large', array('class'	=> "front-humanities-highlight")); ?>
+		<?php the_post_thumbnail('large', array('class'	=> "front-humanities-highlight", 'alt' => esc_html ( get_the_title() ))); ?>
 	</div>
 	<div class="large-8 cell">		
 		<header>
