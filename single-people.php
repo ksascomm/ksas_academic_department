@@ -39,6 +39,9 @@ get_header(); ?>
                     <?php if (get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
                         <h2><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h2>
                     <?php endif; ?>
+                   <?php if (get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
+                         <h3><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?></h3>
+                   <?php endif;?>
                         <p class="listing">
                             <?php if (get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
                             <span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
