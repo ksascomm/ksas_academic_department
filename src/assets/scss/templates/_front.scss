@@ -410,3 +410,8 @@
 .jquery-background-video-pauseplay.pause:after {
   left: 10px;
 }
+
+h2.explore-title {     
+  font-size: 1.75rem;
+  @include font-header-extrabold;
+}
