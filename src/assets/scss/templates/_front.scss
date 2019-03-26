@@ -411,7 +411,15 @@
   left: 10px;
 }
 
-h2.explore-title {     
-  font-size: 1.75rem;
-  @include font-header-extrabold;
+.buckets {
+  padding-top: 1.25rem;
+  @include xy-grid-container;
+  @include xy-grid;  
+  h2 {     
+    font-size: 1.75rem;
+    @include font-header-extrabold;
+  }
+  .widget_title {
+    padding-bottom: .25rem !important;
+  }
 }

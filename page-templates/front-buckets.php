@@ -29,37 +29,39 @@ get_header(); ?>
 	<?php endwhile; ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php if ( have_rows( 'explore_the_department' ) ) :?>
-		<div class="main-container">
-			<div class="main-grid">
-				<?php $heading = get_field_object('explore_the_department');?>
-				<h2 class="explore-title"><?php echo $heading['label'] ?></h2>
-				<div class="grid-x grid-padding-x">
-				<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
+		<div class="buckets">
+			<?php $heading = get_field_object('explore_the_department');?>
+			<div class="grid-x grid-padding-x">
+				<div class="cell explore-title">
+					<h2><?php echo $heading['label'] ?></h2>
+				</div>
+			</div>
+			<div class="grid-x grid-padding-x">
+			<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
 
-				<?php if ( is_active_sidebar('homepage-sb')):?>
-					<div class="cell small-12 medium-6 large-3">
-				<?php else: ?>
-					<div class="cell small-12 medium-6 large-4">
-				<?php endif;?>		
-						<div class="widget widget_text">
-							<div class="widget_title">
-								<h4>
-									<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>"><?php the_sub_field( 'explore_bucket_heading' ); ?></a>
-								</h4>
-							</div>
-							<div class="textwidget">
-								<p><?php the_sub_field( 'explore_bucket_text' ); ?></p>
-							</div>
+			<?php if ( is_active_sidebar('homepage-sb')):?>
+				<div class="cell small-12 medium-6 large-3">
+			<?php else: ?>
+				<div class="cell small-12 medium-6 large-4">
+			<?php endif;?>		
+					<div class="widget widget_text">
+						<div class="widget_title">
+							<h4>
+								<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>"><?php the_sub_field( 'explore_bucket_heading' ); ?></a>
+							</h4>
+						</div>
+						<div class="textwidget">
+							<p><?php the_sub_field( 'explore_bucket_text' ); ?></p>
 						</div>
 					</div>
-				<?php endwhile;?>
+				</div>
+			<?php endwhile;?>
 				<?php if ( is_active_sidebar('homepage-sb')):?>
 					<div class="cell small-12 medium-6 large-3">
 						<?php dynamic_sidebar( 'homepage-sb' ); ?>
 					</div>
 				<?php endif;?>
 				</div>
-			</div>
 		</div>
 	<?php endif;?>
 
