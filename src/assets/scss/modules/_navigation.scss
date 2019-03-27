@@ -16,6 +16,13 @@
   }
 }
 
+.site-header {
+  background-color: $blue;
+  @include breakpoint (medium only) {
+    margin-top: -10px;
+  }
+}
+
 // Navigation breakpoints
 .mobile-menu,
 .site-title-bar {
@@ -79,8 +86,12 @@
 // Tablet and desktop menu
 
 .top-bar {
-  @include xy-grid;
+  //@include xy-grid;
+  &.site-information {
+    @include xy-grid-container;
+  }
   &.main-navigation {
+    @include xy-grid-container;
     @include breakpoint(medium) { 
       border-top: solid;
       border-color: #4b88b1;
@@ -120,7 +131,7 @@
         }
     }
     @include breakpoint(medium) {  
-      @include xy-cell(4);
+      @include xy-cell(5);
       img {
         padding: 0rem 1rem .75rem;
       }
@@ -146,7 +157,7 @@
       }
     }
     @include breakpoint(medium) {  
-      @include xy-cell(8);
+      @include xy-cell(7);
       text-align: left;
     }
     @include breakpoint(large) {  
@@ -270,6 +281,7 @@
 }
 
 .site-information {
+
   @include breakpoint(small only) {
     padding: 0; // prevents container visibility on small screens
     background: $white;
@@ -283,7 +295,17 @@
 
 .site-desktop-title {
   @include breakpoint(small only) {
-    background: $blue;
+    //background: $blue;
+    .top-bar-title {
+      h1 {
+        a, a:visited {
+          color: $blue;
+            &:hover, &:focus {
+              color: $blue;
+            }
+        } 
+      }
+    }
   }
 }
 
@@ -389,7 +411,7 @@
     color: $black;
   }
   .breadcrumbs {
-    padding-left: 2rem;
+    padding-left: 3rem;
     @include font-stack-semibold;
     margin: inherit;
     line-height: 1;
