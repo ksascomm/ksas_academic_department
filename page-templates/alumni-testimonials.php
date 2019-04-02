@@ -17,9 +17,7 @@ get_header(); ?>
     <div class="main-grid">
         <main class="main-content">
             <?php
-            while ( have_posts() ) :
-the_post();
-?>
+            while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
             <?php endwhile; ?>
             <?php
@@ -38,20 +36,18 @@ the_post();
 
             <div class="grid-x grid-padding-x small-up-2 large-up-3">
                 <?php
-                while ($ksas_alumni_testimonial_query->have_posts() ) :
-$ksas_alumni_testimonial_query->the_post();
-?>
+                while ($ksas_alumni_testimonial_query->have_posts() ) : $ksas_alumni_testimonial_query->the_post(); ?>
                 <div class="cell testimonial-container">
                     <div class="testimonial-avatar">
                         <?php
                         if ( has_post_thumbnail() ) {
-the_post_thumbnail(
-    'thumbnail', array(
-		'class'   => 'testimonial-image',
-        'alt' => esc_html ( get_the_title() ),
-	)
-    );  }
-?>
+                            the_post_thumbnail(
+                                'thumbnail', array(
+                            		'class'   => 'testimonial-image',
+                                    'alt' => esc_html ( get_the_title() ),
+                            	)
+                                );  }
+                            ?>
                     </div>
                     <div class="testimonial-bio">
                         <h2><?php the_title(); ?></h2>
@@ -64,7 +60,7 @@ the_post_thumbnail(
                     </div>
                     <p class="center">
                         <button class="button testimonial-button float-center" data-open="post-<?php the_ID(); ?>">
-                        Read Bio
+                        Learn More
                       </button>
                     </p>
                     <div class="reveal testimonial-content" id="post-<?php the_ID(); ?>" aria-labelledby="Modal-<?php the_ID(); ?>" data-reveal>
