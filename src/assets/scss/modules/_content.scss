@@ -79,6 +79,7 @@ p {
 
     @include breakpoint(medium) {
       @include xy-cell(10);
+      padding-left: 1rem;
     }
   }
 

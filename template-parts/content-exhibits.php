@@ -19,25 +19,27 @@
 
 	<div class="entry-content">
 		<div class="exhibit-body">						
-				<?php
-                the_post_thumbnail(
-                    'medium',
-					array(
-						'alt' => trim(strip_tags( $post->post_title )),
-						'aria-label' => 'Click on the featured image to expand it',
-					)
-                    );
-                    ?>
-				<?php if (get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
-					<p><strong>Location:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_location', true); ?></p>
-				<?php endif; ?>
-				<?php if (get_post_meta($post->ID, 'ecpt_dates', true) ) : ?>
-					<p><strong>Dates:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_dates', true); ?></p>
-				<?php endif; ?>
-				<?php if (get_post_meta($post->ID, 'ecpt_description_full', true) ) : ?>
-					<p><strong>Description:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_description_full', true); ?></p>
-				<?php endif; ?>
+			<?php
+            the_post_thumbnail(
+                'featured-large',
+				array(
+					'alt' => trim(strip_tags( $post->post_title )),
+					'aria-label' => 'Click on the featured image to expand it',
+				)
+                );
+                ?>
+          	<h3>
+			<?php if (get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
+				Location: <small><?php echo get_post_meta($post->ID, 'ecpt_location', true); ?></small><br>
+			<?php endif; ?>
+			<?php if (get_post_meta($post->ID, 'ecpt_dates', true) ) : ?>
+				Dates: <small><?php echo get_post_meta($post->ID, 'ecpt_dates', true); ?></small>
+			<?php endif; ?>
+			</h3>
+			<?php if (get_post_meta($post->ID, 'ecpt_description_full', true) ) : ?>
+				<h3>Description</h3>
+				<?php echo get_post_meta($post->ID, 'ecpt_description_full', true); ?>
+			<?php endif; ?>
 		</div>
-	</div>	
-	<hr />
+	</div>
 </article>
