@@ -2,9 +2,10 @@
 	<?php
 		$author_id = get_the_ID();
 		$single_books_query = new WP_Query(
-	array(
+		array(
 				'post_type' => 'post',
 				'category_name' => 'books',
+				'posts_per_page' => 50,
 				'meta_query' => array(
 					'relation' => 'OR',
 					array(
@@ -19,7 +20,6 @@
 						'type' => 'NUMERIC',
 						'compare' => '=',
 					),
-					'posts_per_page' => '100',
 				),
 			)
 	);
