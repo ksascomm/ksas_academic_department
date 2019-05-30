@@ -35,7 +35,7 @@ the_post();
 				'meta_key' => 'ecpt_people_alpha',
 				'orderby' => 'meta_value',
 				'order' => 'ASC',
-				'posts_per_page' => '100',
+				'posts_per_page' => 100,
 			)
             );
 		set_transient( 'graduate_student_query', $graduate_student_query, 345600 );

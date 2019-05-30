@@ -35,7 +35,7 @@ the_post();
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '100',
+					'posts_per_page' => 100,
 				)
                 );
 			set_transient( 'job_market_query', $job_market_query, 345600 );

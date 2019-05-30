@@ -31,7 +31,7 @@ the_post();
 					'meta_key' => 'ecpt_testimonial_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '100',
+					'posts_per_page' => 100,
 				)
                 );
 			?>

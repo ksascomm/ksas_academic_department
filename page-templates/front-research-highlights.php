@@ -26,7 +26,7 @@ get_header(); ?>
 <?php $slider_query = new WP_Query(
         array(
 			'post_type' => 'slider',
-			'posts_per_page' => '5',
+			'posts_per_page' => 5,
 			'orderby' => 'rand',
 		)
         );

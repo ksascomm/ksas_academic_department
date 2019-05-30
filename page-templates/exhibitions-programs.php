@@ -18,7 +18,7 @@ get_header(); ?>
 						'post_type' => 'ksasexhibits',
 						'orderby' => 'date',
 						'order' => 'DESC',
-						'posts_per_page' => '10',
+						'posts_per_page' => 10,
 						'paged' => $paged,
 					)
                 );

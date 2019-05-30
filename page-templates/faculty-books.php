@@ -17,7 +17,7 @@ the_post();
                     array(
 						'post_type' => 'post',
 						'category_name' => 'books',
-						'posts_per_page' => '100',
+						'posts_per_page' => 100,
 					)
                     );
 			 if ( $faculty_book_query->have_posts() ) :

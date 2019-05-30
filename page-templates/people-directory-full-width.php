@@ -121,7 +121,7 @@ the_post();
 								'meta_key' => 'ecpt_people_alpha',
 								'orderby' => 'meta_value',
 								'order' => 'ASC',
-								'posts_per_page' => '250',
+								'posts_per_page' => 250,
 							)
 								);
 											}

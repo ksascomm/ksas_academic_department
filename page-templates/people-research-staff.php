@@ -14,7 +14,7 @@ if ( false === ( $research_staff_query = get_transient( 'research_staff_query' )
 			'meta_key' => 'ecpt_people_alpha',
 			'orderby' => 'meta_value',
 			'order' => 'ASC',
-			'posts_per_page' => '250',
+			'posts_per_page' => 250,
 		)
         );
 	set_transient( 'research_staff_query', $research_staff_query, 345600 );

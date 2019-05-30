@@ -91,7 +91,7 @@ the_post();
 									'meta_key' => 'ecpt_people_alpha',
 									'orderby' => 'meta_value',
 									'order' => 'ASC',
-									'posts_per_page' => '250',
+									'posts_per_page' => 250,
 								)
 							);
 						if ($people_query_alpha->have_posts() ) : while ($people_query_alpha->have_posts() ) : $people_query_alpha->the_post(); ?>

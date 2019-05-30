@@ -24,7 +24,7 @@ Template Name: Courses - Graduate CPT
 						'coursetype' => 'graduate-course',
 						'orderby' => 'title',
 						'order' => 'ASC',
-						'posts_per_page' => '100',
+						'posts_per_page' => 100,
 					)
                     );
 				set_transient( 'ksas_course_grad_query', $ksas_course_grad_query, 345600 );

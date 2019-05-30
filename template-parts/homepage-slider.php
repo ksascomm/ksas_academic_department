@@ -2,7 +2,7 @@
 	$slider_query = new WP_Query(
         array(
 			'post_type' => 'slider',
-			'posts_per_page' => '5',
+			'posts_per_page' => 5,
 			'orderby' => 'rand',
 		)
         );
@@ -47,7 +47,7 @@
 	<?php $slider_mobile_query = new WP_Query(
         array(
 			'post_type' => 'slider',
-			'posts_per_page' => '1',
+			'posts_per_page' => 1,
 			'orderby' => 'rand',
 		)
         );
