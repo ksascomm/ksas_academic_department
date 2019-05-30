@@ -56,7 +56,7 @@ get_header(); ?>
             while ( have_posts() ) :
 the_post();
 ?>
-			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+			<article <?php post_class(); ?> aria-label="<?php the_title(); ?>">
 				<header aria-label="<?php the_title(); ?>">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
@@ -80,7 +80,7 @@ the_post();
 								'meta_key' => 'ecpt_people_alpha',
 								'orderby' => 'meta_value',
 								'order' => 'ASC',
-								'posts_per_page' => '250',
+								'posts_per_page' => 250,
 							)
 								);
 											}
