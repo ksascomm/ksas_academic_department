@@ -85,7 +85,7 @@ get_header(); ?>
 
 		$result->body = json_decode(html_entity_decode($result->body));
 	    if (( ! is_array($result) && ! is_object($result)) ||
-	        (is_array($result) || count($result) == 0) ||
+	        (is_array($result) || count((array)$result) == 0) ||
 	        (json_last_error() != JSON_ERROR_NONE) ) {// only for PHP >= 5.3.0
 
 		        // log the error or warning here ...
