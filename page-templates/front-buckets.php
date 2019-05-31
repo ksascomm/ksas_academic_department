@@ -29,9 +29,9 @@ get_header(); ?>
 	<?php endwhile; ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php if ( have_rows( 'explore_the_department' ) ) :?>
-		<div class="buckets">
+		<div class="buckets" aria-label="Explore the Department Section">
 			<?php $heading = get_field_object('explore_the_department');?>
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-padding-x" aria-label="<?php echo $heading['label'] ?>">
 				<div class="cell explore-title">
 					<h2><?php echo $heading['label'] ?></h2>
 				</div>
@@ -40,9 +40,9 @@ get_header(); ?>
 			<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
 
 			<?php if ( is_active_sidebar('homepage-sb')):?>
-				<div class="cell small-12 medium-6 large-3">
+				<aside class="cell small-12 medium-6 large-3" aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 			<?php else: ?>
-				<div class="cell small-12 medium-6 large-4">
+				<aside class="cell small-12 medium-6 large-4" aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 			<?php endif;?>		
 					<div class="widget widget_text">
 						<div class="widget_title">
@@ -54,7 +54,7 @@ get_header(); ?>
 							<p><?php the_sub_field( 'explore_bucket_text' ); ?></p>
 						</div>
 					</div>
-				</div>
+				</aside>
 			<?php endwhile;?>
 				<?php if ( is_active_sidebar('homepage-sb')):?>
 					<div class="cell small-12 medium-6 large-3">
