@@ -61,6 +61,17 @@
 						<?php endforeach;?>
 					</div>
 				</div>
+			<?php else: ?>
+				<h3>Images</h3>
+				<a data-open="modal-post-thumb">
+					<?php the_post_thumbnail('medium');?>
+				</a>
+				<div id="modal-post-thumb" class="small reveal" data-reveal data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+					<?php the_post_thumbnail('full');?>
+					<button class="close-button" data-close aria-label="Close modal" type="button">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
 			<?php endif;?>
 			<?php if (get_post_meta($post->ID, 'ecpt_description_full', true) ) : ?>
 				<h3>Description</h3>
