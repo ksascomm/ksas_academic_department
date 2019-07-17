@@ -1,8 +1,11 @@
 .frm_forms {
-	label {
-		font-family: $font-stack-semibold !important;
-		font-weight: $font-stack-semibold-weight !important;
-		font-size: 1rem !important;
+	.frm_primary_label {
+		font-family: $font-stack-bold !important;
+		font-weight: $font-stack-bold-weight !important;
+		font-size: 1.125rem !important;
+	}
+	.frm_radio label, .frm_checkbox label {
+		font-size: 1rem;
 	}
 	span.frm_required {
 		color: $fireengine;
