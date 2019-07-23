@@ -6,16 +6,30 @@
     border-bottom: none;
     box-shadow: 0 0.4rem 0 0 $blue;
     margin-bottom: 1.5rem;
-    padding: .5rem;
-    @include breakpoint(large down) {
-    	img {
-    		max-width: 12.5rem;
-    	}
-    }
+    //padding: .5rem;
+    //@include breakpoint(large down) {
+    	//img {
+    		//max-width: 12.5rem;
+    	//}
+    //}
     h1 {
         @include font-stack-semibold;
-        font-size: 1.35rem;
+        font-size: 1.25rem;
     }
+    li {
+        font-size: 1rem;
+    }
+}
+
+.exhibition-image {
+position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+    img {
+      position: absolute;
+    }
+
 }
 
 .exhibit-body {

@@ -5,11 +5,29 @@ Template Name: Exhibitions & Programs
 get_header(); ?>
 
 <div class="main-container" id="page">
-	<div class="main-grid sidebar-right">
-		<main class="main-content">
+	<div class="main-grid">
+		<main class="main-content-full-width">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
             <?php endwhile; ?>
+
+            <?php $exhibits = get_terms('exhibition_type', array(
+							'orderby' 		=> 'ID',
+							'order'			=> 'ASC',
+							'hide_empty'	=> true,
+							));
+						
+						$count_exhibits = count($exhibits);
+						if ($count_exhibits > 0) { ?>
+						<div class="row">
+							<h3>Exhibit Types:</h3>
+						</div>
+						<div class="button-group">
+							<?php foreach ( $exhibits as $exhibit ) { ?>
+								<a class="button" href="<?php echo $exhibit->slug; ?>"><?php echo $exhibit->name; ?></a>
+							<?php } ?>
+						</div>
+					<?php } ?>
 
 			<?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -18,53 +36,25 @@ get_header(); ?>
 						'post_type' => 'ksasexhibits',
 						'orderby' => 'date',
 						'order' => 'DESC',
-						'posts_per_page' => 10,
+						'posts_per_page' => 30,
 						'paged' => $paged,
 					)
                 );
 			 ?>
 
-			<?php if ($flagship_exhibitions_query->have_posts() ) : while ($flagship_exhibitions_query->have_posts() ) : $flagship_exhibitions_query->the_post();
-					// Pull exhibition type array (off/on-campus, independent study, online, etc)
-					$program_types = get_the_terms( $post->ID, 'exhibition_type' );
-					if ( $program_types && ! is_wp_error( $program_types ) ) :
-						$program_type_names = array();
-						$degree_types = array();
-						foreach ( $program_types as $program_type ) {
-							$program_type_names[] = $program_type->slug;
-							$exhibition_types[] = $program_type->name;
-						}
-						$program_type_name = join( ', ', $program_type_names );
-						$exhibition_type = join( ', ', $exhibition_types );
-					endif; ?>
-                 
-				<article class="exhibition media-object" aria-labelledby="post-<?php the_ID(); ?>">
-				<?php if ( has_post_thumbnail() ) : ?> 
-			  		<div class="media-object-section">
-						<?php the_post_thumbnail('thumbnail'); ?>
-			  		</div>
-			  	<?php endif; ?>	
-					<div class="media-object-section">
-						<h1><a href="<?php echo get_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
-						<ul class="no-bullets">
-							<?php if (get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
-								<li><strong>Location:</strong> <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?></li>
-							<?php endif; ?>
-											<?php if (get_post_meta($post->ID, 'ecpt_dates', true) ) : ?>
-								<li><strong>Dates:</strong> <?php echo get_post_meta($post->ID, 'ecpt_dates', true); ?></li>
-							<?php endif; ?>			    	
-								<li><strong>Exhibit Type:</strong> <span class="capitalize"><?php echo $program_type_name; ?></span></li>
-						</ul>
-						<?php if (get_post_meta($post->ID, 'ecpt_description_short', true) ) : ?>
-							<div class="exhibition-description">
-					    		<?php echo get_post_meta($post->ID, 'ecpt_description_short', true); ?>
-					    	</div>
-						<?php endif; ?>	
-					</div>
-				</article>
-			<?php endwhile;
+			<?php if ($flagship_exhibitions_query->have_posts() ) : ?>
 
-			$total_pages = $flagship_exhibitions_query->max_num_pages;
+			<div class="grid-x grid-padding-x small-up-2 medium-up-3">
+
+			<?php while ($flagship_exhibitions_query->have_posts() ) : $flagship_exhibitions_query->the_post();
+
+					get_template_part( 'template-parts/content-exhibits', 'card' ); ?>
+
+			<?php endwhile;?>
+
+			</div>
+
+		<?php $total_pages = $flagship_exhibitions_query->max_num_pages;
 
 			if ($total_pages > 1 ) {
 				$current_page = max(1, get_query_var('paged'));
@@ -88,7 +78,6 @@ get_header(); ?>
 			<?php endif; ?>
 
         </main>
-        <?php get_sidebar(); ?>
     </div>
 </div>
 <?php

@@ -38,3 +38,11 @@ function redirect_empty_bios() {
 		}
 	}
 }
+
+add_action( 'pre_get_posts', 'exhibits_tax_page' );
+// Show all Exhibits on Exhibits Tax Archive Page
+function exhibits_tax_page( $query ) {
+    if ( !is_admin() && $query->is_main_query() && is_tax( 'exhibition_type' ) ) {
+            $query->set( 'posts_per_page', '-1' );
+    }
+}
