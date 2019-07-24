@@ -22,14 +22,23 @@
 }
 
 .exhibition-image {
-position: relative;
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
     img {
       position: absolute;
+      @include breakpoint(large) {
+        //object-fit: none;
+        //object-position: 50% 50%;
+      }
     }
-
+    @include breakpoint(small) {
+        width: 600px;
+        height: 300px;
+    }
+    @include breakpoint(medium) {
+        width: 400px;
+        height: 200px;
+    }
 }
 
 .exhibit-body {

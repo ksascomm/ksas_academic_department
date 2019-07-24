@@ -44,7 +44,7 @@ get_header(); ?>
 
 			<?php if ($flagship_exhibitions_query->have_posts() ) : ?>
 
-			<div class="grid-x grid-padding-x small-up-2 medium-up-3">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 
 			<?php while ($flagship_exhibitions_query->have_posts() ) : $flagship_exhibitions_query->the_post();
 
