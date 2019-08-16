@@ -39,7 +39,7 @@
 	$.fn.bgVideo = function( options ) {
 
 		// @bool iOS
-		var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent);
+		var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) || /Android/.test(navigator.platform) || /Android/.test(navigator.userAgent); 
 
 		// Settings
 		var settings = $.extend({}, $.fn.bgVideo.defaults, options );
@@ -102,7 +102,7 @@
 				'position': 'relative',
 				'overflow': 'hidden',
 				'background-size': 'cover',
-				'background-position': 'center center',
+				'background-position': 'top center',
 				'background-repeat': 'no-repeat',
 				'background-image': 'url(' + poster + ')'
 			});
