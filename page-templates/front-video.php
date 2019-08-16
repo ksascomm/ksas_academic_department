@@ -4,7 +4,7 @@ Template Name: Front (Video Hero)
 */
 get_header(); ?>
 	<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-		<header class="featured-hero homepage hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image">
+		<header class="featured-hero homepage hide-for-small-only hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image">
 		</header>
 	<?php endif; ?>
 	<?php get_template_part( 'template-parts/homepage-video' ); ?>

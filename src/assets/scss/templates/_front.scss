@@ -1,8 +1,6 @@
 .front-hero-featured-image {
   img {
-    max-width: 640px;
-    max-height: 200px;
-    @include breakpoint(small only) {
+    @include breakpoint(medium only) {
       max-width: 100%;
       height: auto;
     }

@@ -99,7 +99,7 @@
     }
   }
   .top-bar-title a {
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
       font-size: 1.5rem;
     }
     font-size: 2rem;
@@ -167,7 +167,12 @@
   .menu {
     @include font-stack-bold;;
     a {
-      font-size: 1.125rem;
+      @include breakpoint (small){
+        font-size: 1rem;
+      }      
+      @include breakpoint (large){
+        font-size: 1.125rem;
+      }
       color: $white;
       &:hover {
         color: $white;
