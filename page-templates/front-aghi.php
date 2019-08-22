@@ -3,7 +3,7 @@
 Template Name: Front (AGHI Only)
 */
 get_header(); ?>
-
+<?php $theme_option = flagship_sub_get_global_options();?>
 <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
 		<header class="featured-hero homepage hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image">
 		</header>
