@@ -114,9 +114,15 @@
 
   .menu>li:not(.menu-text)>a { padding: 1rem; }
 
-  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
-  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
-  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+  //.dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  //.dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+  //.dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after {
+    border-color: $white transparent transparent
+  }
+  .dropdown.menu > li.is-dropdown-submenu-parent > a {
+    padding-right: 1.5rem;
+  }
 
   .nav-shield {
     @include breakpoint(small only) {
