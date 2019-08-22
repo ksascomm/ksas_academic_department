@@ -96,6 +96,7 @@
 	}
 	.ai1ec-agenda-widget-view .ai1ec-weekday, .ai1ec-agenda-view .ai1ec-weekday {
 		text-transform: uppercase;
+		font-weight: 300 !important;
 	}
 	.ai1ec-agenda-widget-view .ai1ec-date-title:hover, .ai1ec-agenda-view .ai1ec-date-title:hover {
     	color: $white !important;
@@ -121,6 +122,16 @@
 	.ai1ec-no-results {
 		color: $black;
 		padding: .75rem;
+	}
+	span.ai1ec-event-time {
+		font-weight: 700 !important;
+ 		font-style: normal;
+	}
+	.ai1ec-agenda-widget-view .ai1ec-date-events {
+		font-size: .9rem !important;
+	}
+	.ai1ec-month, .ai1ec-weekday {
+		font-size: .75rem;
 	}
 }
 

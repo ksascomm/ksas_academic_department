@@ -20,12 +20,7 @@ footer.timely.ai1ec-event-footer {
   }
 }
 
-#ai1ec-container a {
-  color: $blue;
-  &:link, &:visited, &:active, &:hover {
-    color: $blue;
-  }
-}
+
 .ai1ec-event-time, span.ai1ec-event-title, .ai1ec-event-details {
   font-family: $font-stack-bold !important;
   font-weight: $font-stack-weight;
@@ -101,4 +96,29 @@ footer.timely.ai1ec-event-footer {
 
 .ai1ec-event-details.ai1ec-clearfix {
   margin-left: -1rem;
+}
+
+.timely.ai1ec-calendar {
+  .ai1ec-agenda-view .ai1ec-date-title {
+    background-image: none;
+    background: $blue;
+    color: $white;
+    border: none;
+  }
+  .ai1ec-agenda-view .ai1ec-month {
+    @include font-stack-semibold;
+    color: $white;
+    text-align: center;
+    padding: 0;
+  }
+  span.ai1ec-event-title {
+    font-size: 1rem;
+  }
+  .ai1ec-agenda-view .ai1ec-event .ai1ec-event-time {
+    font-size: .9rem;
+  }
+  a.ai1ec-read-more.ai1ec-btn.ai1ec-btn-default.ai1ec-load-event {
+    color: $white !important;
+    background: $blue !important;
+  }
 }

@@ -217,6 +217,7 @@
     small {
       @include font-stack-semibold;
       color: $black;
+      line-height: inherit;
     }   
   }
   h2.archive-link {
