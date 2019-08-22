@@ -40,7 +40,19 @@
 	        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
 	    }
 
-	    echo "
-	";
+	    echo "";
 	}
 add_action( 'wp_head', 'facebook_open_graph', 5 );
+
+function facebook_open_graph_archive() {
+	global $post;
+	$theme_option = flagship_sub_get_global_options();
+	if ( is_home()) {
+		echo '<meta property="og:title" content="' . $theme_option['flagship_sub_feed_name'] ." | " . get_bloginfo('title')  . '"/>';
+		echo '<meta property="og:description" content="Read the latest posts from the ' . get_bloginfo('description') . '&nbsp;' . get_bloginfo('title') . '"/>';
+        echo '<meta property="og:type" content="article"/>';
+        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+		echo '<meta property="og:image" content="' . get_template_directory_uri() . '/dist/assets/images/homepage-slider-hero.jpg' . '"/>';
+	}
+}
+add_action( 'wp_head', 'facebook_open_graph_archive', 5 );
