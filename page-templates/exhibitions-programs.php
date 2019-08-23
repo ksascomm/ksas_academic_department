@@ -11,23 +11,30 @@ get_header(); ?>
                 <?php get_template_part( 'template-parts/content', 'page' ); ?>
             <?php endwhile; ?>
 
-            <?php $exhibits = get_terms('exhibition_type', array(
-							'orderby' 		=> 'ID',
-							'order'			=> 'ASC',
-							'hide_empty'	=> true,
-							));
-						
-						$count_exhibits = count($exhibits);
-						if ($count_exhibits > 0) { ?>
-						<div class="row">
-							<h3>Exhibit Types:</h3>
-						</div>
-						<div class="button-group">
-							<?php foreach ( $exhibits as $exhibit ) { ?>
-								<a class="button" href="<?php echo $exhibit->slug; ?>"><?php echo $exhibit->name; ?></a>
-							<?php } ?>
-						</div>
-					<?php } ?>
+			<?php 
+            $args = array(  
+            	'orderby' => 'ID',
+				'order'	=> 'ASC',
+				'hide_empty' => true
+			);
+
+            $exhibits = get_terms('exhibition_type', $args);
+            if ( ! empty( $exhibits ) && ! is_wp_error( $exhibits ) ) {
+            	$count = count( $exhibits );
+            	$i = 0;
+            	$exhibit_list = '<div class="exhibit-categories button-group">';
+            	foreach ( $exhibits as $exhibit ) {
+            	 	$i++;
+					$exhibit_list .= '<a class="exhibit-category button" href="' . esc_url( get_term_link( $exhibit ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts filed under %s', 'my_localization_domain' ), $exhibit->name ) ) . '">' . $exhibit->name . '</a>';
+			        if ( $count != $i ) {
+			            $exhibit_list .= '';
+			        }
+			        else {
+			            $exhibit_list .= '</div>';
+			        }
+			    }
+			    echo $exhibit_list;
+			} ?>
 
 			<?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
