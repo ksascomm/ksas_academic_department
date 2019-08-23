@@ -17,12 +17,6 @@
       @include xy-cell(auto);
     }
   }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
   p {
     color: $white;
     font-size: 1rem;
@@ -68,7 +62,6 @@
     }
   }
   #menu-footer-links {
-    padding-top: 1rem;
     @include breakpoint(large) {
       padding-left: 5.55rem;
       @include menu-align(center);
@@ -81,6 +74,7 @@
       margin-bottom: 1rem;
     }
     a { 
+      padding: 0.5rem;
       font-size: 1rem;
       @include font-stack-bold;
       color: $white;

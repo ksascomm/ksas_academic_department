@@ -34,14 +34,13 @@
                     );
 
 				// Return to current site
-				if ( $theme_option['flagship_sub_quicklinks'] == '1' ) {
-restore_current_blog(); }
-
-			?>
+				if ( $theme_option['flagship_sub_quicklinks'] == '1' ) { 
+					restore_current_blog(); 
+				} ?>
 
 			</div>
 			<div class="small-12 large-6 cell">
-				<ul id="menu-footer-links" class="menu simple" role="menu">
+				<ul id="menu-footer-links" class="menu" role="menu">
 					<li role="menuitem"><a href="<?php echo get_site_url(); ?>/sitemap/" target="_blank">Sitemap</a></li>
 					<li role="menuitem"><a href="https://jobs.jhu.edu/" target="_blank">Careers</a></li>	
 					<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement" target="_blank">Privacy Statement</a></li>
