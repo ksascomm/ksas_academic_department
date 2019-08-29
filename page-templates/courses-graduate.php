@@ -74,9 +74,9 @@ get_header(); ?>
 				}
 			}
 			$print_tags = empty($tags) ? 'n/a' : implode(', ', $tags);
-			echo '<tr><td>' . $course_number . '&nbsp;(' . $section_number . ')</td><td>' . $title . '</td><td class="show-for-medium">' . $meetings . '</td><td class="show-for-large">' . $instructor . '</td><td class="show-for-large">' . $room . '&nbsp;' . $roomnumber . '</td><td class="show-for-large">' . implode(', ', $tags) . '</td>';
+			echo '<tr><td>' . $course_number . '&nbsp;(' . $section_number . ')</td><td>' . $title . '</td><td class="show-for-medium">' . $meetings . '</td><td class="show-for-large">' . $instructor . '</td><td class="show-for-large">' . $room . '&nbsp;' . $roomnumber . '</td>';
 			echo '<td><button class="button" data-open="course-' . $clean_course_number . $section_number . $clean_term . '">More Info</button></td></tr>';
-			echo '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings . ' </li><li><strong>Instructor:</strong> '. $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . '  </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li><li><strong>PosTag(s):</strong> ' . $print_tags . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
+			echo '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings . ' </li><li><strong>Instructor:</strong> '. $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . '  </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
 		}
 	// ISIS Call callback function
 		function parse_courses( $result ) {
@@ -145,7 +145,6 @@ get_header(); ?>
 								<th class="show-for-medium">Day/Times</th>
 								<th class="show-for-large">Instructor</th>
 								<th class="show-for-large">Room</th>
-								<th class="show-for-large">PosTag(s)</th>
 								<th>Info</th>
 							</tr>
 						</thead>
