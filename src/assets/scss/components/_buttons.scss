@@ -11,6 +11,7 @@
 	@include font-stack-semibold;
 	&:hover {
 		@include button-hover;
+		color: $white !important;
     }
 }
 
