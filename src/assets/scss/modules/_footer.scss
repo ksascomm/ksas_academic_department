@@ -32,7 +32,7 @@
       color: $white;
     }
     .is-drilldown-submenu-parent{
-      background: $skyblue;
+      background: $blue;
       @include font-stack-bold;
       font-size: 1.175rem;
       &:hover {
@@ -44,6 +44,7 @@
       display: none;
     }
     .is-drilldown-submenu {
+      margin-left: 0;
       .js-drilldown-back, .is-drilldown-submenu-item {
         background: $black;
         a {
@@ -58,7 +59,7 @@
       background: $black;
     }
     .drilldown .js-drilldown-back > a::before {
-      border-color: transparent $skyblue transparent transparent;
+      border-color: transparent $blue transparent transparent;
     }
   }
   #menu-footer-links {
@@ -86,10 +87,10 @@
   }  
   .social-media {
     a {
-      color: $skyblue;
+      color: $white;
       margin-left: 1.375rem;
       &:hover {
-        color: $bluejaysblue;
+        border-bottom: 0.0625rem dashed;
         transition: color 0.5s ease;
       }
       @include breakpoint(medium down) {
