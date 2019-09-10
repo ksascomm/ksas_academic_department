@@ -5,16 +5,6 @@ a {
   }
 }
 
-@mixin link {
-    color: $blue;
-    border-bottom: .125em dotted;
-    border-bottom-color: rgba(0,0,0,.2);
-    &:hover, &:active {
-        color: $black;
-        border-bottom-style: solid;
-    }  
-}
-
 body {
   @include font-stack;
   font-size: $global-font-size * 1.125
@@ -352,4 +342,9 @@ cite {
       }
     }
   }
+}
+
+.wp-caption>figcaption {
+  color: $dark-gray;
+  font-size: 1rem;
 }

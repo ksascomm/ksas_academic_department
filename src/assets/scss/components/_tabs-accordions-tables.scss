@@ -29,6 +29,16 @@ table thead {
 	}
 }
 
+.accordion {
+  .accordion-content {
+    p {
+      a {
+        @include link;
+      }
+    }
+  }
+}
+
 .tablepress {
 	font-size: 1rem;
 	tbody tr:nth-child(even) {

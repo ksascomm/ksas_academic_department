@@ -227,7 +227,14 @@
   }
   .news-article {
     border-bottom: none;
-  }  
+  }
+  .slide-caption {
+    p {
+      a:not(.button) {
+        @include link;
+      }
+    }
+  }
 }
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   img.front-humanities-highlight {

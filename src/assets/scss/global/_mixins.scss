@@ -82,3 +82,19 @@
   font-family: $font-header-extrabold;
   font-weight: $font-header-extrabold-weight;
 }
+
+@mixin link {
+    color: $blue;
+    border: none;
+    border-bottom: .125em solid;
+    border-bottom-color: $medium-gray;
+    background-color: transparent;
+    border-radius: 0;
+    transition: border-color,background-color,color;
+    transition-duration: 250ms,250ms,250ms;
+    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+    &:hover, &:active {
+      border-bottom: .125em solid;
+      border-bottom-color: $dark-gray;
+    }  
+}

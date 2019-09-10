@@ -484,6 +484,9 @@
       font-size: 1.15rem;
       line-height: 1;
       margin-bottom: 1rem;
+      a {
+        @include link;
+      }
     }
     margin-bottom: 1rem;
     ul.nav {
