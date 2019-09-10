@@ -96,12 +96,12 @@ endif;
 									<?php endif; ?>
 									<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
 											<li><span class="fa fa-globe"></span>
-												<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank">Personal Website</a>
+												<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank" aria-label="<?php the_title(); ?>'s Personal Website">Personal Website</a>
 											</li>
 										<?php endif; ?>
 										<?php if ( get_post_meta($post->ID, 'ecpt_lab_website', true) ) : ?>
 							    		<li><span class="fa fa-globe"></span>
-							    			<a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>')" target="_blank">Group/Lab Website</a>
+							    			<a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>')" target="_blank" aria-label="<?php the_title(); ?>'s Group/Lab Website">Group/Lab Website</a>
 							    		</li>
 									<?php endif; ?>
 									<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
@@ -110,6 +110,7 @@ endif;
 										</p>
 									<?php endif; ?>								
 								</ul>
+								
 							</div>
 						</div>
 					</li>

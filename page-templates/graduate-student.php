@@ -83,7 +83,7 @@ $graduate_student_query->the_post();
 								<li><span class="fas fa-map-marker-alt"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></li>
 							<?php endif; ?>
 							<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
-							<li><span class="fa fa-globe"></span><a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank">Personal Website</a>
+							<li><span class="fa fa-globe"></span><a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank" aria-label="<?php the_title(); ?>'s Personal Website">Personal Website</a>
 							<?php endif; ?>
 						</ul>
 						<?php
