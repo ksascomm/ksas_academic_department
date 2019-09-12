@@ -71,7 +71,7 @@ get_header(); ?>
 									<?php endif;?>
 										<p><?php echo get_the_content(); ?></p>
 									   	<?php if ( get_post_meta($post->ID, 'ecpt_button', true) ) : ?>				
-												<p><a class="button" href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Slider', 'Click', '<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>');" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a></p>
+												<p><a class="button" href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Research Slider', 'Read More Click');" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a></p>
 										<?php endif;?>
 									</div>
 								</div>	
