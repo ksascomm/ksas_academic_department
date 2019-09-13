@@ -29,6 +29,8 @@ get_header(); ?>
 				CURLOPT_CONNECTTIMEOUT  => 60,
 			)
         );
+        $cache_dir = TEMPLATEPATH . "/sis-cache/";
+		$course_curl->cache($cache_dir, 1296000);
 
 	// Create API Url calls
 		$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department;
@@ -80,8 +82,8 @@ get_header(); ?>
 		}
 	// SIS Call callback function
 		function parse_courses( $result ) {
+			$cache_dir = TEMPLATEPATH . "/sis-cache/";
 			$key = 'DZkN4QOJGaDKVg6Du1911u45d4TJNp6I';
-
 			$result->body = json_decode(html_entity_decode($result->body));
 		    if (( ! is_array($result) && ! is_object($result)) ||
 		        (is_array($result) || count((array)$result) == 0) ||
@@ -118,6 +120,7 @@ get_header(); ?>
 					CURLOPT_CONNECTTIMEOUT  => 60,
 				)
                 );
+			$curl->cache($cache_dir, 1296000);
 			$curl->get($course_data, 'display_courses');
 		}
 ?>
