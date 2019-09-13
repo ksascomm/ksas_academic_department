@@ -31,7 +31,7 @@ table thead {
 
 .accordion {
   .accordion-content {
-    p {
+    p, li {
       a {
         @include link;
       }
