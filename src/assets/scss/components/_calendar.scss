@@ -3,23 +3,30 @@ footer.timely.ai1ec-event-footer {
     color: $dark-gray;
 }
 
-.timely p {
-  font-size: 16px;
+.timely {
+  color: $black !important;
   font-family: $font-stack !important;
   font-weight: $font-stack-weight;
+  h2, h3, h4, h5 {
+    font-family: $font-stack-semibold !important;
+    font-weight: $font-stack-semibold-weight;
+  }
+  p, ul {
+    font-size: 16px;
+    font-family: $font-stack !important;
+    font-weight: $font-stack-weight;
+  }
+  a {
+    color: $blue;
+    &:link, &:visited, &:active, &:hover {
+      color: $blue;
+    }
+  }
 }
 
 .entry-content .timely a:visited, .comment-content .timely a:visited, .site-footer .widget .timely a:visited {
   color: $blue;
 }
-
-.timely a {
-  color: $blue;
-  &:link, &:visited, &:active, &:hover {
-    color: $blue;
-  }
-}
-
 
 .ai1ec-event-time, span.ai1ec-event-title, .ai1ec-event-details {
   font-family: $font-stack-bold !important;
@@ -64,7 +71,7 @@ footer.timely.ai1ec-event-footer {
 }
 
 .ai1ec-agenda-view .ai1ec-event .ai1ec-event-title {
-	color: $blue;
+  color: $blue;
 }
 
 .ai1ec-event-avatar {

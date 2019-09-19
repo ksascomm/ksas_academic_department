@@ -118,3 +118,22 @@ article.page a, .textwidget p a, .textwidget ul li a, .ecpt-page-sidebar a {
     }
   }
 }
+
+.reveal, .callout, .tabs-panel {
+  a {
+    @include link;
+  }
+}
+
+.accordion {
+  .accordion-content {
+    p, li {
+      a {
+        @include link;
+      }
+    }
+    > a {
+      @include link;
+    }
+  }
+}

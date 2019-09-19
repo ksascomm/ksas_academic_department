@@ -29,16 +29,6 @@ table thead {
 	}
 }
 
-.accordion {
-  .accordion-content {
-    p, li {
-      a {
-        @include link;
-      }
-    }
-  }
-}
-
 .tablepress {
 	font-size: 1rem;
 	tbody tr:nth-child(even) {
@@ -56,6 +46,7 @@ table thead {
   	tfoot th, thead th {
 		background: $light-gray!important;
 	}
+
 }
 
 .dataTables_wrapper {
@@ -122,6 +113,9 @@ table thead {
     &:last-child {
       margin-right: 0;
     }
+    &:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
   }
   &.paging_simple {
     padding: 0 15px;
@@ -183,5 +177,8 @@ table thead {
     text-align: right;
     content: "\f054";
     left: auto;
+  }
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
   }
 }
