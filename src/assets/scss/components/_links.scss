@@ -119,9 +119,17 @@ article.page a, .textwidget p a, .textwidget ul li a, .ecpt-page-sidebar a {
   }
 }
 
-.reveal, .callout, .tabs-panel {
+.reveal, .tabs-panel {
   a {
     @include link;
+  }
+}
+
+.callout {
+  &:not(.directory-search) {
+    a {
+      @include link;
+    }
   }
 }
 
