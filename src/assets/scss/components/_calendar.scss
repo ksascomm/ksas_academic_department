@@ -136,7 +136,7 @@ footer.timely.ai1ec-event-footer {
   text-shadow: none;
 }
 
-.event img[alt=""],.event img:not([alt]) {
+.event p img[alt=""], .event p img:not([alt]) {
   filter: grayscale(100%) brightness(40%);
 }
 
