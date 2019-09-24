@@ -6,7 +6,7 @@
 			'orderby' => 'rand',
 		)
         );
-	$slidernumber = 0;
+	
 	if ( $slider_query->have_posts() ) :
 
     ?>
@@ -23,7 +23,8 @@
 
 				<ul class="orbit-container">
 				<?php
-                while ($slider_query->have_posts() ) : $slider_query->the_post(); $slidernumber++?>
+				$slidernumber = 0;
+                while ($slider_query->have_posts() ) : $slider_query->the_post(); $slidernumber++;?>
 
 					<li class="orbit-slide">	
 						<img class="orbit-image hide-for-print" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
@@ -36,7 +37,7 @@
 					  	<?php if ( !empty( get_the_content() ) ):?>
 					      <p class="show-for-large"><?php echo get_the_content(); ?></p>
 						   <?php if (get_post_meta($post->ID, 'ecpt_button', true) ) : ?>
-								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" aria-label="post-<?php the_ID(); ?>" class="button show-for-large" onclick="ga('send', 'event', 'Homepage Slider', 'Read More Click', 'Destination: <?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>');">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
+								<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" aria-label="post-<?php the_ID(); ?>" class="button show-for-large" onclick="ga('send', 'event', 'Homepage Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>', 'Destination: <?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>');">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a>
 							<?php endif; ?>
 						<?php endif;?>
 					    </figcaption>
