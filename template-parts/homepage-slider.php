@@ -27,7 +27,7 @@
                 while ($slider_query->have_posts() ) : $slider_query->the_post(); $slidernumber++;?>
 
 					<li class="orbit-slide">	
-						<img class="orbit-image hide-for-print" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php the_title(); ?>">
+						<img class="orbit-image hide-for-print" src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" alt="<?php $the_content = apply_filters('the_content', get_the_content()); if ( !empty($the_content) ) { echo $the_content; } else { echo 'Homepage Slider'; };?>">
 					<?php if (get_the_title() || !empty( get_the_content() )) :?>
 					    <figcaption class="orbit-caption" aria-hidden="true">
 					    	<?php if (get_the_title()) :?>
