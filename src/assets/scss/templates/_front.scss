@@ -431,6 +431,12 @@
   left: 10px;
 }
 
+button.jquery-background-video-pauseplay.play {
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px !important;
+  }
+}
+
 .buckets {
   padding-top: 1.25rem;
   @include xy-grid-container;
