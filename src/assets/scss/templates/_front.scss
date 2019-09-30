@@ -431,7 +431,7 @@
   left: 10px;
 }
 
-button.jquery-background-video-pauseplay.play {
+button.jquery-background-video-pauseplay.play, button.jquery-background-video-pauseplay.pause {
   &:focus {
     outline: -webkit-focus-ring-color auto 5px !important;
   }

@@ -145,3 +145,11 @@ article.page a, .textwidget p a, .textwidget ul li a, .ecpt-page-sidebar a {
     }
   }
 }
+
+.aghi-events-intro, .people.role-job-market-candidate {
+  p  {
+    a {
+      @include link;
+    }
+  }
+}
