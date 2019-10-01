@@ -66,8 +66,8 @@ the_post_thumbnail(
                     
                     <button class="button testimonial-button" data-open="post-<?php the_ID(); ?>">Read My Experience</button>
                    
-                    <div class="large reveal testimonial-content" id="post-<?php the_ID(); ?>" aria-labelledby="Modal-<?php the_title(); ?>" data-reveal>
-                        <h1 id="Modal-<?php the_title(); ?>"><?php the_title(); ?></h1>
+                    <div class="large reveal testimonial-content" id="post-<?php the_ID(); ?>" aria-labelledby="Modal-<?php the_ID(); ?>" data-reveal>
+                        <h1 id="Modal-<?php the_ID(); ?>"><?php the_title(); ?></h1>
                         <?php the_content(); ?>
                         <button class="close-button" data-close aria-label="Close reveal" type="button">
                             <span aria-hidden="true">&times;</span>
