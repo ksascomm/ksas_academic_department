@@ -68,17 +68,3 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     return $html;
 }
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
-
-function add_css_head() {
-   if ( is_user_logged_in() ) : ?>
-      <style>
-			img[alt=""], img:not([alt]) {
-				border: 4px red dashed !important;
-			}
-			#slb_viewer_wrap .slb_theme_slb_baseline .slb_template_tag_item_content> img:not([alt]) {
-				border: none !important;
-			}
-      </style>
-   <?php endif;
-}
-add_action('wp_head', 'add_css_head');
