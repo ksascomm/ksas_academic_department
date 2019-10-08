@@ -89,7 +89,7 @@ the_post();
 								<?php endif; ?>
 								<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
 	    						<li><span class="fa fa-globe"></span>
-									<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank">Personal Website</a>
+									<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank" aria-label="<?php the_title(); ?>'s Personal Website">Personal Website</a>
 								<?php endif; ?>
 							</ul>
 						<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
