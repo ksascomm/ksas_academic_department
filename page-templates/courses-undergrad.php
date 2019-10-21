@@ -121,7 +121,7 @@ get_header(); ?>
 				)
                 );
 			//$curl->cache($cache_dir, 1296000);
-			//$curl->get($course_data, 'display_courses');
+			$curl->get($course_data, 'display_courses');
 		}
 ?>
 
