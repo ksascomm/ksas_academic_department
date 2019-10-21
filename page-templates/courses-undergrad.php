@@ -13,7 +13,7 @@ get_header(); ?>
 		$department = str_replace(' ', '%20', $department_unclean);
 		$department = str_replace('&', '%26', $department);
 		$fall = 'fall%202019';
-		//$spring = 'spring%202019';
+		$spring = 'spring%202020';
 		//$summer = 'summer%202019';
 		$open = 'open';
 		$approval = 'approval%20required';
@@ -29,19 +29,21 @@ get_header(); ?>
 				CURLOPT_CONNECTTIMEOUT  => 60,
 			)
         );
+        //$cache_dir = TEMPLATEPATH . "/sis-cache/";
+		//$course_curl->cache($cache_dir, 1296000);
 
 	// Create API Url calls
 		$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department;
-		//$courses_spring_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Department=AS%20' . $department;
+		$courses_spring_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Department=AS%20' . $department;
 		// $courses_intersession_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $intersession . '&Department=AS%20' . $department;
 		//$courses_summer_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $summer . '&Department=AS%20' . $department;
 		$courses_call = array(
 			$courses_fall_url,
-			//$courses_spring_url,
+			$courses_spring_url,
 			//$courses_summer_url,
 		);
 		$courses_call_fall = $courses_fall_url;
-		//$courses_call_spring = $courses_spring_url;
+		$courses_call_spring = $courses_spring_url;
 		//$courses_call_summer = $courses_summer_url;
 
 	// Course display callback function
@@ -80,6 +82,7 @@ get_header(); ?>
 		}
 	// SIS Call callback function
 		function parse_courses( $result ) {
+			//$cache_dir = TEMPLATEPATH . "/sis-cache/";
 			$key = 'DZkN4QOJGaDKVg6Du1911u45d4TJNp6I';
 			$result->body = json_decode(html_entity_decode($result->body));
 		    if (( ! is_array($result) && ! is_object($result)) ||
@@ -117,7 +120,8 @@ get_header(); ?>
 					CURLOPT_CONNECTTIMEOUT  => 60,
 				)
                 );
-			$curl->get($course_data, 'display_courses');
+			//$curl->cache($cache_dir, 1296000);
+			//$curl->get($course_data, 'display_courses');
 		}
 ?>
 
@@ -129,8 +133,9 @@ get_header(); ?>
             <?php endwhile; ?>    
 			<ul class="tabs" data-tabs id="courses-tabs">
 			 	<li class="tabs-title is-active"><a href="#Fall">Fall 2019</a></li>
+			 	<li class="tabs-title"><a href="#Spring">Spring 2020</a></li>
 			</ul>
-			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">				 
+			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 				<div class="tabs-panel is-active" id="Fall">
 				 	<p class="show-for-sr" id="tblDescFall">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another program, and a option to view additional course information in a pop-up window.</p>
 				 	<table aria-describedby="tblDescFall" class="course-table">
@@ -149,8 +154,29 @@ get_header(); ?>
 							<?php $course_curl->get($courses_call_fall, 'parse_courses'); ?>
 						</tbody>
 					</table>
-				</div>								 
+				</div>
 			</div>
+			<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
+				<div class="tabs-panel" id="Spring">
+				 	<p class="show-for-sr" id="tblDescSpring">Column one has the course number and section. Other columns show the course title, days offered, instructor's name, room number, if the course is cross-referenced with another program, and a option to view additional course information in a pop-up window.</p>
+				 	<table aria-describedby="tblDescSpring" class="course-table">
+						<thead>
+							<tr>
+								<th>Course # (Section)</th>
+								<th>Title</th>
+								<th class="show-for-medium">Day/Times</th>
+								<th class="show-for-medium">Instructor</th>
+								<th class="show-for-medium">Room</th>
+								<th class="show-for-large">PosTag(s)</th>
+								<th>Info</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php $course_curl->get($courses_call_spring, 'parse_courses'); ?>
+						</tbody>
+					</table>
+				</div>
+			</div>			
         </main>
         <?php get_sidebar(); ?>
     </div>
