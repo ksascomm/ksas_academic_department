@@ -39,7 +39,7 @@
 				<div class="grid-container">
 					<div class="grid-x grid-padding-x small-up-1 large-up-3">
 						<?php foreach ( $attachments as $attachment ) :
-		            		$alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+		            		$alt = $attachment->post_title;
 		            		$image_title = $attachment->post_title;
 		            		$caption = $attachment->post_excerpt;
 		            		$description = $attachment->post_content;
