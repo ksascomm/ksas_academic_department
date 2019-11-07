@@ -19,6 +19,7 @@ get_header(); ?>
 		$approval = 'approval%20required';
 		$closed = 'closed';
 		$waitlist = 'waitlist%20only';
+		$reserved_open = 'reserved%20open';
 		$key = 'Qrf9MQse2cdpgaYdPF23dkMaqrVKE5dP';
 
 	// Create first Zebra Curl class
@@ -33,8 +34,8 @@ get_header(); ?>
 		//$course_curl->cache($cache_dir, 1296000);
 
 	// Create API Url calls
-		$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department;
-		$courses_spring_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Department=AS%20' . $department;
+		$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department . '&status=' . $open . '&status=' . $approval . '&status=' . $waitlist . '&status=' . $reserved_open;
+		$courses_spring_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Department=AS%20' . $department . '&status=' . $open . '&status=' . $approval . '&status=' . $waitlist . '&status=' . $reserved_open;
 		// $courses_intersession_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $intersession . '&Department=AS%20' . $department;
 		//$courses_summer_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $summer . '&Department=AS%20' . $department;
 		$courses_call = array(
@@ -42,10 +43,10 @@ get_header(); ?>
 			$courses_spring_url,
 			//$courses_summer_url,
 		);
+
 		$courses_call_fall = $courses_fall_url;
 		$courses_call_spring = $courses_spring_url;
 		//$courses_call_summer = $courses_summer_url;
-
 	// Course display callback function
 		function display_courses( $result ) {
 		    $result->body = json_decode(html_entity_decode($result->body));
