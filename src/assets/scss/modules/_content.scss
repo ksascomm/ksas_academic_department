@@ -152,19 +152,24 @@ p {
         @include font-stack-italic;
       }          
     }
-    li {
-      a {
-        border: none;
-        border-bottom: .125em solid;
-        border-bottom-color: $medium-gray;
-        background-color: transparent;
-        border-radius: 0;
-        transition: border-color,background-color,color;
-        transition-duration: 250ms,250ms,250ms;
-        transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
-        &:hover {
+    ul, ol {
+      line-height: 1.45;
+      letter-spacing: -.2px;
+      li {
+        margin-bottom: .5rem;
+        a {
+          border: none;
           border-bottom: .125em solid;
-          border-bottom-color: $dark-gray;
+          border-bottom-color: $medium-gray;
+          background-color: transparent;
+          border-radius: 0;
+          transition: border-color,background-color,color;
+          transition-duration: 250ms,250ms,250ms;
+          transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
+          &:hover {
+            border-bottom: .125em solid;
+            border-bottom-color: $dark-gray;
+          }
         }
       }
     }
