@@ -47,7 +47,7 @@ get_header(); ?>
 					 	</div>
 					</div>
 				</div>
-				<div class="orbit" role="region" aria-label="Highlighted Research by our Faculty" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+				<div class="orbit" role="region" aria-label="Highlighted Research by our Faculty" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; autoPlay:false;">
 					<ul class="orbit-container">
 
 					<?php if ($slider_query->post_count > 1 ) : ?>
