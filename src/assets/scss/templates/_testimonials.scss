@@ -51,7 +51,13 @@ $testimonial-container-image-size: rem-calc(190);
     text-align: center;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    &:hover, &:focus {
+      background-color: $darkblue;
+    }
+    &:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
   }
 }
 
