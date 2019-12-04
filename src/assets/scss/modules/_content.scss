@@ -150,7 +150,7 @@ p {
       }
       em, i {
         @include font-stack-italic;
-      }          
+      }      
     }
     ul, ol {
       line-height: 1.45;
@@ -171,6 +171,14 @@ p {
             border-bottom-color: $dark-gray;
           }
         }
+      }
+    }
+    h1, h2, h3, h4, h5 {
+      em, i {
+        font-style: inherit;
+      }
+      strong, b {
+        font-weight: inherit;
       }
     }
   }
