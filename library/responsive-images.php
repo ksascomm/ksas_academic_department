@@ -68,3 +68,14 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     return $html;
 }
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+//Redirect Attachment Pages To The Parent Post URL
+add_action( 'template_redirect', 'wpsites_attachment_redirect' );
+function wpsites_attachment_redirect() {
+	global $post;
+	if ( is_attachment() && isset($post->post_parent) && is_numeric($post->post_parent) && ($post->post_parent != 0) ) :
+	    wp_redirect( get_permalink( $post->post_parent ), 301 );
+	    exit();
+	    wp_reset_postdata();
+	    endif;
+}
