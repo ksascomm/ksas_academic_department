@@ -24,7 +24,8 @@
 			background-color: $white;
 			color: $blue;
 			&:hover {
-	        	background: $darkblue;
+	        	background: $blue;
+	        	border: 1px solid $white;
 	        	transition: color 0.5s ease;
 	      	}
 		}
@@ -37,7 +38,7 @@
 		color: $blue;
 	    &:hover {
 			color: $white;
-			background-color: $darkblue;
+			background-color: $blue;
 	    }
 	}
 }
@@ -50,7 +51,7 @@
 				border: 1px solid transparent;
 				&:hover {
 					border: 1px solid transparent;
-	        		background: $bluejaysblue;
+	        		background: $spiritblue;
 	        		transition: color 0.5s ease;	
 				}
 			}

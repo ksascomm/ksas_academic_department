@@ -93,9 +93,9 @@
   &.main-navigation {
     @include xy-grid-container;
     @include breakpoint(medium) { 
-      border-top: solid;
-      border-color: #4b88b1;
-      border-width: 1px;
+      //border-top: solid;
+      //border-color: $white;
+      //border-width: 1px;
     }
   }
   .top-bar-title a {
@@ -184,7 +184,7 @@
         color: $white;
       }
       &:hover:not(.button) {
-        background: $bluejaysblue;
+        background: darken($blue, 10%);
       }
       li:not(:last-child) {
         border-right: none;
@@ -202,17 +202,17 @@
       }
     }
     .current_page_parent.current_page_ancestor, .current_page_ancestor.is-dropdown-submenu-parent {
-      background: $skyblue;
+      background: darken($blue, 10%);
     }
   }
   .dropdown {
     .current_page_item {
-      background: $skyblue;
+      background: $blue;
     }
     .current_page_ancestor {
       .menu {
         .current_page_item {
-          background: $skyblue;
+          background: $blue;
           a {
             color: $white;
           }
@@ -281,12 +281,13 @@
         color: $black;
         @include font-stack-bold;
         &:hover:not(.button) {
-          background-color: $bluejaysblue;
+          background-color: $blue;
           color: $white;
         }
       }
-      &:hover {
-        background-color: $bluejaysblue;
+      &:hover, &:active {
+        color: $white;
+        background-color: $blue;
       }
       &:not(:last-child) {
         border-bottom: 1px solid $gray;
@@ -375,6 +376,9 @@
     a.button {
       padding: 0.7rem 1rem;
       color: $blue;
+      &:hover {
+        border: 1px solid $white;
+      }
     }
   }
   .roof-header-top-links {
@@ -422,6 +426,7 @@
 
 .secondary {
   background-color: $white;
+  border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
   a {
     color: $black;

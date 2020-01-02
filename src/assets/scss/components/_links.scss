@@ -5,7 +5,7 @@
 [data-whatinput="mouse"] a:focus, button:focus
 [data-whatinput="touch"] a:focus, button:focus {
   outline: none;
-  color: $bluejaysblue;
+  color: $spiritblue;
 }
 
 
@@ -36,7 +36,7 @@ footer.timely.ai1ec-event-footer {
     transition-duration: 250ms,250ms,250ms;
     transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
     &:hover {
-      color: $bluejaysblue;
+      color: $spiritblue;
       border-bottom: .125em solid;
       border-bottom-color: $dark-gray;
     }

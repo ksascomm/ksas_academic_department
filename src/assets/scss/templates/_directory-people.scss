@@ -82,12 +82,13 @@
   }
   .expertise-group {
     .button {
-      background: $skyblue;
+      background: $spiritblue;
+      color: $black !important;
       @include font-stack-bold;
       &.is-checked {
         background-color: transparent;
-        border: 1px solid $skyblue;
-        color: $skyblue;
+        border: 1px solid $spiritblue;
+        color: $black;
       }
     }
   }

@@ -1,25 +1,29 @@
 $dark-nav-color: #2C3840;
-$oldblue: #005eb8;
-$blue: #0057ac;
+$oldblack: #2C2C33;
+$black: #31261D;
+
+$blue: #002D72;
 $darkblue: #002D72;
+$spiritblue: #68ACE5;
+$oldblue: #005eb8;
+$bluejaysblue: #418fde;
+$skyblue: #2A78C7;
+$powderblue: lighten($bluejaysblue, 30%);
+
+$orange: #cf4520;
+$tangerine: #d07b00;
+$yellow: #cba052;
 $aqua: #00ab8e;
+$darkaqua: #589c90;
+$gold: #807350;
+$forest: #003d4c;
 $green: #007a53;
 $purple: #24135f;
 $red: #8a2a2b;
 $fireengine: #CF4520;
-$yellow: #cba052;
 $rust: #6f2c3f;
-$oldblack: #2C2C33;
-$black: #31261D;
-$bluejaysblue: #418fde;
-$skyblue: #2A78C7;
-$powderblue: lighten($bluejaysblue, 30%);
-$orange: #cf4520;
-$tangerine: #d07b00;
 $fushia: #8e3a80;
-$darkaqua: #589c90;
-$gold: #807350;
-$forest: #003d4c;
+
 $gray: #e5e2e0;       //overrides foundation core
 $dark-gray: #4A484C;  //overrides foundation core
 $medium-gray: #d6d6d6;

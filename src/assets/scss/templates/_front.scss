@@ -38,9 +38,15 @@
         @include font-stack;
         font-size: 1.25rem;
         line-height: 1.45;
-          strong {
-            @include font-stack-semibold;
-          }
+        strong {
+          @include font-stack-semibold;
+        }
+        a {
+          border-bottom: .0625rem solid;
+          border-bottom-color: $light-gray;
+          background-color: transparent;
+          border-radius: 0;
+        }
       }
     }
   }
