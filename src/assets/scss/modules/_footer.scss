@@ -29,15 +29,17 @@
     }
     .drilldown a {
       background: inherit;
-      color: $white;
+      color: inherit;
     }
     .is-drilldown-submenu-parent{
       background: $blue;
+      color: $white;
       @include font-stack-bold;
       font-size: 1.175rem;
       &:hover {
-        background-color: $oldblue;
-        transition: color 0.5s ease;
+        background-color: $white;
+        color: $blue;
+        //transition: color 0.5s ease;
       }
     }
     .drilldown .is-drilldown-submenu-parent > a::after {
@@ -51,7 +53,7 @@
           text-align: left;
           font-size: 1rem;
           @include font-stack-bold;
-          color: $white;          
+          color: $white;    
         }
       }
     }
@@ -59,7 +61,7 @@
       background: $oldblack;
     }
     .drilldown .js-drilldown-back > a::before {
-      border-color: transparent $blue transparent transparent;
+      border-color: transparent $white transparent transparent;
     }
   }
   #menu-footer-links {

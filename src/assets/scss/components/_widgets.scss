@@ -144,12 +144,12 @@
 	background: $powderblue;
 	background: url('../images/bg-radialWhiteLtBlue.jpg') bottom center;
 	.widget_title {
-		background: $spiritblue;
+		background: $blue;
 		h4, h5 {
 			font-size: 1.25rem;
 			@include widget-title;
 			text-align: center;
-			color: $black;
+			color: $white;
 			margin-bottom: 0;
 		}
 		padding: .75rem;
@@ -205,7 +205,7 @@
 		a {
 			color: $blue;
 		    &:hover {
-		    	color: $spiritblue;
+		    	color: $black;
 		    } 
 		}
 	}
@@ -239,7 +239,10 @@
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 				    &:hover, &:active {
-				        color: $black;
+				    	font-family: $font-stack-semibold;
+				    	font-weight: $font-stack-semibold-weight;
+          				color: $blue;
+          				box-shadow: inset 0 -2.5rem 0 0 $white;				        
 				    }   
 				}
 			}
@@ -256,9 +259,10 @@
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 				    &:hover {
-				    	color: $black;
-				    	border-bottom: .0625rem solid;
-				    	border-bottom-color: $dark-gray;
+				    	font-family: $font-stack-semibold;
+				    	font-weight: $font-stack-semibold-weight;
+          				color: $blue;
+          				box-shadow: inset 0 -2.5rem 0 0 $white;
 				    } 				
 				}
 			}
@@ -354,9 +358,10 @@
 			    transition-duration: 250ms,250ms,250ms;
 			    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 			    &:hover {
-			    	color: $black;
-			    	border-bottom: .0625rem solid;
-			    	border-bottom-color: $dark-gray;
+			    	font-family: $font-stack-semibold;
+			    	font-weight: $font-stack-semibold-weight;
+      				color: $blue;
+      				box-shadow: inset 0 -2.5rem 0 0 $white;
 			    }
 			}
 		}
@@ -374,9 +379,10 @@
 		    transition-duration: 250ms,250ms,250ms;
 		    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 		    &:hover {
-		    	color: $black;
-		    	border-bottom: .0625rem solid;
-		    	border-bottom-color: $dark-gray;
+				font-family: $font-stack-semibold;
+		    	font-weight: $font-stack-semibold-weight;
+				color: $blue;
+				box-shadow: inset 0 -2.5rem 0 0 $white;
 		    }
 		}
 	}

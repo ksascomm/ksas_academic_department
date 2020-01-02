@@ -10,8 +10,9 @@
 	background: $blue;
 	@include font-stack-semibold;
 	&:hover {
-		@include button-hover;
-		color: $white !important;
+		background-color: $white;
+    	color: $blue;
+    	border: 1px solid $blue;
     }
     &.news-archive {
 		font-size: 1rem;
@@ -27,12 +28,13 @@
 	        	background: $blue;
 	        	border: 1px solid $white;
 	        	transition: color 0.5s ease;
+	        	color: $white;
 	      	}
 		}
 	}
 }
 
-.roof-header-top {
+.roof-header-top .menu.simple  {
 	.button {
     	background-color: $white;
 		color: $blue;
