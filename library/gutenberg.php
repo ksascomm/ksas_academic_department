@@ -38,4 +38,32 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
 	// Disable custom font sizing
 	add_theme_support( 'disable-custom-font-sizes' );
 
+    // Enable widge alignments
+    add_theme_support( 'align-wide' );
+
 endif;
+
+/**
+ * Gutenberg scripts and styles
+ * @link https://www.billerickson.net/block-styles-in-gutenberg/
+ */
+function custom_gutenberg_scripts() {
+
+    wp_enqueue_script(
+        'custom-editor', 
+        get_stylesheet_directory_uri() . '/gutenberg-editor/editor.js', 
+        array( 'wp-blocks', 'wp-dom' ), 
+        filemtime( get_stylesheet_directory() . '/gutenberg-editor/editor.js' ),
+        true
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'custom_gutenberg_scripts' );
+
+add_action( 'after_setup_theme', 'custom_gutenberg_css' );
+ 
+function custom_gutenberg_css(){
+ 
+    add_theme_support( 'editor-styles' ); // if you don't add this line, your stylesheet won't be added
+    add_editor_style( 'gutenberg-editor/editor-style.css' ); // tries to include editor-style.css directly from your theme folder
+ 
+}
