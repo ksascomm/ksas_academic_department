@@ -185,7 +185,7 @@ p {
   h1, h2 {
     font-size: 1.75rem;
     @include font-stack-bold;
-    word-break: break-all;
+    //word-break: break-all;
     small {
       text-transform: uppercase;
       font-size: 55%;
