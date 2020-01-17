@@ -51,9 +51,11 @@
 			&.button {
 				background-color: $blue;
 				border: 1px solid transparent;
+				color: $white;
 				&:hover {
-					border: 1px solid transparent;
-	        		background: $spiritblue;
+					color: $blue;
+					border: 1px solid $blue;
+	        		background: $white;
 	        		transition: color 0.5s ease;	
 				}
 			}
