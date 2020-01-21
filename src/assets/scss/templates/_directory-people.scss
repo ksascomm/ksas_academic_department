@@ -74,7 +74,7 @@
     margin: .5rem;
     @include font-stack-bold;
     font-size: 1rem;
-    &.is-checked {
+    &.is-checked, &:hover {
       background-color: transparent;
       border: 1px solid $blue;
       color: $blue;
@@ -85,7 +85,7 @@
       background: $spiritblue;
       color: $black !important;
       @include font-stack-bold;
-      &.is-checked {
+      &.is-checked, &:hover {
         background-color: transparent;
         border: 1px solid $spiritblue;
         color: $black;
