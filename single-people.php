@@ -84,7 +84,7 @@ get_header(); ?>
                             <span class="fab fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta($post->ID, 'ecpt_microsoft_id', true); ?>" target="_blank"> Microsoft Academic Profile</a><br>
                                 <?php endif; ?>
                             <?php if (get_post_meta($post->ID, 'ecpt_orcid_id', true) ) : ?>
-                            <a href="http://orcid.org/<?php echo get_post_meta($post->ID, 'ecpt_orcid_id', true); ?>" target="_blank"><span class="fas fa-user"></span> ORCID Profile</a><br>
+                            <span class="fas fa-user"></span> <a href="http://orcid.org/<?php echo get_post_meta($post->ID, 'ecpt_orcid_id', true); ?>" target="_blank">ORCID Profile</a><br>
                             <?php endif; ?>
                             <?php if (get_post_meta($post->ID, 'ecpt_twitter', true) ) : ?>
                             <span class="fab fa-twitter"></span> <a href="https://twitter.com/<?php echo get_post_meta($post->ID, 'ecpt_twitter', true); ?>" target="_blank"> @<?php echo get_post_meta($post->ID, 'ecpt_twitter', true); ?></a>
