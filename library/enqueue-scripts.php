@@ -84,4 +84,4 @@ if (!(is_admin() )) {
 }
 
 //remove Tablepress default styles; use Foundation
-add_filter( 'tablepress_use_default_css', '__return_false' );
+//add_filter( 'tablepress_use_default_css', '__return_false' );
