@@ -234,3 +234,28 @@ footer.timely.ai1ec-event-footer {
     margin-bottom: 1rem;
   }
 }
+
+//Modern Tribe 
+#tribe-events-pg-template .tribe-events-content, .tribe-events-after-html, .tribe-events-before-html{
+  h3 {
+    font-size: 1.1875rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;   
+  }
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+#tribe-events .tribe-events-content p, .tribe-events-after-html p, .tribe-events-before-html p {
+  line-height: 1.6;
+}
+
+.tribe-events-notices {
+  @include callout-base;
+  @include callout(orange);
+}

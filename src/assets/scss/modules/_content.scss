@@ -141,10 +141,10 @@ p {
         @include font-stack-italic;
       }      
     }
-    ul, ol {
+    ul, ol, dl {
       line-height: 1.45;
       letter-spacing: -.2px;
-      li {
+      li, dd {
         margin-bottom: .5rem;
         a {
           border: none;
@@ -168,6 +168,11 @@ p {
       }
       strong, b {
         font-weight: inherit;
+      }
+    }
+    dl {
+      dt {
+         @include font-stack-bold;
       }
     }
   }
@@ -282,11 +287,11 @@ img.article {
 }
 
 blockquote, blockquote p {
-  color: $dark-gray;
+  color: $oldblack;
 }
 
 cite {
-  color: $spiritblue;
+  color: $black;
   font-size: 1rem;
   font-style: inherit;
   @include font-stack-semibold;

@@ -207,7 +207,7 @@
   }
   .dropdown {
     .current_page_item {
-      background: $blue;
+      background: darken($blue, 10%);
     }
     .current_page_ancestor {
       .menu {
