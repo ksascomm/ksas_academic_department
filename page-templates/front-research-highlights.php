@@ -23,7 +23,8 @@ get_header(); ?>
 	<?php endwhile; ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 
-<?php $slider_query = new WP_Query(
+<?php
+$slider_query = new WP_Query(
         array(
 			'post_type' => 'slider',
 			'posts_per_page' => 8,
@@ -53,12 +54,13 @@ get_header(); ?>
 					<?php if ($slider_query->post_count > 1 ) : ?>
 					
 					<div class="hide-for-small-only">
-						<button class="orbit-previous show-for-large" onclick="ga('send', 'event', 'Homepage Slider', 'Previous Slide Click');"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-						<button class="orbit-next show-for-large" onclick="ga('send', 'event', 'Homepage Slider', 'Next Slide Click');"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+						<button class="orbit-previous show-for-large" onclick="ga('send', 'event', 'Homepage Research Slider', 'Previous Slide Click');"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+						<button class="orbit-next show-for-large" onclick="ga('send', 'event', 'Homepage Research Slider', 'Next Slide Click');"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
 		   			</div>	
 					<?php endif;?>
 					
-					<?php while ($slider_query->have_posts() ) : $slider_query->the_post(); ?>
+					<?php  $slidernumber = 0;
+					while ($slider_query->have_posts() ) : $slider_query->the_post(); $slidernumber++; ?>
 						<li class="orbit-slide">
 							<div class="grid-x">
 								<div class="cell small-12 medium-6 large-5 large-offset-1">
@@ -71,7 +73,7 @@ get_header(); ?>
 									<?php endif;?>
 										<p><?php echo get_the_content(); ?></p>
 									   	<?php if ( get_post_meta($post->ID, 'ecpt_button', true) ) : ?>				
-												<p><a class="button" href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Research Slider', 'Read More Click');" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a></p>
+												<p><a class="button" href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Research Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>');" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a></p>
 										<?php endif;?>
 									</div>
 								</div>	
