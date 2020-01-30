@@ -252,10 +252,144 @@ footer.timely.ai1ec-event-footer {
 }
 
 #tribe-events .tribe-events-content p, .tribe-events-after-html p, .tribe-events-before-html p {
-  line-height: 1.6;
+    line-height: 1.45;
+    letter-spacing: -.2px;
+    margin-bottom: 1rem;
 }
 
 .tribe-events-notices {
   @include callout-base;
   @include callout(orange);
+}
+
+.categories  {
+  dd {
+    margin: 0;
+    display: inline;
+    a {
+      @include link;
+    }
+  }
+
+  dt {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+  }
+
+  dd:after {
+    content: '\a';
+    white-space: pre;
+  }
+}
+
+.tribe-events-meta-group.tribe-events-meta-group-details {
+  dd {
+    margin: 0;
+    display: inline;
+  }
+
+  dt {
+    display: inline-block;
+    margin: 0 0 5px 0;
+  }
+
+  dd:after {
+    content: '\a';
+    white-space: pre;
+  } 
+}
+
+.tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group {
+  width: inherit;
+}
+
+.single-tribe_events #tribe-events-content .tribe-events-event-meta dd.tribe-events-event-cost, .tribe-events-meta-group.tribe-events-meta-group-details {
+  font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+}
+
+.tribe-events-abbr.tribe-events-start-time.published.dtstart {
+  display: inline;
+}
+
+.tribe-events-meta-group .tribe-events-single-section-title {
+  font-size: 1.25rem;
+  font-family: $font-stack-bold;
+  font-weight: $font-stack-bold-weight;
+}
+
+a.tribe-events-gmap, .tribe-events-content p a {
+  @include link;
+}
+
+.tribe-events-event-image img {
+    //max-width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tribe-events-button {
+  margin-right: 1.25em;
+}
+
+.tribe-events-button.tribe-events-social {
+  margin-top: 21px;
+}
+
+//Widgets
+.widget.tribe-events-adv-list-widget {
+    background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
+    background-color: $white;
+    background-size: 2.666666666666667rem auto;
+    border: .06667rem solid $blue;
+    border-bottom: none;
+    box-shadow: 0 0.4rem 0 0 $blue;
+  .widget_title {
+    h4, h5 {
+      font-size: 1.25rem;
+      @include widget-title;
+      text-align: center;
+      padding: .75rem .75rem 0 .75rem;
+      margin-bottom: .5rem;
+    }
+  }  
+  .tribe-mini-calendar-event {
+    padding: 0 .5rem;
+    .list-info {
+      font-size: .9rem;
+      h2.tribe-events-title {
+        font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
+        font-size: 1.125rem;
+        margin-bottom: .5rem;
+      }
+      .tribe-events-duration {
+        font-size: .9rem;
+      }     
+    }    
+    .list-date {
+      background: $blue;
+    }
+    .list-dayname {
+      color: $black;
+      font-size: .75rem;
+    }
+    .tribe-section-s {
+      padding-top: 0;
+    }
+  } 
+  p.tribe-events-widget-link {
+    @include button;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    a {
+      color: $white;
+    }
+  }
+}
+
+.events-list {
+  .tribe-events-loop {
+    max-width: 1000px;
+  }
 }
