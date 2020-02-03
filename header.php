@@ -46,6 +46,7 @@
 		<?php wp_head(); ?>
 		
 		<!--Scripts-->
+		<script src="https://kit.fontawesome.com/ed22ca715b.js" crossorigin="anonymous"></script>
 		<?php get_template_part( 'template-parts/analytics' ); ?>
 		<?php get_template_part( 'template-parts/script-initiators' ); ?>
 		
