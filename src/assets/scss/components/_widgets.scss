@@ -255,12 +255,9 @@
 				    transition: border-color,background-color,color;
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
-				    &:hover {
-				    	font-family: $font-stack-semibold;
-				    	font-weight: $font-stack-semibold-weight;
-          				color: $blue;
-          				box-shadow: inset 0 -2.5rem 0 0 $white;
-				    } 				
+				    &:hover, &:active {
+				    	border-bottom-color: $black;			        
+				    }			
 				}
 			}
 		}		
@@ -375,11 +372,8 @@
 		    transition: border-color,background-color,color;
 		    transition-duration: 250ms,250ms,250ms;
 		    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
-		    &:hover {
-				font-family: $font-stack-semibold;
-		    	font-weight: $font-stack-semibold-weight;
-				color: $blue;
-				box-shadow: inset 0 -2.5rem 0 0 $white;
+		    &:hover, &:active {
+		    	border-bottom-color: $black;			        
 		    }
 		}
 	}
