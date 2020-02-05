@@ -35,16 +35,16 @@ p.wp-caption-text{
   @include xy-gutters($negative: true);
   @for $i from 1 through 9 {
     &.gallery-columns-#{$i} {
-      @include xy-grid-layout(2, '.gallery-item', true);
+      @include xy-grid-layout(2, '.gallery-item');
     }
     @include breakpoint(medium){
       &.gallery-columns-#{$i} {
-        @include xy-grid-layout(4, '.gallery-item', true, (small: 30px));
+        @include xy-grid-layout(4, '.gallery-item');
       }
     }
     @include breakpoint(large) {
       &.gallery-columns-#{$i} {
-        @include xy-grid-layout($i, '.gallery-item', true, (small: 30px));
+        @include xy-grid-layout($i, '.gallery-item');
       }
     }
   }
@@ -55,8 +55,4 @@ p.wp-caption-text{
   .gallery-icon > img {
     @include thumbnail;
   }
-}
-
-.sui-2-3-22 {
-  display: none;
 }

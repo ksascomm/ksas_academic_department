@@ -236,11 +236,18 @@ p {
         opacity: .7;
       }
     }
-  &.single-book {
-    img {
-      padding-bottom: 0rem;
+    &.single-book {
+      img {
+        padding-bottom: 0rem;
+      }
     }
-  }
+    .fp-gallery-item {
+      .fp-gallery-icon {
+        img {
+          max-width: inherit;
+        }
+      }
+    }
   }
 }
 .no-bullets {

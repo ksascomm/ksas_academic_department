@@ -60,6 +60,7 @@ if ( ! function_exists( 'foundationpress_cleanup_head' ) ) :
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
 
 		// Links for adjacent posts.
+		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); 
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
 
 		// WP version.
@@ -98,3 +99,11 @@ if ( ! function_exists( 'foundationpress_remove_recent_comments_style' ) ) :
 		}
 	}
 endif;
+
+function crave_remove_jquery_migrate( &$scripts) {
+	if(!is_admin()) {
+		$scripts->remove('jquery');
+		$scripts->add('jquery', false, array( 'jquery-core' ), '1.12.4');
+	}
+}
+add_action( 'wp_default_scripts', 'crave_remove_jquery_migrate' );
