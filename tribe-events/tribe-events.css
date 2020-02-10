@@ -1,0 +1,182 @@
+/* Bars & Titles */
+
+#tribe-events-bar { margin-bottom: 1rem; }
+.tribe-events-list-separator-month { margin: .25rem auto; }
+#tribe-bar-form .tribe-bar-submit input[type=submit] { background: #002d72; }
+.tribe-events-notices {
+	text-shadow: none;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    border-radius: 0px;
+    background-color: #fefefe;
+    color: #0a0a0a;
+    padding: 8px 35px 0px 14px;
+	font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+}
+
+.datepicker table tr td span.active.active, .datepicker table tr td span.active:hover, .datepicker table tr td span.active:hover.active, .datepicker table tr td span.active:hover:hover {
+	background: #002d72;
+	color: #fefefe;
+}
+
+/* List & Loop Display */
+.tribe-events-list .tribe-events-venue-details { margin: 0 0 1rem; }
+
+.tribe-events-list .type-tribe_events {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+}
+
+.tribe-events-loop .type-tribe_events.tribe-events-last {
+	padding-bottom: 0;
+}
+
+.tribe-events-loop .tribe-events-event-meta { font-size: 1rem; font-weight: inherit;}
+
+.tribe-event-schedule-details {font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;}
+
+.tribe-events-event-meta address.tribe-events-address, .tribe-events-list .tribe-events-venue-details {font-style: normal;}
+
+.tribe-events-list .type-tribe_events:first-of-type {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+/* Calendar & Loop Display */
+
+#tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.tribe-events-month-event-title {
+	font-family:'gentona-light', 'Helvetica Neue', Roboto, sans-serif;
+	font-size: .85rem;
+}
+
+.tribe-events-tooltip h3.entry-title, .tribe-events-tooltip .tribe-events-abbr.tribe-event-date-start, .tribe-events-tooltip .tribe-event-description {
+	color: #31261D;
+	font-size: 1.25rem;
+	line-height: 1.2;
+}
+
+.tribe-events-tooltip h3.entry-title {
+
+}
+
+
+.tribe-events-tooltip .tribe-events-abbr.tribe-event-date-start, .tribe-events-tooltip .tribe-event-description {
+	font-size: .75rem;
+}
+
+/*current day*/
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-], .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+	background-color:#68ACE5;
+	color: #31261D;
+}
+/*days of the week*/
+#tribe-events-content .tribe-events-calendar td {}
+.tribe-events-calendar thead th {
+	background-color: #002d72;
+	border-left: #002d72;
+	border-right: #002d72;
+}
+
+/*upcoming days*/
+.tribe-events-calendar div[id*=tribe-events-daynum-], .tribe-events-calendar div[id*=tribe-events-daynum-] a {
+	background-color: #4A484C;
+}
+
+
+/* Buttons */
+a.tribe-events-read-more {
+	display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem;
+    padding: .85em 1em;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-family: inherit;
+    font-size: .9rem;
+    -webkit-appearance: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #002D72;
+    color: #fefefe;
+    font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+}
+
+a.tribe-events-read-more:hover {
+	background-color: #fefefe;
+	color: #002d72;
+	border: 1px solid #002d72;
+}
+
+#tribe-events .tribe-events-button, #tribe-events .tribe-events-button:hover, #tribe_events_filters_wrapper input[type=submit], .tribe-events-button, .tribe-events-button.tribe-active:hover, .tribe-events-button.tribe-inactive, .tribe-events-button:hover {
+	background-color: #002D72;
+	font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+	font-size: .75rem;
+}
+
+/* Single Events */
+h2.tribe-events-schedule__datetime { font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif !important; }
+
+span.tribe-events-schedule__separator.tribe-events-schedule__separator--date, span.tribe-events-schedule__separator.tribe-events-schedule__separator--time  { 
+	color: inherit; 
+}
+
+.tribe-events-meta-group .tribe-events-single-section-title, .single-tribe_events #tribe-events-content .tribe-events-event-meta dt {
+	font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+}
+
+.tribe-events-single-section.tribe-events-event-meta.primary.tribe-clearfix, .single-tribe_events .tribe-events-event-meta > * {
+	font-size: 1.125rem !important;
+}
+
+
+.single-tribe_events .tribe-events-event-meta {
+	background:#f4f4f4;
+}
+
+.tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__address, .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__phone, .tribe-block__venue .tribe-block__venue__meta .tribe-block__venue__website {
+	color: inherit;
+}
+
+.tribe-block__event-price .tribe-block__event-price__cost, .tribe-block__event-price .tribe-block__event-price__description {
+	color: #31261D;
+	font-weight: inherit;
+	font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+}
+
+.tribe-events-schedule__date.tribe-events-schedule__date--start::before, .tribe-block__event-price__cost::before, .tribe-block__venue__name::before {
+	font-family: "Font Awesome 5 Free", "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+    color: #31261D;
+    font-size: 1.125rem;
+    padding-right: .2rem;
+    font-weight: 900;
+}
+
+.tribe-block__event-price__cost::before {
+    content: '\f155';
+}
+
+.tribe-events-schedule__date.tribe-events-schedule__date--start::before {
+	content: '\f073' ;
+}
+
+.tribe-block__venue__name::before {
+	content: '\f3c5';
+}
+
+address.tribe-block__venue__address {
+    padding-left: 1rem;
+}
+
+dd.tribe-venue {
+	font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+	margin-bottom: 0px !important;
+}
+
+
+/* Widgets */
+
+.tribe-events-list-widget {
+	background: #000;
+}

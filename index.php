@@ -26,7 +26,7 @@ get_header();
 
 				if ($news_query_cond === 1) {
 					$news_archive_query = new WP_Query(array(
-						'post_type' => 'post',
+						'post_type' => array('post'),
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'category',
@@ -39,7 +39,7 @@ get_header();
 						'paged' => $paged));
 				} else {
 					$news_archive_query = new WP_Query(array(
-						'post_type' => 'post',
+						'post_type' => array('post'),
 						'posts_per_page' => 10,
 						'paged' => $paged
 						)); 

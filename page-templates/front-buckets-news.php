@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Front (Buckets & No News)
+Template Name: Front (Buckets & News)
  * The template for displaying the a front page with 3 buckets via ACF
  * and 1 homepage widgets (if active).
  * Option for news or hub feed below buckets.
@@ -28,7 +28,9 @@ get_header(); ?>
 		</main>
 	<?php endwhile; ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
-	<?php if ( have_rows( 'explore_the_department' ) ) :?>
+	<?php if ( have_rows( 'explore_the_department' ) ) :
+		$num_cols = count( get_field('explore_the_department') ); ?>
+
 		<div class="buckets" aria-label="Explore the Department Section">
 			<?php $heading = get_field_object('explore_the_department');?>
 			<div class="grid-x grid-padding-x" aria-label="<?php echo $heading['label'] ?>">
@@ -38,12 +40,11 @@ get_header(); ?>
 			</div>
 			<div class="grid-x grid-padding-x">
 			<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
-
-			<?php if ( is_active_sidebar('homepage-sb')):?>
+				<?php if ($num_cols == "4") : ?>
 				<aside class="cell small-12 medium-6 large-3" aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
-			<?php else: ?>
+				<?php else: ?>	
 				<aside class="cell small-12 medium-6 large-4" aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
-			<?php endif;?>		
+				<?php endif;?>	
 					<div class="widget widget_text">
 						<div class="widget_title">
 							<h4>
@@ -56,12 +57,7 @@ get_header(); ?>
 					</div>
 				</aside>
 			<?php endwhile;?>
-				<?php if ( is_active_sidebar('homepage-sb')):?>
-					<div class="cell small-12 medium-6 large-3">
-						<?php dynamic_sidebar( 'homepage-sb' ); ?>
-					</div>
-				<?php endif;?>
-				</div>
+			</div>
 		</div>
 	<?php endif;?>
 
@@ -135,8 +131,10 @@ $news_query->the_post();
 					get_template_part( 'template-parts/hub-news' );
 				endif;
                 ?>
-
 			</div>
+			<div class="homepage sidebar">
+				<?php dynamic_sidebar( 'homepage-sb' ); ?>
+			</div>	
 		</div>
 	</div>
 <?php
