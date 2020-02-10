@@ -41,11 +41,17 @@ table thead {
 		font-size: .9rem;
 	}
 	.sorting:hover, .sorting_asc, .sorting_desc, .row-hover tr:hover td {
-    	background-color: $medium-gray !important;
+      background-color: $medium-gray !important;
   	}
   	tfoot th, thead th {
-		background: $light-gray!important;
+		  background: $light-gray!important;
 	}
+  .sorting, .sorting_asc, .sorting_desc {
+    outline: inherit !important;
+    &:focus {
+      outline: -webkit-focus-ring-color auto 5px !important;
+    }
+  }
 
 }
 
