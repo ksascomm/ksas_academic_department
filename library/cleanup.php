@@ -100,10 +100,10 @@ if ( ! function_exists( 'foundationpress_remove_recent_comments_style' ) ) :
 	}
 endif;
 
-function crave_remove_jquery_migrate( &$scripts) {
+function remove_jquery_migrate( &$scripts) {
 	if(!is_admin()) {
 		$scripts->remove('jquery');
 		$scripts->add('jquery', false, array( 'jquery-core' ), '1.12.4');
 	}
 }
-add_action( 'wp_default_scripts', 'crave_remove_jquery_migrate' );
+add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
