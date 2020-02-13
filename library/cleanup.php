@@ -107,3 +107,10 @@ function remove_jquery_migrate( &$scripts) {
 	}
 }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+// Autodirect gallery shortcode to file, not attachment page
+function my_gallery_default_type_set_link( $settings ) {
+    $settings['galleryDefaults']['link'] = 'file';
+    return $settings;
+}
+add_filter( 'media_view_settings', 'my_gallery_default_type_set_link');
