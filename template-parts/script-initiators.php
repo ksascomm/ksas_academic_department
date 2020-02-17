@@ -7,7 +7,7 @@
 
 <?php if (is_page_template('page-templates/courses-undergrad.php') || is_page_template('page-templates/courses-graduate.php') ) : ?>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.css"/>
-  <script type="text/javascript" src="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.js"></script>
+  <script type="text/javascript" defer src="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.js"></script>
   <script>
     jQuery(document).ready( function($) {
       $('a[aria-selected="true"]').on( 'shown.bs.tab', function (e) {
@@ -17,7 +17,10 @@
       $('table.course-table').DataTable( {
           "order": [[ 0, "asc" ]],
           "lengthMenu": [[15, 30, -1],[15, 30, "All"]],
-          "dom": '<"top"f>ilrt<"bottom"p><"clear">'
+          "dom": '<"top"f>ilrt<"bottom"p><"clear">',
+          "language": {
+            "emptyTable": "Courses have a status of Closed, or are unavailable at this time. Please try again later."
+          } 
       } );
   } );
   </script>
