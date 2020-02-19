@@ -3,7 +3,7 @@
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
 				<div class="media-object-section hide-for-print">
-					<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?> 's webpage"><?php $title=get_the_title();
+					<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" aria-label="<?php the_title(); ?> 's webpage"><?php $title=get_the_title();
 					the_post_thumbnail('directory', array('class' => 'hide-for-small-only', 'alt' => $title)); ?>
 					</a>							
 				</div>
@@ -17,7 +17,7 @@
 		<div class="media-object-section">
 			<h3>
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
-				<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" title="<?php the_title(); ?>'s webpage" target="_blank">
+				<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" aria-label="<?php the_title(); ?>'s website" target="_blank">
 					<?php the_title(); ?>
 				</a>
 			<?php else : ?>
