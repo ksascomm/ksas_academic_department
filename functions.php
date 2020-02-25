@@ -68,5 +68,8 @@ require_once( 'library/theme-options-init.php');
 require_once( 'library/page-metabox.php');
 require_once( 'library/open-graph.php');
 
+/** Gutenberg editor support */
+require_once( 'library/gutenberg.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
