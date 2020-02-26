@@ -161,6 +161,19 @@ p {
           }
         }
       }
+      ul, ol {
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        li {
+          line-height: 1.45;
+        }
+      }
+    }
+    ul ul { 
+      list-style-type: disc; 
+    }
+    ol ol {
+      list-style-type: lower-alpha;
     }
     h1, h2, h3, h4, h5 {
       em, i {
