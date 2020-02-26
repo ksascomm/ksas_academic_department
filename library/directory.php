@@ -30,7 +30,7 @@ function redirect_empty_bios() {
 		global $post;
 		$bio = get_post_meta($post->ID, 'ecpt_bio', true);
 		$link = get_post_meta($post->ID, 'ecpt_website', true);
-		if (has_term(array('faculty', 'tenured-and-tenure-track-faculty'), 'role')) {
+		if (has_term(array('faculty', 'tenured-and-tenure-track-faculty', 'joint-faculty' ,'advisory-board', 'ab-joint-and-secondary-appointments'), 'role')) {
 			if(empty($bio) && isset($link)) {
 			    wp_redirect(esc_url($link), 301);
 			    exit;
