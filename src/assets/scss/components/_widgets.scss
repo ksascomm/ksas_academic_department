@@ -637,3 +637,40 @@
 	}
 
 }
+
+
+.widget.home-featured {
+	.widget_title {
+		h3 {
+			font-size: 1.5rem;
+			text-align: center;
+		}
+	}
+	&.ksas_testimonial {
+		.widget_title {
+			h3 {
+				color: $white;
+			}
+		}
+	}
+	&.tribe-events-adv-list-widget {
+		background: $light-gray;
+		border: 1px solid $gray;
+		box-shadow: none;
+		padding: .5rem;
+		.tribe-events-widget-link {
+			&:hover {
+				@include button-hollow;
+				border: 1px solid $blue;
+				color: $blue;
+				a { color: $blue;
+				}
+			}			
+			a {
+				font-size: 0.75rem;
+				font-family: $font-stack-bold;
+				font-weight: $font-stack-bold-weight;
+			}
+		}
+	}
+}
