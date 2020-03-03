@@ -70,6 +70,18 @@ function foundationpress_sidebar_widgets() {
 
 			register_sidebar(
 			array(
+				'name'          => 'Homepage Featured Sidebar',
+				'id'            => 'homepage-featured-sb',
+				'description'   => 'This sidebar will only appear on the "Front (Buckets)" template',
+				'before_widget' => '<aside aria-label="%1$s" class="widget home-featured %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<div class="widget_title"><h3>',
+				'after_title'   => '</h3></div>',
+			)
+			);			
+
+			register_sidebar(
+			array(
 				'name'          => 'News Archive Sidebar',
 				'id'            => 'archive-sb',
 				'description'   => 'This sidebar will only appear on the news archive page',

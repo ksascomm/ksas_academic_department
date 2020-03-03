@@ -71,7 +71,24 @@ Frontend styles for gutenberg blocks
   @include button();
 }
 
-/** === Gallery === */
+/** === Image === */
+.post-singular .entry-content .wp-block-image {
+	img {
+		max-width: inherit !important;
+	}
+}
+
+.page {
+	.entry-content {
+		figure.wp-caption {
+			img {
+
+			}
+		}
+	}
+}
+
+/** === Image Gallery === */
 
 .entry-content {
 	ul.wp-block-gallery {

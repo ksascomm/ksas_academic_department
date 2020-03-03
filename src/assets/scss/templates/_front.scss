@@ -10,14 +10,14 @@
 // Intro
 .background-bluejaysblue {
   background: $powderblue;
-  padding-top: 1.25rem;
-  padding-bottom: 0px;
+  padding: 1rem 0;
 }
 .intro {
   @include xy-grid-container;
   @include xy-grid;
 
   .seo-intro {
+    padding: .75rem 0;
     @include breakpoint(small) {
       @include xy-cell(12);
     }
@@ -37,7 +37,11 @@
       p {
         @include font-stack;
         font-size: 1.25rem;
+        @include breakpoint (xlarge) {
+          font-size: 1.35rem;
+        }        
         line-height: 1.45;
+        margin-bottom: 0;
         strong {
           @include font-stack-semibold;
         }
@@ -70,6 +74,7 @@
     .main-content { order: 1; }
     .sidebar { order: 2; }
   }
+  padding-top: 1rem;
 }
 
 /*.home-widgets {
@@ -88,6 +93,7 @@
 
 .homepage-news {
   .news-title, .hub-title {
+    //margin-bottom: 1rem;
     h2 {
       font-size: 1.5rem;
       @include font-header-extrabold;
@@ -128,6 +134,9 @@
   border-top: 1px solid $gray;
   &:first-of-type{
     border-top: none;
+  }
+  &.wp-sticky {
+    margin-top: 1rem;
   }
 }
 .hub-article {
@@ -442,16 +451,109 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
     outline: -webkit-focus-ring-color auto 5px !important;
   }
 }
-
+.bucket-area {
+  background-image: url('https://krieger.jhu.edu/wp-content/themes/ksas_flagship_2017/assets/images/frontpage/ag-square.png')
+}
 .buckets {
-  padding-top: 1.25rem;
+  //padding-top: 1.25rem;
+  padding: 2.5rem 0;
   @include xy-grid-container;
   @include xy-grid;  
-  h2 {     
-    font-size: 1.75rem;
-    @include font-header-extrabold;
+  .explore-title {
+    h2 {
+      margin: 0 0 1.875rem;
+      font-size: 1.75rem;
+      @include font-header-extrabold;
+    }
+  }
+  .widget {
+    //background: none;
   }
   .widget_title {
     padding-bottom: .25rem !important;
+  }
+  .textwidget.bucket {
+    p {
+      font-size: 1rem;
+    }
+  }
+  .bucket {
+    a {
+      color: $black;
+      &:focus, &:hover {
+        img {
+          opacity: .7;
+        }
+        h3 {
+          color: $black;
+        }
+        
+      }
+    }
+    .bucket-title {
+      h3 {
+        color: $blue;
+        font-size: 1.5rem
+      }
+    }
+    .bucket-text {
+      p {
+        color: $black;
+      }
+    }
+    .bucket-image {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.hero {
+  .full-screen-image {
+    position: relative;
+    .front-hero {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: rem-calc(150);
+        @include breakpoint(medium) {
+          height: rem-calc(250);
+        }
+        @include breakpoint(xlarge) {
+          height: rem-calc(400);
+        }
+      .caption {
+        position: absolute;
+        right: 5%;
+        bottom: 50%;
+        -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        transform: translateY(50%);
+        color: $white;
+        width: 550px;
+        padding: 2rem 4rem;
+        font-size: 1.25rem;
+        background-color: rgba(44, 44, 51, 0.66);
+        @include breakpoint(large) {
+          padding: 1rem 2rem;
+          p {
+            font-size: 1.125rem;
+            font-family: $font-stack-semibold;
+            font-weight: $font-stack-semibold-weight;
+            line-height: 1.25;
+          }
+          h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 2px #000;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.75);
+          }
+        }
+        @include breakpoint (xlarge) {
+          padding: 2rem 4rem;
+          p {
+             font-size: 1.25rem;
+          }
+        }     
+      }            
+    }
   }
 }
