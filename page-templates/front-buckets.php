@@ -32,7 +32,7 @@ get_header(); ?>
 
 		<?php //if slider, show those posts
 		if ( $hero_query->have_posts() ) :  while ($hero_query->have_posts() ) : $hero_query->the_post(); ?>
-			<div class="front-hero" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('full'); ?>, large], [<?php the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="Featured Image">
+			<div class="front-hero slide" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('full'); ?>, large], [<?php the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="Featured Image">
 					<?php endwhile; wp_reset_postdata(); ?>
 				<?php if( get_field('studyfield') ): ?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 		<?php //if slider query empty, show post thumbnail
 		else : ?>
 			<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-				<div class="front-hero" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('full'); ?>, large], [<?php the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="Featured Image">
+				<div class="front-hero static" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('full'); ?>, large], [<?php the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="Featured Image">
 			<?php endif; ?>
 				<?php if( get_field('studyfield') ): ?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
