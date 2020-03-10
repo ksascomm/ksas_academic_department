@@ -2,7 +2,7 @@
 
 For academic departments, program, centers, and institutes that are housed within the Krieger School.
 
-This theme is built off [FoundationPress](https://github.com/olefredrik/FoundationPress). Uses Foundation 6.4.3!
+This theme is built off [FoundationPress](https://github.com/olefredrik/FoundationPress). Uses Foundation 6.6.1!
 
 ## Quickstart
 
