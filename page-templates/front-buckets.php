@@ -88,14 +88,14 @@ $sidebarActive = is_active_sidebar('homepage-featured-sb');?>
 			<div class="cell " aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 				<div class="bucket"  data-equalizer-watch>
 					<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>">
-						<?php $image = get_sub_field('explore_bucket_image');?>
+						<?php $image = get_sub_field('explore_bucket_image');
+						if(get_sub_field('explore_bucket_image')):?>
 						<div class="bucket-image">
 							<?php echo wp_get_attachment_image( $image['ID'], 'full',false, array( 'class' => '' ) ); ?>
 						</div>
+						<?php endif;?>
 						<div class="bucket-title">
-							<h3>
-								<?php the_sub_field( 'explore_bucket_heading' ); ?>
-							</h3>
+							<h3><?php the_sub_field( 'explore_bucket_heading' ); ?></h3>
 						</div>
 						<div class="bucket-text">
 							<p><?php the_sub_field( 'explore_bucket_text' ); ?></p>
