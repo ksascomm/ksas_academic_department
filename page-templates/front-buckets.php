@@ -66,27 +66,27 @@ get_header(); ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 <?php if ( have_rows( 'explore_the_department' ) ):
 $count = count(get_field('explore_the_department'));
-$sidebarActive = is_active_sidebar('homepage-featured-sb');?>
+$featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
 <div class="bucket-area">
-	<div class="buckets" aria-label="Explore the Department Section">
+	<div class="buckets">
 		<?php $heading = get_field_object('explore_the_department');?>
-		<div class="grid-x grid-padding-x" aria-label="<?php echo $heading['label'] ?>">
-			<div class="cell explore-title">
+		<div class="grid-x grid-padding-x">
+			<header class="cell explore-title" aria-label="<?php the_field( 'buckets_heading' ); ?>">
 				<h2><?php the_field( 'buckets_heading' ); ?></h2>
-			</div>
+			</header>
 		</div>
-		<?php if ($count == 2 && $sidebarActive):?>
+		<?php if ($count == 2 && $featuredSidebar):?>
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="large">
-		<?php elseif($count == 3 && $sidebarActive):?>
+		<?php elseif($count == 3 && $featuredSidebar):?>
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-4" data-equalizer data-equalize-on="large">
-		<?php elseif($count == 3 && !$sidebarActive):?>
+		<?php elseif($count == 3 && !$featuredSidebar):?>
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="large">
-		<?php elseif ($count == 2 && !$sidebarActive):?>
+		<?php elseif ($count == 2 && !$featuredSidebar):?>
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-2" data-equalizer data-equalize-on="large">
 		<?php endif;?>
 		<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
 			<div class="cell " aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
-				<div class="bucket"  data-equalizer-watch>
+				<article class="bucket"  data-equalizer-watch aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 					<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>">
 						<?php $image = get_sub_field('explore_bucket_image');
 						if(get_sub_field('explore_bucket_image')):?>
@@ -101,10 +101,10 @@ $sidebarActive = is_active_sidebar('homepage-featured-sb');?>
 							<p><?php the_sub_field( 'explore_bucket_text' ); ?></p>
 						</div>	
 					</a>
-				</div>
+				</article>
 			</div>
 		<?php endwhile;?>
-			<?php if ( $sidebarActive):?>
+			<?php if ( $featuredSidebar):?>
 				<div class="cell">
 					<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
 				</div>
