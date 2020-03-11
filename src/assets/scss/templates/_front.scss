@@ -41,7 +41,9 @@
           font-size: 1.35rem;
         }        
         line-height: 1.45;
-        margin-bottom: 0;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
         strong {
           @include font-stack-semibold;
         }
