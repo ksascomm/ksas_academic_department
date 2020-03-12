@@ -3,19 +3,21 @@
     background-color: $maroon;
     color: $white;
     text-align: center;
-	a {
-		font-family: $font-stack-bold;
-		font-weight: $font-stack-bold-weight;
-		width: 100%;
-    	padding: .5em;
-    	padding-right: 2.75em;
-   		border: none;
-    	display: block;
-    	color: $white;
-    	line-height: 1em;
-	}
-	&:hover {
+    padding: .5rem;
+	&:hover, &:focus, &:focus-within {
 		background-color:$rust;
     	transition: background-color 250ms ease-in-out,color 250ms ease-in-out;
-	}
+	}      
+    a {
+        font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
+        width: 100%;
+        border: none;
+        display: block;
+        color: $white;
+        &:focus, &:focus-within {
+            display: initial;
+            outline: -webkit-focus-ring-color auto 5px;
+        }              
+    }    
 }
