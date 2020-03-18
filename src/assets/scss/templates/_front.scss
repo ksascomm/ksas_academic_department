@@ -535,13 +535,12 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
         padding: 2rem 4rem;
         font-size: 1.25rem;
         background-color: rgba(44, 44, 51, 0.66);
+        font-family: $font-stack-semibold;
+        font-weight: $font-stack-semibold-weight;        
         @include breakpoint(large) {
           padding: 1rem 2rem;
-          p {
-            font-size: 1.125rem;
-            font-family: $font-stack-semibold;
-            font-weight: $font-stack-semibold-weight;
-            line-height: 1.25;
+          p, li {
+            font-size: 1.25rem;
           }
           h1 {
             font-size: 2rem;
@@ -550,10 +549,7 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
           }
         }
         @include breakpoint (xlarge) {
-          padding: 2rem 4rem;
-          p {
-             font-size: 1.25rem;
-          }
+          
         }     
       }            
     }
