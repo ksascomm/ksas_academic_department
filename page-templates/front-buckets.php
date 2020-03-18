@@ -74,7 +74,7 @@ $featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
 		<?php if($heading):?>
 		<div class="grid-x grid-padding-x">
 			<header class="cell explore-title" aria-label="<?php the_field( 'buckets_heading' ); ?>">
-				<h2><?php echo $heading['value']; ?></h2>
+				<h2><?php echo $heading;?></h2>
 			</header>
 		</div>
 		<?php endif;?>
