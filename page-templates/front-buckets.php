@@ -69,12 +69,16 @@ $count = count(get_field('explore_the_department'));
 $featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
 <div class="bucket-area">
 	<div class="buckets">
-		<?php $heading = get_field_object('explore_the_department');?>
+		<?php $heading = get_field('buckets_heading');?>
+		<!--Print Heading if there-->
+		<?php if($heading):?>
 		<div class="grid-x grid-padding-x">
 			<header class="cell explore-title" aria-label="<?php the_field( 'buckets_heading' ); ?>">
-				<h2><?php the_field( 'buckets_heading' ); ?></h2>
+				<h2><?php echo $heading['value']; ?></h2>
 			</header>
 		</div>
+		<?php endif;?>
+		<!--Show Columns Dynamically-->
 		<?php if ($count == 2 && $featuredSidebar):?>
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="large">
 		<?php elseif($count == 3 && $featuredSidebar):?>
@@ -85,6 +89,7 @@ $featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-2" data-equalizer data-equalize-on="large">
 		<?php endif;?>
 		<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
+			<!--Loop through each repeater field-->
 			<div class="cell " aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 				<article class="bucket"  data-equalizer-watch aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 					<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>">
@@ -105,6 +110,7 @@ $featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
 			</div>
 		<?php endwhile;?>
 			<?php if ( $featuredSidebar):?>
+				<!--Show Featured Widget-->
 				<div class="cell">
 					<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
 				</div>
