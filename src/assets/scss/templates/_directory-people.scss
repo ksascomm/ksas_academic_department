@@ -137,6 +137,13 @@ ul.expander > li {
   min-height: 0px !important;
 }
 
+.people-content {
+  strong, b {
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
+  }
+}
+
 /* Start: Recommended Isotope styles */
 
 /**** Isotope Filtering ****/
