@@ -11,7 +11,7 @@
 ?>
 
 <header class="page-header">
-	<h1 class="page-title"><?php _e( 'Nothing Found', 'foundationpress' ); ?></h1>
+	<h1 class="page-title"><?php _e( 'Nothing Found', 'ksasacademic' ); ?></h1>
 </header>
 
 <div class="page-content">
@@ -22,7 +22,7 @@
 			/* translators: %1$s: new post url */
 			printf(
                 __(
-				'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'foundationpress'
+				'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'ksasacademic'
                 ),
 				admin_url( 'post-new.php' )
 			);
@@ -31,12 +31,12 @@
 
 	<?php elseif ( is_search() ) : ?>
 
-	<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'foundationpress' ); ?></p>
+	<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ksasacademic' ); ?></p>
 	<?php get_search_form(); ?>
 
 	<?php else : ?>
 
-	<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'foundationpress' ); ?></p>
+	<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ksasacademic' ); ?></p>
 	<?php get_search_form(); ?>
 
 	<?php endif; ?>

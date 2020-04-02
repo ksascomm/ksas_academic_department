@@ -31,12 +31,12 @@ $flagship_sub_option = flagship_sub_get_global_options();
 function flagship_sub_options_page_sections() {
 
 	$sections = array();
-	// $sections[$id] 				= __($title, 'flagship_sub_textdomain');
-	$sections['homepage_section']   = __('Homepage Options', 'flagship_sub_textdomain');
-	$sections['select_section']     = __('Content Options', 'flagship_sub_textdomain');
-	$sections['footer_section']     = __('Footer Options', 'flagship_sub_textdomain');
-	$sections['technical_section']  = __('Technical Options', 'flagship_sub_textdomain');
-	$sections['directory_section']  = __('Directory Search Options', 'flagship_sub_textdomain');
+	// $sections[$id] 				= __($title, 'ksasacademic');
+	$sections['homepage_section']   = __('Homepage Options', 'ksasacademic');
+	$sections['select_section']     = __('Content Options', 'ksasacademic');
+	$sections['footer_section']     = __('Footer Options', 'ksasacademic');
+	$sections['technical_section']  = __('Technical Options', 'ksasacademic');
+	$sections['directory_section']  = __('Directory Search Options', 'ksasacademic');
 	return $sections;
 }
 
@@ -52,8 +52,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_feed_name',
-		'title'   => __( 'Homepage Sub-head', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter the headline for the news feed on the homepage', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Homepage Sub-head', 'ksasacademic' ),
+		'desc'    => __( 'Enter the headline for the news feed on the homepage', 'ksasacademic' ),
 		'type'    => 'text',
 		'class'   => 'nohtml',
 		'std'    => '',
@@ -62,8 +62,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_news_quantity',
-		'title'   => __( 'Homepage Posts', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter the number of posts you would like displayed on the homepage', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Homepage Posts', 'ksasacademic' ),
+		'desc'    => __( 'Enter the number of posts you would like displayed on the homepage', 'ksasacademic' ),
 		'type'    => 'text',
 		'class'   => 'numeric',
 		'std'    => '',
@@ -72,8 +72,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'directory_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_directory_search',
-		'title'   => __( 'Directory Search', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want a search box for your people directory?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Directory Search', 'ksasacademic' ),
+		'desc'    => __( 'Do you want a search box for your people directory?', 'ksasacademic' ),
 		'type'    => 'checkbox',
 		'std'    => '1',
 	);
@@ -81,8 +81,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'technical_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_google_analytics',
-		'title'   => __( 'Google Analytics ID', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter your Google Analytics ID ie. UA-2497774-9', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Google Analytics ID', 'ksasacademic' ),
+		'desc'    => __( 'Enter your Google Analytics ID ie. UA-2497774-9', 'ksasacademic' ),
 		'type'    => 'text',
 		'class'   => 'nohtml',
 		'std'    => 'UA-40512757-1',
@@ -91,8 +91,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'footer_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_quicklinks',
-		'title'   => __( 'Quicklinks', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to use quicklinks from another site?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Quicklinks', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to use quicklinks from another site?', 'ksasacademic' ),
 		'type'    => 'checkbox',
 		'std'    => '1',
 	);
@@ -100,8 +100,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'footer_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_quicklinks_id',
-		'title'   => __( 'Quicklinks Site ID', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter the site ID for the quicklinks you would like to use. krieger.jhu.edu is 1', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Quicklinks Site ID', 'ksasacademic' ),
+		'desc'    => __( 'Enter the site ID for the quicklinks you would like to use. krieger.jhu.edu is 1', 'ksasacademic' ),
 		'type'    => 'text',
 		'class'   => 'numeric',
 		'std'    => '1',
@@ -110,8 +110,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'footer_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_copyright',
-		'title'   => __( 'Department Address', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter the department address', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Department Address', 'ksasacademic' ),
+		'desc'    => __( 'Enter the department address', 'ksasacademic' ),
 		'type'    => 'textarea',
 		'std'    => 'Zanvyl Krieger School of Arts & Sciences',
 	);
@@ -119,8 +119,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'directory_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_role_search',
-		'title'   => __( 'Filter by Role', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to be able to filter by role (faculty, research staff, emertiti)?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Filter by Role', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to be able to filter by role (faculty, research staff, emertiti)?', 'ksasacademic' ),
 		'type'    => 'checkbox',
 		'std'    => '0',
 	);
@@ -128,8 +128,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'directory_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_research_search',
-		'title'   => __( 'Filter by Expertise', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to be able to filter by expertise/research area?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Filter by Expertise', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to be able to filter by expertise/research area?', 'ksasacademic' ),
 		'type'    => 'checkbox',
 		'std'    => '0',
 	);
@@ -137,8 +137,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_news_query_cond',
-		'title'   => __( 'News Feed Option', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to exclude faculty books from your news feeds?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'News Feed Option', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to exclude faculty books from your news feeds?', 'ksasacademic' ),
 		'type'    => 'checkbox',
 		'std'    => '0',
 	);
@@ -146,8 +146,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'technical_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_isis_name',
-		'title'   => __( 'SIS Department Name', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter the SIS department name', 'flagship_sub_textdomain' ),
+		'title'   => __( 'SIS Department Name', 'ksasacademic' ),
+		'desc'    => __( 'Enter the SIS department name', 'ksasacademic' ),
 		'type'    => 'text',
 		'class'   => 'nohtml',
 		'std'    => '',
@@ -156,8 +156,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_cond',
-		'title'   => __( 'Hub Feed Option', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to display articles from The Hub?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Hub Feed Option', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to display articles from The Hub?', 'ksasacademic' ),
 		'type'    => 'checkbox',
 		'std'    => '0',
 	);
@@ -165,8 +165,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_topic_keyword',
-		'title'   => __( 'Hub Topic or Keywords?', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to display Hub articles via topic or keyword? You may only select one.' ),
+		'title'   => __( 'Hub Topic or Keywords?', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to display Hub articles via topic or keyword? You may only select one.','ksasacademic' ),
 		'type'    => 'select',
 		'choices' => array(' ', 'topic', 'keyword'),
 		'std'    => ' ',
@@ -175,8 +175,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_keywords',
-		'title'   => __( 'Hub Keywords', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Enter keywords. Use hyphens instead of spaces (comma separated, no spaces) ie. physics,arts-and-sciences.', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Hub Keywords', 'ksasacademic' ),
+		'desc'    => __( 'Enter keywords. Use hyphens instead of spaces (comma separated, no spaces) ie. physics,arts-and-sciences.', 'ksasacademic' ),
 		'type'    => 'text',
 		'class'   => 'nohtml',
 		'std'    => '',
@@ -185,8 +185,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'homepage_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_hub_topic',
-		'title'   => __( 'Hub Topics', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Choose a relevant Hub Topic from the list above' ),
+		'title'   => __( 'Hub Topics', 'ksasacademic' ),
+		'desc'    => __( 'Choose a relevant Hub Topic from the list above','ksasacademic' ),
 		'type'    => 'select',
 		'choices' => array(' ', 'arts-culture', 'at-work', 'health', 'politics-society', 'science-technology', 'student-life', 'university-news', 'voices-opinion'),
 		'std'    => ' ',
@@ -195,8 +195,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'select_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_shield',
-		'title'   => __( 'Shield', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Which shield should appear in the header?', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Shield', 'ksasacademic' ),
+		'desc'    => __( 'Which shield should appear in the header?', 'ksasacademic' ),
 		'type'    => 'select',
 		'choices' => array('ksas','jhu','custom'),
 		'std'     => 'ksas',
@@ -205,8 +205,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'select_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_shield_location',
-		'title'   => __( 'Custom Shield Location', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Paste the media url for custom JHU shields', 'flagship_sub_textdomain' ),
+		'title'   => __( 'Custom Shield Location', 'ksasacademic' ),
+		'desc'    => __( 'Paste the media url for custom JHU shields', 'ksasacademic' ),
 		'type'    => 'text',
 		'std'     => '',
 	);
@@ -214,8 +214,8 @@ function flagship_sub_options_page_fields() {
 	array(
 		'section' => 'technical_section',
 		'id'      => FLAGSHIP_SUB_SHORTNAME . '_siteimprove_analytics',
-		'title'   => __( 'Siteimprove Analytics', 'flagship_sub_textdomain' ),
-		'desc'    => __( 'Do you want to display the Siteimprove Analytics script?', 'flagship_sub_textdomain'  ),
+		'title'   => __( 'Siteimprove Analytics', 'ksasacademic' ),
+		'desc'    => __( 'Do you want to display the Siteimprove Analytics script?', 'ksasacademic'  ),
 		'type'    => 'checkbox',
 		'std'    => '0',
 	);	

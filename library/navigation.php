@@ -9,9 +9,9 @@
 
 register_nav_menus(
      array(
-		 'top-bar-r'  => esc_html__( 'Right Top Bar', 'foundationpress' ),
-		 'mobile-nav' => esc_html__( 'Mobile', 'foundationpress' ),
-		 'quick_links' => esc_html__( 'Quick Links', 'foundationpress' ),
+		 'top-bar-r'  => esc_html__( 'Right Top Bar', 'ksasacademic' ),
+		 'mobile-nav' => esc_html__( 'Mobile', 'ksasacademic' ),
+		 'quick_links' => esc_html__( 'Quick Links', 'ksasacademic' ),
 	 )
     );
 
@@ -46,7 +46,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 		wp_nav_menu(
              array(
 				 'container'      => false,                         // Remove nav container
-			'menu'           => __( 'mobile-nav', 'foundationpress' ),
+			'menu'           => __( 'mobile-nav', 'ksasacademic' ),
 			'menu_class'     => 'vertical menu',
 			'theme_location' => 'mobile-nav',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true" aria-label="Mobile Navigation">%3$s</ul>',

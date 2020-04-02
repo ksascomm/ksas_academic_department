@@ -53,6 +53,6 @@ $faculty_post_id = get_post_meta($post->ID, 'ecpt_pub_author', true);
 					</li>
 				</ul>
 			<?php the_content(); ?>
-			<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 </article>

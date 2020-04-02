@@ -14,15 +14,15 @@ function wpt_register_theme_customizer( $wp_customize ) {
          'mobile_menu_settings', array(
 			 'priority'       => 1000,
 			 'theme_supports' => '',
-			 'title'          => __( 'Mobile Menu Settings', 'foundationpress' ),
-			 'description'    => __( 'Controls the mobile menu', 'foundationpress' ),
+			 'title'          => __( 'Mobile Menu Settings', 'ksasacademic' ),
+			 'description'    => __( 'Controls the mobile menu', 'ksasacademic' ),
 		 )
 			);
 
 			// Create custom field for mobile navigation layout
 			$wp_customize->add_section(
 			 'mobile_menu_layout' , array(
-				 'title'    => __('Mobile navigation layout','foundationpress'),
+				 'title'    => __('Mobile navigation layout','ksasacademic'),
 				 'panel'    => 'mobile_menu_settings',
 				 'priority' => 1000,
 			 )
@@ -32,7 +32,7 @@ function wpt_register_theme_customizer( $wp_customize ) {
 			$wp_customize->add_setting(
 			'wpt_mobile_menu_layout',
 			array(
-				'default' => __( 'topbar', 'foundationpress' ),
+				'default' => __( 'topbar', 'ksasacademic' ),
 			)
 			);
 

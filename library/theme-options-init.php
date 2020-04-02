@@ -35,7 +35,7 @@ function flagship_sub_get_settings() {
 
 	// put together the output array
 	$output['flagship_sub_option_name']         = 'flagship_sub_options'; // the option name as used in the get_option() call.
-	$output['flagship_sub_page_title']      = __( 'Theme Options','flagship_sub_textdomain'); // the settings page title
+	$output['flagship_sub_page_title']      = __( 'Theme Options','ksasacademic'); // the settings page title
 	$output['flagship_sub_page_sections']   = flagship_sub_options_page_sections(); // the setting section
 	$output['flagship_sub_page_fields']         = flagship_sub_options_page_fields(); // the setting fields
 
@@ -120,7 +120,7 @@ function flagship_sub_add_menu() {
 
 	// Display Settings Page link under the "Appearance" Admin Menu
 	// add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function);
-	$flagship_sub_settings_page = add_theme_page(__('Theme Options'), __('Theme Options','flagship_sub_textdomain'), 'edit_theme_options', FLAGSHIP_SUB_PAGE_BASENAME, 'flagship_sub_settings_page_fn');
+	$flagship_sub_settings_page = add_theme_page(__('Theme Options'), __('Theme Options','ksasacademic'), 'edit_theme_options', FLAGSHIP_SUB_PAGE_BASENAME, 'flagship_sub_settings_page_fn');
 		// contextual help
 		// css & js
 /* 		add_action( 'load-'. $flagship_sub_settings_page, 'flagship_sub_settings_scripts' );	 */
@@ -136,7 +136,7 @@ function flagship_sub_add_menu() {
  * @return echoes output
  */
 function flagship_sub_section_fn( $desc ) {
-	echo '<p>' . __('Settings for this section','flagship_sub_textdomain') . '</p>';
+	echo '<p>' . __('Settings for this section','ksasacademic') . '</p>';
 }
 
 /*
@@ -174,7 +174,7 @@ function flagship_sub_form_field_fn( $args = array() ) {
 		case 'multi-text':
 			foreach ($choices as $item ) {
 				$item = explode('|',$item); // cat_name|cat_slug
-				$item[0] = esc_html__($item[0], 'flagship_sub_textdomain');
+				$item[0] = esc_html__($item[0], 'ksasacademic');
 				if ( ! empty($options[ $id ]) ) {
 					foreach ($options[ $id ] as $option_key => $option_val ) {
 						if ($item[1] == $option_key ) {
@@ -199,8 +199,8 @@ function flagship_sub_form_field_fn( $args = array() ) {
 		case 'select':
 			echo "<select id='$id' class='select$field_class' name='" . $flagship_sub_option_name . "[$id]'>";
 				foreach ($choices as $item ) {
-				$value  = esc_attr($item, 'flagship_sub_textdomain');
-				$item   = esc_html($item, 'flagship_sub_textdomain');
+				$value  = esc_attr($item, 'ksasacademic');
+				$item   = esc_html($item, 'ksasacademic');
 
 				$selected = ($options[ $id ] == $value) ? 'selected="selected"' : '';
 				echo "<option value='$value' $selected>$item</option>";
@@ -214,7 +214,7 @@ function flagship_sub_form_field_fn( $args = array() ) {
 			foreach ($choices as $item ) {
 
 				$item = explode('|',$item);
-				$item[0] = esc_html($item[0], 'flagship_sub_textdomain');
+				$item[0] = esc_html($item[0], 'ksasacademic');
 
 				$selected = ($options[ $id ] == $item[1]) ? 'selected="selected"' : '';
 				echo "<option value='$item[1]' $selected>$item[0]</option>";
@@ -232,7 +232,7 @@ function flagship_sub_form_field_fn( $args = array() ) {
 			foreach ($choices as $item ) {
 
 				$item = explode('|',$item);
-				$item[0] = esc_html($item[0], 'flagship_sub_textdomain');
+				$item[0] = esc_html($item[0], 'ksasacademic');
 
 				$checked = '';
 
@@ -311,7 +311,7 @@ function flagship_sub_validate_options( $input ) {
 							add_settings_error(
 								$option['id'], // setting title
 								FLAGSHIP_SUB_SHORTNAME . '_txt_numeric_error', // error ID
-								__('Expecting a Numeric value! Please fix.','flagship_sub_textdomain'), // error message
+								__('Expecting a Numeric value! Please fix.','ksasacademic'), // error message
 								'error' // type of message
 							);
 						}
@@ -324,7 +324,7 @@ function flagship_sub_validate_options( $input ) {
 
 						if ($input[ $option['id'] ] != '' ) {
 							// /^-?\d+(?:,\s?-?\d+)*$/ matches: -1 | 1 | -12,-23 | 12,23 | -123, -234 | 123, 234  | etc.
-							$valid_input[ $option['id'] ] = (preg_match('/^-?\d+(?:,\s?-?\d+)*$/', $input[ $option['id'] ]) == 1) ? $input[ $option['id'] ] : __('Expecting comma separated numeric values','flagship_sub_textdomain');
+							$valid_input[ $option['id'] ] = (preg_match('/^-?\d+(?:,\s?-?\d+)*$/', $input[ $option['id'] ]) == 1) ? $input[ $option['id'] ] : __('Expecting comma separated numeric values','ksasacademic');
 							}else {
 							$valid_input[ $option['id'] ] = $input[ $option['id'] ];
 							}
@@ -334,7 +334,7 @@ function flagship_sub_validate_options( $input ) {
 							add_settings_error(
 								$option['id'], // setting title
 								FLAGSHIP_SUB_SHORTNAME . '_txt_multinumeric_error', // error ID
-								__('Expecting comma separated numeric values! Please fix.','flagship_sub_textdomain'), // error message
+								__('Expecting comma separated numeric values! Please fix.','ksasacademic'), // error message
 								'error' // type of message
 							);
 						}
@@ -359,9 +359,9 @@ function flagship_sub_validate_options( $input ) {
 						// accept the input only after the email has been validated
 						$input[ $option['id'] ]       = trim($input[ $option['id'] ]); // trim whitespace
 						if ($input[ $option['id'] ] != '' ) {
-							$valid_input[ $option['id'] ] = (is_email($input[ $option['id'] ]) !== false) ? $input[ $option['id'] ] : __('Invalid email! Please re-enter!','flagship_sub_textdomain');
+							$valid_input[ $option['id'] ] = (is_email($input[ $option['id'] ]) !== false) ? $input[ $option['id'] ] : __('Invalid email! Please re-enter!','ksasacademic');
 							}elseif ($input[ $option['id'] ] == '' ) {
-							$valid_input[ $option['id'] ] = __('This setting field cannot be empty! Please enter a valid email address.','flagship_sub_textdomain');
+							$valid_input[ $option['id'] ] = __('This setting field cannot be empty! Please enter a valid email address.','ksasacademic');
 							}
 
 						// register error
@@ -369,7 +369,7 @@ function flagship_sub_validate_options( $input ) {
 							add_settings_error(
 								$option['id'], // setting title
 								FLAGSHIP_SUB_SHORTNAME . '_txt_email_error', // error ID
-								__('Please enter a valid email address.','flagship_sub_textdomain'), // error message
+								__('Please enter a valid email address.','ksasacademic'), // error message
 								'error' // type of message
 							);
 						}

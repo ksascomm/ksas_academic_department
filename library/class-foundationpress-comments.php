@@ -22,7 +22,7 @@ class Foundationpress_Comments extends Walker_Comment {
              * start_lvl() only goes as high as 1 deep nested comments */
 			function __construct() { ?>
 
-					<h3><?php comments_number( __( 'No Responses to', 'foundationpress' ), __( 'One Response to', 'foundationpress' ), __( '% Responses to', 'foundationpress' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+					<h3><?php comments_number( __( 'No Responses to', 'ksasacademic' ), __( 'One Response to', 'ksasacademic' ), __( '% Responses to', 'ksasacademic' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 					<ol class="comment-list">
 
 				<?php
@@ -72,7 +72,7 @@ class Foundationpress_Comments extends Walker_Comment {
 						/* translators: %s: comment author link */
 						printf(
                     __(
-					'<cite class="fn">%s</cite>', 'foundationpress'
+					'<cite class="fn">%s</cite>', 'ksasacademic'
 						),
 						get_comment_author_link()
 						);
@@ -86,7 +86,7 @@ class Foundationpress_Comments extends Walker_Comment {
 					<section id="comment-content-<?php comment_ID(); ?>" class="comment">
 					<?php if ( ! $comment->comment_approved ) : ?>
 							<div class="notice">
-					<p class="bottom"><?php _e( 'Your comment is awaiting moderation.', 'foundationpress' ); ?></p>
+					<p class="bottom"><?php _e( 'Your comment is awaiting moderation.', 'ksasacademic' ); ?></p>
 				</div>
 					<?php
                     else :

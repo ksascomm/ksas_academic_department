@@ -75,15 +75,15 @@ function foundationpress_menu_fallback() {
 		echo '<div class="alert-box secondary">';
 		/* translators: %1$s: link to menus, %2$s: link to customize. */
 		printf(
-         __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
+         __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'ksasacademic' ),
 		/* translators: %s: menu url */
 		sprintf(
-              __( '<a href="%s">Menus</a>', 'foundationpress' ),
+              __( '<a href="%s">Menus</a>', 'ksasacademic' ),
 			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 		),
 		/* translators: %s: customize url */
 		sprintf(
-              __( '<a href="%s">Customize</a>', 'foundationpress' ),
+              __( '<a href="%s">Customize</a>', 'ksasacademic' ),
 			get_admin_url( get_current_blog_id(), 'customize.php' )
 		)
 			);

@@ -194,7 +194,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 			} elseif ( get_query_var('paged') ) {
 
 				// Paginated archives
-				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'foundationpress' ) . ' ' . get_query_var('paged') . '</li>';
+				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'ksasacademic' ) . ' ' . get_query_var('paged') . '</li>';
 
 			} elseif ( is_search() ) {
 

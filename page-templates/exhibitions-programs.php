@@ -25,7 +25,7 @@ get_header(); ?>
             	$exhibit_list = '<div class="exhibit-categories button-group">';
             	foreach ( $exhibits as $exhibit ) {
             	 	$i++;
-					$exhibit_list .= '<a class="exhibit-category button" href="' . esc_url( get_term_link( $exhibit ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts filed under %s', 'my_localization_domain' ), $exhibit->name ) ) . '">' . $exhibit->name . '</a>';
+					$exhibit_list .= '<a class="exhibit-category button" href="' . esc_url( get_term_link( $exhibit ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts filed under %s', 'ksasacademic' ), $exhibit->name ) ) . '">' . $exhibit->name . '</a>';
 			        if ( $count != $i ) {
 			            $exhibit_list .= '';
 			        }

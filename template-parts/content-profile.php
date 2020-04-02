@@ -17,7 +17,7 @@
 		<div class="entry-content">
 			<?php the_post_thumbnail('thumbnail'); ?>
 			<?php the_content(); ?>
-			<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 </article>
 <hr>
