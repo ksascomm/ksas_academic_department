@@ -68,7 +68,7 @@ span.tribe-events-calendar-list__event-date-tag-daynum.tribe-common-h5.tribe-com
     border-right: 1px solid #d6d6d6;
 }*/
 
-span.tribe-event-date-start, span.tribe-event-time, time.tribe-events-calendar-list__month-separator-text.tribe-common-h7.tribe-common-h6--min-medium.tribe-common-h--alt, h3.tribe-events-calendar-list__event-title.tribe-common-h6.tribe-common-h4--min-medium a {
+span.tribe-event-date-start, span.tribe-event-date-end, span.tribe-event-time, time.tribe-events-calendar-list__month-separator-text.tribe-common-h7.tribe-common-h6--min-medium.tribe-common-h--alt, h3.tribe-events-calendar-list__event-title.tribe-common-h6.tribe-common-h4--min-medium a {
 	font-size: 1.25rem;
 }
 
