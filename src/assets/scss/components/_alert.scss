@@ -1,11 +1,11 @@
 /* Alert */
 .alert {
-    background-color: $maroon;
+    background-color: $secondaryblue;
     color: $white;
     text-align: center;
     padding: .5rem;
 	&:hover, &:focus, &:focus-within {
-		background-color:$rust;
+		background-color:$bluejaysblue;
     	transition: background-color 250ms ease-in-out,color 250ms ease-in-out;
 	}      
     a {
