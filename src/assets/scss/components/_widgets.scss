@@ -584,27 +584,29 @@
 }
 
 //Modern Tribe Events Calendar Widgets
-.tribe-events-list-widget {
-	//background: $gray;
-	//padding: 1rem;
-	background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
-    background-color: $white;
-    background-size: 2.666666666666667rem auto;	
-	border: .06667rem solid $blue;
-	border-bottom: none;
-	border-top: none;
-	box-shadow: 0 0.4rem 0 0 $blue;
+
+//All widgets
+.tribe-events-list-widget,.tribe-events-adv-list-widget, .widget.tribe_mini_calendar_widget,  {
 	.widget_title {
-		background: $blue;
+		//background: $blue;
 		h4, h5 {
-			font-size: 1.25rem;
-			@include widget-title;
-			text-align: center;
-			color: $white;
-			margin-bottom: 0;
-		}
+		font-size: 1.25rem;
+		font-family: $font-header-extrabold;
+		font-weight: $font-header-extrabold-weight;
 		padding: .75rem;
+		margin-bottom: 0;
+		}
 	}
+}
+
+//Event List Widget
+.tribe-events-list-widget,.tribe-events-adv-list-widget {
+    background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
+    background-color: $white;
+    background-size: 2.666666666666667rem auto;
+    border: .06667rem solid $blue;
+    border-bottom: none;
+    box-shadow: 0 0.4rem 0 0 $blue;
 	.tribe-list-widget {
 		padding-top: 1rem;
 	}
@@ -635,10 +637,122 @@
 		    content: "\f138";
 	    }
 	}
-
+	.tribe-mini-calendar-event {
+	    padding: 0 .5rem;
+	    .list-info {
+	      font-size: .9rem;
+	      h2.tribe-events-title {
+	        font-family: $font-stack-bold;
+	        font-weight: $font-stack-bold-weight;
+	        font-size: 1.125rem;
+	        margin-bottom: .5rem;
+	      }
+	      .tribe-events-duration {
+	        font-size: .9rem;
+	      }     
+	    }    
+	    .list-date {
+	      background: $blue;
+	    }
+	    .list-dayname {
+	      color: $black;
+	      font-size: .75rem;
+	    }
+	    .tribe-section-s {
+	      padding-top: 0;
+	    }
+	  } 
+	  p.tribe-events-widget-link {
+	    @include button;
+	    margin-top: .5rem;
+	    margin-left: .5rem;
+	    a {
+	      color: $white;
+	    }
+	  }
 }
 
+//Mini Calendar Weiget
+.widget.tribe_mini_calendar_widget {
+	background: $light-gray;
+	border: 1px solid $gray;
+	box-shadow: none;
+	.tribe-mini-calendar-grid-wrapper {
+		padding: .25rem;
+	}
+	.tribe-mini-calendar {
+		thead, th, .tribe-mini-calendar-nav td {
+			background: $blue;
+			border: 1px solid $blue;
+		}
+		.tribe-events-othermonth span {
+			color: $gray;
+		}
+		.tribe-events-thismonth {
+			&.tribe-events-past {
+				background-color: $light-gray;
+				opacity: 1;
+				.tribe-mini-calendar-no-event {
+					color: $black;
+				}
+				&.tribe-events-has-events {
+					background-color: $medium-gray;
+					a.tribe-mini-calendar-day-link {
+						color: $black;
+						border-bottom: none;
+						&:before{
+							background: $black;
+						}
+					}
+				}
+			}
+			&.tribe-events-future {
+				background-color: $bluejaysblue;
+				.tribe-mini-calendar-no-event {
+					color: $black;
+				}
+				a.tribe-mini-calendar-day-link {
+					border-bottom: none;
+					color: $black;
+					&:before{
+						background: $black;
+					}
+				}
+			}			
+		}
+		.tribe-events-present, .tribe-mini-calendar-today {
+			background-color: $blue;
+		}
+	}
+	.tribe-mini-calendar-event {
+		border-bottom: none;
+	    padding: 0 .5rem;
+	    .list-info {
+	      font-size: .9rem;
+	      h2.tribe-events-title {
+	        font-family: $font-stack-bold;
+	        font-weight: $font-stack-bold-weight;
+	        font-size: 1.125rem;
+	        margin-bottom: .5rem;
+	      }
+	      .tribe-events-duration {
+	        font-size: .9rem;
+	      }     
+	    }    
+	    .list-date {
+	      background: $blue;
+	    }
+	    .list-dayname {
+	      color: $black;
+	      font-size: .75rem;
+	    }
+	    .tribe-section-s {
+	      padding-top: 0;
+	    }
+	}	
+}
 
+//Home Feature Widget
 .widget.home-featured {
 	.widget_title {
 		h3 {
@@ -673,4 +787,63 @@
 			}
 		}
 	}
+}
+
+//This Week's Events Widget
+.tribe-this-week-events-widget {
+	background: $light-gray;
+	border: 1px solid $gray;
+	box-shadow: none;
+	padding: .5rem;
+	//padding: .75rem;
+	h2.tribe-events-page-title {
+		font-size: 1rem;
+		font-family: $font-header-extrabold;
+		font-weight: $font-header-extrabold-weight;
+		margin-bottom: 0;
+		text-align: left;
+	}
+	.tribe-this-week-widget-wrapper {
+		a, .entry-title a {
+			color: $black;
+		}
+	}
+	.tribe-this-week-widget-weekday-wrapper {
+		padding: .25rem;
+		margin-bottom: 0px;
+	}
+	.this-week-past .tribe-this-week-widget-header-date {
+		background-color: $gray;
+		color: black;
+	}
+	.this-week-today .tribe-this-week-widget-header-date {
+		background-color: $blue;
+	}
+	.tribe-this-week-widget-header-date {
+		background-color: $bluejaysblue;
+	}
+	.tribe-this-week-widget-vertical .tribe-this-week-widget-day {
+		color: $black;
+	}
+	.tribe-this-week-event {
+		border-left-color: $blue;
+	}
+	.this-week-no-events-msg {
+    	padding: .25rem;
+    	background: $white;
+	}
+	.tribe-this-week-widget-day-wrap {
+		border-left: 1px solid $black;
+	    border-right: 1px solid $black;
+	    border-bottom: 1px solid $black;
+	    margin-bottom: .5rem;
+	    padding: 0;
+	}
+	.this-week-past .tribe-this-week-widget-header-date, .this-week-today .tribe-this-week-widget-header-date, .tribe-this-week-widget-header-date {
+    	margin-bottom: 0px;
+    	border-left: 1px solid $black;
+    	border-right: 1px solid $black;
+    	border-top: 1px solid $black;
+	}
+
 }

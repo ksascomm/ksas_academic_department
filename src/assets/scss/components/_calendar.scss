@@ -336,64 +336,6 @@ a.tribe-events-gmap, .tribe-events-content p a {
   margin-top: 21px;
 }
 
-//Widgets
-.widget.tribe-events-adv-list-widget {
-    background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
-    background-color: $white;
-    background-size: 2.666666666666667rem auto;
-    border: .06667rem solid $blue;
-    border-bottom: none;
-    box-shadow: 0 0.4rem 0 0 $blue;
-  .widget_title {
-    h4, h5 {
-      font-size: 1.25rem;
-      @include widget-title;
-      text-align: center;
-      padding: .75rem .75rem 0 .75rem;
-      margin-bottom: .5rem;
-    }
-  }  
-  .tribe-mini-calendar-event {
-    padding: 0 .5rem;
-    .list-info {
-      font-size: .9rem;
-      h2.tribe-events-title {
-        font-family: $font-stack-bold;
-        font-weight: $font-stack-bold-weight;
-        font-size: 1.125rem;
-        margin-bottom: .5rem;
-      }
-      .tribe-events-duration {
-        font-size: .9rem;
-      }     
-    }    
-    .list-date {
-      background: $blue;
-    }
-    .list-dayname {
-      color: $black;
-      font-size: .75rem;
-    }
-    .tribe-section-s {
-      padding-top: 0;
-    }
-  } 
-  p.tribe-events-widget-link {
-    @include button;
-    margin-top: .5rem;
-    margin-left: .5rem;
-    a {
-      color: $white;
-    }
-  }
-}
-
-.events-list {
-  .tribe-events-loop {
-    max-width: 1000px;
-  }
-}
-
 /* V2 Views */
 
 .tribe-common {
