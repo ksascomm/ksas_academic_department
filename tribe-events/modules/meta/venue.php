@@ -19,7 +19,7 @@ $website = tribe_get_venue_website_link();
 ?>
 
 <div class="tribe-events-meta-group tribe-events-meta-group-venue">
-	<h2 class="tribe-events-single-section-title"><i class="fas fa-map-marker-alt"></i> <?php esc_html_e( tribe_get_venue_label_singular(), 'the-events-calendar' ) ?> </h2>
+	<h2 class="tribe-events-single-section-title"><span class="fas fa-map-marker-alt"></span> <?php esc_html_e( tribe_get_venue_label_singular(), 'the-events-calendar' ) ?> </h2>
 	<dl>
 		<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
 
