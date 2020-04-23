@@ -400,10 +400,33 @@ a.tribe-events-gmap, .tribe-events-content p a {
       color: $blue !important;
     }
   }
+  .tribe-events-c-breadcrumbs__list {
+    font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
+  }
+  .datepicker .day {
+    &.active {
+      background: $blue;
+      color: $white;
+      &:hover {
+        background: $bluejaysblue;
+        color: $black;
+      }
+    }
+    &:hover {
+      background: $bluejaysblue;
+      color: $black;
+    }
+  }
 }
 
-.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__day:hover:after {
-  background-color: $blue !important;
+.tribe-common--breakpoint-medium.tribe-events {
+  .tribe-events-calendar-month__day:hover:after {
+    background-color: $blue !important;
+  }
+  .tribe-events-c-breadcrumbs__list {
+    font-size: 1.5rem;
+  }
 }
 
 li.tribe-events-c-top-bar__nav-list-item {
@@ -436,5 +459,13 @@ input#tribe-events-events-bar-keyword, input#tribe-events-events-bar-location {
   }
   .tribe-events-calendar-list__event-details.tribe-common-g-col {
     width: 100% !important;
+  }
+}
+
+.event-is-recurring {
+  font-size: 1.125rem;
+  color: $black;
+  a {
+    @include link;
   }
 }

@@ -679,8 +679,11 @@
 	box-shadow: none;
 	.tribe-mini-calendar-grid-wrapper {
 		padding: .25rem;
+		margin: .5rem 0;
 	}
 	.tribe-mini-calendar {
+		margin-left: 0px;
+		margin-bottom: 0;
 		thead, th, .tribe-mini-calendar-nav td {
 			background: $blue;
 			border: 1px solid $blue;
@@ -707,7 +710,7 @@
 				}
 			}
 			&.tribe-events-future {
-				background-color: $bluejaysblue;
+				background-color: $secondaryblue;
 				.tribe-mini-calendar-no-event {
 					color: $black;
 				}
@@ -820,7 +823,7 @@
 		background-color: $blue;
 	}
 	.tribe-this-week-widget-header-date {
-		background-color: $bluejaysblue;
+		background-color: $secondaryblue;
 	}
 	.tribe-this-week-widget-vertical .tribe-this-week-widget-day {
 		color: $black;
@@ -845,5 +848,10 @@
     	border-right: 1px solid $black;
     	border-top: 1px solid $black;
 	}
-
+	.tribe-this-week-widget-vertical .tribe-this-week-widget-header-date {
+		padding-left: .5rem;
+	}
+	.tribe-events-sub-nav {
+		margin: .5rem 0;
+	}
 }
