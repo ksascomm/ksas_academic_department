@@ -89,6 +89,7 @@ $font-awesome: "Font Awesome 5 Free", 'gentona-semibold', 'Helvetica Neue', Robo
         url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -99,6 +100,7 @@ $font-awesome: "Font Awesome 5 Free", 'gentona-semibold', 'Helvetica Neue', Robo
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
+    font-display: block;
     line-height: 1;
 
     /* Better Font Rendering =========== */
