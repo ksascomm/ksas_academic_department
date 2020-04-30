@@ -67,6 +67,7 @@ require_once( 'library/theme-options.php');
 require_once( 'library/theme-options-init.php');
 require_once( 'library/page-metabox.php');
 require_once( 'library/open-graph.php');
+require_once( 'library/tribe-events.php');
 
 /** Gutenberg editor support */
 require_once( 'library/gutenberg.php' );
