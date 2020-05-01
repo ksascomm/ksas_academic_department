@@ -129,7 +129,7 @@ $website = tribe_get_event_website_link();
 		<?php
 		// Event Website
 		if ( ! empty( $website ) ) : ?>
-			<dd class="tribe-events-event-url"> <?php echo $website; ?> </dd>
+			<dd class="tribe-events-event-url"> <a href="<?php echo tribe_get_event_website_url();?>">Event Website »</a> </dd>
 		<?php endif ?>
 
 		<?php do_action( 'tribe_events_single_meta_details_section_end' ) ?>
