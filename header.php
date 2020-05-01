@@ -20,6 +20,8 @@
 
 		<?php wp_head(); ?>
 		
+		<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/browserconfig.xml" />
+
 		<!--Scripts-->
 		<?php get_template_part( 'template-parts/analytics' ); ?>
 		<?php get_template_part( 'template-parts/script-initiators' ); ?>
