@@ -232,6 +232,23 @@ h3.tribe-events-calendar-month__multiday-event-bar-title.tribe-common-h8 {
 	color: #fefefe;
 }
 
+.tribe_events .categories {
+    font-family:'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif !important;
+}
+
+.tribe_events .categories dl {
+	margin-bottom: 0;
+}
+
+.tribe_events .categories a {
+	background-color: transparent;
+    text-transform: none;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding: 0;
+    float: none;
+}
 
 /* Widgets */
 
