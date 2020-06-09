@@ -317,7 +317,7 @@ footer.timely.ai1ec-event-footer {
   font-weight: $font-stack-bold-weight;
 }
 
-a.tribe-events-gmap, .tribe-events-content p a {
+a.tribe-events-gmap, .tribe-events-content p a, .tribe-events-content li a {
   @include link;
 }
 
