@@ -201,9 +201,13 @@ table thead {
       border-bottom: 1px solid $gray;
     }
     /* is-open is added to open accordion items */
-    .c-accordion__item.is-open {} 
+    &.is-open {
+      .c-accordion__title { 
+        background: $light-gray;
+      }
+    } 
     /* is-read is added to accordion items that have been opened at least once */
-    .c-accordion__item.is-read {} 
+    &.is-read {} 
     /* An accordion item title */
     .c-accordion__title {
       color: $blue;
