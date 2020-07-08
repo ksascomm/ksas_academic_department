@@ -193,6 +193,7 @@ table thead {
 //Accordion Block Plugin
 /* The accordion item container */
 .wp-block-pb-accordion-item.c-accordion__item {
+    padding-bottom: .5rem;
     &:last-child:not(.is-open) > .c-accordion__title {
       border-bottom: 1px solid $gray;
       border-radius: 0 0 0 0;
@@ -204,6 +205,7 @@ table thead {
     &.is-open {
       .c-accordion__title { 
         background: $light-gray;
+        border-bottom: 0px;
       }
     } 
     /* is-read is added to accordion items that have been opened at least once */
@@ -214,10 +216,9 @@ table thead {
       font-family: $font-stack-bold;
       font-weight: $font-stack-bold-weight;
       font-size: 1.125rem;
-      padding: 1.25rem 1rem;
-      margin-bottom: 0;
+      padding: 1rem;
       border: 1px solid $gray;
-      border-bottom: 0;
+      margin-bottom: 0 !important;
       &::after {
         right: 1rem;
         color: $blue;
@@ -233,7 +234,7 @@ table thead {
     .c-accordion__content {
       padding: 1rem;
       border: 1px solid $gray;
-      border-bottom: 0;
+      //border-bottom: 0;
       background-color: $white;
       color: $black;
     } 
