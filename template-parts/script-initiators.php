@@ -6,8 +6,8 @@
 ?>
 
 <?php if (is_page_template('page-templates/courses-undergrad.php') || is_page_template('page-templates/courses-graduate.php') ) : ?>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.css"/>
-  <script type="text/javascript" defer src="https://cdn.datatables.net/v/zf/dt-1.10.16/datatables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/zf/dt-1.10.21/datatables.min.css"/>
+  <script type="text/javascript" defer src="https://cdn.datatables.net/v/zf/dt-1.10.21/datatables.min.js"></script>
   <script>
     jQuery(document).ready( function($) {
       $('a[aria-selected="true"]').on( 'shown.bs.tab', function (e) {
