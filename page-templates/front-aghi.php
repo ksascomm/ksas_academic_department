@@ -32,7 +32,13 @@ get_header(); ?>
 								<p>A complete calendar of all humanities-related events, including all AGHI-sponsored events, happening at Johns Hopkins is available on our <a href="<?php echo site_url();?>/events/">events page</a>.</p>	
 							</div>
 						</div>
-						<?php echo do_shortcode('[ai1ec view="agenda" cat_name="AGHI" events_limit="4"]');	?>
+						<?php $featuredSidebar = is_active_sidebar('homepage-featured-sb');
+						if ( $featuredSidebar):?>
+							<!--Show Featured Widget-->
+							<div class="aghi-events-home-widget">
+								<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
+							</div>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>	
