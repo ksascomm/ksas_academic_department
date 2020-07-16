@@ -22,26 +22,19 @@ get_header(); ?>
 		</main>
 	<?php endwhile; ?>
 	<div class="aghi-events">
-		<div class="grid-container">
-			<div class="grid-x" aria-label="Upcoming Events">
-				<div class="small-12 large-10 large-offset-1 cell events-feed" role="region" aria-label="Events">
-					<div class="aghi-events-intro">
-					   <h1>Upcoming AGHI-sponsored Events</h1>
-						<div class="grid-x">
-							<div class="small-12 columns">
-								<p>A complete calendar of all humanities-related events, including all AGHI-sponsored events, happening at Johns Hopkins is available on our <a href="<?php echo site_url();?>/events/">events page</a>.</p>	
-							</div>
-						</div>
-						<?php $featuredSidebar = is_active_sidebar('homepage-featured-sb');
-						if ( $featuredSidebar):?>
-							<!--Show Featured Widget-->
-							<div class="aghi-events-home-widget">
-								<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
-							</div>
-						<?php endif;?>
-					</div>
+		<div class="events-feed" role="region" aria-label="Events">
+			<div class="aghi-events-intro">
+			   <h1>Upcoming AGHI-sponsored Events</h1>
+				<p>A complete calendar of all humanities-related events, including all AGHI-sponsored events, happening at Johns Hopkins is available on our <a href="<?php echo site_url();?>/events/">events page</a>.</p>	
+			</div>
+			<?php $featuredSidebar = is_active_sidebar('homepage-featured-sb');
+			if ( $featuredSidebar):?>
+				<!--Show Featured Widget-->
+				<div class="aghi-events-home-widget">
+					<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
 				</div>
-			</div>	
+			<?php endif;?>
+			</div>
 		</div>
 	</div>
 	<?php do_action( 'foundationpress_after_content' ); ?>

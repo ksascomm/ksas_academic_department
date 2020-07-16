@@ -209,34 +209,27 @@
 //AGHI Front Page Template
 .aghi-events {
   background: $light-gray;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
+  @include xy-grid-container;
+  @include xy-grid;
   .aghi-events-intro {
     h1 {
       font-size: 1.5rem;
+      margin-top: 1rem;
     }
   }
-  .ai1ec-agenda-view {
-    .ai1ec-date {
-      background: none;
+  .events-feed {
+    padding: .75rem 0;
+    @include breakpoint(small) {
+      @include xy-cell(12);
     }
-    .ai1ec-event {
-      border: none;
+    @include breakpoint(medium) {
+      @include xy-cell(11);
     }
-  }
-  .ai1ec-pagination, .ai1ec-subscribe-container, .ai1ec-clearfix, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-calendar-toolbar, span.ai1ec-categories {
-    display: none;
-  }
-  .ai1ec-event-time, .ai1ec-event-location {
-    font-size: 1rem !important;
-  }
-  .ai1ec-event-title {
-    font-size: 1.25rem !important;
-  }
-  .ai1ec-time, .ai1ec-location {
-    font-size: 1rem;
+    .aghi-events-home-widget {
+      .tribe-mini-calendar-event {
+        border-bottom: none;
+      }
+    }
   }
 }
 
