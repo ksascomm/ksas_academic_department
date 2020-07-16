@@ -209,9 +209,13 @@
 //AGHI Front Page Template
 .aghi-events {
   background: $light-gray;
-  @include xy-grid-container;
-  @include xy-grid;
   .aghi-events-intro {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
+    @include breakpoint(medium) {
+      @include xy-cell(11);
+    }
     h1 {
       font-size: 1.5rem;
       margin-top: 1rem;
@@ -219,12 +223,8 @@
   }
   .events-feed {
     padding: .75rem 0;
-    @include breakpoint(small) {
-      @include xy-cell(12);
-    }
-    @include breakpoint(medium) {
-      @include xy-cell(11);
-    }
+    @include xy-grid-container;
+    @include xy-grid;
     .aghi-events-home-widget {
       .tribe-mini-calendar-event {
         border-bottom: none;
