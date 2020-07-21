@@ -146,6 +146,9 @@ p {
       letter-spacing: -.2px;
       li, dd {
         margin-bottom: .5rem;
+        strong, b {
+          @include font-stack-semibold;
+        }        
         a {
           border: none;
           border-bottom: .125em solid;
