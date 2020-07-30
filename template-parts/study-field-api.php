@@ -18,7 +18,7 @@
 	// Display a error nothing is returned.
 	if ( is_wp_error( $studyfield ) ) {
 		$error_string = $studyfield->get_error_message();
-		echo '<div class="caption"><div class="callout alert"><p>' . $error_string . '</p></div></div>';
+		echo '<script>console.log("Error:' . $error_string . '")</script>';
 
 	}
 	// Get the body.		
@@ -26,7 +26,7 @@
 
 	// Display a warning nothing is returned.
 	if ( empty( $studyfield_response ) ) {
-		echo '<div class="caption"><div class="callout warning"><p>There is no API response</p></div></div>';
+		echo '<script>console.log("Error: There is no API Response")</script>';
 	}
 
 	if ( ! empty( $studyfield_response ) ) :?>
