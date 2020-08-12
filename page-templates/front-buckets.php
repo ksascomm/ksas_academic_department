@@ -67,7 +67,7 @@ get_header(); ?>
 <?php if ( have_rows( 'explore_the_department' ) ):
 $count = count(get_field('explore_the_department'));
 $featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
-<div class="bucket-area">
+<div class="bucket-area" id="explore-bucket">
 	<div class="buckets">
 		<?php $heading = get_field('buckets_heading');?>
 		<!--Print Heading if there-->
