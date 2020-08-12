@@ -674,8 +674,8 @@
 	      background: $blue;
 	    }
 	    .list-dayname {
-	      color: $black;
-	      font-size: .75rem;
+	      color: $black !important;
+	      font-size: .75rem !important;
 	    }
 	    .tribe-section-s {
 	      padding-top: 0;
