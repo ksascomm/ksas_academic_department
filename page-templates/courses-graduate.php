@@ -75,7 +75,7 @@ get_header(); ?>
 			}
 			$print_tags = empty($tags) ? 'n/a' : implode(', ', $tags);
 			echo '<tr><td>' . $course_number . '&nbsp;(' . $section_number . ')</td><td>' . $title . '</td><td class="show-for-medium">' . $meetings . '</td><td class="show-for-large">' . $instructor . '</td><td class="show-for-large">' . $room . '&nbsp;' . $roomnumber . '</td>';
-			echo '<td><button class="button" data-open="course-' . $clean_course_number . $section_number . $clean_term . '">More Info</button></td></tr>';
+			echo '<td><button class="button course-details" data-open="course-' . $clean_course_number . $section_number . $clean_term . '">More Info</button></td></tr>';
 			echo '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term.'" aria-labelledby="' . $clean_term . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $clean_term . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings . ' </li><li><strong>Instructor:</strong> '. $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . '  </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
 		}
 	// ISIS Call callback function
