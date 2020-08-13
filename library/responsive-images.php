@@ -60,14 +60,14 @@ function foundationpress_adjust_image_sizes_attr( $sizes, $size ) {
 }
 add_filter( 'wp_calculate_image_sizes', 'foundationpress_adjust_image_sizes_attr', 10 , 2 );
 
-// Remove inline width and height attributes for post thumbnails
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-    if ( ! strpos($html, 'attachment-shop_single') ) {
-        $html = preg_replace( '/^(width|height)=\"\d*\"\s/', '', $html );
-    }
+// Remove inline width and height attributes for post thumbnails & image insert
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+
+function remove_thumbnail_dimensions( $html ) {
+ 	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
 //Redirect Attachment Pages To The Parent Post URL
 add_action( 'template_redirect', 'wpsites_attachment_redirect' );
