@@ -83,9 +83,7 @@ function sass() {
       includePaths: PATHS.sass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
-    }))
+    .pipe($.autoprefixer())
 
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
@@ -109,6 +107,7 @@ const webpack = {
         },
       ],
     },
+    mode: 'development',
     externals: {
       jquery: 'jQuery',
     },
@@ -118,7 +117,7 @@ const webpack = {
     log('[webpack]', stats.toString({
       colors: true,
     }));
-    
+
     browser.reload();
   },
 
@@ -162,7 +161,7 @@ gulp.task('webpack:watch', webpack.watch);
 function images() {
   return gulp.src('src/assets/images/**/*')
     .pipe($.if(PRODUCTION, $.imagemin([
-      $.imagemin.jpegtran({
+      $.imagemin.mozjpeg({
         progressive: true,
       }),
       $.imagemin.optipng({
@@ -211,7 +210,7 @@ gulp.task('phpcbf', function () {
     standard: './codesniffer.ruleset.xml',
     warningSeverity: 0
   }))
-  //.on('error', log)
+  .on('error', log)
   .pipe(gulp.dest('.'));
 });
 
