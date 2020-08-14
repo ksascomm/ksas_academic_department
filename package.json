@@ -26,6 +26,8 @@
   "dependencies": {
     "foundation-sites": "6.6.3",
     "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "lodash.template": "^4.5.0",
     "motion-ui": "^2.0.3",
     "what-input": "^5.2.10"
   },
@@ -67,7 +69,7 @@
   },
   "browserslist": [
     "defaults"
-  ],  
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ksascomm/ksas_academic_department.git"
