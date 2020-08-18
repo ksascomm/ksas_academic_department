@@ -30,9 +30,12 @@ get_header(); ?>
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
 	<div class="full-screen-image show-for-large">
 
-		<?php //if slider, show those posts
-		if ( $hero_query->have_posts() ) :  while ($hero_query->have_posts() ) : $hero_query->the_post(); ?>
-			<div class="front-hero slide" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('full'); ?>, large], [<?php the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="Featured Image">
+		<?php 
+		//if slider, show those posts
+		if ( $hero_query->have_posts() ) :  while ($hero_query->have_posts() ) : $hero_query->the_post(); 
+		$thumbnail_id  = get_post_thumbnail_id( $post->ID );
+  		$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );?>
+			<div class="front-hero slide" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('full'); ?>, large], [<?php the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo $thumbnail_alt ?>"/>
 					<?php endwhile; wp_reset_postdata(); ?>
 				<?php if( get_field('studyfield') ): ?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
