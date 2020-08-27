@@ -3,13 +3,12 @@
 Template Name: Front
 */
 get_header(); ?>
-	<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+	<?php if ( has_post_thumbnail( $post->ID ) ) :
 		$thumbnail_id  = get_post_thumbnail_id( $post->ID );
   		$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );?>
 		<header class="featured-hero homepage hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo $thumbnail_alt ?>"/>
 		</header>
 	<?php endif; ?>
-	<?php get_template_part( 'template-parts/homepage-slider' ); ?>
 	<?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<main class="background-bluejaysblue" id="page" tabindex="0" aria-label="Website Introduction">
