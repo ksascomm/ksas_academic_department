@@ -123,9 +123,6 @@ $website = tribe_get_event_website_link();
 			<dd class="tribe-events-event-cost"><?php esc_html_e( $cost ); ?></dd>
 		<?php endif ?>
 
-
-		<?php echo tribe_meta_event_tags( sprintf( esc_html__( '%s Tags:', 'the-events-calendar' ), tribe_get_event_label_singular() ), ', ', false ) ?>
-
 		<?php
 		// Event Website
 		if ( ! empty( $website ) ) : ?>

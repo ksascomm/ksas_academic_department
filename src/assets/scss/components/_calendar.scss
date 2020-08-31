@@ -270,3 +270,20 @@ input#tribe-events-events-bar-keyword, input#tribe-events-events-bar-location {
     @include link;
   }
 }
+
+/* Gutenberg Editor Enabled */
+.tribe_events>a, .single-tribe_events .tribe-events-single-event-recurrence-description>a {
+  @include link;
+}
+
+
+.tribe-block__events-link .tribe-block__btn--link {
+  margin: 1rem 1rem 0 0;
+  a {
+   @include button;
+ }
+}
+
+.tribe-events-single-event-recurrence-description a {
+  font-family: $font-stack-bold;
+}
