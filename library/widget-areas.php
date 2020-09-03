@@ -18,9 +18,9 @@ function foundationpress_sidebar_widgets() {
 			'before_title'  => '<div class="widget_title"><h4>',
 			'after_title'   => '</h4></div>',
 		)
-			);
+		);
 
-			register_sidebar(
+		register_sidebar(
 			array(
 				'name'          => 'Graduate Sidebar',
 				'id'            => 'graduate-sb',
@@ -30,9 +30,9 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
 			)
-			);
+		);
 
-			register_sidebar(
+		register_sidebar(
 			array(
 				'name'          => 'Undergraduate Sidebar',
 				'id'            => 'undergrad-sb',
@@ -42,9 +42,9 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
 			)
-			);
+		);
 
-			register_sidebar(
+		register_sidebar(
 			array(
 				'name'          => 'Research Sidebar',
 				'id'            => 'research-sb',
@@ -54,9 +54,9 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
 			)
-			);
+		);
 
-			register_sidebar(
+		register_sidebar(
 			array(
 				'name'          => 'Homepage Sidebar',
 				'id'            => 'homepage-sb',
@@ -66,9 +66,9 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
 			)
-			);
+		);
 
-			register_sidebar(
+		register_sidebar(
 			array(
 				'name'          => 'Homepage Featured Sidebar',
 				'id'            => 'homepage-featured-sb',
@@ -78,9 +78,9 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h3>',
 				'after_title'   => '</h3></div>',
 			)
-			);			
+		);			
 
-			register_sidebar(
+		register_sidebar(
 			array(
 				'name'          => 'News Archive Sidebar',
 				'id'            => 'archive-sb',
@@ -90,7 +90,27 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
 			)
-			);
+		);
+
+		register_sidebar( array(
+				'name' => 'Custom Sidebar 1',
+				'id' => 'sidebar-1',
+				'description' => __('Custom Sidebar #1. This sidebar will only appear when selected on the page editor', 'foundationpress'),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s" aria-label="Sidebar Content">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<div class="widget_title"><h4>',
+				'after_title'   => '</h4></div>',
+		));
+
+		register_sidebar( array(
+				'name' => 'Custom Sidebar 2',
+				'id' => 'sidebar-2',
+				'description' => __('Sidebar #2. This sidebar will only appear when selected on the page editor', 'foundationpress'),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s" aria-label="Sidebar Content">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<div class="widget_title"><h4>',
+				'after_title'   => '</h4></div>',
+		));			
 }
 
 add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );

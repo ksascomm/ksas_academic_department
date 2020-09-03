@@ -213,12 +213,12 @@ array(
 while ( have_posts() ) :
 				the_post();
 				?>
-					<aside class="custom page-widgets" aria-labelledby="custom-sidebar-content">
-				<div class="widget ecpt-page-sidebar" id="custom-sidebar-content">
-					<?php echo apply_filters('the_content', get_post_meta($post->ID, 'ecpt_page_sidebar', true)); ?>
-				</div>
-					</aside>
-					<?php endwhile; endif; ?>
+				<aside class="custom page-widgets" aria-labelledby="custom-sidebar-content">
+					<div class="widget ecpt-page-sidebar" id="custom-sidebar-content">
+						<?php echo apply_filters('the_content', get_post_meta($post->ID, 'ecpt_page_sidebar', true)); ?>
+					</div>
+				</aside>
+			<?php endwhile; endif; ?>
 	<?php
 		$ancestors = get_post_ancestors( $post->ID ); // Get the array of ancestors
 		$ancestor_id = ($ancestors) ? $ancestors[ count($ancestors) - 1 ] : $post->ID;
@@ -237,4 +237,11 @@ while ( have_posts() ) :
 		<?php elseif ( is_page() && !is_page('faculty-books') ) : ?>
 			<?php dynamic_sidebar( 'page-sb' ); ?>
 	<?php endif; ?>
+	<!-- Customized Page Sidebar -->
+	<?php if ( have_posts()) : while ( have_posts() ) : the_post(); 
+		$custom_sidebar = get_post_meta($post->ID, 'ecpt_page_custom_widget_sidebar', true); ?>
+		
+			<?php dynamic_sidebar($custom_sidebar); ?>
+		
+	<?php endwhile; endif; ?>	
 </div>
