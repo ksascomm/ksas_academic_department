@@ -15,7 +15,9 @@
 			<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
 		</header>
 		<div class="entry-content">
-			<?php if ( has_post_thumbnail()) {  the_post_thumbnail('thumbnail');  } ?>
+			<?php if ( has_post_thumbnail()) {  the_post_thumbnail('thumbnail',
+				array('alt' => esc_html ( get_the_title() ))
+				);  } ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_class', true) ) : ?>
 				<p><strong>Class of: <?php echo get_post_meta($post->ID, 'ecpt_class', true); ?></strong></p>
 			<?php endif; ?>

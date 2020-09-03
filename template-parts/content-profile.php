@@ -15,7 +15,9 @@
 			<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
 		</header>
 		<div class="entry-content">
-			<?php the_post_thumbnail('thumbnail'); ?>
+			<?php if ( has_post_thumbnail()) {  the_post_thumbnail('thumbnail',
+				array('alt' => esc_html ( get_the_title() ))
+				);  } ?>
 			<?php the_content(); ?>
 			<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>

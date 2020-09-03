@@ -15,9 +15,9 @@ endif; ?>
 <div class="cell">
 	<article class="exhibition card" aria-labelledby="post-<?php the_ID(); ?>">
 		<div class="exhibition-image">
-			<?php if ( has_post_thumbnail() ) : ?> 
-					<?php the_post_thumbnail('large'); ?>
-		  	<?php endif; ?>	
+		  	<?php if ( has_post_thumbnail()) {  the_post_thumbnail('large',
+				array('alt' => esc_html ( get_the_title() ))
+				);  } ?>
 		  	</div>
 		 <div class="card-section">
 			<h1><a href="<?php echo get_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a></h1>

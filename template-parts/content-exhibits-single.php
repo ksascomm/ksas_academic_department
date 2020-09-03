@@ -64,10 +64,14 @@
 			<?php else: ?>
 				<h3>Images</h3>
 				<a data-open="modal-post-thumb">
-					<?php the_post_thumbnail('medium');?>
+					<?php if ( has_post_thumbnail()) {  the_post_thumbnail('medium',
+						array('alt' => esc_html ( get_the_title() ))
+						);  } ?>
 				</a>
 				<div id="modal-post-thumb" class="small reveal" data-reveal data-animation-in="scale-in-up" data-animation-out="scale-out-down">
-					<?php the_post_thumbnail('full');?>
+					<?php if ( has_post_thumbnail()) {  the_post_thumbnail('full',
+						array('alt' => esc_html ( get_the_title() ))
+					);  } ?>					
 					<button class="close-button" data-close aria-label="Close modal" type="button">
 						<span aria-hidden="true">&times;</span>
 					</button>
