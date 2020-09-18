@@ -5,10 +5,10 @@
   padding: 0.25rem 0;
 }
 
-p.wp-caption-text{
-  font-size:90%;
+p.wp-caption-text {
+  font-size: 90%;
   color: #666;
-  padding:rem-calc(10) 0;
+  padding: rem-calc(10) 0;
 }
 
 .alignleft {
@@ -29,22 +29,21 @@ p.wp-caption-text{
   margin-right: auto;
 }
 
-
 .gallery {
   @include xy-grid;
   @include xy-gutters($negative: true);
   @for $i from 1 through 9 {
     &.gallery-columns-#{$i} {
-      @include xy-grid-layout(2, '.gallery-item');
+      @include xy-grid-layout(2, ".gallery-item");
     }
-    @include breakpoint(medium){
+    @include breakpoint(medium) {
       &.gallery-columns-#{$i} {
-        @include xy-grid-layout(4, '.gallery-item');
+        @include xy-grid-layout(4, ".gallery-item");
       }
     }
     @include breakpoint(large) {
       &.gallery-columns-#{$i} {
-        @include xy-grid-layout($i, '.gallery-item');
+        @include xy-grid-layout($i, ".gallery-item");
       }
     }
   }
@@ -55,7 +54,4 @@ p.wp-caption-text{
   .gallery-icon > img {
     @include thumbnail;
   }
-}
-.bypostauthor {
-  
 }
