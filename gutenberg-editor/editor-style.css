@@ -53,12 +53,15 @@ body {
 }
 
 p b,
-p strong {
+p strong,
+li b,
+li strong {
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
 }
 
-p u {
+p u,
+li u {
   text-decoration: none;
 }
 
@@ -132,8 +135,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: gentona-bold, "Helvetica Neue", Roboto, sans-serif;
-  font-weight: 700;
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
 }
 
 /* Blockquote styles */
