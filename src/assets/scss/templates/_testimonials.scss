@@ -53,7 +53,9 @@ $testimonial-container-image-size: rem-calc(190);
     margin-left: auto;
     margin-right: auto;
     &:hover, &:focus {
-      background-color: $blue;
+      background-color: $white;
+      border: 1px solid $blue;
+      color: $blue;
     }
     &:focus {
       outline: -webkit-focus-ring-color auto 5px;
@@ -66,8 +68,14 @@ $testimonial-container-image-size: rem-calc(190);
     @include font-stack-bold;
     font-size: 1.5rem;
     padding-right: 1rem;
-  }  
+  }
+  h2, h3 {
+    font-size: 1.25rem;
+    @include font-stack-bold;
+  }
   p {
-    padding-right: 1rem;
+    padding-right: 3rem;
+    line-height: 1.45;
+    letter-spacing: -.2px;
   }
 }
