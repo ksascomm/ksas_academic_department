@@ -36,13 +36,13 @@
   }
 }
 
-//Modern Tribe 
+//Modern Tribe
 #tribe-events-pg-template .tribe-events-content, .tribe-events-after-html, .tribe-events-before-html{
   h3 {
     font-size: 1.1875rem;
     line-height: 1.4;
     margin-top: 0;
-    margin-bottom: 0.5rem;   
+    margin-bottom: 0.5rem;
   }
   h4 {
     font-size: 1.125rem;
@@ -97,7 +97,7 @@
   dd:after {
     content: '\a';
     white-space: pre;
-  } 
+  }
 }
 
 .tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group {
@@ -177,19 +177,14 @@ a.tribe-events-gmap, .tribe-events-content p a, .tribe-events-content li a {
     font-weight: $font-stack-bold-weight !important;
   }
   .tribe-events-c-ical__link {
-    background-color: $blue !important;
     border-color: $blue !important;
-    color: $white !important;
-    &:before {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10m5-5H1' fill='none' fill-rule='evenodd' stroke='%23fefefe' stroke-linecap='square' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+    svg.tribe-common-c-svgicon.tribe-common-c-svgicon--plus.tribe-events-c-ical__link-icon-svg {
+      color: $blue !important;
     }
     &:hover {
-    background-color: $white !important;
-    border-color: $blue !important;
-    color: $blue !important;
-      &:before {
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10m5-5H1' fill='none' fill-rule='evenodd' stroke='%23002d72' stroke-linecap='square' stroke-width='1.5'/%3E%3C/svg%3E") !important;
-      }
+    border-color: $white !important;
+    background-color: $blue !important;
+    color: $white !important;
     }
   }
   .tribe-events-calendar-month__day--past {
@@ -219,6 +214,15 @@ a.tribe-events-gmap, .tribe-events-content p a, .tribe-events-content li a {
       color: $black;
     }
   }
+}
+
+.tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small, .tribe-events .datepicker .datepicker-switch, .tribe-events .datepicker .day, .tribe-events .datepicker .dow {
+  font-family: $font-stack !important;
+  font-weight: $font-stack-weight !important;
+}
+
+.tribe-events .datepicker .day, .tribe-events .datepicker .dow {
+  color: $black;
 }
 
 .tribe-common--breakpoint-medium.tribe-events {
@@ -269,6 +273,14 @@ input#tribe-events-events-bar-keyword, input#tribe-events-events-bar-location {
   a {
     @include link;
   }
+}
+
+time.tribe-events-calendar-list__month-separator-text.tribe-common-h7.tribe-common-h6--min-medium.tribe-common-h--alt {
+  font-size: 1.5rem;
+}
+
+.tribe-events .tribe-events-calendar-list__event-date-tag-weekday {
+  color: $dark-gray !important;
 }
 
 /* Gutenberg Editor Enabled */

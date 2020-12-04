@@ -36,7 +36,7 @@
 
 // Site title
 .site-desktop-title a {
-  
+
 }
 
 // Mobile menu
@@ -92,7 +92,7 @@
   }
   &.main-navigation {
     @include xy-grid-container;
-    @include breakpoint(medium) { 
+    @include breakpoint(medium) {
       //border-top: solid;
       //border-color: $white;
       //border-width: 1px;
@@ -136,7 +136,7 @@
           width: 70%;
         }
     }
-    @include breakpoint(medium) {  
+    @include breakpoint(medium) {
       @include xy-cell(5);
       img {
         padding: 0rem 1rem .75rem;
@@ -145,13 +145,13 @@
     @include breakpoint(medium only) {
        margin-top: 1rem;
     }
-    @include breakpoint(large) {  
+    @include breakpoint(large) {
       @include xy-cell(3);
     }
 
   }
   .site-desktop-title {
-    @include breakpoint(small only) {  
+    @include breakpoint(small only) {
       width: 100%;
       text-align: center;
       .top-bar-title {
@@ -162,11 +162,11 @@
         }
       }
     }
-    @include breakpoint(medium) {  
+    @include breakpoint(medium) {
       @include xy-cell(7);
       text-align: left;
     }
-    @include breakpoint(large) {  
+    @include breakpoint(large) {
       @include xy-cell(9);
     }
   }
@@ -175,7 +175,7 @@
     a {
       @include breakpoint (small){
         font-size: 1rem;
-      }      
+      }
       @include breakpoint (xxlarge){
         font-size: 1.125rem;
       }
@@ -231,7 +231,7 @@
     @include breakpoint(large) {
       font-size: 2.35rem;
       line-height: 1.1em;
-    }      
+    }
     small {
       font-size: 50%;
       color: $white;
@@ -244,7 +244,7 @@
         &:hover, &:focus {
           color: $white;
         }
-    }        
+    }
   }
   .input-group {
     margin-bottom: 0;
@@ -273,7 +273,7 @@
   }
   .top-bar-left {
     padding-left: 2rem;
-  } 
+  }
   ul li ul.submenu {
     background-color: $white;
     li {
@@ -293,7 +293,7 @@
         border-bottom: 1px solid $gray;
       }
     }
-  }  
+  }
 }
 
 .site-information {
@@ -319,7 +319,7 @@
             &:hover, &:focus {
               color: $blue;
             }
-        } 
+        }
       }
     }
   }
@@ -363,7 +363,7 @@
   height: 40px;
   padding: 8px 20px 10px 20px;
   li.bar {
-    &:after { 
+    &:after {
       @include font-stack-semibold;
       content: "|";
       color: $black;
@@ -397,7 +397,7 @@
       &:hover {
         background: $light-gray;
       }
-    }    
+    }
   }
   #global-links {
     h2 {
@@ -410,16 +410,16 @@
       li {
         display: list-item;
         a {
-          padding: 0.35rem 1rem; 
+          padding: 0.35rem 1rem;
           @include font-stack-bold;
           color: $blue;
           &:hover, &:active {
               color: $black;
           }
-        }      
+        }
       }
     }
-  }  
+  }
 }
 
 //Breadcrumbs
@@ -450,7 +450,7 @@
       background-color: transparent;
     }
     @include breakpoint (small only) {
-      li { 
+      li {
           font-size: .85rem;
         }
       }
@@ -508,7 +508,7 @@
         }
         &.is-active {
           a {
-            
+
           }
         }
         ul.sub-menu {
@@ -544,7 +544,7 @@
     ul.sub-menu {
       li {
         a {
-          
+
         }
       }
     }
@@ -564,5 +564,5 @@
     &.widow {
       display: none;
     }
-  } 
+  }
 }

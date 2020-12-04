@@ -39,7 +39,7 @@
 		    	color: $black;
 		    	border-bottom: .0625rem solid;
 		     	border-bottom-color: $dark-gray;
-		    } 			
+		    }
 		}
 	}
 	article.row {
@@ -61,7 +61,7 @@
 			    	color: $black;
 			    	border-bottom: .0625rem solid;
 			     	border-bottom-color: $dark-gray;
-			    } 			
+			    }
 			}
 		}
 	}
@@ -134,7 +134,7 @@
 			color: $blue;
 		    &:hover {
 		    	color: $black;
-		    } 
+		    }
 		}
 	}
 }
@@ -167,8 +167,8 @@
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 				    &:hover, &:active {
-				    	border-bottom-color: $black;			        
-				    }   
+				    	border-bottom-color: $black;
+				    }
 				}
 			}
 		}
@@ -184,11 +184,11 @@
 				    transition-duration: 250ms,250ms,250ms;
 				    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 				    &:hover, &:active {
-				    	border-bottom-color: $black;			        
-				    }			
+				    	border-bottom-color: $black;
+				    }
 				}
 			}
-		}		
+		}
 	}
 	//white background
 	&:nth-of-type(odd) {
@@ -220,7 +220,7 @@
 				    &:hover {
 				    	border-bottom: .0625rem solid;
 				    	border-bottom-color: $dark-gray;
-				    } 
+				    }
 				}
 			}
 		}
@@ -248,7 +248,7 @@
 			}
 		}
 	}
-	
+
 }
 
 //Page Custom Sidebar Meta Field
@@ -280,7 +280,7 @@
 			    transition-duration: 250ms,250ms,250ms;
 			    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 			    &:hover, &:active {
-			    	border-bottom-color: $black;			        
+			    	border-bottom-color: $black;
 			    }
 			}
 		}
@@ -298,7 +298,7 @@
 		    transition-duration: 250ms,250ms,250ms;
 		    transition-timing-function: ease-in-out,ease-in-out,ease-in-out;
 		    &:hover, &:active {
-		    	border-bottom-color: $black;			        
+		    	border-bottom-color: $black;
 		    }
 		}
 	}
@@ -308,7 +308,7 @@
 .widget.ksas_books,.widget.ksas_bulletin {
 	background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
     background-color: $white;
-    background-size: 2.666666666666667rem auto;	
+    background-size: 2.666666666666667rem auto;
 	border: .06667rem solid $blue;
 	border-bottom: none;
 	border-top: none;
@@ -331,7 +331,7 @@
 			padding-right: .5rem;
 		      @include breakpoint(small only) {
 		        max-width: rem-calc(150px);
-		      }      
+		      }
 		      @include breakpoint(medium) {
 		        max-width: rem-calc(75px);
 		      }
@@ -348,7 +348,7 @@
 			font-size: 1rem;
 			margin-bottom: 0rem;
 			line-height: 1.1;
-		}		
+		}
 		h5 {
 			font-size: 1.125rem;
 			@include font-stack-semibold;
@@ -366,7 +366,7 @@
 				span.fa {
 					color: $black;
 				}
-			}			
+			}
 		}
 	}
 }
@@ -444,7 +444,7 @@
 			margin-bottom: 0;
 		}
 		padding: .75rem;
-	}	
+	}
 	.frm_forms {
 		padding: 0 .75rem;
 		label {
@@ -464,7 +464,7 @@
 	}
 }
 
-//Recent News widget 
+//Recent News widget
 .widget.widget_recent_entries {
 	background: url('../images/blueInWhite_corner1.svg') no-repeat right bottom;
     background-color: $white;
@@ -484,11 +484,11 @@
 	ul {
 		margin-left: .5rem;
 		font-size: .9em;
-		line-height: 1.25;	
+		line-height: 1.25;
 		li {
 			padding: .75rem;
 			height:auto;
-			overflow:auto;			
+			overflow:auto;
 			a {
 				&:before {
 					font-family: $font-awesome;
@@ -505,7 +505,7 @@
 			    &:hover {
 			    	border-bottom: .0625rem solid;
 			    	border-bottom-color: $dark-gray;
-			    } 
+			    }
 			}
 		}
 	}
@@ -553,17 +553,17 @@
 		}
 	}
 	.tribe-events-widget-link a {
-		padding: 1rem !important;
-	    text-transform: uppercase;
-	    font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
-	    font-weight: 600;
-	    font-size: .9rem;
-	    &::after{
-			font-family: "Font Awesome 5 Free", "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
-		    padding-left: .2rem;
-		    font-weight: 900;
-		    content: "\f138";
-	    }
+    padding: 1rem !important;
+    text-transform: uppercase;
+    font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+    font-weight: 600;
+    font-size: .9rem;
+    &::after{
+    font-family: "Font Awesome 5 Free", "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+      padding-left: .2rem;
+      font-weight: 900;
+      content: "\f138";
+    }
 	}
 	.tribe-mini-calendar-event {
 	    padding: 0 .5rem;
@@ -577,8 +577,8 @@
 	      }
 	      .tribe-events-duration {
 	        font-size: .9rem;
-	      }     
-	    }    
+	      }
+	    }
 	    .list-date {
 	      background: $blue;
 	    }
@@ -589,7 +589,7 @@
 	    .tribe-section-s {
 	      padding-top: 0;
 	    }
-	  } 
+	  }
 	  p.tribe-events-widget-link {
 	    @include button;
 	    margin-top: .5rem;
@@ -649,7 +649,7 @@
 						background: $black;
 					}
 				}
-			}			
+			}
 		}
 		.tribe-events-present, .tribe-mini-calendar-today {
 			background-color: $blue;
@@ -668,8 +668,8 @@
 	      }
 	      .tribe-events-duration {
 	        font-size: .9rem;
-	      }     
-	    }    
+	      }
+	    }
 	    .list-date {
 	      background: $blue;
 	    }
@@ -680,7 +680,7 @@
 	    .tribe-section-s {
 	      padding-top: 0;
 	    }
-	}	
+	}
 }
 
 //Home Feature Widget
@@ -710,7 +710,7 @@
 				color: $blue;
 				a { color: $blue;
 				}
-			}			
+			}
 			a {
 				font-size: 0.75rem;
 				font-family: $font-stack-bold;
@@ -782,4 +782,94 @@
 	.tribe-events-sub-nav {
 		margin: .5rem 0;
 	}
+}
+
+
+//v5.2 Widget List (Major Changes)
+
+//Widget Background
+.tribe-common.tribe-events.tribe-events-view.tribe-events-view--widget-events-list.tribe-events-widget {
+  background: $light-gray;
+  border: 1px solid $gray;
+  box-shadow: none;
+  padding: .5rem;
+}
+
+//Header
+header.tribe-events-widget-events-list__header {
+  padding-bottom: .25rem!important;
+}
+h3.tribe-events-widget-events-list__header-title.tribe-common-h6.tribe-common-h--alt {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+//Month & Day
+.tribe-events-widget-events-list__event-date-tag.tribe-common-g-col {
+  margin-right: .5rem;
+  width: 20% !important;
+}
+span.tribe-events-widget-events-list__event-date-tag-month {
+  border: 2px solid $blue;
+  color: $black !important;
+  margin: .25rem;
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif !important;
+  font-weight: 600;
+  font-size: .75rem !important;
+}
+span.tribe-events-widget-events-list__event-date-tag-daynum.tribe-common-h2.tribe-common-h4--min-medium {
+  color: $white !important;
+  background-color: $blue !important;
+  margin: .25rem;
+  font-size: 1rem;
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif !important;
+  font-weight: 600;
+}
+
+//Event Title
+h3.tribe-events-widget-events-list__event-title.tribe-common-h7 {
+  line-height: 1;
+  margin-bottom: .25rem;
+  a {
+    font-size: 1.125rem;
+
+  }
+}
+
+//Event Time
+.tribe-events-widget-events-list__event-datetime-wrapper.tribe-common-b2.tribe-common-b3--min-medium {
+  time.tribe-events-widget-events-list__event-datetime {
+    color: $black;
+    font-family: $font-stack;
+    font-weight: $font-stack-weight;
+    font-size: .9rem;
+  }
+}
+
+//View More Button
+.tribe-events-widget-events-list__view-more.tribe-common-b1.tribe-common-b2--min-medium {
+  @include button;
+  margin: 1rem;
+  &:hover {
+    @include button-hollow;
+    border: 1px solid $blue;
+    color: $blue;
+    a {
+      color: $blue !important;
+    }
+  }
+  a {
+    padding: 1rem !important;
+    text-transform: uppercase;
+    font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+    font-weight: 600;
+    font-size: .9rem;
+    color: $white !important;
+    &::after{
+    font-family: "Font Awesome 5 Free", "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+      padding-left: .2rem;
+      font-weight: 900;
+      content: "\f138";
+    }
+  }
 }
