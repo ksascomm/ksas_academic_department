@@ -73,16 +73,13 @@ endif;
 
 // Defer non-essential/plugin javascript files
 // Defer jQuery Parsing using the HTML5 defer property
-if (!(is_admin() )) {
-    function defer_parsing_of_js ( $url ) {
-        if ( FALSE === strpos( $url, '.js' ) ) return $url;
-        if ( strpos( $url, 'jquery.js' ) ) return $url;
-        if ( strpos( $url, 'app.js' ) ) return $url;
-        // return "$url' defer ";
-        return "$url' defer onload='";
-    }
-    add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+function defer_parsing_of_js( $url ) {
+	if ( is_user_logged_in() ) return $url; //don't break WP Admin
+	if ( FALSE === strpos( $url, '.js' ) ) return $url;
+	if ( strpos( $url, 'jquery.js' ) ) return $url;
+	return str_replace( ' src', ' defer src', $url );
 }
+add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
 
 //remove Tablepress default styles; use Foundation
 //add_filter( 'tablepress_use_default_css', '__return_false' );
