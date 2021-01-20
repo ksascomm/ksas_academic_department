@@ -60,7 +60,7 @@ if ( ! function_exists( 'foundationpress_cleanup_head' ) ) :
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
 
 		// Links for adjacent posts.
-		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); 
+		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
 
 		// WP version.
@@ -151,7 +151,7 @@ add_action( 'wp_print_styles', 'dequeue_css', 100 );
 
 //Deregister Modern Tribe Styles
 add_action( 'wp_enqueue_scripts', 'deregister_tribe_styles' );
- 
+
 function deregister_tribe_styles() {
 	if (is_singular(array('people', 'profile','testimonial','bulletinboard', 'ksasexhibits'))) {
 		wp_deregister_style( 'tribe-events-pro-views-v2-skeleton' );
@@ -163,7 +163,7 @@ function deregister_tribe_styles() {
 	    wp_deregister_style( 'tribe-common-skeleton-style' );
 	    wp_deregister_style( 'tribe-tooltip');
 	}
-	if (is_page_template(array('page-templates/courses-undergrad.php', 'page-templates/courses-graduate.php','page-templates/people-research-staff.php','page-templates/graduate-student.php','page-templates/people-job-market-candidate'))) {
+	if (is_page_template(array('page-templates/courses-undergrad.php', 'page-templates/courses-graduate.php','page-templates/people-research-staff.php','page-templates/graduate-student.php','page-templates/job-market-candidate'))) {
 		wp_deregister_style( 'tribe-events-pro-views-v2-skeleton' );
 	    wp_deregister_style( 'tribe-events-pro-views-v2-full' );
 	    wp_deregister_style( 'tribe-events-views-v2-skeleton' );
