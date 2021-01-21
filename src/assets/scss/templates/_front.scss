@@ -39,7 +39,7 @@
         font-size: 1.25rem;
         @include breakpoint (xlarge) {
           font-size: 1.35rem;
-        }        
+        }
         line-height: 1.45;
         &:last-of-type {
           margin-bottom: 0;
@@ -126,7 +126,7 @@
     @include font-stack-semibold;
   }
   .homepage-news-archive {
-	font-size: 1.25rem; 
+	font-size: 1.25rem;
     margin: 1rem 0;
   }
 }
@@ -242,7 +242,7 @@
       @include font-stack-semibold;
       color: $black;
       line-height: inherit;
-    }   
+    }
   }
   h2.archive-link {
     font-size: 1.25rem;
@@ -272,7 +272,7 @@
    background: $light-gray;
    border-bottom: none;
   .intro {
-   
+
   }
   .fa-circle {
     color: $blue;
@@ -394,7 +394,7 @@
 
 /**
  * Pause/play button
- */ 
+ */
 .jquery-background-video-pauseplay {
   position: absolute;
   background: transparent !important;
@@ -447,13 +447,13 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
   }
 }
 .bucket-area {
-  background-image: url('https://krieger.jhu.edu/wp-content/themes/ksas_flagship_2017/assets/images/frontpage/ag-square.png')
+  background-image: url('../images/ag-square.png')
 }
 .buckets {
   //padding-top: 1.25rem;
   padding: 2.5rem 0;
   @include xy-grid-container;
-  @include xy-grid;  
+  @include xy-grid;
   .explore-title {
     h2 {
       margin: 0 0 1.875rem;
@@ -482,7 +482,7 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
         h3 {
           color: $black;
         }
-        
+
       }
     }
     .bucket-title {
@@ -529,7 +529,7 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
         font-size: 1.25rem;
         background-color: rgba(44, 44, 51, 0.66);
         font-family: $font-stack-semibold;
-        font-weight: $font-stack-semibold-weight;        
+        font-weight: $font-stack-semibold-weight;
         @include breakpoint(large) {
           padding: 1rem 2rem;
           p, li {
@@ -542,9 +542,9 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
           }
         }
         @include breakpoint (xlarge) {
-          
-        }     
-      }            
+
+        }
+      }
     }
   }
 }
