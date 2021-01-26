@@ -4,15 +4,15 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
 
 
 
-<article aria-labelledby="post-<?php the_ID(); ?>" 
+<article aria-labelledby="post-<?php the_ID(); ?>"
 <?php if( is_sticky() ) :?>
 	<?php post_class('post-listing news-article wp-sticky'); ?>>
 	<div class="ribbon"><span>FEATURED</span></div>
@@ -44,7 +44,7 @@
 				<a href="<?php the_permalink(); ?>" class="archive-post" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a>
 			<?php endif; ?>
 		</h2>
-		<?php foundationpress_entry_meta(); ?>
+		<?php ksasacademic_entry_meta(); ?>
 	</header>
 
 	<div class="entry-content">

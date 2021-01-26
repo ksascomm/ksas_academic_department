@@ -9,19 +9,19 @@
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 get_header();
 	$theme_option = flagship_sub_get_global_options();
-	$collection_name = $theme_option['flagship_sub_search_collection']; 
+	$collection_name = $theme_option['flagship_sub_search_collection'];
 	$news_query_cond = $theme_option['flagship_sub_news_query_cond']; ?>
 	<div class="main-container" id="page">
 		<div class="main-grid">
 			<main class="main-content">
 				<h1 class="page-title"><?php echo $theme_option['flagship_sub_feed_name']; ?> Archive</h1>
-			
+
 			<?php $paged = (get_query_var('paged')) ? (int) get_query_var('paged') : 1;
 
 				if ($news_query_cond === 1) {
@@ -42,19 +42,19 @@ get_header();
 						'post_type' => array('post'),
 						'posts_per_page' => 10,
 						'paged' => $paged
-						)); 
+						));
 				}
 
 			while ($news_archive_query->have_posts()) : $news_archive_query->the_post(); ?>
-				
+
 					<?php get_template_part( 'template-parts/content-news', get_post_format() ); ?>
 				<?php endwhile; ?>
 
 
 				<?php /* Display navigation to next/previous pages when applicable */ ?>
 			<?php
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
+			if ( function_exists( 'ksasacademic_pagination' ) ) :
+				ksasacademic_pagination();
 			elseif ( is_paged() ) :
 			?>
 				<nav id="post-nav">

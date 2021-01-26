@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package FoundationPress
- * @since   FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since   KSASAcademicDepartment 1.0.0
  */
 
 get_header(); ?>
@@ -38,8 +38,8 @@ get_header(); ?>
                         <li>
                             <?php _e('Click the <a href="javascript:history.back()">Back</a> button', 'ksasacademic'); ?>
                         </li>
-                        <li>Try Searching using the search box in the menu 
-                        </li>                       
+                        <li>Try Searching using the search box in the menu
+                        </li>
                     </ul>
                 </div>
             </article>

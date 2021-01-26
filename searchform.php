@@ -2,8 +2,8 @@
 /**
  * The template for displaying search form
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>

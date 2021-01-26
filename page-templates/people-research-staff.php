@@ -24,7 +24,7 @@ endif;
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content">
-		<?php do_action( 'foundationpress_before_content' ); ?>
+		<?php do_action( 'ksasacademic_before_content' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -32,18 +32,18 @@ endif;
 		      <header aria-label="<?php the_title(); ?>">
 		          <h1 class="entry-title"><?php the_title(); ?></h1>
 		      </header>
-		      <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+		      <?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 		      <div class="entry-content">
 		          <?php the_content(); ?>
 		         <div class="study-fields callout lightgrey" role="region" aria-label="Filters">
 					<label for="id_search">
 						<h4>Search our Research Staff:</h4>
-					</label>	
+					</label>
 					<div class="input-group">
 						<span class="input-group-label">
 							<span class="fa fa-search"></span>
 						</span>
-							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search Research Staff" placeholder="Search by name, title, and research interests"  /> 
+							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search Research Staff" placeholder="Search by name, title, and research interests"  />
 					</div>
 		          </div>
 		      </div>
@@ -52,32 +52,32 @@ endif;
 			<?php endwhile; ?>
 			<div id="isotope-list" class="people-directory loading" role="region" aria-label="Results">
 				<ul class="directory">
-					
+
 				<?php if ($research_staff_query->have_posts() ) : while ($research_staff_query->have_posts() ) : $research_staff_query->the_post(); ?>
-					
+
 					<li class="item person <?php echo get_the_directory_filters($post); ?> <?php echo get_the_roles($post); ?>">
 						<div class="media-object">
-							<?php if ( has_post_thumbnail() ) { ?> 
+							<?php if ( has_post_thumbnail() ) { ?>
 							<div class="media-object-section">
 								<?php $title=get_the_title();
-									the_post_thumbnail('directory', array( 'alt' => $title ) ); 
-								?>					
+									the_post_thumbnail('directory', array( 'alt' => $title ) );
+								?>
 							</div>
-							<?php } ?>	
+							<?php } ?>
 							<div class="media-object-section">
-							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?> 
+							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
 								<h3>
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h3>
-							<?php else : ?>	    
+							<?php else : ?>
 								<h3><?php the_title(); ?></h3>
 							<?php endif; ?>
 							<?php if ( array(get_post_meta($post->ID, 'ecpt_position', true) || get_post_meta($post->ID, 'ecpt_degrees', true )) ) : ?>
 								<h4>
 									<?php echo get_post_meta($post->ID, 'ecpt_position', true); ?>
-						
+
 										<br>
-						
+
 									<?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?>
 								</h4>
 							<?php endif; ?>
@@ -108,9 +108,9 @@ endif;
 										<p class="expertise">
 											<strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?>
 										</p>
-									<?php endif; ?>								
+									<?php endif; ?>
 								</ul>
-								
+
 							</div>
 						</div>
 					</li>
@@ -123,8 +123,8 @@ endif;
 					</div>
 				</ul>
 			</div>
-		</main>		
-		<?php do_action( 'foundationpress_after_content' ); ?>
+		</main>
+		<?php do_action( 'ksasacademic_after_content' ); ?>
 		<?php get_sidebar(); ?>
 	</div>
 </div>

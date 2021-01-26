@@ -5,8 +5,8 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 if ( have_comments() ) :
@@ -18,7 +18,7 @@ if ( have_comments() ) :
 
 		wp_list_comments(
 			array(
-				'walker'            => new Foundationpress_Comments(),
+				'walker'            => new Ksasacademic_Comments(),
 				'max_depth'         => '',
 				'style'             => 'ol',
 				'callback'          => null,
@@ -117,7 +117,7 @@ if ( comments_open() ) :
 _e( ' (required)', 'ksasacademic' ); }
 				?>
 			</label>
-			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" 
+			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1"
                                                                                         <?php
             if ( $req ) {
 																																						echo "aria-required='true'"; }
@@ -131,7 +131,7 @@ _e( ' (required)', 'ksasacademic' ); }
 _e( ' (required)', 'ksasacademic' ); }
 				?>
 			</label>
-			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" 
+			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2"
                                                                                       <?php
             if ( $req ) {
 																																						echo "aria-required='true'"; }

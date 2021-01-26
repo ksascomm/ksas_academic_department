@@ -7,8 +7,8 @@ Template Name: Testimonial Listing (Alumni)
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 get_header(); ?>
@@ -71,7 +71,7 @@ get_header(); ?>
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                        </div>             
+                        </div>
                     </div>
                 <?php endwhile; ?>
             </div>

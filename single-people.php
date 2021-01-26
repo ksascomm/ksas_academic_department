@@ -2,8 +2,8 @@
 /**
  * The template for displaying all single People CPT
  *
- * @package FoundationPress
- * @since   FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since   KSASAcademicDepartment 1.0.0
  */
 
 get_header(); ?>
@@ -12,7 +12,7 @@ get_header(); ?>
 <div class="main-container" id="page">
     <div class="main-grid">
         <main class="main-content">
-            <?php do_action('foundationpress_before_content'); ?>
+            <?php do_action('ksasacademic_before_content'); ?>
             <?php
             if (have_posts() ) :
                 while ( have_posts() ) :
@@ -46,31 +46,31 @@ get_header(); ?>
                             <?php if (get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
                             <span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
                             <?php endif; ?>
-                            
+
                             <?php if (get_post_meta($post->ID, 'ecpt_hours', true) ) : ?>
                             <span class="fa fa-calendar" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_hours', true); ?><br>
                             <?php endif; ?>
-                            
+
                             <?php if (get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
                             <span class="fa fa-phone-square" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br>
                             <?php endif; ?>
-                            
+
                             <?php if (get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
                             <span class="fa fa-fax" aria-hidden="true"></span>  <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?><br>
                             <?php endif; ?>
-                            
+
                             <?php
                             if (get_post_meta($post->ID, 'ecpt_email', true) ) :
                                 $email = get_post_meta($post->ID, 'ecpt_email', true);
                             ?>
                             <span class="fa fa-envelope" aria-hidden="true"></span> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge($email); ?>">
-                            
+
                             <?php echo email_munge($email); ?> </a><br>
                             <?php endif; ?>
                             <?php if (get_post_meta($post->ID, 'ecpt_cv', true) ) : ?>
                             <span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_cv', true); ?>">Curriculum Vitae</a><br>
                             <?php endif; ?>
-                            
+
                             <?php if (get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
                             <span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank">Personal Website</a><br>
                             <?php endif; ?>
@@ -100,11 +100,11 @@ get_header(); ?>
                     <?php if (get_post_meta($post->ID, 'ecpt_research', true) ) : ?>
                     <li class="tabs-title"><a href="#researchTab">Research</a></li>
                     <?php endif; ?>
-                    
+
                     <?php if (get_post_meta($post->ID, 'ecpt_teaching', true) ) : ?>
                     <li class="tabs-title"><a href="#teachingTab">Teaching</a></li>
                     <?php endif; ?>
-                    
+
                     <?php if (get_post_meta($post->ID, 'ecpt_publications', true) ) : ?>
                     <li class="tabs-title"><a href="#publicationsTab">Publications</a></li>
                     <?php endif; ?>
@@ -118,22 +118,22 @@ get_header(); ?>
                     <li class="tabs-title"><a href="#extra2Tab"><?php echo get_post_meta($post->ID, 'ecpt_extra_tab_title2', true); ?></a></li>
                     <?php endif; ?>
                 </ul>
-                
+
                 <div class="tabs-content people-content" data-tabs-content="profile-tabs">
                     <?php if (get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
                     <div class="tabs-panel is-active" id="bioTab" itemprop="articleBody">
                         <?php echo get_post_meta($post->ID, 'ecpt_bio', true); ?>
                     </div>
                     <?php endif; ?>
-                    
+
                     <?php if (get_post_meta($post->ID, 'ecpt_research', true) ) : ?>
                     <div class="tabs-panel" id="researchTab"><?php echo get_post_meta($post->ID, 'ecpt_research', true); ?></div>
                     <?php endif; ?>
-                    
+
                     <?php if (get_post_meta($post->ID, 'ecpt_teaching', true) ) : ?>
                     <div class="tabs-panel" id="teachingTab"><?php echo get_post_meta($post->ID, 'ecpt_teaching', true); ?></div>
                     <?php endif; ?>
-                    
+
                     <?php if (get_post_meta($post->ID, 'ecpt_publications', true) ) : ?>
                     <div class="tabs-panel" id="publicationsTab">
                         <?php
@@ -151,7 +151,7 @@ get_header(); ?>
                     <?php if (get_post_meta($post->ID, 'ecpt_extra_tab', true) ) : ?>
                     <div class="tabs-panel"  id="extraTab"><?php echo apply_filters('the_content', get_post_meta($post->ID, 'ecpt_extra_tab', true)); ?></div>
                     <?php endif; ?>
-                    
+
                     <?php if (get_post_meta($post->ID, 'ecpt_extra_tab2', true) ) : ?>
                     <div class="tabs-panel" id="extra2Tab"><?php echo apply_filters('the_content', get_post_meta($post->ID, 'ecpt_extra_tab2', true)); ?></div>
                     <?php endif; ?>
@@ -166,7 +166,7 @@ get_header(); ?>
                 <?php if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) : ?>
                     <p><strong>Thesis Title:</strong> "<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"
                 <?php endif; ?>
-                <?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>&nbsp;- 
+                <?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>&nbsp;-
                     <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract</a> (PDF)</p>
                 <?php endif; ?>
                 <?php if (get_post_meta($post->ID, 'ecpt_fields', true)) : ?>
@@ -175,11 +175,11 @@ get_header(); ?>
                 <?php if (get_post_meta($post->ID, 'ecpt_advisor', true)) : ?>
                     <p><strong>Main Advisor:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_advisor', true); ?></p>
                 <?php endif; ?>
-                <?php echo get_post_meta($post->ID, 'ecpt_job_research', true); ?>                
+                <?php echo get_post_meta($post->ID, 'ecpt_job_research', true); ?>
             </article>
         <?php endwhile; endif;?>
     </main>
-    <?php do_action('foundationpress_after_content'); ?>
+    <?php do_action('ksasacademic_after_content'); ?>
     <?php get_sidebar(); ?>
 </div>
 </div>

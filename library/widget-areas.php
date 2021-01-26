@@ -2,12 +2,12 @@
 /**
  * Register widget areas
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
-function foundationpress_sidebar_widgets() {
+if ( ! function_exists( 'ksasacademic_sidebar_widgets' ) ) :
+function ksasacademic_sidebar_widgets() {
 		register_sidebar(
         array(
 			'name'          => 'Default Sidebar',
@@ -78,7 +78,7 @@ function foundationpress_sidebar_widgets() {
 				'before_title'  => '<div class="widget_title"><h3>',
 				'after_title'   => '</h3></div>',
 			)
-		);			
+		);
 
 		register_sidebar(
 			array(
@@ -95,7 +95,7 @@ function foundationpress_sidebar_widgets() {
 		register_sidebar( array(
 				'name' => 'Custom Sidebar 1',
 				'id' => 'sidebar-1',
-				'description' => __('Custom Sidebar #1. This sidebar will only appear when selected on the page editor', 'foundationpress'),
+				'description' => __('Custom Sidebar #1. This sidebar will only appear when selected on the page editor', 'ksasacademic'),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s" aria-label="Sidebar Content">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<div class="widget_title"><h4>',
@@ -105,13 +105,13 @@ function foundationpress_sidebar_widgets() {
 		register_sidebar( array(
 				'name' => 'Custom Sidebar 2',
 				'id' => 'sidebar-2',
-				'description' => __('Sidebar #2. This sidebar will only appear when selected on the page editor', 'foundationpress'),
+				'description' => __('Sidebar #2. This sidebar will only appear when selected on the page editor', 'ksasacademic'),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s" aria-label="Sidebar Content">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<div class="widget_title"><h4>',
 				'after_title'   => '</h4></div>',
-		));			
+		));
 }
 
-add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );
+add_action( 'widgets_init', 'ksasacademic_sidebar_widgets' );
 endif;

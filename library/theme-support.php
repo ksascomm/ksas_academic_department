@@ -2,12 +2,12 @@
 /**
  * Register theme support for languages, menus, post-thumbnails, post-formats etc.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_theme_support' ) ) :
-function foundationpress_theme_support() {
+if ( ! function_exists( 'ksasacademic_theme_support' ) ) :
+function ksasacademic_theme_support() {
 		// Add language support
 		load_theme_textdomain( 'ksasacademic', get_template_directory() . '/languages' );
 
@@ -46,11 +46,11 @@ function foundationpress_theme_support() {
 			add_theme_support( 'wc-product-gallery-slider' );
 
 			// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
-			//add_editor_style( 'dist/assets/css/' . foundationpress_asset_path('app.css'));
+			//add_editor_style( 'dist/assets/css/' . ksasacademic_asset_path('app.css'));
 
 			// Enable block styles on the front end
     		add_theme_support( 'wp-block-styles' );
 }
 
-add_action( 'after_setup_theme', 'foundationpress_theme_support' );
+add_action( 'after_setup_theme', 'ksasacademic_theme_support' );
 endif;

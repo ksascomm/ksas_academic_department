@@ -6,8 +6,8 @@
  * @param bool $separatorclass should a separator class be added (in case :before is not an option).
  */
 
-if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
-	function foundationpress_breadcrumb( $showhome = true, $separatorclass = false ) {
+if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
+	function ksasacademic_breadcrumb( $showhome = true, $separatorclass = false ) {
 
 		// Settings
 		$separator  = '&gt;';
@@ -45,7 +45,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				} elseif (is_singular('ai1ec_event') ) {
 					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';
 				} elseif (is_singular('tribe_events') ) {
-					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';	
+					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';
 				} elseif (is_singular('ksasexhibits') ) {
 					echo '<li><a href="' . $home_url . '/exhibitions">Exhibitions</a></li>';
 				} elseif (is_singular('profile') ) {
@@ -63,7 +63,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 						echo '<li><a href="' . $home_url . '/testimonialtype/current-students/">Undergraduate Testimonials</a></li>';
 					} elseif (has_term('internship', 'testimonialtype') ) {
 						echo '<li><a href="' . $home_url . '/testimonialtype/internship-testimonial/">Undergraduate Testimonials</a></li>';
-					}					
+					}
 				} elseif (is_singular('people') ) {
 					echo '<li><a href="' . $home_url . '/people/">People</a></li>';
 				} else {

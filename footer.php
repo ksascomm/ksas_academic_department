@@ -4,8 +4,8 @@
  *
  * Contains the closing of the "off-canvas-wrap" div and all content after.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
@@ -34,16 +34,16 @@
                     );
 
 				// Return to current site
-				if ( $theme_option['flagship_sub_quicklinks'] == '1' ) { 
-					restore_current_blog(); 
+				if ( $theme_option['flagship_sub_quicklinks'] == '1' ) {
+					restore_current_blog();
 				} ?>
 
 			</div>
 			<div class="small-12 large-6 cell">
 				<ul id="menu-footer-links" class="menu" role="menu">
 					<li role="menuitem"><a href="<?php echo get_site_url(); ?>/sitemap/" target="_blank">Sitemap</a></li>
-					<li role="menuitem"><a href="https://accessibility.jhu.edu/" target="_blank">Accessibility</a></li>	
-					<li role="menuitem"><a href="https://jobs.jhu.edu/" target="_blank">Careers</a></li>	
+					<li role="menuitem"><a href="https://accessibility.jhu.edu/" target="_blank">Accessibility</a></li>
+					<li role="menuitem"><a href="https://jobs.jhu.edu/" target="_blank">Careers</a></li>
 					<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement" target="_blank">Privacy Statement</a></li>
 				</ul>
 			</div>
@@ -54,11 +54,11 @@
 				<a href="https://www.youtube.com/jhuartssciences"><span class="fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a>
 			</div>
 		</div>
-		<div class="grid-x">	
+		<div class="grid-x">
 			<div class="small-12 cell copydate">
 				<a href="https://www.jhu.edu/" class="hide-for-print">
 					<img class="jhushield" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/jhu-horizontal.png" alt="Johns Hopkins University">
-				</a>					
+				</a>
 				<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright'];?></p>
 			</div>
 		</div>

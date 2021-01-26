@@ -1,8 +1,8 @@
-//function foundationpress_gallery($attr) in foundation.php renders .gallery superfluous
+//function ksasacademic_gallery($attr) in foundation.php renders .gallery superfluous
 
 .gallery
  {
-  
+
   @include grid-row();
 
     &.gallery-columns-2 {
@@ -106,7 +106,7 @@
       border-radius: 20px !important;
       border-bottom: none !important;
       &:hover {
-        background: #333 !important; 
+        background: #333 !important;
         background: rgba(0,0,0,.7) !important;
       }
     }

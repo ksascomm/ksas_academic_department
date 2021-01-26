@@ -11,20 +11,20 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
-get_header(); ?>	
+get_header(); ?>
 
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content-full-width">
-		
+
 		<?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 
 			<h1 class="page-title"><?php echo $term->name;?> Exhibits</h1>
 			<p>Explore all of our <?php echo $term->name;?> Exhibits</p>
-			
+
 			<?php if ( have_posts() ) : ?>
 				<div class="grid-x grid-padding-x small-up-2 medium-up-3">
 

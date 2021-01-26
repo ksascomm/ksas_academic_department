@@ -2,13 +2,13 @@
 /**
  * Foundation PHP template
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 // Pagination.
-if ( ! function_exists( 'foundationpress_pagination' ) ) :
-	function foundationpress_pagination() {
+if ( ! function_exists( 'ksasacademic_pagination' ) ) :
+	function ksasacademic_pagination() {
 		global $wp_query;
 
 		$big = 999999999; // This needs to be an unlikely integer
@@ -70,8 +70,8 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
-function foundationpress_menu_fallback() {
+if ( ! function_exists( 'ksasacademic_menu_fallback' ) ) :
+function ksasacademic_menu_fallback() {
 		echo '<div class="alert-box secondary">';
 		/* translators: %1$s: link to menus, %2$s: link to customize. */
 		printf(
@@ -92,22 +92,22 @@ function foundationpress_menu_fallback() {
 endif;
 
 // Add Foundation 'is-active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-function foundationpress_active_nav_class( $classes, $item ) {
+if ( ! function_exists( 'ksasacademic_active_nav_class' ) ) :
+function ksasacademic_active_nav_class( $classes, $item ) {
 		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
 			$classes[] = 'is-active';
 			}
 		return $classes;
 }
-add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
+add_filter( 'nav_menu_css_class', 'ksasacademic_active_nav_class', 10, 2 );
 endif;
 
 /**
  * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
-function foundationpress_active_list_pages_class( $input ) {
+if ( ! function_exists( 'ksasacademic_active_list_pages_class' ) ) :
+function ksasacademic_active_list_pages_class( $input ) {
 
 		$pattern = '/current_page_item/';
 		$replace = 'current_page_item is-active';
@@ -116,15 +116,15 @@ function foundationpress_active_list_pages_class( $input ) {
 
 		return $output;
 }
-add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
+add_filter( 'wp_list_pages', 'ksasacademic_active_list_pages_class', 10, 2 );
 endif;
 
 /**
  * Enable Foundation responsive embeds for WP video embeds
  */
 
-if ( ! function_exists( 'foundationpress_responsive_video_oembed_html' ) ) :
-function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
+if ( ! function_exists( 'ksasacademic_responsive_video_oembed_html' ) ) :
+function ksasacademic_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
 
 		// Whitelist of oEmbed compatible sites that **ONLY** support video.
 		// Cannot determine if embed is a video or not from sites that
@@ -182,15 +182,15 @@ function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post
 				}
 
 }
-add_filter( 'embed_oembed_html', 'foundationpress_responsive_video_oembed_html', 10, 4 );
+add_filter( 'embed_oembed_html', 'ksasacademic_responsive_video_oembed_html', 10, 4 );
 endif;
 
 /**
  * Get mobile menu ID
  */
 
-if ( ! function_exists( 'foundationpress_mobile_menu_id' ) ) :
-function foundationpress_mobile_menu_id() {
+if ( ! function_exists( 'ksasacademic_mobile_menu_id' ) ) :
+function ksasacademic_mobile_menu_id() {
 		if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) {
 			echo 'off-canvas-menu';
 			} else {
@@ -203,8 +203,8 @@ endif;
  * Get title bar responsive toggle attribute
  */
 
-if ( ! function_exists( 'foundationpress_title_bar_responsive_toggle' ) ) :
-function foundationpress_title_bar_responsive_toggle() {
+if ( ! function_exists( 'ksasacademic_title_bar_responsive_toggle' ) ) :
+function ksasacademic_title_bar_responsive_toggle() {
 		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) {
 			echo 'data-responsive-toggle="mobile-menu"';
 			}
@@ -214,8 +214,8 @@ endif;
 /**
  * Custom markup for Wordpress gallery
  */
-if ( ! function_exists( 'foundationpress_gallery' ) ) :
-	function foundationpress_gallery($attr) {
+if ( ! function_exists( 'ksasacademic_gallery' ) ) :
+	function ksasacademic_gallery($attr) {
 
 		$post = get_post();
 		static $instance = 0;
@@ -329,14 +329,14 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 		        </{$icon_tag}>";
 
 			// Uncomment if you wish to display captions inline on gallery.
-			
+
 			if ( $caption_tag && trim($attachment->post_excerpt) ) {
 				$output .= "
 		            <{$caption_tag} class='wp-caption-text gallery-caption'>
 		            " . wptexturize($attachment->post_excerpt) . "
 		            </{$caption_tag}>";
 			}
-			
+
 
 			$output .= "</{$item_tag}>";
 
@@ -345,5 +345,5 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 
 		return $output;
 	}
-	add_shortcode('gallery', 'foundationpress_gallery');
+	add_shortcode('gallery', 'ksasacademic_gallery');
 endif;

@@ -2,8 +2,8 @@
 /**
  * The default template for the "roof"
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
@@ -32,7 +32,7 @@
 				<li role="menuitem"><a href="http://e-catalog.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Academic Catalog')">Academic Catalog</a></li>
 				<li role="menuitem"><a href="https://livejohnshopkins.sharepoint.com/sites/KSASFacultyHandbook" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Faculty Handbook')">Faculty Handbook <span class="fas fa-sign-in-alt"></span></a></li>
 				<li role="menuitem"><a href="https://studentaffairs.jhu.edu/registrar" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Registrars')">Registrar's Office</a></li>
-				<li role="menuitem"><a href="https://policies.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Policy Library')">University Policies & Document Library <span class="fas fa-sign-in-alt"></span></a></li>	
+				<li role="menuitem"><a href="https://policies.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Policy Library')">University Policies & Document Library <span class="fas fa-sign-in-alt"></span></a></li>
 			</ul>
 		</div>
 		<div class="cell">
@@ -46,6 +46,6 @@
 		</div>
 		<button class="close-button" aria-label="Close menu" type="button" data-close>
 		  <span aria-hidden="true">&times;</span>
-		</button>			
+		</button>
 	</div>
 </div>

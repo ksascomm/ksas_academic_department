@@ -2,8 +2,8 @@
 /**
  * The template for displaying search results pages.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 get_header(); ?>
@@ -31,8 +31,8 @@ the_post();
 		<?php endif; ?>
 
 		<?php
-		if ( function_exists( 'foundationpress_pagination' ) ) :
-			foundationpress_pagination();
+		if ( function_exists( 'ksasacademic_pagination' ) ) :
+			ksasacademic_pagination();
 		elseif ( is_paged() ) :
 		?>
 			<nav id="post-nav">

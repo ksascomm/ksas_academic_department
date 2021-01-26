@@ -4,8 +4,8 @@
  *
  * Displays all of the head element and everything up until the "container" div.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
@@ -19,23 +19,23 @@
 		<title><?php create_page_title(); ?></title>
 
 		<?php wp_head(); ?>
-		
+
 		<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/browserconfig.xml" />
 
 		<!--Scripts-->
 		<script src="https://kit.fontawesome.com/ed22ca715b.js" crossorigin="anonymous" defer></script>
 		<?php get_template_part( 'template-parts/analytics' ); ?>
 		<?php get_template_part( 'template-parts/script-initiators' ); ?>
-		
+
 	</head>
 	<body <?php body_class(); ?>>
 <!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VTN64C"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->		
+<!-- End Google Tag Manager (noscript) -->
 	<div class="alert" role="navigation" aria-label="COVID-19 Alerts">
     	<a class="alert-message" href="https://covidinfo.jhu.edu/">COVID-19 information and resources for the Johns Hopkins University community</a>
-	</div>	
+	</div>
 	<div role="navigation" aria-label="Skip to main content">
 		<a class="skip-main show-on-focus" href="#page" >Skip to main content</a>
 	</div>
@@ -49,9 +49,9 @@
 
 
 	<header class="site-header" role="banner" aria-labelledby="dept-info">
-		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
+		<div class="site-title-bar title-bar" <?php ksasacademic_title_bar_responsive_toggle(); ?>>
 			<div class="title-bar-left">
-				<button aria-label="<?php _e( 'Main Menu', 'ksasacademic' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+				<button aria-label="<?php _e( 'Main Menu', 'ksasacademic' ); ?>" class="menu-icon" type="button" data-toggle="<?php ksasacademic_mobile_menu_id(); ?>"></button>
 				<span class="site-mobile-title title-bar-title">
 					Main Menu
 				</span>
@@ -103,7 +103,7 @@
 		</div>
 		<nav class="top-bar main-navigation hide-for-print" aria-label="Main Menu">
 			<div class="top-bar-left">
-				<?php foundationpress_top_bar_r(); ?>
+				<?php ksasacademic_top_bar_r(); ?>
 			</div>
 			<div class="top-bar-right hide-for-small-only">
 				<form method="GET" action="<?php echo home_url( '/' ); ?>" role="search" aria-label="Utility Bar Search">
@@ -114,7 +114,7 @@
 						<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Search this site" aria-label="Search This Website"/>
 						<div class="input-group-button">
 			    			<input type="submit" class="button" value="&#xf002;" aria-label="search">
-			  			</div>	
+			  			</div>
 					</div>
 				</form>
 			</div>
@@ -122,8 +122,8 @@
 		<?php if ( ! is_front_page() ) : ?>
 		<div class="secondary">
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">		
-			 		<?php foundationpress_breadcrumb(); ?>
+				<div class="grid-x grid-padding-x">
+			 		<?php ksasacademic_breadcrumb(); ?>
 			 	</div>
 			 </div>
 		</div>

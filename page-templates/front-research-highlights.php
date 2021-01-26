@@ -9,13 +9,13 @@ get_header(); ?>
 		<header class="featured-hero homepage hide-for-small-only hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo $thumbnail_alt ?>"/>>
 		</header>
 	<?php endif; ?>
-	
-	<?php do_action( 'foundationpress_before_content' ); ?>
+
+	<?php do_action( 'ksasacademic_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<main class="background-bluejaysblue" id="page" tabindex="0" aria-label="Website Introduction">
 			<div class="intro">
 				<div <?php post_class('seo-intro'); ?> id="post-<?php the_ID(); ?>">
-					<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+					<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 		</main>
 	<?php endwhile; ?>
-	<?php do_action( 'foundationpress_after_content' ); ?>
+	<?php do_action( 'ksasacademic_after_content' ); ?>
 
 <?php
 $slider_query = new WP_Query(
@@ -37,7 +37,7 @@ $slider_query = new WP_Query(
 			<div class="highlighted-research" role="region" aria-label="Faculty Research Highlights">
 				<div class="intro">
 					<div class="media-object">
-						<div class="media-object-section">			
+						<div class="media-object-section">
 							<span class="fa-stack fa-2x hide-for-small-only">
 								<span class="fa fa-circle fa-stack-2x"></span>
 								<span class="fa fa-flask fa-stack-1x fa-inverse" aria-hidden="true"></span>
@@ -54,13 +54,13 @@ $slider_query = new WP_Query(
 					<ul class="orbit-container">
 
 					<?php if ($slider_query->post_count > 1 ) : ?>
-					
+
 					<div class="hide-for-small-only">
 						<button class="orbit-previous show-for-large" onclick="ga('send', 'event', 'Homepage Research Slider', 'Previous Slide Click');"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
 						<button class="orbit-next show-for-large" onclick="ga('send', 'event', 'Homepage Research Slider', 'Next Slide Click');"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-		   			</div>	
+		   			</div>
 					<?php endif;?>
-					
+
 					<?php  $slidernumber = 0;
 					while ($slider_query->have_posts() ) : $slider_query->the_post(); $slidernumber++; ?>
 						<li class="orbit-slide">
@@ -74,12 +74,12 @@ $slider_query = new WP_Query(
 										<h3><?php the_title(); ?></h3>
 									<?php endif;?>
 										<p><?php echo get_the_content(); ?></p>
-									   	<?php if ( get_post_meta($post->ID, 'ecpt_button', true) ) : ?>				
+									   	<?php if ( get_post_meta($post->ID, 'ecpt_button', true) ) : ?>
 												<p><a class="button" href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" onclick="ga('send', 'event', 'Homepage Research Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>');" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">Find Out More <span class="far fa-arrow-alt-circle-right"></span></a></p>
 										<?php endif;?>
 									</div>
-								</div>	
-							</div>						
+								</div>
+							</div>
 						</li>
 					<?php endwhile;?>
 		  			</ul>
@@ -90,10 +90,10 @@ $slider_query = new WP_Query(
 								<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
 							</button>
 						<?php $bullet_counter++; endwhile; ?>
-					</nav>	
+					</nav>
 		   		</div>
 			</div>
-			<?php endif;?> 		
+			<?php endif;?>
 
 	<div class="main-container">
 	    <div class="main-grid homepage">
@@ -128,7 +128,7 @@ $slider_query = new WP_Query(
 						}
 					if ( $news_query->have_posts() ) :
                     ?>
-                     
+
 
 				<header class="news-title" aria-label="Site Feed">
 					<h2><?php echo $theme_option['flagship_sub_feed_name']; ?></h2>
@@ -138,20 +138,20 @@ $slider_query = new WP_Query(
                 while ($news_query->have_posts() ) :
 $news_query->the_post();
 ?>
-					
-			
+
+
 				<?php get_template_part( 'template-parts/content-news-homepage', get_post_format() ); ?>
 
 				<?php endwhile; ?>
 				<article class="homepage-news-archive" aria-label="<?php echo $theme_option['flagship_sub_feed_name']; ?>">
-				
+
 					<a class="button news-archive" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?> " class="button" id="newsarchive">
 						<?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
-					</a>        
+					</a>
 
-				</article>      
+				</article>
 
-					
+
 			<?php endif; ?>
 
 			<?php

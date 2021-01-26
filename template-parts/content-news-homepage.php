@@ -2,13 +2,13 @@
 /**
  * The default template for displaying news content on homepage (meta fields are above the permalink; contains external link class; categories NOT shown)
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
 
-<article aria-labelledby="post-<?php the_ID(); ?>" 
+<article aria-labelledby="post-<?php the_ID(); ?>"
 	<?php if( is_sticky() ) :?>
 		<?php post_class('post-listing homepage-article wp-sticky'); ?>>
 		<div class="ribbon"><span>FEATURED</span></div>
@@ -17,7 +17,7 @@
 	<?php endif;?>
 	<header>
 		<?php if( !is_sticky() ) :?>
-			<?php foundationpress_entry_meta(); ?>
+			<?php ksasacademic_entry_meta(); ?>
 		<?php endif;?>
 		<h2>
 			<?php if ( get_post_meta($post->ID, 'ecpt_external_link', true) ) : ?>
@@ -43,5 +43,5 @@
 			</div>
 		<?php endif;?>
 		</div>
-	</div>	
+	</div>
 </article>

@@ -4,8 +4,8 @@
 *
 * Used for both single exhibits.
 *
-* @package FoundationPress
-* @since FoundationPress 1.0.0
+* @package KSASAcademicDepartment
+* @since KSASAcademicDepartment 1.0.0
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-listing exhibit'); ?>>
@@ -25,16 +25,16 @@
 			<?php endif; ?>
 			</h3>
 			<?php $images = array(
-		    	'post_type' => 'attachment', 
-		        'orderby' => 'menu_order', 
+		    	'post_type' => 'attachment',
+		        'orderby' => 'menu_order',
 		        'post_mime_type' => 'image',
-		        'post_status' => null, 
-		        'posts_per_page' => 10, 
+		        'post_status' => null,
+		        'posts_per_page' => 10,
 		        'post_parent' => $post->ID
 				);
 			$attachments = get_posts( $images );
 		    if( ! empty( $attachments ) ) :?>
-			
+
 			<h3>Images</h3>
 				<div class="grid-container">
 					<div class="grid-x grid-padding-x small-up-1 large-up-3">
@@ -46,7 +46,7 @@
 						?>
 						<div class="cell">
 							<div class="card exhibit-image">
-								<a data-open="modal-image-<?php echo $attachment->ID;?>">	
+								<a data-open="modal-image-<?php echo $attachment->ID;?>">
 									<?php echo wp_get_attachment_image( $attachment->ID, 'featured-small' ); ?>
 								</a>
 							</div>
@@ -57,7 +57,7 @@
 							<button class="close-button" data-close aria-label="Close modal" type="button">
 								<span aria-hidden="true">&times;</span>
 							</button>
-						 </div>									
+						 </div>
 						<?php endforeach;?>
 					</div>
 				</div>
@@ -71,7 +71,7 @@
 				<div id="modal-post-thumb" class="small reveal" data-reveal data-animation-in="scale-in-up" data-animation-out="scale-out-down">
 					<?php if ( has_post_thumbnail()) {  the_post_thumbnail('full',
 						array('alt' => esc_html ( get_the_title() ))
-					);  } ?>					
+					);  } ?>
 					<button class="close-button" data-close aria-label="Close modal" type="button">
 						<span aria-hidden="true">&times;</span>
 					</button>

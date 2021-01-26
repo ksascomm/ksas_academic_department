@@ -33,7 +33,7 @@ get_header(); ?>
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content-full-width">
-			<?php do_action( 'foundationpress_before_content' ); ?>
+			<?php do_action( 'ksasacademic_before_content' ); ?>
 			<?php
             while ( have_posts() ) :
 the_post();
@@ -42,7 +42,7 @@ the_post();
 				<header aria-label="<?php the_title(); ?>">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
-				<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+				<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
@@ -135,7 +135,7 @@ the_post();
 							while ($people_query->have_posts() ) :
 	$people_query->the_post();
 	?>
-					
+
 					<?php
                     if ( get_post_meta($post->ID, 'ecpt_bio', true) ) :
 							get_template_part( 'template-parts/hasbio-loop' );
@@ -153,7 +153,7 @@ the_post();
 				</ul>
 			</div>
 		</main>
-		<?php do_action( 'foundationpress_after_content' ); ?>
+		<?php do_action( 'ksasacademic_after_content' ); ?>
 	</div>
 </div>
 <?php

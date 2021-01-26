@@ -11,25 +11,25 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 get_header();
 	$theme_option = flagship_sub_get_global_options();
-	$collection_name = $theme_option['flagship_sub_search_collection']; ?>	
+	$collection_name = $theme_option['flagship_sub_search_collection']; ?>
 
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content-full-width">
 		<?php if ( have_posts() ) : ?>
-			<?php if(is_category('highlights')): ?> 
+			<?php if(is_category('highlights')): ?>
         		<h1 class="page-title">Humanities Highlights</h1>
         	<?php endif;?>
 			<?php /* Start the Loop */ ?>
 			<?php
             while ( have_posts() ) : the_post(); ?>
-            	<?php if(is_category('highlights')): 
+            	<?php if(is_category('highlights')):
             		get_template_part( 'template-parts/content', 'humanities-highlights' );
             	else:
 					get_template_part( 'template-parts/content', get_post_format() );
@@ -43,8 +43,8 @@ get_header();
 
 			<?php /* Display navigation to next/previous pages when applicable */ ?>
 			<?php
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
+			if ( function_exists( 'ksasacademic_pagination' ) ) :
+				ksasacademic_pagination();
 			elseif ( is_paged() ) :
 			?>
 				<nav id="post-nav">

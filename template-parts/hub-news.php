@@ -2,8 +2,8 @@
 /**
 * The default template for displaying news via the hub's api
 *
-* @package FoundationPress
-* @since FoundationPress 1.0.0
+* @package KSASAcademicDepartment
+* @since KSASAcademicDepartment 1.0.0
 */
 ?>
 <?php

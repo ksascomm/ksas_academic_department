@@ -11,11 +11,11 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
-get_header(); ?>	
+get_header(); ?>
 
 <div class="main-container" id="page">
     <div class="main-grid sidebar-right">
@@ -44,8 +44,8 @@ the_post();
 
 			<?php /* Display navigation to next/previous pages when applicable */ ?>
 			<?php
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
+			if ( function_exists( 'ksasacademic_pagination' ) ) :
+				ksasacademic_pagination();
 			elseif ( is_paged() ) :
 			?>
 				<nav id="post-nav">

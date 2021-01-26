@@ -4,22 +4,22 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
 
 <article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-singular single-post'); ?>>
 		<header>
-		<?php if ( is_single() ) : ?>	
+		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
 			<?php else : ?>
 			<h2 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark"></a><?php the_title(); ?></h2>
 		<?php endif; ?>
 			<ul class="no-bullet meta">
-				<li>Posted on: <?php foundationpress_entry_meta(); ?></li>
-				<li>Posted in: <strong><span class="capitalize"> 
+				<li>Posted on: <?php ksasacademic_entry_meta(); ?></li>
+				<li>Posted in: <strong><span class="capitalize">
                 <?php
                 $categories = get_the_category();
 						$separator = ', ';

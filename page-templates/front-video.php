@@ -8,12 +8,12 @@ get_header(); ?>
 		</header>
 	<?php endif; ?>
 	<?php get_template_part( 'template-parts/homepage-video' ); ?>
-	<?php do_action( 'foundationpress_before_content' ); ?>
+	<?php do_action( 'ksasacademic_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<main class="background-bluejaysblue" id="page" tabindex="0" aria-label="Website Introduction">
 			<div class="intro">
 				<div <?php post_class('seo-intro'); ?> id="post-<?php the_ID(); ?>">
-					<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+					<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
@@ -21,7 +21,7 @@ get_header(); ?>
 			</div>
 		</main>
 	<?php endwhile; ?>
-	<?php do_action( 'foundationpress_after_content' ); ?>
+	<?php do_action( 'ksasacademic_after_content' ); ?>
 	<?php if ( have_rows( 'explore_the_department' ) ):
 	$count = count(get_field('explore_the_department'));
 	$featuredSidebar = is_active_sidebar('homepage-featured-sb');?>
@@ -57,7 +57,7 @@ get_header(); ?>
 							</div>
 							<div class="bucket-text">
 								<p><?php the_sub_field( 'explore_bucket_text' ); ?></p>
-							</div>	
+							</div>
 						</a>
 					</article>
 				</div>
@@ -109,19 +109,19 @@ get_header(); ?>
 				</header>
 
 				<?php while ($news_query->have_posts() ) : $news_query->the_post(); ?>
-					
-			
+
+
 					<?php get_template_part( 'template-parts/content-news-homepage', get_post_format() ); ?>
 
 				<?php endwhile; ?>
 				<article class="homepage-news-archive" aria-label="<?php echo $theme_option['flagship_sub_feed_name']; ?>">
-				
+
 					<a class="button news-archive" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?> " class="button" id="newsarchive">
 						<?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
-					</a>        
+					</a>
 
 				</article>
-				
+
 			<?php endif; ?>
 
 			<?php $hub_query_cond = $theme_option['flagship_sub_hub_cond']; if ($hub_query_cond === 1 ) : ?>

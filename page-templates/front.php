@@ -9,12 +9,12 @@ get_header(); ?>
 		<header class="featured-hero homepage hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo $thumbnail_alt ?>"/>
 		</header>
 	<?php endif; ?>
-	<?php do_action( 'foundationpress_before_content' ); ?>
+	<?php do_action( 'ksasacademic_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<main class="background-bluejaysblue" id="page" tabindex="0" aria-label="Website Introduction">
 			<div class="intro">
 				<div <?php post_class('seo-intro'); ?> id="post-<?php the_ID(); ?>">
-					<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+					<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
@@ -22,7 +22,7 @@ get_header(); ?>
 			</div>
 		</main>
 	<?php endwhile; ?>
-	<?php do_action( 'foundationpress_after_content' ); ?>
+	<?php do_action( 'ksasacademic_after_content' ); ?>
 
 	<div class="main-container">
 	    <div class="main-grid homepage">
@@ -57,7 +57,7 @@ get_header(); ?>
 						}
 					if ( $news_query->have_posts() ) :
                     ?>
-                     
+
 
 				<header class="news-title" aria-label="Site Feed">
 					<h2><?php echo $theme_option['flagship_sub_feed_name']; ?></h2>
@@ -65,20 +65,20 @@ get_header(); ?>
 
 				<?php
                 while ($news_query->have_posts() ) : $news_query->the_post(); ?>
-					
-			
+
+
 				<?php get_template_part( 'template-parts/content-news-homepage', get_post_format() ); ?>
 
 				<?php endwhile; ?>
 				<article class="homepage-news-archive" aria-label="<?php echo $theme_option['flagship_sub_feed_name']; ?>">
-				
+
 					<a class="button news-archive" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?> " class="button" id="newsarchive">
 						<?php echo $theme_option['flagship_sub_feed_name']; ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
-					</a>        
+					</a>
 
-				</article>      
+				</article>
 
-					
+
 			<?php endif; ?>
 
 			<?php

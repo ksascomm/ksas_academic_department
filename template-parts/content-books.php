@@ -4,8 +4,8 @@
  *
  * Used for single.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
@@ -20,21 +20,21 @@ $faculty_post_id = get_post_meta($post->ID, 'ecpt_pub_author', true);
 		</header>
 		<div class="entry-content single-book">
 				<?php $title=get_the_title();
-					the_post_thumbnail('medium', array( 'alt' => $title ) ); 
-				?>	
+					the_post_thumbnail('medium', array( 'alt' => $title ) );
+				?>
 				<ul class="no-bullet">
 					<li>
-					<?php if ( get_post_meta($post->ID, 'ecpt_pub_date', true) ) : ?> 
+					<?php if ( get_post_meta($post->ID, 'ecpt_pub_date', true) ) : ?>
 						<?php echo get_post_meta($post->ID, 'ecpt_pub_date', true); ?>,
 					<?php endif; ?>
 					<?php if ( get_post_meta($post->ID, 'ecpt_publisher', true) ) : ?>
-						<?php echo get_post_meta($post->ID, 'ecpt_publisher', true); ?> 
-					<?php endif; ?>	
+						<?php echo get_post_meta($post->ID, 'ecpt_publisher', true); ?>
+					<?php endif; ?>
 					</li>
 					<li>
 						<a href="<?php echo get_permalink($faculty_post_id); ?>">
-							<?php echo get_the_title($faculty_post_id); ?>, 
-							<?php if ( get_post_meta($post->ID, 'ecpt_pub_role', true) ) : ?> 
+							<?php echo get_the_title($faculty_post_id); ?>,
+							<?php if ( get_post_meta($post->ID, 'ecpt_pub_role', true) ) : ?>
 								<?php echo get_post_meta($post->ID, 'ecpt_pub_role', true); ?>
 							<?php endif; ?>
 						</a>
@@ -45,7 +45,7 @@ $faculty_post_id = get_post_meta($post->ID, 'ecpt_pub_author', true);
 						</a>
 					</li>
 					<?php } ?>
-					<li><?php if ( get_post_meta($post->ID, 'ecpt_pub_link', true) ) : ?> 
+					<li><?php if ( get_post_meta($post->ID, 'ecpt_pub_link', true) ) : ?>
 							<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_pub_link', true); ?>" aria-label="Link to purchase <?php the_title(); ?>">
 								Purchase Online <span class="fas fa-external-link-square-alt"></span>
 							</a>

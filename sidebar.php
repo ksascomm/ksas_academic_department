@@ -2,13 +2,13 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
  */
 
 ?>
 <div class="sidebar">
-	
+
 	<!-- Sidebar Menu -->
 	<?php
 	wp_reset_query();
@@ -31,14 +31,14 @@
      // If there are no ancestors display a menu of children. If no children, hide menu.
 			if (count($ancestors) == 0 && is_front_page() == false ) {
 	?>
-	<div class="sidebar-menu 
+	<div class="sidebar-menu
     <?php
 	if (count($children) < 1 ) :
 echo 'widow'; endif;
 ?>
 ">
 <h1 class="sidebar-menu-title" id="sidebar-navigation">In This Section</h1>
-		
+
 <?php
 $page_name = $post->post_title;
 $test_menu = wp_nav_menu(
@@ -77,7 +77,7 @@ array(
 )
 );
 ?>
-			
+
 </div>
 <?php
         } elseif (count($ancestors) >= 2 ) {
@@ -98,8 +98,8 @@ array(
 		<?php if ($root_parent = get_the_title($grandparent) !== $root_parent = get_the_title($current) ) : ?>
 				<a href="<?php echo $grandparent_link; ?>" aria-label="Sidebar Menu: <?php echo $grandparent_name; ?>"><?php echo get_the_title($grandparent); ?></a>
 					 <?php else : ?>
-				<a href="<?php echo $parent_link; ?>" aria-label="Sidebar Menu: <?php echo $parent_name; ?>"><?php echo get_the_title($parent); ?></a>	 	
-				<?php endif; ?>		
+				<a href="<?php echo $parent_link; ?>" aria-label="Sidebar Menu: <?php echo $parent_name; ?>"><?php echo get_the_title($parent); ?></a>
+				<?php endif; ?>
 		</h1>
 		<?php
 		wp_nav_menu(
@@ -112,7 +112,7 @@ array(
 	 )
 		);
 		?>
-		</div>	
+		</div>
 		<?php } ?>
 		</aside>
 	<?php } ?>
@@ -152,7 +152,7 @@ array(
                         );
                     ?>
 			</div>
-			<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>			
+			<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
 				<div class="sidebar-menu faculty-bio-jump" aria-labelledby="jump-menu">
 					<label for="jump">
 						<h1 id="jump-menu">Jump to Faculty Member</h1>
@@ -160,7 +160,7 @@ array(
 					<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
 						<?php
                         if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-							<option>---<?php the_title(); ?></option> 
+							<option>---<?php the_title(); ?></option>
 						<?php endwhile; endif; ?>
 						<?php
                         $jump_menu_query = new WP_Query(
@@ -191,7 +191,7 @@ array(
 			<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
 				<?php
 		        if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-					<option>---<?php the_title(); ?></option> 
+					<option>---<?php the_title(); ?></option>
 				<?php endwhile; endif; ?>
 				<?php $jump_menu_query = new WP_Query(array(
 					'post-type' => 'testimonial',
@@ -199,13 +199,13 @@ array(
 					'orderby' => 'title',
 					'order' => 'ASC',
 					'posts_per_page' => 250)); ?>
-				<?php while ($jump_menu_query->have_posts()) : $jump_menu_query->the_post(); ?>				
+				<?php while ($jump_menu_query->have_posts()) : $jump_menu_query->the_post(); ?>
 					<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
 				<?php endwhile; ?>
 			</select>
 		</div>
 	<?php endif; ?>
-	
+
 	<!-- Widgetized Sidebars -->
 	<!-- Page Specific Sidebar -->
 	<?php
@@ -226,22 +226,22 @@ while ( have_posts() ) :
 		$ancestor_slug = $the_ancestor->post_name;
 		if ( is_home() ) :
         ?>
-           
+
 		<?php dynamic_sidebar( 'archive-sb' ); ?>
 		<?php elseif ( is_page( 'graduate' ) || $ancestor_slug == 'graduate' ) : ?>
 			<?php dynamic_sidebar( 'graduate-sb' ); ?>
 		<?php elseif ( is_page( 'research' ) || $ancestor_slug == 'research' ) : ?>
 			<?php dynamic_sidebar( 'research-sb' ); ?>
-		<?php elseif ( is_page( 'undergraduate' ) || $ancestor_slug == 'undergraduate' ) : ?>  
+		<?php elseif ( is_page( 'undergraduate' ) || $ancestor_slug == 'undergraduate' ) : ?>
 			<?php dynamic_sidebar( 'undergrad-sb' ); ?>
 		<?php elseif ( is_page() && !is_page('faculty-books') ) : ?>
 			<?php dynamic_sidebar( 'page-sb' ); ?>
 	<?php endif; ?>
 	<!-- Customized Page Sidebar -->
-	<?php if ( have_posts()) : while ( have_posts() ) : the_post(); 
+	<?php if ( have_posts()) : while ( have_posts() ) : the_post();
 		$custom_sidebar = get_post_meta($post->ID, 'ecpt_page_custom_widget_sidebar', true); ?>
-		
+
 			<?php dynamic_sidebar($custom_sidebar); ?>
-		
-	<?php endwhile; endif; ?>	
+
+	<?php endwhile; endif; ?>
 </div>

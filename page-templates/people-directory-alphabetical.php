@@ -16,7 +16,7 @@ get_header(); ?>
 	));
 	//convert the role slug to corresponding IDs
 	if( !is_wp_error( $roles_to_exclude ) && count($roles_to_exclude) > 0){
-	    $ids_to_exclude = $roles_to_exclude; 
+	    $ids_to_exclude = $roles_to_exclude;
 	}
 	$roles = get_terms(
         'role', array(
@@ -50,7 +50,7 @@ get_header(); ?>
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content">
-			<?php do_action( 'foundationpress_before_content' ); ?>
+			<?php do_action( 'ksasacademic_before_content' ); ?>
 			<?php
             while ( have_posts() ) :
 the_post();
@@ -59,7 +59,7 @@ the_post();
 				<header aria-label="<?php the_title(); ?>">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
-				<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+				<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
@@ -68,7 +68,7 @@ the_post();
 			<div class="study-fields callout lightgrey" role="region" aria-label="Filters
 			">
 				<?php //SEARCH BOX
-					if ( $theme_option['flagship_sub_directory_search']  == '1' ) :?>					
+					if ( $theme_option['flagship_sub_directory_search']  == '1' ) :?>
 					<label for="id_search">
 						<h4>Search our Faculty:</h4>
 					</label>
@@ -95,7 +95,7 @@ the_post();
 								)
 							);
 						if ($people_query_alpha->have_posts() ) : while ($people_query_alpha->have_posts() ) : $people_query_alpha->the_post(); ?>
-					
+
 							<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
 								<li class="item person">
 									<div class="media-object">
@@ -105,7 +105,7 @@ the_post();
 											</h3>
 											<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
 												<h4><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h4>
-											<?php endif; ?>	
+											<?php endif; ?>
 											<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
 												<h5><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?></h5>
 											<?php endif; ?>
@@ -127,7 +127,7 @@ the_post();
 												<?php endif; ?>
 												<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
 													<li><strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?></li>
-												<?php endif; ?>			
+												<?php endif; ?>
 											</ul>
 										</div>
 									</div>
@@ -147,7 +147,7 @@ the_post();
 											</h3>
 											<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
 												<h4><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h4>
-											<?php endif; ?>	
+											<?php endif; ?>
 											<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
 												<h5><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?></h5>
 											<?php endif; ?>
@@ -166,14 +166,14 @@ the_post();
 												<?php endif; ?>
 												<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
 													<li><strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?></li>
-												<?php endif; ?>				
+												<?php endif; ?>
 											</ul>
 										</div>
 									</div>
 								</li>
 						<?php endif; ?>
-						<?php endwhile; endif; 
-					} 
+						<?php endwhile; endif;
+					}
 					wp_reset_postdata(); ?>
 					<div id="noResult">
 						<div class="callout warning">
@@ -184,10 +184,10 @@ the_post();
 				</ul>
 			</div>
 		</main>
-		<?php do_action( 'foundationpress_after_content' ); ?>
-	
+		<?php do_action( 'ksasacademic_after_content' ); ?>
+
 		<?php get_sidebar(); ?>
-		
+
 	</div>
 </div>
 <?php

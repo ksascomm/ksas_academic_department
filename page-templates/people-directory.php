@@ -13,7 +13,7 @@ get_header(); ?>
 	));
 	//convert the role slug to corresponding IDs
 	if( !is_wp_error( $roles_to_exclude ) && count($roles_to_exclude) > 0){
-	    $ids_to_exclude = $roles_to_exclude; 
+	    $ids_to_exclude = $roles_to_exclude;
 	}
 	$roles = get_terms(
         'role', array(
@@ -44,7 +44,7 @@ get_header(); ?>
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content">
-			<?php do_action( 'foundationpress_before_content' ); ?>
+			<?php do_action( 'ksasacademic_before_content' ); ?>
 			<?php
             while ( have_posts() ) :
 the_post();
@@ -53,7 +53,7 @@ the_post();
 				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
-				<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+				<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
@@ -64,7 +64,7 @@ the_post();
 					<?php //ROLE FILTER BUTTONS
 					 if ($theme_option['flagship_sub_role_search'] == true ) : ?>
 					<?php
-	           	
+
 						$count_roles = count($roles);
 					if ( $count_roles > 0 ) :
 	                ?>
@@ -116,7 +116,7 @@ the_post();
                     foreach ($roles as $role ) {
 						$role_slug = $role->slug;
 						$role_name = $role->name;
-				
+
 						$people_query = new WP_Query(
 	                    array(
 							'post_type' => 'people',
@@ -126,7 +126,7 @@ the_post();
 							'order' => 'ASC',
 							'posts_per_page' => 250,
 						) );
-						
+
 						if ($people_query->have_posts() ) : ?>
 							<li class="person sub-head quicksearch-match <?php echo $role->slug; ?>">
 								<h2 class="black capitalize"><?php echo $role_name; ?> </h2>
@@ -148,7 +148,7 @@ the_post();
 				</ul>
 			</div>
 		</main>
-		<?php do_action( 'foundationpress_after_content' ); ?>
+		<?php do_action( 'ksasacademic_after_content' ); ?>
 		<?php get_sidebar(); ?>
 	</div>
 </div>
