@@ -9,7 +9,7 @@
 
 // If a featured image is set, insert into layout.
 if ( has_post_thumbnail( $post->ID ) ) : ?>
-		<header class="featured-hero uploaded hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'full' ); ?>, x-large]" aria-label="Featured Image">
+		<header class="featured-hero uploaded hide-for-print show-for-medium" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'full' ); ?>, x-large]" aria-label="Featured Image">
 	</header>
 
 	<?php
@@ -33,7 +33,7 @@ else :
 
 	?>
 
-<header class="featured-hero default hide-for-print" role="banner" data-interchange="[<?php echo esc_url( $selected_image ); ?>, small], [<?php echo esc_url( $selected_image ); ?>, medium], [<?php echo esc_url( $selected_image ); ?>, large], [<?php echo esc_url( $selected_image ); ?>, xlarge]" aria-label="Featured Image">
+<header class="featured-hero default hide-for-print show-for-medium" role="banner" style="background-image: url('<?php echo esc_url( $selected_image ); ?>');" aria-label="Featured Image">
 	</header>
 	<?php
 endif;
