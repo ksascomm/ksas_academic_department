@@ -20,10 +20,9 @@
 
 		<?php wp_head(); ?>
 
-		<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/browserconfig.xml" />
+		<meta name="msapplication-config" content="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/favicons/browserconfig.xml" />
 
 		<!--Scripts-->
-		<script src="https://kit.fontawesome.com/ed22ca715b.js" crossorigin="anonymous" defer></script>
 		<?php get_template_part( 'template-parts/analytics' ); ?>
 		<?php get_template_part( 'template-parts/script-initiators' ); ?>
 
@@ -34,14 +33,14 @@
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 	<div class="alert" role="navigation" aria-label="COVID-19 Alerts">
-    	<a class="alert-message" href="https://covidinfo.jhu.edu/">COVID-19 information and resources for the Johns Hopkins University community</a>
+		<a class="alert-message" href="https://covidinfo.jhu.edu/">COVID-19 information and resources for the Johns Hopkins University community</a>
 	</div>
 	<div role="navigation" aria-label="Skip to main content">
 		<a class="skip-main show-on-focus" href="#page" >Skip to main content</a>
 	</div>
 	<div class="show-for-print" aria-hidden="true">
-		<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/krieger.blue.svg" alt="krieger logo">
-		<h1><?php echo get_bloginfo( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="krieger logo">
+		<h1><?php bloginfo( 'description' ); ?> <?php bloginfo( 'title' ); ?></h1>
 	</div>
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
@@ -60,44 +59,59 @@
 
 		<div class="roof-header-top show-for-large hide-for-print">
 			<div class="row align-justify">
-		    	<div class="roof-header-top-links">
-		        	<?php get_template_part( 'template-parts/roof' ); ?>
-		      	</div>
-		    </div>
+				<div class="roof-header-top-links">
+					<?php get_template_part( 'template-parts/roof' ); ?>
+				</div>
+			</div>
 		</div>
-
-		<div class="top-bar site-information hide-for-print">
-			<div class="nav-shield">
-				<?php $theme_option = flagship_sub_get_global_options();
+		<div class="small-site-holder">
+			<div class="top-bar site-information hide-for-print">
+				<div class="nav-shield">
+					<?php
+					$theme_option = flagship_sub_get_global_options();
 					if ( array_key_exists( 'flagship_sub_shield', $theme_option ) ) {
 						$shield = $theme_option['flagship_sub_shield'];
-						} else {
-						    $shield = 'ksas'; // Default value
-						}
-						if ('jhu' === $shield ) : ?>
-					<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/jhu-horizontal.png" alt="Johns Hopkins University">
+					} else {
+						$shield = 'ksas'; // Default value.
+					}
+					if ( 'jhu' === $shield ) :
+						?>
+					<div class="blue">
+						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.blue.png" alt="Johns Hopkins University">
 						</a>
-					<?php elseif ('custom' === $shield ) : ?>
-					<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-						<img src="<?php echo $theme_option['flagship_sub_shield_location']; ?>" alt="Johns Hopkins University">
-					</a>
-				<?php else: ?>
-					<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
-						<img data-interchange="[<?php echo get_template_directory_uri(); ?>/dist/assets/images/krieger.blue.svg, small], [<?php echo get_template_directory_uri(); ?>/dist/assets/images/ksas-horizontal-md.png, medium], [<?php echo get_template_directory_uri(); ?>/dist/assets/images/ksas-horizontal-lg.png, large]" alt="Krieger School of Arts & Sciences">
-					</a>
-				<?php endif; ?>
-			</div>
-			<div class="site-desktop-title">
-				<div class="top-bar-title">
-					<h1>
-						<a id="dept-info" href="<?php echo site_url(); ?>">
-							<?php if ( ! empty( get_bloginfo('description') ) ) : ?>
-								<small class="hide-for-small-only"><?php echo get_bloginfo( 'description' ); ?></small>
-							<?php endif; ?>
-						<?php echo get_bloginfo( 'title' ); ?>
+					</div>
+					<div class="white">
+						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University">
 						</a>
-					</h1>
+					</div>
+						<?php elseif ( 'custom' === $shield ) : ?>
+						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
+							<img src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University">
+						</a>
+					<?php else : ?>
+						<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
+							<div class="blue">
+								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="KSAS Shield">
+							</div>
+							<div class="white">
+								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield">
+							</div>
+						</a>
+					<?php endif; ?>
+				</div>
+				<div class="site-desktop-title">
+					<div class="top-bar-title">
+						<h1>
+							<a id="dept-info" href="<?php echo site_url(); ?>">
+								<?php if ( ! empty( get_bloginfo( 'description' ) ) ) : ?>
+									<small class="hide-for-small-only"><?php bloginfo( 'description' ); ?></small>
+								<?php endif; ?>
+							<?php bloginfo( 'title' ); ?>
+							</a>
+						</h1>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -106,15 +120,15 @@
 				<?php ksasacademic_top_bar_r(); ?>
 			</div>
 			<div class="top-bar-right hide-for-small-only">
-				<form method="GET" action="<?php echo home_url( '/' ); ?>" role="search" aria-label="Utility Bar Search">
+				<form method="GET" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-label="Utility Bar Search">
 					<div class="input-group">
 						<label for="s" class="screen-reader-text">
-			                Search This Website
-			            </label>
+							Search This Website
+						</label>
 						<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Search this site" aria-label="Search This Website"/>
 						<div class="input-group-button">
-			    			<input type="submit" class="button" value="&#xf002;" aria-label="search">
-			  			</div>
+							<input type="submit" class="button" value="&#xf002;" aria-label="search">
+						</div>
 					</div>
 				</form>
 			</div>
@@ -123,9 +137,9 @@
 		<div class="secondary">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
-			 		<?php ksasacademic_breadcrumb(); ?>
-			 	</div>
-			 </div>
+					<?php ksasacademic_breadcrumb(); ?>
+				</div>
+			</div>
 		</div>
 		<?php endif; ?>
 	</header>

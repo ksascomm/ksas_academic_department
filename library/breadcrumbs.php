@@ -28,7 +28,7 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 		if ( ! is_front_page() ) {
 
 			// Home page
-			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '">' . $home_title . '</a></li>';
+			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '">Home</a></li>';
 			if ( $separatorclass ) {
 				echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 			}

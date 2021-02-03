@@ -100,7 +100,7 @@
   }
   .top-bar-title a {
     @include breakpoint(medium down) {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
     font-size: 2rem;
     letter-spacing: 0px;
@@ -125,7 +125,9 @@
   }
 
   .nav-shield {
+    height: auto;
     @include breakpoint(small only) {
+      height: 100px;
       @include xy-cell(12);
         img {
           display: block;
@@ -135,8 +137,14 @@
           margin-bottom: 1rem;
           width: 70%;
         }
+      .white {
+        display: none;
+      }
     }
     @include breakpoint(medium) {
+      .blue {
+        display: none;
+      }
       @include xy-cell(5);
       img {
         padding: 0rem 1rem .75rem;
@@ -295,7 +303,12 @@
     }
   }
 }
-
+.small-site-holder {
+  @include breakpoint(small only) {
+    height: 200px;
+    background: $white;
+  }
+}
 .site-information {
 
   @include breakpoint(small only) {
@@ -434,7 +447,6 @@
   .breadcrumbs {
     padding-left: 3rem;
     @include font-stack-semibold;
-    margin: inherit;
     line-height: 1;
     li {
       padding: 0.5rem 0;
@@ -442,25 +454,29 @@
       position: relative;
       font-size: .85rem;
     }
-    li:first-child a {
-      margin-left: 1rem;
-    }
-
     li.current_page_item > a {
       background-color: transparent;
     }
+    a {
+      color: $blue;
+      &:hover {
+        color: $black;
+      }
+    }
     @include breakpoint (small only) {
+      margin: 0;
+      padding-left: .5rem;
       li {
           font-size: .85rem;
         }
+    }
+    @include breakpoint (medium) {
+      margin: inherit;
+      li:first-child a {
+        margin-left: 1rem;
       }
-    a {
-        color: $blue;
-        &:hover {
-          color: $black;
-        }
     }
-    }
+  }
 }
 
 .pagination {
@@ -482,6 +498,9 @@
 
 .sidebar {
   padding-left: 1rem;
+  @include breakpoint (small only) {
+    padding-left: 0;
+  }
   .sidebar-menu {
     padding: .5rem;
     h1.sidebar-menu-title {
