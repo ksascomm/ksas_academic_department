@@ -38,8 +38,8 @@
     p {
       @include font-stack;
       font-size: 1.125rem;
-      @include breakpoint (large) {
-        font-size: 1.35rem;
+      @include breakpoint (xlarge) {
+        font-size: 1.25rem;
       }
       line-height: 1.45;
       &:last-of-type {
@@ -500,13 +500,15 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
   .full-screen-image {
     position: relative;
     .front-hero {
-        height: auto;
-        justify-content: inherit;
-        align-items: inherit;
-      .featured-hero-image  {
-        width: 100%;
-        height: inherit;
-        display: block;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: rem-calc(150);
+      @include breakpoint(medium) {
+        height: rem-calc(250);
+      }
+      @include breakpoint(xlarge) {
+        height: rem-calc(400);
       }
       .caption {
         position: absolute;
@@ -516,21 +518,25 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
         -ms-transform: translateY(50%);
         transform: translateY(50%);
         color: $white;
-        width: 550px;
-        padding: 2rem 4rem;
-        font-size: 1.25rem;
+        width: 400px;
+        padding: .75rem 1rem;
+        font-size: 1rem;
         background-color: rgba(44, 44, 51, 0.66);
         font-family: $font-stack-semibold;
         font-weight: $font-stack-semibold-weight;
-        @include breakpoint(large) {
+        h1 {
+          font-size: 1.25rem;
+          text-shadow: 2px 2px 2px #000;
+          text-shadow: 2px 2px 2px rgba(0,0,0,0.75);
+        }
+        @include breakpoint(xlarge) {
           padding: 1rem 1.5rem;
+          width: 550px;
           p, li {
             font-size: 1.25rem;
           }
           h1 {
             font-size: 1.75rem;
-            text-shadow: 2px 2px 2px #000;
-            text-shadow: 2px 2px 2px rgba(0,0,0,0.75);
           }
         }
       }

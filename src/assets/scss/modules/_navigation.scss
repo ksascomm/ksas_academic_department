@@ -305,7 +305,7 @@
 }
 .small-site-holder {
   @include breakpoint(small only) {
-    height: 200px;
+    height: auto;
     background: $white;
   }
 }

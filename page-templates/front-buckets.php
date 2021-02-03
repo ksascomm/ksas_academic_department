@@ -39,15 +39,7 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 				$thumbnail_id  = get_post_thumbnail_id( $post->ID );
 				$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 				?>
-			<div class="front-hero slide" role="banner" aria-label="Featured Image">
-						<?php
-						the_post_thumbnail(
-							'full',
-							array(
-								'class' => 'featured-hero-image',
-							)
-						);
-						?>
+			<div class="front-hero slide" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'full' ); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo esc_html( $thumbnail_alt ); ?>"/>
 					<?php
 					endwhile;
 			wp_reset_postdata();
