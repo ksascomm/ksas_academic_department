@@ -78,25 +78,25 @@
 						?>
 					<div class="blue">
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.blue.png" alt="Johns Hopkins University">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.blue.png" alt="Johns Hopkins University" data-no-lazy="1">
 						</a>
 					</div>
 					<div class="white">
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University" data-no-lazy="1">
 						</a>
 					</div>
 						<?php elseif ( 'custom' === $shield ) : ?>
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University">
+							<img src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University" data-no-lazy="1">
 						</a>
 					<?php else : ?>
 						<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
 							<div class="blue">
-								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="KSAS Shield">
+								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="KSAS Shield" data-no-lazy="1">
 							</div>
 							<div class="white">
-								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield">
+								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield" data-no-lazy="1">
 							</div>
 						</a>
 					<?php endif; ?>
