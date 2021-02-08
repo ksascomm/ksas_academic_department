@@ -503,13 +503,13 @@ button.jquery-background-video-pauseplay.play, button.jquery-background-video-pa
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: rem-calc(150);
+      /*height: rem-calc(150);
       @include breakpoint(medium) {
         height: rem-calc(250);
       }
       @include breakpoint(xlarge) {
         height: rem-calc(400);
-      }
+      }*/
       .caption {
         position: absolute;
         right: 5%;

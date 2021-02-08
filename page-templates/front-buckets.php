@@ -39,7 +39,16 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 				$thumbnail_id  = get_post_thumbnail_id( $post->ID );
 				$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 				?>
-			<div class="front-hero slide" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'full' ); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo esc_html( $thumbnail_alt ); ?>"/>
+			<div class="front-hero slide" role="banner" aria-label="Featured Image">
+				<?php
+						the_post_thumbnail(
+							'full',
+							array(
+								'class'   => 'featured-hero-image',
+								'loading' => 'eager',
+							)
+						);
+				?>
 					<?php
 					endwhile;
 			wp_reset_postdata();
@@ -57,7 +66,8 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 						the_post_thumbnail(
 							'full',
 							array(
-								'class' => 'featured-hero-image',
+								'class'   => 'featured-hero-image',
+								'loading' => 'eager',
 							)
 						);
 				?>
@@ -126,7 +136,7 @@ if ( have_rows( 'explore_the_department' ) ) :
 						if ( get_sub_field( 'explore_bucket_image' ) ) :
 							?>
 						<div class="bucket-image">
-							<?php echo wp_get_attachment_image( $image['ID'], 'full', false, array( 'class' => '' ) ); ?>
+							<?php echo wp_get_attachment_image( $image['ID'], 'full', false ); ?>
 						</div>
 						<?php endif; ?>
 						<div class="bucket-title">

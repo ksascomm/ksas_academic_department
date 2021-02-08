@@ -11,10 +11,21 @@
 get_header(); ?>
 	<?php
 	if ( has_post_thumbnail( $post->ID ) ) :
-		$thumbnail_id  = get_post_thumbnail_id( $post->ID );
-		$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 		?>
-		<header class="featured-hero homepage hide-for-small-only hide-for-print" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'featured-xlarge' ); ?>, xlarge]" aria-label="Featured Image" alt="<?php echo esc_html( $thumbnail_alt ); ?>"/>
+		<header class="hero" role="banner" aria-label="Featured Image">
+			<div class="full-screen-image show-for-large">
+				<div class="front-hero static" role="banner">
+				<?php
+						the_post_thumbnail(
+							'full',
+							array(
+								'class'   => 'featured-hero-image',
+								'loading' => 'eager',
+							)
+						);
+				?>
+				</div>
+			</div>
 		</header>
 	<?php endif; ?>
 
@@ -42,6 +53,13 @@ $slider_query = new WP_Query(
 		'post_type'      => 'slider',
 		'posts_per_page' => 8,
 		'orderby'        => 'rand',
+		'tax_query'      => array(
+			array(
+				'taxonomy' => 'slider_type',
+				'field'    => 'slug',
+				'terms'    => 'research',
+			)
+	)
 	)
 );
 if ( $slider_query->have_posts() ) :
@@ -82,7 +100,11 @@ if ( $slider_query->have_posts() ) :
 						<li class="orbit-slide">
 							<div class="grid-x">
 								<div class="cell small-12 medium-6 large-5 large-offset-1">
-									<img class="card" src="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_slideimage', true ) ); ?>" alt="slider <?php the_title(); ?>" />
+								<?php
+										the_post_thumbnail(
+											'large',
+										);
+								?>
 								</div>
 								<div class="cell small-12 medium-6 large-4">
 									<div class="slide-caption">

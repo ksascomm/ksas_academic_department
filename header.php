@@ -39,7 +39,7 @@
 		<a class="skip-main show-on-focus" href="#page" >Skip to main content</a>
 	</div>
 	<div class="show-for-print" aria-hidden="true">
-		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="krieger logo">
+		<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="krieger logo" loading="lazy">
 		<h1><?php bloginfo( 'description' ); ?> <?php bloginfo( 'title' ); ?></h1>
 	</div>
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 		<div class="small-site-holder">
-			<div class="top-bar site-information hide-for-print">
+			<div class="site-information hide-for-print">
 				<div class="nav-shield">
 					<?php
 					$theme_option = flagship_sub_get_global_options();
@@ -77,26 +77,27 @@
 					if ( 'jhu' === $shield ) :
 						?>
 					<div class="blue">
+					<!-- Lazy Load Mobile Version -->
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.blue.png" alt="Johns Hopkins University" data-no-lazy="1">
+							<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.blue.png" alt="Johns Hopkins University" loading="lazy">
 						</a>
 					</div>
 					<div class="white">
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University" data-no-lazy="1">
+							<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University">
 						</a>
 					</div>
 						<?php elseif ( 'custom' === $shield ) : ?>
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University" data-no-lazy="1">
+							<img width="300" height="87" src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University">
 						</a>
 					<?php else : ?>
 						<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
 							<div class="blue">
-								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="KSAS Shield" data-no-lazy="1">
+								<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="KSAS Shield" loading="lazy">
 							</div>
 							<div class="white">
-								<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield" data-no-lazy="1">
+								<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield">
 							</div>
 						</a>
 					<?php endif; ?>

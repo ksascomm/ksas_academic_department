@@ -58,7 +58,7 @@
 		<div class="grid-x">
 			<div class="small-12 cell copydate">
 				<a href="https://www.jhu.edu/" class="hide-for-print">
-					<img class="jhushield" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University">
+					<img class="jhushield" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University"  width="567" height="109" loading="lazy">
 				</a>
 				<p>&copy; <?php print gmdate( 'Y' ); ?> Johns Hopkins University, <?php echo $theme_option['flagship_sub_copyright']; ?></p>
 			</div>
