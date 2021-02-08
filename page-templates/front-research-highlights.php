@@ -102,7 +102,7 @@ if ( $slider_query->have_posts() ) :
 								<div class="cell small-12 medium-6 large-5 large-offset-1">
 								<?php
 										the_post_thumbnail(
-											'large',
+											'large'
 										);
 								?>
 								</div>
