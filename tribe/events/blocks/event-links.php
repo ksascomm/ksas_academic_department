@@ -34,7 +34,7 @@ if ( $should_render ) :
 					href="<?php echo Tribe__Events__Main::instance()->esc_gcal_url( tribe_get_gcal_link() ); ?>"
 					title="<?php esc_attr_e( 'Add to Google Calendar', 'the-events-calendar' ); ?>"
 				>
-					<?php echo esc_html( $this->attr( 'googleCalendarLabel' ) ) ?>
+				<i class="fab fa-google"></i> <?php echo esc_html( $this->attr( 'googleCalendarLabel' ) ) ?>
 				</a>
 			</div>
 		<?php endif; ?>
@@ -44,7 +44,7 @@ if ( $should_render ) :
 					href="<?php echo esc_url( tribe_get_single_ical_link() ); ?>"
 					title="<?php esc_attr_e( 'Download .ics file', 'the-events-calendar' ); ?>"
 				>
-					<?php echo esc_html( $this->attr( 'iCalLabel' ) ) ?>
+				<i class="far fa-calendar-alt"></i> <?php echo esc_html( $this->attr( 'iCalLabel' ) ) ?>
 				</a>
 			</div>
 		<?php endif; ?>

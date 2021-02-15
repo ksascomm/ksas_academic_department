@@ -25,7 +25,7 @@ $website = tribe_get_venue_website_link();
 
 <div class="tribe-block__venue__meta">
 	<div class="tribe-block__venue__name">
-		<h3><?php echo tribe_get_venue() ?></h3>
+		<h3>Location: <span class="plain"><?php echo tribe_get_venue() ?></span></h3>
 	</div>
 
 	<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
