@@ -139,7 +139,7 @@ p {
       }
       em, i {
         @include font-stack-italic;
-      }      
+      }
     }
     ul, ol, dl {
       line-height: 1.45;
@@ -148,7 +148,7 @@ p {
         margin-bottom: .5rem;
         strong, b {
           @include font-stack-semibold;
-        }        
+        }
         a {
           border: none;
           border-bottom: .125em solid;
@@ -172,8 +172,8 @@ p {
         }
       }
     }
-    ul ul { 
-      list-style-type: disc; 
+    ul ul {
+      list-style-type: disc;
     }
     ol ol {
       list-style-type: lower-alpha;
@@ -225,7 +225,7 @@ p {
     margin-top: .5rem;
   }
 }
-.post-singular {  
+.post-singular {
   &.category-books {
     img {
       @include image-float-left;
@@ -309,15 +309,26 @@ img.article {
   margin-bottom: 1rem;
 }
 
-blockquote, blockquote p {
-  color: $oldblack;
-}
-
-cite {
-  color: $black;
-  font-size: 1rem;
-  font-style: inherit;
-  @include font-stack-semibold;
+.wp-block-quote {
+  border-left-color: $black;
+  p {
+    color: $black;
+  }
+  cite {
+    color: $black;
+    font-size: 1rem;
+    font-style: inherit;
+    @include font-stack-semibold;
+  }
+  &.is-style-large {
+    border-left: .25em solid $black;
+    p {
+      font-style: normal;
+    }
+    cite {
+      text-align: left;
+    }
+  }
 }
 
 .wp-sticky {

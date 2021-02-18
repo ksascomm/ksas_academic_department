@@ -140,30 +140,27 @@ h6 {
 }
 
 /* Blockquote styles */
-.wp-block blockquote {
-  font-style: italic;
-  color: #aaa;
-  margin-left: 20px;
-  border-left: 0;
-  padding-left: 0;
+.wp-block-quote__citation {
+  font-size: 1rem;
+  font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
+  color: #31261d;
 }
 
-.wp-block blockquote .editor-rich-text {
-  padding-left: 3rem;
+.wp-block-quote__citation:before, .wp-block-quote__citation:before {
+  content: "— ";
 }
 
-.wp-block blockquote:before {
-  color: #ccc;
-  content: "\201C" !important;
-  font-size: 4em;
-  position: absolute;
-  top: 10px;
+.wp-block-quote.is-large, .wp-block-quote.is-style-large {
+  border-left: 0.25em solid #31261D;
 }
 
-.wp-block-quote:not(.is-large):not(.is-style-large) {
-  border-left: 0;
-  margin-left: 0;
-  padding-left: 0;
+.wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
+  font-style: normal;
+}
+
+.wp-block-quote.is-style-large .wp-block-quote__citation {
+  font-size: 1.125em;
 }
 
 /* Event Calendar Plugin */
