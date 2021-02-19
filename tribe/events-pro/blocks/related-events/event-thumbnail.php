@@ -19,7 +19,7 @@ if ( is_bool( $display_images ) && ! $display_images ) {
 }
 
 $thumb = ( has_post_thumbnail( $event->ID ) )
-	? get_the_post_thumbnail( $event->ID, 'large' )
+	? get_the_post_thumbnail( $event->ID, 'medium' )
 	: '<img src="' . esc_url( trailingslashit( Tribe__Events__Pro__Main::instance()->pluginUrl ) . 'src/resources/images/tribe-related-events-placeholder.png' ) . '" alt="' . esc_attr( get_the_title( $event->ID ) ) . '" />'; ?>
 
 <div class="tribe-related-events-thumbnail">

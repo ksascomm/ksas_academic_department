@@ -127,13 +127,6 @@ a.tribe-events-gmap, .tribe-events-content p a, .tribe-events-content li a {
   @include link;
 }
 
-.tribe-events-event-image img {
-    //max-width: 85%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .tribe-events-button {
   margin-right: 1.25em;
 }
@@ -292,12 +285,17 @@ time.tribe-events-calendar-list__month-separator-text.tribe-common-h7.tribe-comm
       padding: 0;
       font-size: 1.125rem;
     }
-    .tribe-events-meta-group-organizer {
+    .tribe-events-event-categories, .tribe-events-event-url {
+      a {
+        font-size: 1.125rem;
+      }
+    }
+    .tribe-events-meta-group-organizer, .tribe-events-meta-group-venue {
       @media only screen and (max-width: 801px) {
         padding-left: 0%;
         padding-top: 1rem;
       }
-      padding-left: 4%;
+      padding-left: 10%;
       padding-top: 0rem;
     }
   }
@@ -490,8 +488,4 @@ h2.tribe-events-related-events-title {
 
 .tribe-events-section-category dt, .tribe-events-section-category dd {
   display: inline-block;
-}
-
-.tribe-events-event-categories a {
-  font-size: 1.25rem;
 }
