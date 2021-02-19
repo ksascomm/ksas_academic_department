@@ -248,3 +248,9 @@ h2.tribe-editor__subtitle__headline {
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
 }
+
+
+p.block-editor-rich-text__editable {
+  box-shadow: inset 0 0 0 1px #e5e2e0 !important;
+  padding: .25rem;
+}
