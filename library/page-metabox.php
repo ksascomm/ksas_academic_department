@@ -1,266 +1,86 @@
 <?php
+/**
+ * Adds Widget Title Shortcode and custom sidebar widget metabox
+ *
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
+ */
 
-$page_sidebar_metabox = array(
-	'id' => 'page_sidebar_meta',
-	'title' => 'Sidebar Content',
-	'page' => array('page'),
-	'context' => 'normal',
-	'priority' => 'high',
-	'fields' => array(
-
-		array(
-			'name'          => 'Sidebar Content',
-			'desc'          => 'This content will display in the sidebar on this page ONLY.  Please set section titles as [sidebar-title]Heading Name[/sidebar-title]',
-			'id'            => 'ecpt_page_sidebar',
-			'class'         => 'ecpt_page_sidebar',
-			'type'          => 'textarea',
-			'rich_editor'   => 1,
-			'max'           => 0,
-			'std'           => '',
-		),
-	),
-);
-
-add_action('admin_menu', 'ecpt_add_page_sidebar_meta_box');
-function ecpt_add_page_sidebar_meta_box() {
-
-	global $page_sidebar_metabox;
-
-	foreach ($page_sidebar_metabox['page'] as $page ) {
-		add_meta_box($page_sidebar_metabox['id'], $page_sidebar_metabox['title'], 'ecpt_show_page_sidebar_box', $page, 'normal', 'default', $page_sidebar_metabox);
-	}
-}
-
-// function to show meta boxes
-function ecpt_show_page_sidebar_box() {
-	global $post;
-	global $page_sidebar_metabox;
-	global $ecpt_prefix;
-	global $wp_version;
-
-	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_page_sidebar_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
-
-	echo '<table class="form-table">';
-
-	foreach ($page_sidebar_metabox['fields'] as $field ) {
-		// get current post meta data
-
-		$meta = get_post_meta($post->ID, $field['id'], true);
-
-		echo '<tr>',
-				'<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
-				'<td class="ecpt_field_type_' . str_replace(' ', '_', $field['type']) . '">';
-		switch ($field['type'] ) {
-			case 'text':
-				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
-				break;
-			case 'textarea':
-				if ($field['rich_editor'] == 1 ) {
-					echo $field['desc'];
-
-					if ($wp_version >= 3.3 ) {
-						echo wp_editor(
-                            $meta, $field['id'], array(
-								'textarea_name' => $field['id'],
-								'wpautop' => false,
-							)
-                            );
-					} else {
-						// older versions of WP
-						$editor = '';
-						if ( ! post_type_supports($post->post_type, 'editor') ) {
-							$editor = wp_tiny_mce(
-                                true, array(
-									'editor_selector' => $field['class'],
-									'remove_linebreaks' => false,
-								)
-                                );
-						}
-						$field_html = '<div style="width: 97%; border: 1px solid #DFDFDF;"><textarea name="' . $field['id'] . '" class="' . $field['class'] . '" id="' . $field['id'] . '" cols="60" rows="8" style="width:100%">' . $meta . '</textarea></div><br/>' . __($field['desc']);
-						echo $editor . $field_html;
-					}
-				} else {
-					echo '<div style="width: 100%;"><textarea name="', $field['id'], '" class="', $field['class'], '" id="', $field['id'], '" cols="60" rows="8" style="width:97%">', $meta ? $meta : $field['std'], '</textarea></div>', '', $field['desc'];
-				}
-
-				break;
-			case 'upload':
-				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload" /><br/>', '', $field['desc'];
-				break;
-		}
-		echo     '<td>',
-			'</tr>';
-	}
-
-	echo '</table>';
-}
-
-add_action('save_post', 'ecpt_page_sidebar_save');
-
-// Save data from meta box
-function ecpt_page_sidebar_save( $post_id ) {
-	global $post;
-	global $page_sidebar_metabox;
-
-	// verify nonce
-	if ( ! isset($_POST['ecpt_page_sidebar_meta_box_nonce']) || ! wp_verify_nonce($_POST['ecpt_page_sidebar_meta_box_nonce'], basename(__FILE__)) ) {
-		return $post_id;
-	}
-
-	// check autosave
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
-		return $post_id;
-	}
-
-	// check permissions
-	if ('page' == $_POST['post_type'] ) {
-		if ( ! current_user_can('edit_page', $post_id) ) {
-			return $post_id;
-		}
-	} elseif ( ! current_user_can('edit_post', $post_id) ) {
-		return $post_id;
-	}
-
-	foreach ($page_sidebar_metabox['fields'] as $field ) {
-
-		$old = get_post_meta($post_id, $field['id'], true);
-		$new = $_POST[ $field['id'] ];
-
-		if ($new && $new != $old ) {
-			if ($field['type'] == 'date' ) {
-				$new = ecpt_format_date($new);
-				update_post_meta($post_id, $field['id'], $new);
-			} else {
-				update_post_meta($post_id, $field['id'], $new);
-
-			}
-		} elseif ('' == $new && $old ) {
-			delete_post_meta($post_id, $field['id'], $old);
-		}
-	}
-}
-
-
-// Add Widget Title shortcode
+/**  Add Widget Title shortcode */
 function sidebar_title_shortcode( $attr, $content = null ) {
-  return '<div class="widget_title"><h5>' . $content . '</h5></div>';
+	return '<div class="widget_title"><h5>' . $content . '</h5></div>';
 }
-add_shortcode('sidebar-title', 'sidebar_title_shortcode');
+add_shortcode( 'sidebar-title', 'sidebar_title_shortcode' );
 
+/**  Register meta box */
+function ksasacademic_add_meta_box() {
 
+	$post_types = array( 'page' );
 
-//CUSTOM WIDGET
-$page_sidebar_custom_widget_metabox = array(
-	'id' => 'page_sidebar_custom_widget_meta',
-	'title' => 'Sidebar',
-	'page' => array('page'),
-	'context' => 'side',
-	'priority' => 'high',
-	'fields' => array(
-		array(
-			'name' 			=> 'Sidebar Content',
-			'desc' 			=> '<br> Choose the custom sidebar widget # you want to display (only works on page templates with sidebars)',
-			'id' 			=> 'ecpt_page_custom_widget_sidebar',
-			'class' 		=> 'ecpt_page_custom_widget_sidebar',
-			'type' 			=> 'select',
-			'options' => array(	'',
-								'sidebar-1',
-								'sidebar-2',
-								),
-			'max' 			=> 0,
-			'std'			=> '',
-		),
-));
+	foreach ( $post_types as $post_type ) {
 
-add_action('admin_menu', 'ecpt_add_page_sidebar_custom_widget_meta_box');
-function ecpt_add_page_sidebar_custom_widget_meta_box() {
+		add_meta_box(
+			'ksasacademic_meta_box',         // Unique ID of meta box.
+			'Custom Sidebar Widget',         // Title of meta box.
+			'ksasacademic_display_meta_box', // Callback function.
+			$post_type                       // Post type.
+		);
 
-	global $page_sidebar_custom_widget_metabox;
-
-	foreach ($page_sidebar_custom_widget_metabox['page'] as $page ) {
-		add_meta_box($page_sidebar_custom_widget_metabox['id'], $page_sidebar_custom_widget_metabox['title'], 'ecpt_show_page_sidebar_custom_widget_box', $page, 'side', 'default', $page_sidebar_custom_widget_metabox);
-	}
-}
-
-// function to show meta boxes
-function ecpt_show_page_sidebar_custom_widget_box() {
-	global $post;
-	global $page_sidebar_custom_widget_metabox;
-	global $ecpt_prefix;
-	global $wp_version;
-
-	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_page_custom_widget_sidebar_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
-
-	echo '<table class="form-table">';
-
-	foreach ($page_sidebar_custom_widget_metabox['fields'] as $field ) {
-		// get current post meta data
-
-		$meta = get_post_meta($post->ID, $field['id'], true);
-
-		echo '<tr>',
-				'<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
-				'<td class="ecpt_field_type_' . str_replace(' ', '_', $field['type']) . '">';
-		switch ($field['type'] ) {
-			case 'select':
-				echo '<select name="', $field['id'], '" id="', $field['id'], '">';
-				foreach ($field['options'] as $option ) {
-					echo '<option value="' . $option . '"', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
-				}
-				echo '</select>', '', stripslashes($field['desc']);
-				break;
-		}
-		echo     '<td>',
-			'</tr>';
 	}
 
-	echo '</table>';
+}
+add_action( 'add_meta_boxes', 'ksasacademic_add_meta_box' );
+
+/** Display meta box */
+function ksasacademic_display_meta_box( $post ) {
+
+	$value = get_post_meta( $post->ID, '_ksasacademic_meta_key', true );
+
+	wp_nonce_field( basename( __FILE__ ), 'ksasacademic_meta_box_nonce' );
+
+	?>
+
+	<label for="ksasacademic-meta-box">Select a Custom Sidebar</label>
+	<select id="ksasacademic-meta-box" name="ksasacademic-meta-box">
+		<option value="">Select sidebar...</option>
+		<option value="sidebar-1" <?php selected( $value, 'sidebar-1' ); ?>>Sidebar 1</option>
+		<option value="sidebar-2" <?php selected( $value, 'sidebar-2' ); ?>>Sidebar 2</option>
+	</select>
+
+	<?php
+
 }
 
-add_action('save_post', 'ecpt_page_custom_widget_sidebar_save');
+/** Save Meta Box */
+function ksasacademic_save_meta_box( $post_id ) {
 
-// Save data from meta box
-function ecpt_page_custom_widget_sidebar_save( $post_id ) {
-	global $post;
-	global $page_sidebar_custom_widget_metabox;
+	$is_autosave = wp_is_post_autosave( $post_id );
+	$is_revision = wp_is_post_revision( $post_id );
 
-	// verify nonce
-	if ( ! isset($_POST['ecpt_page_custom_widget_sidebar_meta_box_nonce']) || ! wp_verify_nonce($_POST['ecpt_page_custom_widget_sidebar_meta_box_nonce'], basename(__FILE__)) ) {
-		return $post_id;
-	}
+	$is_valid_nonce = false;
 
-	// check autosave
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
-		return $post_id;
-	}
+	if ( isset( $_POST['ksasacademic_meta_box_nonce'] ) ) {
 
-	// check permissions
-	if ('page' == $_POST['post_type'] ) {
-		if ( ! current_user_can('edit_page', $post_id) ) {
-			return $post_id;
-		}
-	} elseif ( ! current_user_can('edit_post', $post_id) ) {
-		return $post_id;
-	}
+		if ( wp_verify_nonce( wp_unslash( $_POST['ksasacademic_meta_box_nonce'], basename( __FILE__ ) ) ) ) {
 
-	foreach ($page_sidebar_custom_widget_metabox['fields'] as $field ) {
+			$is_valid_nonce = true;
 
-		$old = get_post_meta($post_id, $field['id'], true);
-		$new = $_POST[ $field['id'] ];
-
-		if ($new && $new != $old ) {
-			if ($field['type'] == 'date' ) {
-				$new = ecpt_format_date($new);
-				update_post_meta($post_id, $field['id'], $new);
-			} else {
-				update_post_meta($post_id, $field['id'], $new);
-
-			}
-		} elseif ('' == $new && $old ) {
-			delete_post_meta($post_id, $field['id'], $old);
 		}
 	}
-}
 
+	if ( $is_autosave || $is_revision || ! $is_valid_nonce ) {
+		return;
+	}
+
+	if ( array_key_exists( 'ksasacademic-meta-box', $_POST ) ) {
+
+		update_post_meta(
+			$post_id,                                              // Post ID.
+			'_ksasacademic_meta_key',                              // Meta key.
+			sanitize_text_field( wp_unslash( $_POST['ksasacademic-meta-box'] ) ) // Meta value.
+		);
+
+	}
+
+}
+add_action( 'save_post', 'ksasacademic_save_meta_box' );
