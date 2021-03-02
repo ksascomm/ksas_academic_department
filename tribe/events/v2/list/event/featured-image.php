@@ -29,7 +29,7 @@ if ( ! $event->thumbnail->exists ) {
 		class="tribe-events-calendar-list__event-featured-image-link"
 	>
 		<img
-			src="<?php echo esc_url( $event->thumbnail->full->url ); ?>"
+			src="<?php echo esc_url( $event->thumbnail->medium->url ); ?>"
 			<?php if ( ! empty( $event->thumbnail->srcset ) ) : ?>
 				srcset="<?php echo esc_attr( $event->thumbnail->srcset ); ?>"
 			<?php endif; ?>
@@ -38,7 +38,7 @@ if ( ! $event->thumbnail->exists ) {
 			<?php endif; ?>
 			<?php if ( empty( $event->thumbnail->alt ) ) : ?>
 				alt="<?php echo esc_attr( $event->thumbnail->title ); ?>"
-			<?php endif; ?>			
+			<?php endif; ?>
 			<?php if ( ! empty( $event->thumbnail->title ) ) : ?>
 				title="<?php echo esc_attr( $event->thumbnail->title ); ?>"
 			<?php endif; ?>
