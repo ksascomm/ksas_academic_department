@@ -18,22 +18,22 @@
 get_header(); ?>
 
 <div class="main-container" id="page">
-    <div class="main-grid sidebar-right">
-        <main class="main-content">
-			<?php if (is_tax('profiletype', 'spotlight') ) { ?>
+	<div class="main-grid sidebar-right">
+		<main class="main-content">
+			<?php if ( is_tax( 'profiletype', 'spotlight' ) ) { ?>
 				<h1 class="page-title">Spotlights</h1>
-			<?php } elseif (is_tax('profiletype', 'undergraduate-profile') ) { ?>
+			<?php } elseif ( is_tax( 'profiletype', 'undergraduate-profile' ) ) { ?>
 				<h1 class="page-title">Undergraduate Profiles</h1>
-			<?php } elseif (is_tax('profiletype', 'graduate-profile') ) { ?>
+			<?php } elseif ( is_tax( 'profiletype', 'graduate-profile' ) ) { ?>
 				<h1 class="page-title">Graduate Profiles</h1>
 			<?php } ?>
 		<?php if ( have_posts() ) : ?>
 			<?php /* Start the Loop */ ?>
 
 			<?php
-            while ( have_posts() ) :
-the_post();
-?>
+			while ( have_posts() ) :
+				the_post();
+				?>
 				<?php get_template_part( 'template-parts/content', 'profile' ); ?>
 			<?php endwhile; ?>
 
@@ -47,7 +47,7 @@ the_post();
 			if ( function_exists( 'ksasacademic_pagination' ) ) :
 				ksasacademic_pagination();
 			elseif ( is_paged() ) :
-			?>
+				?>
 				<nav id="post-nav">
 					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'ksasacademic' ) ); ?></div>
 					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'ksasacademic' ) ); ?></div>

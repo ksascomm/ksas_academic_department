@@ -105,7 +105,7 @@
 				<div class="site-desktop-title">
 					<div class="top-bar-title">
 						<h1>
-							<a id="dept-info" href="<?php echo site_url(); ?>">
+							<a id="dept-info" href="<?php echo esc_url( site_url() ); ?>">
 								<?php if ( ! empty( get_bloginfo( 'description' ) ) ) : ?>
 									<small class="hide-for-small-only"><?php bloginfo( 'description' ); ?></small>
 								<?php endif; ?>
