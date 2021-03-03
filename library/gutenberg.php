@@ -20,7 +20,7 @@ function ksas_disable_gutenberg_colour_settings() {
 			array(
 				'name'      => __( 'Normal', 'ksasacademic' ),
 				'shortName' => __( 'N', 'ksasacademic' ),
-				'size'      => 16,
+				'size'      => 18,
 				'slug'      => 'normal',
 			),
 		)
