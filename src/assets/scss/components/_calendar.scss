@@ -42,6 +42,10 @@
   margin-bottom: .5rem;
 }
 
+.tribe-events .tribe-events-l-container {
+  padding-top: 1rem !important;
+}
+
 #tribe-events-pg-template .tribe-events-content, .tribe-events-after-html, .tribe-events-before-html{
   h3 {
     font-size: 1.1875rem;
@@ -508,4 +512,13 @@ h2.tribe-events-related-events-title {
 
 .tribe-events-section-category dt, .tribe-events-section-category dd {
   display: inline-block;
+}
+
+//Imported Events on AGHI
+.site-82 {
+  .tribe-events-single-event-description.tribe-events-content {
+    h2.tribe-events-schedule__datetime, .tribe-block__events-link {
+      display: none;
+    }
+  }
 }
