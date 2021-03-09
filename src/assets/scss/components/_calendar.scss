@@ -92,6 +92,13 @@
   }
 }
 
+dd.tribe-event-tags {
+  a {
+    margin-left: .25rem;
+    @include link;
+  }
+}
+
 .tribe-events-meta-group.tribe-events-meta-group-details,  .tribe-events-meta-group.tribe-events-meta-group-organizer{
   dd {
     margin: 0;
@@ -524,4 +531,12 @@ h2.tribe-events-related-events-title {
   .tribe-events-single-event-description .tribe-events-single-section {
     display: none;
   }
+}
+
+.tribe-common .tribe-common-c-svgicon {
+  color: $blue !important;
+}
+
+.tribe-events .tribe-events-calendar-list__event-row--featured .tribe-events-calendar-list__event-date-tag-datetime:after {
+  background-color: $blue !important;
 }
