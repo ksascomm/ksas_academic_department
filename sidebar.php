@@ -273,18 +273,16 @@ endif;
 	<?php endif; ?>
 
 	<?php
-	if ( have_posts() ) :
-		while ( have_posts() ) :
-			the_post();
-			$custom_sidebar = get_post_meta( $post->ID, '_ksasacademic_meta_key', true );
-			?>
-			<!-- Customized Page Sidebar -->
-			<?php
-			dynamic_sidebar( $custom_sidebar );
-			?>
-
-			<?php
-	endwhile;
-endif;
+	if ( function_exists( 'get_field' ) && get_field( 'custom_sidebar' ) ) :
+		?>
+		<!-- ACF Custom Widget Sidebar -->
+		<?php
+		$custom_sidebar_widget = get_field( 'custom_sidebar', false, false );
+		if ( is_active_sidebar( $custom_sidebar_widget ) ) {
+			dynamic_sidebar( $custom_sidebar_widget );
+		}
+		?>
+		<?php
+	endif;
 	?>
 </div>
