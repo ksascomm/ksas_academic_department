@@ -23,7 +23,7 @@ $event_id = get_the_ID();
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single">
-
+	<div id="page">
 	<p class="tribe-events-back">
 		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'All %s', '%s Events plural label', 'the-events-calendar' ), $events_label_plural ); ?></a>
 	</p>
@@ -86,5 +86,5 @@ $event_id = get_the_ID();
 		</nav>
 	</div>
 	<!-- #tribe-events-footer -->
-
+	</div>
 </div><!-- #tribe-events-content -->
