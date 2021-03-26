@@ -355,6 +355,12 @@ h2.tribe-events-related-events-title {
   padding-top: 1rem;
 }
 
+.tribe-events-meta-group.tribe-events-meta-group-details {
+  dd.tribe-events-event-url {
+    display: inline;
+  }
+}
+
 /* Gutenberg Block Editor Enabled */
 .tribe_events>a, .tribe_events>p a, .single-tribe_events .tribe-events-single-event-recurrence-description>a {
   @include link;
@@ -539,4 +545,32 @@ h2.tribe-events-related-events-title {
 
 .tribe-events .tribe-events-calendar-list__event-row--featured .tribe-events-calendar-list__event-date-tag-datetime:after {
   background-color: $blue !important;
+}
+
+.aghi-events-home-widget {
+
+  .tribe-common.tribe-events.tribe-events-view.tribe-events-view--widget-events-list.tribe-events-widget {
+    border: none;
+  }
+  @include breakpoint (medium) {
+    margin-left: 1rem;
+    .tribe-events-widget-events-list__event-date-tag.tribe-common-g-col {
+      width: 5% !important;
+    }
+  }
+
+  .tribe-events-widget .tribe-events-widget-events-list__event-row--featured .tribe-events-widget-events-list__event-date-tag-datetime:after,
+  .tribe-events-widget-events-list__view-more.tribe-common-b1.tribe-common-b2--min-medium,
+  header.tribe-events-widget-events-list__header {
+    display: none;
+  }
+  .tribe-events-widget-events-list__event-datetime-wrapper.tribe-common-b2.tribe-common-b3--min-medium time.tribe-events-widget-events-list__event-datetime {
+    font-size: 1.125rem;
+  }
+  h3.tribe-events-widget-events-list__event-title.tribe-common-h7 a {
+    font-size: 1.25rem;
+  }
+  .tribe-events-widget {
+    margin-bottom: 0;
+  }
 }
