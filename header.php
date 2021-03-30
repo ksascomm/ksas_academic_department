@@ -32,11 +32,11 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VTN64C"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-	<div class="alert" role="navigation" aria-label="COVID-19 Alerts">
-		<a class="alert-message" href="https://covidinfo.jhu.edu/">COVID-19 information and resources for the Johns Hopkins University community</a>
-	</div>
 	<div role="navigation" aria-label="Skip to main content">
 		<a class="skip-main show-on-focus" href="#page" >Skip to main content</a>
+	</div>
+	<div class="alert" role="navigation" aria-label="COVID-19 Alerts">
+		<a class="alert-message" href="https://covidinfo.jhu.edu/">COVID-19 information and resources for the Johns Hopkins University community</a>
 	</div>
 	<div class="show-for-print" aria-hidden="true">
 		<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="krieger logo" loading="lazy">
