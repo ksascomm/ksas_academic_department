@@ -799,7 +799,7 @@
 header.tribe-events-widget-events-list__header {
   padding-bottom: .25rem!important;
 }
-h3.tribe-events-widget-events-list__header-title.tribe-common-h6.tribe-common-h--alt {
+h2.tribe-events-widget-events-list__header-title.tribe-common-h6.tribe-common-h--alt {
   font-size: 1.5rem;
   text-align: center;
 }
@@ -872,4 +872,14 @@ h3.tribe-events-widget-events-list__event-title.tribe-common-h7 {
       content: "\f138";
     }
   }
+}
+
+//Widget Links
+h3.tribe-events-widget-events-list__event-title.tribe-common-h7 .tribe-common-anchor-thin:hover, a.tribe-events-widget-events-list__view-more-link.tribe-common-anchor-thin:hover {
+  border-bottom: none;
+}
+.tribe-events-widget .tribe-events-widget-events-list .tribe-events-c-messages__message {
+  justify-content: center;
+  font-family: $font-stack;
+  font-weight: $font-stack-weight;
 }
