@@ -33,3 +33,5 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 </script>
 <?php
 endif; ?>
+
+<meta name="facebook-domain-verification" content="s1lj448peh4wqw24bgcc5f2t6n23tc" />
