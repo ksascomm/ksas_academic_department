@@ -32,8 +32,8 @@
     "what-input": "^5.2.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
     "@babel/preset-react": "^7.13.13",
     "@babel/register": "^7.13.16",
     "ansi-colors": "^4.1.1",
@@ -63,9 +63,9 @@
     "rimraf": "^3.0.2",
     "style-sherpa": "^1.0.2",
     "vinyl-named": "^1.1.0",
-    "webpack": "^5.35.1",
+    "webpack": "^5.36.2",
     "webpack-stream": "^6.1.2",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.0"
   },
   "browserslist": [
     "defaults"
