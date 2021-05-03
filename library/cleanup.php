@@ -127,24 +127,18 @@ function dequeue_css() {
 	if ( is_singular( array( 'people', 'profile', 'testimonial', 'bulletinboard', 'ksasexhibits' ) ) ) {
 		wp_dequeue_style( 'tablepress-default' );
 		wp_dequeue_style( 'tablepress-responsive-tables' );
-		wp_dequeue_style( 'ai1ec_style' );
 		wp_dequeue_style( 'widget-calendar-pro-style' );
 		wp_dequeue_style( 'slb_core' );
-		wp_dequeue_style( 'formidable' );
 	}
-	if ( is_page_template( array( 'page-templates/courses-undergrad.php', 'page-templates/courses-graduate.php', 'page-templates/people-research-staff.php', 'page-templates/graduate-student.php', 'page-templates/people-job-market-candidate' ) ) ) {
-		wp_dequeue_style( 'ai1ec_style' );
+	if ( is_page_template( array( 'page-templates/people-research-staff.php', 'page-templates/graduate-student.php', 'page-templates/people-job-market-candidate' ) ) ) {
 		wp_dequeue_style( 'widget-calendar-pro-style' );
 		wp_dequeue_style( 'slb_core' );
-		wp_dequeue_style( 'formidable' );
 	}
 	if ( is_page( 'people' ) ) {
 		wp_dequeue_style( 'tablepress-default' );
 		wp_dequeue_style( 'tablepress-responsive-tables' );
-		wp_dequeue_style( 'ai1ec_style' );
 		wp_dequeue_style( 'widget-calendar-pro-style' );
 		wp_dequeue_style( 'slb_core' );
-		wp_dequeue_style( 'formidable' );
 	}
 }
 add_action( 'wp_print_styles', 'dequeue_css', 100 );
@@ -163,7 +157,7 @@ function deregister_tribe_styles() {
 		wp_deregister_style( 'tribe-common-skeleton-style' );
 		wp_deregister_style( 'tribe-tooltip' );
 	}
-	if ( is_page_template( array( 'page-templates/courses-undergrad.php', 'page-templates/courses-graduate.php', 'page-templates/people-research-staff.php', 'page-templates/graduate-student.php', 'page-templates/job-market-candidate' ) ) ) {
+	if ( is_page_template( array( 'page-templates/people-research-staff.php', 'page-templates/graduate-student.php', 'page-templates/job-market-candidate' ) ) ) {
 		wp_deregister_style( 'tribe-events-pro-views-v2-skeleton' );
 		wp_deregister_style( 'tribe-events-pro-views-v2-full' );
 		wp_deregister_style( 'tribe-events-views-v2-skeleton' );
