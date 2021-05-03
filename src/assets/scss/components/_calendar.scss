@@ -37,7 +37,6 @@
 }
 
 //Modern Tribe
-
 #tribe-events-content {
   margin-bottom: .5rem;
 }
@@ -70,6 +69,10 @@
 .tribe-events-notices {
   @include callout-base;
   @include callout(orange);
+}
+
+.tribe-events-event-meta:before {
+  display: none;
 }
 
 .categories  {
@@ -327,7 +330,7 @@ time.tribe-events-calendar-list__month-separator-text.tribe-common-h7.tribe-comm
         padding-top: 0rem;
       }
     }
-    .tribe-events-cal-links .tribe-events-button, .tribe-events-event-categories a, .tribe-organizer a, .tribe-venue a, .tribe-events-event-url a {
+    .tribe-events-cal-links .tribe-events-button, .tribe-events-event-categories a, .tribe-organizer a, .tribe-venue a, .tribe-events-event-url a, dd.tribe-venue-url a {
     color: $blue;
     @include link;
     }
@@ -573,4 +576,25 @@ h2.tribe-events-related-events-title {
   .tribe-events-widget {
     margin-bottom: 0;
   }
+}
+
+.tribe-events-content, .single-tribe_events .tribe-events-single .tribe-events-event-meta {
+  font-family: $font-stack;
+  font-weight: $font-stack-weight;
+  color: $black;
+}
+
+.tribe-events-schedule h2, .tribe-events-meta-group .tribe-events-single-section-title {
+  font-family: $font-stack-semibold;
+  font-weight: $font-stack-semibold-weight;
+  color: $black;
+}
+
+.tribe-events-cal-links .tribe-events-gcal, .tribe-events-cal-links .tribe-events-ical {
+  @include button;
+  background-color: $blue !important;
+  color: $white !important;
+  margin-left: 1rem;
+  font-family: $font-stack-semibold !important;
+  font-weight: $font-stack-semibold-weight !important;
 }
