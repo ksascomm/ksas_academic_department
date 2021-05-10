@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
     "@babel/preset-react": "^7.13.13",
     "@babel/register": "^7.13.16",
     "ansi-colors": "^4.1.1",
@@ -59,13 +59,13 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
     "js-yaml": "^4.1.0",
-    "panini": "^1.7.1",
+    "panini": "^1.6.3",
     "rimraf": "^3.0.2",
     "style-sherpa": "^1.0.2",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.36.2",
     "webpack-stream": "^6.1.2",
-    "yargs": "^17.0.0"
+    "yargs": "^17.0.1"
   },
   "browserslist": [
     "defaults"
