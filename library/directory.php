@@ -33,7 +33,7 @@ function redirect_empty_bios() {
 		$link = get_post_meta( $post->ID, 'ecpt_website', true );
 		if ( has_term( array( 'faculty', 'tenured-and-tenure-track-faculty', 'joint-faculty', 'advisory-board', 'ab-joint-and-secondary-appointments' ), 'role' ) ) {
 			if ( empty( $bio ) && isset( $link ) ) {
-				wp_safe_redirect( esc_url( $link ), 301 );
+				wp_redirect( esc_url( $link ), 301 );
 				exit;
 			}
 		}
