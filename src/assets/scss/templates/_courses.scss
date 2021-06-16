@@ -14,11 +14,11 @@
     	float: right;
 	}
 	.dataTables_info {
-    	float: inherit !important; 
+    	float: inherit !important;
     	clear: none;
 	}
 	.dataTables_length {
-    	float: left; 
+    	float: left;
 	}
 	.course-table {
 		th {
@@ -30,7 +30,46 @@
 	}
 	.tabs-panel {
 		padding: 0;
-	}	
+	}
+}
+
+.all-courses {
+ .course-table {
+    tbody tr:nth-child(even) {
+      background-color: $light-gray !important;
+    }
+  }
+  .dtsp-title {
+    font-size:1.5rem;
+    @include font-stack-semibold;
+    display: none;
+  }
+  div.dtsp-panesContainer button.dtsp-clearAll {
+    @include button;
+  }
+  div.dtsp-panesContainer button.dtsp-clearAll:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+  div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-name {
+    font-size: 1rem;
+  }
+  table.dataTable tbody tr.selected {
+    background-color: $spiritblue;
+  }
+  div.dtsp-searchPane div.dataTables_scrollBody {
+    height: 8rem !important;
+  }
+  .dataTables_wrapper .dataTables_length select {
+    padding: .5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  input.dtsp-paneInputButton.dtsp-search {
+    background-color: $light-gray !important;
+  }
+  div.dtsp-topRow {
+    margin-bottom: .5rem;
+  }
 }
 
 #courses-tabs {
