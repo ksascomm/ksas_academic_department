@@ -302,3 +302,32 @@ Frontend styles for gutenberg blocks
 p.has-text-align-center {
   text-align: left;
 }
+
+
+.has-heritage-blue-background-color, .has-primary-background-color {
+  background: $blue;
+}
+
+.has-blue-background-color {
+	background: $spiritblue;
+}
+
+.has-grey-background-color {
+	background: $gray;
+}
+
+.has-cool-background-color {
+	background: #bfccd9;
+}
+
+.has-black-background-color {
+	background: $black;
+}
+
+.has-heritage-blue-background-color *, .has-black-background-color *, .has-primary-background-color * {
+	color: $white;
+}
+
+.color-accent, .color-accent-hover:hover, .color-accent-hover:focus, :root .has-accent-color, .has-drop-cap:not(:focus):first-letter, .wp-block-button.is-style-outline, a {
+  color: $blue;
+}
