@@ -50,13 +50,13 @@
 				searchPanes: {
 					show: true
 				},
-				targets: [6]
+				targets: [5]
 			},
 			{
 				searchPanes: {
 					show: false
 				},
-				targets: [0,1,2,3,4,5]
+				targets: [0,1,2,3,4,6]
 			}
 		]
 	  } );
