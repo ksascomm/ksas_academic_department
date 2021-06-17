@@ -48,7 +48,8 @@
 			columnDefs: [
 			{
 				searchPanes: {
-					show: true
+					show: true,
+					preSelect: ['Summer 2021']
 				},
 				targets: [5]
 			},
