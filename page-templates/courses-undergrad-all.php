@@ -100,11 +100,13 @@ get_header(); ?>
 			$section_number      = $result->body[0]->{'SectionName'};
 			$instructor          = $result->body[0]->{'InstructorsFullName'};
 			$course_level        = $result->body[0]->{'Level'};
+			$location            = $result->body[0]->{'Location'};
 			$description         = $result->body[0]->{'SectionDetails'}[0]->{'Description'};
 			$room                = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[0]->{'Building'};
 			$room_aux            = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[1]->{'Building'};
 			$roomnumber          = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[0]->{'Room'};
 			$roomnumber_aux      = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[1]->{'Room'};
+			$dates               = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[0]->{'Dates'};
 			$postag              = ' ';
 			$sectiondetails      = $result->body[0]->{'SectionDetails'}[0];
 			$tags                = [];
@@ -120,11 +122,11 @@ get_header(); ?>
 
 			$print_tags = empty( $tags ) ? 'n/a' : implode( ', ', $tags );
 
-			$output .= '<tr><td>' . $course_number . '&nbsp;(' . $section_number . ')</td><td>' . $title . '</td><td class="show-for-medium">' . $meetings . '</td><td class="show-for-medium">' . $instructor . '</td><td class="show-for-medium">' . $room . '&nbsp;' . $roomnumber . '<br/>' . $room_aux . '&nbsp;' . $roomnumber_aux . '</td><td class="show-for-large">' . implode( ', ', $tags ) . '</td><td class="hide">' . $term . '</td>';
+			$output .= '<tr><td>' . $course_number . '&nbsp;(' . $section_number . ')</td><td>' . $title . '</td><td class="show-for-medium">' . $meetings . '</td><td class="show-for-medium">' . $instructor . '</td><td class="show-for-medium">' . $location . '</td><td class="show-for-large">' . $term . '</td>';
 
 			$output .= '<td><button class="button course-details" data-open="course-' . $clean_course_number . $section_number . $clean_term . '">Course Details<span class="show-for-sr">-' . $title . '-' . $section_number . '</span></button></td></tr>';
 
-			$output .= '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $clean_term . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $clean_term . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings . ' </li><li><strong>Instructor:</strong> ' . $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . '&nbsp;' . $room_aux . '&nbsp;' . $roomnumber_aux . ' </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li><li><strong>PosTag(s):</strong> ' . $print_tags . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
+			$output .= '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $clean_term . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $clean_term . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings .  '&nbsp;' . $dates . ' </li><li><strong>Instructor:</strong> ' . $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . '&nbsp;' . $room_aux . '&nbsp;' . $roomnumber_aux . ' </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li><li><strong>PosTag(s):</strong> ' . $print_tags . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
 		}
 	);
 
@@ -148,10 +150,9 @@ get_header(); ?>
 								<th>Title</th>
 								<th class="show-for-medium">Day/Times</th>
 								<th class="show-for-medium">Instructor</th>
-								<th class="show-for-medium">Room</th>
-								<th class="show-for-large">PosTag(s)</th>
-								<th class="hide">Term</th>
-								<th>Info</th>
+								<th class="show-for-medium">Location</th>
+								<th class="show-for-medium">Term</th>
+								<th>Course Details</th>
 							</tr>
 						</thead>
 						<tbody>
