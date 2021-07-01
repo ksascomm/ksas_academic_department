@@ -331,3 +331,19 @@ p.has-text-align-center {
 .color-accent, .color-accent-hover:hover, .color-accent-hover:focus, :root .has-accent-color, .has-drop-cap:not(:focus):first-letter, .wp-block-button.is-style-outline, a {
   color: $blue;
 }
+
+
+.wp-block-columns.calls-to-action, .wp-block-group.alignwide.call-to-action.has-background {
+  .has-text-align-center, p.has-text-align-center, .aligncenter {
+    text-align: center;
+  }
+}
+
+
+.entry-content > .three-column-feature {
+  padding-top: 1rem;
+}
+
+.entry-content > .three-column-feature ~ .three-column-feature {
+  padding-top: 0rem;
+}
