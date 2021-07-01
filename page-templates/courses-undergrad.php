@@ -97,6 +97,7 @@ get_header(); ?>
 			$section_number      = $result->body[0]->{'SectionName'};
 			$instructor          = $result->body[0]->{'InstructorsFullName'};
 			$course_level        = $result->body[0]->{'Level'};
+			$location            = $result->body[0]->{'Location'};
 			$description         = $result->body[0]->{'SectionDetails'}[0]->{'Description'};
 			$room                = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[0]->{'Building'};
 			$room_aux            = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[1]->{'Building'};

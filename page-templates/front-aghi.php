@@ -84,9 +84,7 @@ get_header(); ?>
 							$highlights_query->the_post();
 							?>
 
-
 							<?php get_template_part( 'template-parts/content', 'humanities-highlights' ); ?>
-
 
 							<?php
 						endwhile;

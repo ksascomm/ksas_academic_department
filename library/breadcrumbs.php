@@ -14,7 +14,7 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 		$id         = 'breadcrumbs';
 		$class      = 'breadcrumbs';
 		$home_title = get_bloginfo( 'title' );
-		$home_url = home_url();
+		$home_url   = home_url();
 
 		// Get the query & post information
 		global $post,$wp_query;
@@ -39,32 +39,30 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 				if ( $separatorclass ) {
 					echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
 				}
-				if (is_singular('bulletinboard') ) {
+				if ( is_singular( 'bulletinboard' ) ) {
 					echo '<li><a href="' . $home_url . '/undergraduate/">Undergraduate</a></li>';
 					echo '<li><a href="' . $home_url . '/bbtype/">Bulletins</a></li>';
-				} elseif (is_singular('ai1ec_event') ) {
+				} elseif ( is_singular( 'tribe_events' ) ) {
 					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';
-				} elseif (is_singular('tribe_events') ) {
-					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';
-				} elseif (is_singular('ksasexhibits') ) {
+				} elseif ( is_singular( 'ksasexhibits' ) ) {
 					echo '<li><a href="' . $home_url . '/exhibitions">Exhibitions</a></li>';
-				} elseif (is_singular('profile') ) {
-					if (has_term('spotlight', 'profiletype') ) {
-					 	echo '<li><a href="' . $home_url . '/profiletype/spotlight">Spotlights</a></li>';
-					} elseif (has_term('undergraduate-profile', 'profiletype') ) {
+				} elseif ( is_singular( 'profile' ) ) {
+					if ( has_term( 'spotlight', 'profiletype' ) ) {
+						echo '<li><a href="' . $home_url . '/profiletype/spotlight">Spotlights</a></li>';
+					} elseif ( has_term( 'undergraduate-profile', 'profiletype' ) ) {
 						echo '<li><a href="' . $home_url . '/profiletype/undergraduate-profile/">Undergraduate Profiles</a></li>';
-					} elseif (has_term('graduate-profile', 'profiletype') ) {
+					} elseif ( has_term( 'graduate-profile', 'profiletype' ) ) {
 						echo '<li><a href="' . $home_url . '/profiletype/graduate-profile/">Graduate Profiles</a></li>';
 					}
-				} elseif (is_singular('testimonial')) {
-					if (has_term('alumni', 'testimonialtype') ) {
-					 	echo '<li><a href="' . $home_url . '/testimonialtype/alumni-testimonial/">Alumni Testimonials</a></li>';
-					} elseif (has_term('current-students', 'testimonialtype') ) {
+				} elseif ( is_singular( 'testimonial' ) ) {
+					if ( has_term( 'alumni', 'testimonialtype' ) ) {
+						echo '<li><a href="' . $home_url . '/testimonialtype/alumni-testimonial/">Alumni Testimonials</a></li>';
+					} elseif ( has_term( 'current-students', 'testimonialtype' ) ) {
 						echo '<li><a href="' . $home_url . '/testimonialtype/current-students/">Undergraduate Testimonials</a></li>';
-					} elseif (has_term('internship', 'testimonialtype') ) {
+					} elseif ( has_term( 'internship', 'testimonialtype' ) ) {
 						echo '<li><a href="' . $home_url . '/testimonialtype/internship-testimonial/">Undergraduate Testimonials</a></li>';
 					}
-				} elseif (is_singular('people') ) {
+				} elseif ( is_singular( 'people' ) ) {
 					echo '<li><a href="' . $home_url . '/people/">People</a></li>';
 				} else {
 					echo '<li><a href="' . $home_url . '/about/">About</a></li>';
@@ -75,28 +73,28 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 
 				// Category page
 				// Get the current category
- 				$current_category = $wp_query->queried_object;
+				$current_category = $wp_query->queried_object;
 				echo '<li class="item-current item-cat-' . $current_category->term_id . ' item-cat-' . $current_category->category_nicename . '"><strong class="bread-current bread-cat-' . $current_category->term_id . ' bread-cat-' . $current_category->category_nicename . '">' . $current_category->cat_name . '</strong></li>';
 
 			} elseif ( is_tax() ) {
 				// Tax archive page
 				$queried_object = get_queried_object();
-				$name = $queried_object->name;
-				$slug = $queried_object->slug;
-				$tax = $queried_object->taxonomy;
-				$term_id = $queried_object->term_id;
-				$parent = $queried_object->parent;
+				$name           = $queried_object->name;
+				$slug           = $queried_object->slug;
+				$tax            = $queried_object->taxonomy;
+				$term_id        = $queried_object->term_id;
+				$parent         = $queried_object->parent;
 				if ( $parent ) {
-					$parents = [];
+					$parents = array();
 					// Loop through all term ancestors
 					while ( $parent ) {
-						$parent_term = get_term($parent, $tax);
+						$parent_term = get_term( $parent, $tax );
 						// The output will be reversed, so separator goes first
 						if ( $separatorclass ) {
 							$parents[] = '<li class="separator separator-' . $parent . '"> ' . $separator . ' </li>';
 						}
-						$parents[] = '<li class="item-parent item-parent-' . $parent . '"><a class="bread-parent bread-parent-' . $parent . '" href="' . get_term_link($parent) . '" title="' . $parent_term->name . '">' . $parent_term->name . '</a></li>';
-						$parent = $parent_term->parent;
+						$parents[] = '<li class="item-parent item-parent-' . $parent . '"><a class="bread-parent bread-parent-' . $parent . '" href="' . get_term_link( $parent ) . '" title="' . $parent_term->name . '">' . $parent_term->name . '</a></li>';
+						$parent    = $parent_term->parent;
 					}
 					echo implode( array_reverse( $parents ) );
 				}
@@ -116,7 +114,7 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 					// Parent page loop
 					$parents = '';
 					foreach ( $anc as $ancestor ) {
-						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
+						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink( $ancestor ) . '">' . get_the_title( $ancestor ) . '</a></li>';
 						if ( $separatorclass ) {
 							$parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
 						}
@@ -138,10 +136,10 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 
 				// Tag page
 				// Get tag information
-				$term_id = get_query_var('tag_id');
+				$term_id  = get_query_var( 'tag_id' );
 				$taxonomy = 'post_tag';
-				$args = 'include=' . $term_id;
-				$terms = get_terms($taxonomy, $args);
+				$args     = 'include=' . $term_id;
+				$terms    = get_terms( $taxonomy, $args );
 
 				// Display the tag name
 				echo '<li class="current item-tag-' . $terms[0]->term_id . ' item-tag-' . $terms[0]->slug . '">' . $terms[0]->name . '</li>';
@@ -150,58 +148,58 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 
 				// Day archive
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
+				echo '<li class="item-year item-year-' . get_the_time( 'Y' ) . '"><a class="bread-year bread-year-' . get_the_time( 'Y' ) . '" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( 'Y' ) . '">' . get_the_time( 'Y' ) . ' Archives</a></li>';
 				if ( $separatorclass ) {
-					echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
+					echo '<li class="separator separator-' . get_the_time( 'Y' ) . '"> ' . $separator . ' </li>';
 				}
 
 				// Month link
-				echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></li>';
+				echo '<li class="item-month item-month-' . get_the_time( 'm' ) . '"><a class="bread-month bread-month-' . get_the_time( 'm' ) . '" href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '" title="' . get_the_time( 'M' ) . '">' . get_the_time( 'M' ) . ' Archives</a></li>';
 				if ( $separatorclass ) {
-					echo '<li class="separator separator-' . get_the_time('m') . '"> ' . $separator . ' </li>';
+					echo '<li class="separator separator-' . get_the_time( 'm' ) . '"> ' . $separator . ' </li>';
 				}
 
 				// Day display
-				echo '<li class="current item-' . get_the_time('j') . '">' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</li>';
+				echo '<li class="current item-' . get_the_time( 'j' ) . '">' . get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ) . ' Archives</li>';
 
 			} elseif ( is_month() ) {
 
 				// Month Archive
 				// Year link
-				echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
+				echo '<li class="item-year item-year-' . get_the_time( 'Y' ) . '"><a class="bread-year bread-year-' . get_the_time( 'Y' ) . '" href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( 'Y' ) . '">' . get_the_time( 'Y' ) . ' Archives</a></li>';
 				if ( $separatorclass ) {
-					echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
+					echo '<li class="separator separator-' . get_the_time( 'Y' ) . '"> ' . $separator . ' </li>';
 				}
 
 				// Month display
-				echo '<li class="item-month item-month-' . get_the_time('m') . '">' . get_the_time('M') . ' Archives</li>';
+				echo '<li class="item-month item-month-' . get_the_time( 'm' ) . '">' . get_the_time( 'M' ) . ' Archives</li>';
 
 			} elseif ( is_year() ) {
 
 				// Display year archive
-				echo '<li class="current item-current-' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</li>';
+				echo '<li class="current item-current-' . get_the_time( 'Y' ) . '">' . get_the_time( 'Y' ) . ' Archives</li>';
 
 			} elseif ( is_author() ) {
 
 				// Auhor archive
 				// Get the author information
 				global $author;
-				$userdata = get_userdata($author);
+				$userdata = get_userdata( $author );
 
 				// Display author name
 				echo '<li class="current item-current-' . $userdata->user_nicename . '">Author: ' . $userdata->display_name . '</li>';
 
-			} elseif ( get_query_var('paged') ) {
+			} elseif ( get_query_var( 'paged' ) ) {
 
 				// Paginated archives
-				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'ksasacademic' ) . ' ' . get_query_var('paged') . '</li>';
+				echo '<li class="current item-current-' . get_query_var( 'paged' ) . '">' . __( 'Page', 'ksasacademic' ) . ' ' . get_query_var( 'paged' ) . '</li>';
 
 			} elseif ( is_search() ) {
 
 				// Search results page
 				echo '<li class="current item-current-search">Search results for: ' . get_search_query() . '</li>';
 
-			} elseif (is_home() ) {
+			} elseif ( is_home() ) {
 				echo '<li class="item-parent item-parent-747"><a class="bread-parent bread-parent-747" href="' . site_url() . '/about/" title="About">About</a></li><li class="current item-' . $post->ID . '">' . 'News Archive' . '</li>';
 
 			} elseif ( is_404() ) {

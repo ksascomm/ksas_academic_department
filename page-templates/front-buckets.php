@@ -53,9 +53,11 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 					endwhile;
 			wp_reset_postdata();
 			?>
-				<?php if ( get_field( 'studyfield' ) ) : ?>
+			<?php
+			if ( function_exists( 'get_field' ) && get_field( 'studyfield' ) ) :
+			?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
-				<?php endif; ?>
+			<?php endif; ?>
 			<?php
 			// if slider query empty, show post thumbnail.
 		else :
@@ -72,9 +74,11 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 						);
 				?>
 			<?php endif; ?>
-				<?php if ( get_field( 'studyfield' ) ) : ?>
+			<?php
+			if ( function_exists( 'get_field' ) && get_field( 'studyfield' ) ) :
+			?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
-				<?php endif; ?>
+			<?php endif; ?>
 		</div>
 		<?php endif; ?>
 	</div>
@@ -97,6 +101,9 @@ while ( have_posts() ) :
 	</main>
 <?php endwhile; ?>
 <?php do_action( 'ksasacademic_after_content' ); ?>
+<?php
+	if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
+?>
 <?php
 if ( have_rows( 'explore_the_department' ) ) :
 	$count            = count( get_field( 'explore_the_department' ) );
@@ -159,7 +166,7 @@ if ( have_rows( 'explore_the_department' ) ) :
 	</div>
 </div>
 <?php endif; ?>
-
+<?php endif; ?>
 <div class="main-container">
 	<div class="main-grid homepage">
 		<div class="main-content homepage-news">
