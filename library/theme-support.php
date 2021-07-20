@@ -23,22 +23,25 @@ if ( ! function_exists( 'ksasacademic_theme_support' ) ) :
 			)
 		);
 
-			// Add menu support
-			add_theme_support( 'menus' );
+			// Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
+		add_theme_support( 'post-thumbnails' );
 
-			// RSS thingy
-			add_theme_support( 'automatic-feed-links' );
+		// Add menu support
+		add_theme_support( 'menus' );
 
-			// Add post formats support: http://codex.wordpress.org/Post_Formats
-			add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+		// RSS thingy
+		add_theme_support( 'automatic-feed-links' );
 
-			// Additional theme support for woocommerce 3.0.+
-			add_theme_support( 'wc-product-gallery-zoom' );
-			add_theme_support( 'wc-product-gallery-lightbox' );
-			add_theme_support( 'wc-product-gallery-slider' );
+		// Add post formats support: http://codex.wordpress.org/Post_Formats
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
-			// Enable block styles on the front end
-			add_theme_support( 'wp-block-styles' );
+		// Additional theme support for woocommerce 3.0.+
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
+		// Enable block styles on the front end
+		add_theme_support( 'wp-block-styles' );
 	}
 
 	add_action( 'after_setup_theme', 'ksasacademic_theme_support' );
