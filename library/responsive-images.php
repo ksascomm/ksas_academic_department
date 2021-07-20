@@ -13,26 +13,7 @@
 add_image_size( 'featured-small', 640, 200, true ); // name, width, height, crop.
 add_image_size( 'featured-medium', 1280, 400, true );
 add_image_size( 'featured-large', 1920, 400, true );
-
-// Add additional image sizes.
-add_image_size( 'fp-small', 640 );
-add_image_size( 'fp-medium', 1024 );
-add_image_size( 'fp-large', 1200 );
-add_image_size( 'fp-xlarge', 1920 );
-
-// Register the new image sizes for use in the add media modal in wp-admin.
-function ksasacademic_custom_sizes( $sizes ) {
-	return array_merge(
-		$sizes,
-		array(
-			'fp-small'  => __( 'FP Small' ),
-			'fp-medium' => __( 'FP Medium' ),
-			'fp-large'  => __( 'FP Large' ),
-			'fp-xlarge' => __( 'FP XLarge' ),
-		)
-	);
-}
-add_filter( 'image_size_names_choose', 'ksasacademic_custom_sizes' );
+add_image_size( 'directory', 150, 217, true );
 
 // Add custom image sizes attribute to enhance responsive image functionality for content images.
 function ksasacademic_adjust_image_sizes_attr( $sizes, $size ) {
@@ -53,15 +34,6 @@ function ksasacademic_adjust_image_sizes_attr( $sizes, $size ) {
 }
 
 add_filter( 'wp_calculate_image_sizes', 'ksasacademic_adjust_image_sizes_attr', 10, 2 );
-
-// Remove inline width and height attributes for post thumbnails & image insert.
-//add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
-//add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
-
-/*function remove_thumbnail_dimensions( $html ) {
-	$html = preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
-	return $html;
-}*/
 
 // Redirect Attachment Pages To The Parent Post URL.
 add_action( 'template_redirect', 'wpsites_attachment_redirect' );
