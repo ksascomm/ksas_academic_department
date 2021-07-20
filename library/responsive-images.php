@@ -15,6 +15,7 @@ add_image_size( 'featured-medium', 1280, 400, true );
 add_image_size( 'featured-large', 1920, 400, true );
 add_image_size( 'directory', 150, 217, true );
 
+
 // Add custom image sizes attribute to enhance responsive image functionality for content images.
 function ksasacademic_adjust_image_sizes_attr( $sizes, $size ) {
 
@@ -44,4 +45,17 @@ function wpsites_attachment_redirect() {
 		exit();
 		wp_reset_postdata();
 		endif;
+}
+
+
+// Disable a few default image sizes that I don’t need
+add_filter( 'intermediate_image_sizes', 'remove_default_img_sizes', 10, 1 );
+function remove_default_img_sizes( $sizes ) {
+	$targets = array( 'medium_large', '1536x1536', '2048x2048' );
+	foreach ( $sizes as $size_index => $size ) {
+		if ( in_array( $size, $targets ) ) {
+			unset( $sizes[ $size_index ] );
+		}
+	}
+	return $sizes;
 }
