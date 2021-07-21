@@ -29,9 +29,9 @@
 		<div class="cell">
 			<h2>Student & Faculty Resources</h2>
 			<ul class="vertical menu" role="menu">
-				<li role="menuitem"><a href="http://e-catalog.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Academic Catalog')">Academic Catalog</a></li>
+				<li role="menuitem"><a href="https://e-catalogue.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Academic Catalog')">Academic Catalog</a></li>
 				<li role="menuitem"><a href="https://livejohnshopkins.sharepoint.com/sites/KSASFacultyHandbook" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Faculty Handbook')">Faculty Handbook <span class="fas fa-sign-in-alt"></span></a></li>
-				<li role="menuitem"><a href="https://studentaffairs.jhu.edu/registrar" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Registrars')">Registrar's Office</a></li>
+				<li role="menuitem"><a href="https://studentaffairs.jhu.edu/registrar/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Registrars')">Registrar's Office</a></li>
 				<li role="menuitem"><a href="https://policies.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Policy Library')">University Policies & Document Library <span class="fas fa-sign-in-alt"></span></a></li>
 			</ul>
 		</div>
@@ -41,11 +41,11 @@
 				<li role="menuitem"><a href="https://www.jhu.edu/admissions/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'Admissions')">Admissions & Aid</a></li>
 				<li role="menuitem"><a href="https://www.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'JHU Home')">Johns Hopkins University Website</a></li>
 				<li role="menuitem"><a href="https://www.jhu.edu/maps-directions/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'Maps/Directions')">Maps & Directions</a></li>
-				<li role="menuitem"><a href="https://my.jh.edu/portal/web/jhupub" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'myJHU')">myJHU</a></li>
+				<li role="menuitem"><a href="https://my.jh.edu/myJH/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'myJHU')">myJHU</a></li>
 			</ul>
 		</div>
 		<button class="close-button" aria-label="Close menu" type="button" data-close>
-		  <span aria-hidden="true">&times;</span>
+			<span aria-hidden="true">&times;</span>
 		</button>
 	</div>
 </div>
