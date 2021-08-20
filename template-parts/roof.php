@@ -11,7 +11,7 @@
 	<li class="roof-padding"><a href="https://www.jhu.edu/admissions/visit/" target="_blank" rel="noopener">Visit</a></li>
 	<li class="bar"></li>
 	<li class="roof-padding"><a href="https://magazine.krieger.jhu.edu/" target="_blank" rel="noopener">A&S Magazine</a></li>
-	<li><a class="button" href="#" aria-label="Johns Hopkins University Quicklinks" data-toggle="offCanvasTop1">Explore JHU <span class="fas fa-bars" aria-hidden="true"></span></a></li>
+	<li><a class="button" href="#" aria-label="Explore JHU" data-toggle="offCanvasTop1">Explore JHU <span class="fas fa-bars" aria-hidden="true"></span></a></li>
 </ul>
 
 <div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas aria-hidden="true">
