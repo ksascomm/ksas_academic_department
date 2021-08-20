@@ -132,7 +132,6 @@ p {
   }
   .entry-content, .people-content {
     p {
-      line-height: 1.45;
       letter-spacing: -.2px;
       a {
         @include link;
@@ -142,7 +141,6 @@ p {
       }
     }
     ul, ol, dl {
-      line-height: 1.45;
       letter-spacing: -.2px;
       li, dd {
         margin-bottom: .5rem;
@@ -168,7 +166,6 @@ p {
         padding-top: 1rem;
         margin-bottom: 1rem;
         li {
-          line-height: 1.45;
         }
       }
     }
