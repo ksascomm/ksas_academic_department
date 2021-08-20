@@ -48,7 +48,7 @@ if ( is_page() ) {
 							'menu_class'     => 'nav',
 							'submenu'        => $page_name,
 							'depth'          => 1,
-							'items_wrap'     => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
+							'items_wrap'     => '<ul class="%2$s" aria-label="Sidebar Menu">%3$s</ul>',
 						)
 					);
 					?>
