@@ -73,10 +73,12 @@ Frontend styles for gutenberg blocks
   }
 }
 
-.page {
+.post-singular {
   .entry-content {
-    figure.wp-caption {
+    .wp-block-gallery {
       img {
+        max-width: inherit !important;
+        padding-bottom: 0rem;
       }
     }
   }
