@@ -31,7 +31,7 @@ if ( is_page() ) {
 		// If there are no ancestors display a menu of children. If no children, hide menu.
 		if ( count( $ancestors ) == 0 && is_front_page() == false ) {
 			?>
-			<div class="sidebar-menu
+			<div role="navigation" aria-label="sidebar navigation" class="sidebar-menu
 					<?php
 					if ( count( $children ) < 1 ) :
 						echo 'widow';
@@ -65,7 +65,7 @@ if ( is_page() ) {
 			$parent_name = $parent_page->post_title;
 			?>
 		<!--Below is displayed when on a child page -->
-			<div class="sidebar-menu">
+			<div class="sidebar-menu" role="navigation" aria-label="sidebar navigation">
 				<h1 class="sidebar-menu-title" id="sidebar-navigation">Also in <a href="<?php echo esc_url( $parent_url ); ?>" aria-label="Sidebar Menu: <?php echo esc_html( $parent_name ); ?>"><?php echo esc_html( $parent_name ); ?></a></h1>
 						<?php
 						wp_nav_menu(
@@ -74,7 +74,7 @@ if ( is_page() ) {
 								'menu_class'     => 'nav',
 								'submenu'        => $parent_name,
 								'depth'          => 2,
-								'items_wrap'     => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
+								'items_wrap'     => '<ul class="%2$s" aria-label="Sidebar Menu">%3$s</ul>',
 							)
 						);
 						?>
@@ -94,14 +94,14 @@ if ( is_page() ) {
 			$greatgrandparent_name = get_the_title( $greatgrandparent );
 			?>
 		<!--Below is displayed when on a grandchild page -->
-		<div class="sidebar-menu">
-		<h1 class="sidebar-menu-title" id="sidebar-navigation">Inside
+		<div class="sidebar-menu" role="navigation" aria-label="sidebar navigation">
+			<h1 class="sidebar-menu-title" id="sidebar-navigation">Inside
 			<?php if ( $root_parent = get_the_title( $grandparent ) !== $root_parent = get_the_title( $current ) ) : ?>
 				<a href="<?php echo esc_url( $grandparent_link ); ?>" aria-label="Sidebar Menu: <?php echo esc_html( $grandparent_name ); ?>"><?php echo esc_html( get_the_title( $grandparent ) ); ?></a>
 			<?php else : ?>
 				<a href="<?php echo esc_url( $parent_link ); ?>" aria-label="Sidebar Menu: <?php echo esc_html( $parent_name ); ?>"><?php echo esc_html( get_the_title( $parent ) ); ?></a>
 			<?php endif; ?>
-		</h1>
+			</h1>
 			<?php
 			wp_nav_menu(
 				array(
@@ -109,7 +109,7 @@ if ( is_page() ) {
 					'menu_class'     => 'nav',
 					'submenu'        => $grandparent_name,
 					'depth'          => 3,
-					'items_wrap'     => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
+					'items_wrap'     => '<ul class="%2$s" aria-label="Sidebar Menu">%3$s</ul>',
 				)
 			);
 			?>
@@ -120,7 +120,7 @@ if ( is_page() ) {
 
 	<?php if ( is_home() || is_single() && ! is_singular( array( 'studyfields', 'ai1ec_event', 'people', 'testimonial' ) ) ) : ?>
 	<aside class="sidebar-menu-area" aria-labelledby="sidebar-navigation">
-		<div class="sidebar-menu">
+		<div class="sidebar-menu" role="navigation" aria-label="sidebar navigation">
 			<h1 class="sidebar-menu-title" id="sidebar-navigation">Also in <a href="<?php echo esc_url( get_home_url() ); ?>/about/" aria-label="Sidebar Menu: About">About</a></h1>
 		<?php
 			wp_nav_menu(
@@ -129,7 +129,7 @@ if ( is_page() ) {
 					'menu_class'     => 'nav',
 					'submenu'        => 'About',
 					'depth'          => 2,
-					'items_wrap'     => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
+					'items_wrap'     => '<ul class="%2$s" aria-label="Sidebar Menu">%3$s</ul>',
 				)
 			);
 		?>
@@ -139,7 +139,7 @@ if ( is_page() ) {
 
 	<?php if ( is_singular( 'people' ) ) : ?>
 		<aside class="sidebar-menu-area" aria-labelledby="sidebar-navigation">
-			<div class="sidebar-menu">
+			<div class="sidebar-menu" role="navigation" aria-label="sidebar navigation">
 				<h1 class="sidebar-menu-title" id="sidebar-navigation">Also in <a href="<?php echo esc_url( get_home_url() ); ?>/people/" aria-label="Sidebar Menu: People">People</a></h1>
 				<?php
 					wp_nav_menu(
@@ -148,7 +148,7 @@ if ( is_page() ) {
 							'menu_class'     => 'nav',
 							'submenu'        => 'People',
 							'depth'          => 2,
-							'items_wrap'     => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
+							'items_wrap'     => '<ul class="%2$s" aria-label="Sidebar Menu">%3$s</ul>',
 						)
 					);
 				?>
