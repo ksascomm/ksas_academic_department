@@ -113,6 +113,7 @@ add_filter(
 				),
 			),
 			array( 'tribe/featured-image' ),
+			array( 'tribe/event-venue' ),
 			array( 'tribe/event-organizer' ),
 			array( 'tribe/event-category' ),
 			array(
