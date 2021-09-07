@@ -366,6 +366,7 @@ h2.tribe-events-related-events-title {
 /* Gutenberg Block Editor Enabled */
 .tribe_events>a, .tribe_events>p a, .single-tribe_events .tribe-events-single-event-recurrence-description>a {
   @include link;
+  color: $white !important;
 }
 
 .tribe-block__events-link .tribe-block__btn--link {
