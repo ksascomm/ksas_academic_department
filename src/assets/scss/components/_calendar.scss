@@ -372,6 +372,7 @@ h2.tribe-events-related-events-title {
   margin: 1rem 1rem 0 0;
   a {
    @include button;
+   color: $white !important;
  }
 }
 
