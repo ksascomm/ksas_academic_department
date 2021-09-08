@@ -14,7 +14,7 @@
 	<li><a class="button" href="#" aria-label="Explore JHU" data-toggle="offCanvasTop1">Explore JHU <span class="fas fa-bars" aria-hidden="true"></span></a></li>
 </ul>
 
-<div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas aria-hidden="true">
+<div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas>
 	<div id="global-links" class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">
 	<h1 class="show-for-sr">Explore JHU</h1>
 		<div class="cell">
