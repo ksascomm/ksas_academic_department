@@ -24,78 +24,78 @@ get_header(); ?>
 				</header>
 				<div class="grid-x grid-margin-x bio">
 					<?php if ( has_post_thumbnail() ) : ?>
-					<div class="small-12 medium-4 cell">
-						<?php
-						the_post_thumbnail(
-							'full',
-							array(
-								'class' => 'headshot',
-								'alt'   => esc_html( get_the_title() ),
-							)
-						);
-						?>
-					</div>
-					<div class="small-12 medium-8 cell">
+						<div class="small-12 medium-4 cell">
+							<?php
+							the_post_thumbnail(
+								'full',
+								array(
+									'class' => 'headshot',
+									'alt'   => esc_html( get_the_title() ),
+								)
+							);
+							?>
+						</div>
+						<div class="small-12 medium-8 cell">
 					<?php else : ?>
 						<div class="small-12 medium-10 cell">
 					<?php endif; ?>
 					<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
-						<h2><?php echo get_post_meta( $post->ID, 'ecpt_position', true ); ?></h2>
+							<h2><?php echo get_post_meta( $post->ID, 'ecpt_position', true ); ?></h2>
 					<?php endif; ?>
 					<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
-						 <h3><?php echo get_post_meta( $post->ID, 'ecpt_degrees', true ); ?></h3>
-				   <?php endif; ?>
-						<p class="listing">
-							<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
-							<span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta( $post->ID, 'ecpt_office', true ); ?><br>
-							<?php endif; ?>
-
-							<?php if ( get_post_meta( $post->ID, 'ecpt_hours', true ) ) : ?>
-							<span class="fa fa-calendar" aria-hidden="true"></span> <?php echo get_post_meta( $post->ID, 'ecpt_hours', true ); ?><br>
-							<?php endif; ?>
-
-							<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
-							<span class="fa fa-phone-square" aria-hidden="true"></span> <?php echo get_post_meta( $post->ID, 'ecpt_phone', true ); ?><br>
-							<?php endif; ?>
-
-							<?php if ( get_post_meta( $post->ID, 'ecpt_fax', true ) ) : ?>
-							<span class="fa fa-fax" aria-hidden="true"></span>  <?php echo get_post_meta( $post->ID, 'ecpt_fax', true ); ?><br>
-							<?php endif; ?>
-
-							<?php
-							if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) :
-								$email = get_post_meta( $post->ID, 'ecpt_email', true );
-								?>
-							<span class="fa fa-envelope" aria-hidden="true"></span> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge( $email ); ?>">
-
-								<?php echo email_munge( $email ); ?> </a><br>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_cv', true ) ) : ?>
-							<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_cv', true ); ?>">Curriculum Vitae</a><br>
-							<?php endif; ?>
-
-							<?php if ( get_post_meta( $post->ID, 'ecpt_website', true ) ) : ?>
-							<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_website', true ); ?>" target="_blank">Personal Website</a><br>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ) : ?>
-							<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_lab_website', true ); ?>" target="_blank">Group/Lab Website</a><br>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_google_id', true ) ) : ?>
-							<span class="fab fa-google"></span> <a href="http://scholar.google.com/citations?user=<?php echo get_post_meta( $post->ID, 'ecpt_google_id', true ); ?>" target="_blank">Google Scholar Profile</a><br>
-							<?php endif; ?>
-							 <?php if ( get_post_meta( $post->ID, 'ecpt_microsoft_id', true ) ) : ?>
-							<span class="fab fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta( $post->ID, 'ecpt_microsoft_id', true ); ?>" target="_blank"> Microsoft Academic Profile</a><br>
+							<h3><?php echo get_post_meta( $post->ID, 'ecpt_degrees', true ); ?></h3>
+					<?php endif; ?>
+							<p class="listing">
+								<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
+								<span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta( $post->ID, 'ecpt_office', true ); ?><br>
 								<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_orcid_id', true ) ) : ?>
-							<span class="fas fa-user"></span> <a href="http://orcid.org/<?php echo get_post_meta( $post->ID, 'ecpt_orcid_id', true ); ?>" target="_blank">ORCID Profile</a><br>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_twitter', true ) ) : ?>
-							<span class="fab fa-twitter"></span> <a href="https://twitter.com/<?php echo get_post_meta( $post->ID, 'ecpt_twitter', true ); ?>" target="_blank"> @<?php echo get_post_meta( $post->ID, 'ecpt_twitter', true ); ?></a>
-							<?php endif; ?>
-						</p>
+
+								<?php if ( get_post_meta( $post->ID, 'ecpt_hours', true ) ) : ?>
+								<span class="fa fa-calendar" aria-hidden="true"></span> <?php echo get_post_meta( $post->ID, 'ecpt_hours', true ); ?><br>
+								<?php endif; ?>
+
+								<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
+								<span class="fa fa-phone-square" aria-hidden="true"></span> <?php echo get_post_meta( $post->ID, 'ecpt_phone', true ); ?><br>
+								<?php endif; ?>
+
+								<?php if ( get_post_meta( $post->ID, 'ecpt_fax', true ) ) : ?>
+								<span class="fa fa-fax" aria-hidden="true"></span>  <?php echo get_post_meta( $post->ID, 'ecpt_fax', true ); ?><br>
+								<?php endif; ?>
+
+								<?php
+								if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) :
+									$email = get_post_meta( $post->ID, 'ecpt_email', true );
+									?>
+								<span class="fa fa-envelope" aria-hidden="true"></span> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge( $email ); ?>">
+
+									<?php echo email_munge( $email ); ?> </a><br>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_cv', true ) ) : ?>
+								<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_cv', true ); ?>">Curriculum Vitae</a><br>
+								<?php endif; ?>
+
+								<?php if ( get_post_meta( $post->ID, 'ecpt_website', true ) ) : ?>
+								<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_website', true ); ?>" target="_blank">Personal Website</a><br>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ) : ?>
+								<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_lab_website', true ); ?>" target="_blank">Group/Lab Website</a><br>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_google_id', true ) ) : ?>
+								<span class="fab fa-google"></span> <a href="http://scholar.google.com/citations?user=<?php echo get_post_meta( $post->ID, 'ecpt_google_id', true ); ?>" target="_blank">Google Scholar Profile</a><br>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_microsoft_id', true ) ) : ?>
+								<span class="fab fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta( $post->ID, 'ecpt_microsoft_id', true ); ?>" target="_blank"> Microsoft Academic Profile</a><br>
+									<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_orcid_id', true ) ) : ?>
+								<span class="fas fa-user"></span> <a href="http://orcid.org/<?php echo get_post_meta( $post->ID, 'ecpt_orcid_id', true ); ?>" target="_blank">ORCID Profile</a><br>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_twitter', true ) ) : ?>
+								<span class="fab fa-twitter"></span> <a href="https://twitter.com/<?php echo get_post_meta( $post->ID, 'ecpt_twitter', true ); ?>" target="_blank"> @<?php echo get_post_meta( $post->ID, 'ecpt_twitter', true ); ?></a>
+								<?php endif; ?>
+							</p>
 					</div>
 				</div>
-					<?php if ( has_term( '', 'role' ) && ! has_term( 'job-market-candidate', 'role' ) ) : ?>
+				<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 				<ul class="tabs margin10" data-tabs id="profile-tabs">
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 					<li class="tabs-title is-active"><a href="#bioTab">Biography</a></li>
