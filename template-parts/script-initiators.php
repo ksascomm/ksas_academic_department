@@ -49,7 +49,7 @@
 			{
 				searchPanes: {
 					show: true,
-					preSelect: ['Summer 2021']
+					preSelect: ['Fall 2021']
 				},
 				targets: [5]
 			},
