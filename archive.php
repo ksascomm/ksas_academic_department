@@ -17,23 +17,27 @@
 
 get_header();
 	$theme_option = flagship_sub_get_global_options();
-	$collection_name = $theme_option['flagship_sub_search_collection']; ?>
+?>
 
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content-full-width">
 		<?php if ( have_posts() ) : ?>
-			<?php if(is_category('highlights')): ?>
-        		<h1 class="page-title">Humanities Highlights</h1>
-        	<?php endif;?>
+			<?php if ( is_category( 'highlights' ) ) : ?>
+				<h1 class="page-title">Humanities Highlights</h1>
+			<?php endif; ?>
 			<?php /* Start the Loop */ ?>
 			<?php
-            while ( have_posts() ) : the_post(); ?>
-            	<?php if(is_category('highlights')):
-            		get_template_part( 'template-parts/content', 'humanities-highlights' );
-            	else:
+			while ( have_posts() ) :
+				the_post();
+				?>
+				<?php
+				if ( is_category( 'highlights' ) ) :
+					get_template_part( 'template-parts/content', 'humanities-highlights' );
+				else :
 					get_template_part( 'template-parts/content', get_post_format() );
-				endif;?>
+				endif;
+				?>
 			<?php endwhile; ?>
 
 			<?php else : ?>
@@ -46,7 +50,7 @@ get_header();
 			if ( function_exists( 'ksasacademic_pagination' ) ) :
 				ksasacademic_pagination();
 			elseif ( is_paged() ) :
-			?>
+				?>
 				<nav id="post-nav">
 					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'ksasacademic' ) ); ?></div>
 					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'ksasacademic' ) ); ?></div>

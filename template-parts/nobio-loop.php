@@ -5,7 +5,7 @@
 				<div class="media-object-section hide-for-print">
 					<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" aria-label="<?php the_title(); ?> 's webpage"><?php $title=get_the_title();
 					the_post_thumbnail('directory', array('class' => 'hide-for-small-only', 'alt' => $title)); ?>
-					</a>							
+					</a>
 				</div>
 			<?php else : ?>
 				<div class="media-object-section hide-for-print">
@@ -13,7 +13,7 @@
 					the_post_thumbnail('directory', array('class' => 'hide-for-small-only', 'alt' => $title)); ?>
 				</div>
 			<?php endif; ?>
-		<?php endif; ?>	
+		<?php endif; ?>
 		<div class="media-object-section">
 			<h3>
 			<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
@@ -26,7 +26,7 @@
 			</h3>
 			<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
 				<h4><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h4>
-			<?php endif; ?>	
+			<?php endif; ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>
 				<h5><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?></h5>
 			<?php endif; ?>
@@ -45,10 +45,10 @@
 				<?php endif; ?>
 				<?php if ( get_post_meta($post->ID, 'ecpt_lab_website', true) ) : ?>
 					<li><span class="fa fa-globe"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>')" target="_blank" aria-label="<?php the_title(); ?>'s Group/Lab Website">Group/Lab Website</a></li>
-				<?php endif; ?>				
+				<?php endif; ?>
 				<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
 					<li><strong>Research Interests:&nbsp;</strong><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?></li>
-				<?php endif; ?>				
+				<?php endif; ?>
 			</ul>
 		</div>
 	</div>
