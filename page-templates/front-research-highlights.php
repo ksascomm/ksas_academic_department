@@ -59,7 +59,7 @@ $slider_query = new WP_Query(
 				'field'    => 'slug',
 				'terms'    => 'research',
 			)
-	)
+		)
 	)
 );
 if ( $slider_query->have_posts() ) :
@@ -213,7 +213,7 @@ if ( $slider_query->have_posts() ) :
 			if ( $hub_query_cond === 1 ) :
 				?>
 				<header class="hub-title" aria-label="Hub Feed">
-					<h2>Related News from <a href="https://hub.jhu.edu/" aria-label="hub website">The Hub</a></h2>
+					<h2>Related News from <a href="https://hub.jhu.edu/" aria-label="The Hub">The Hub</a></h2>
 				</header>
 				<?php
 				get_template_part( 'template-parts/hub-news' );
