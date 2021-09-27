@@ -65,7 +65,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^5.54.0",
     "webpack-stream": "^7.0.0",
-    "yargs": "^17.1.0"
+    "yargs": "^17.2.1"
   },
   "browserslist": [
     "defaults"
