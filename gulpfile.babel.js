@@ -7,7 +7,6 @@ import gulp from "gulp";
 import rimraf from "rimraf";
 import yaml from "js-yaml";
 import fs from "fs";
-import dateFormat from "dateformat";
 import webpackStream from "webpack-stream";
 import webpack2 from "webpack";
 import named from "vinyl-named";
@@ -216,15 +215,6 @@ function images() {
     .pipe(gulp.dest(PATHS.dist + "/assets/images"));
 }
 
-// Create a .zip archive of the theme
-function archive() {
-  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
-  var pkg = JSON.parse(fs.readFileSync("./package.json"));
-  var title = pkg.name + "_" + time + ".zip";
-
-  return gulp.src(PATHS.package).pipe($.zip(title)).pipe(gulp.dest("packaged"));
-}
-
 // PHP Code Sniffer task
 gulp.task("phpcs", function () {
   return gulp
@@ -305,6 +295,3 @@ gulp.task(
   "default",
   gulp.series("build", server, gulp.parallel("webpack:watch", watch))
 );
-
-// Package task
-gulp.task("package", gulp.series("build", archive));
