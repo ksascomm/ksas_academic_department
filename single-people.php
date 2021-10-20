@@ -95,7 +95,7 @@ get_header(); ?>
 							</p>
 					</div>
 				</div>
-				<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
+				<?php if ( has_term( '', 'role' ) && ! has_term( 'job-market-candidate', 'role' ) ) : ?>
 				<ul class="tabs margin10" data-tabs id="profile-tabs">
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 					<li class="tabs-title is-active"><a href="#bioTab">Biography</a></li>
@@ -160,29 +160,35 @@ get_header(); ?>
 					<?php endif; ?>
 				</div>
 				<?php endif; ?>
-				<!--JMC Content -->
-					<?php if ( has_term( 'job-market-candidate', 'role' ) ) : ?>
-						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
-						<p><?php echo get_post_meta( $post->ID, 'ecpt_bio', true ); ?></p>
+				<!--JMC Content Start -->
+					<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
+						<p><strong>Main Advisor:</strong>&nbsp;<?php echo get_post_meta( $post->ID, 'ecpt_advisor', true ); ?></p>
 					<?php endif; ?>
-				<?php endif; ?>
+
 					<?php if ( get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
-					<p><strong>Thesis Title:</strong> "<?php echo get_post_meta( $post->ID, 'ecpt_thesis', true ); ?>"
-				<?php endif; ?>
+						<p><strong>Thesis Title:</strong> "<?php echo get_post_meta( $post->ID, 'ecpt_thesis', true ); ?>"</p>
+					<?php endif; ?>
+
 					<?php
 					if ( get_post_meta( $post->ID, 'ecpt_job_abstract', true ) ) :
 						?>
 						&nbsp;-
 					<a href="<?php echo get_post_meta( $post->ID, 'ecpt_job_abstract', true ); ?>">Download Abstract</a> (PDF)</p>
-				<?php endif; ?>
+					<?php endif; ?>
+
 					<?php if ( get_post_meta( $post->ID, 'ecpt_fields', true ) ) : ?>
-					<p><strong>Fields:</strong>&nbsp;<?php echo get_post_meta( $post->ID, 'ecpt_fields', true ); ?></p>
-				<?php endif; ?>
-					<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
-					<p><strong>Main Advisor:</strong>&nbsp;<?php echo get_post_meta( $post->ID, 'ecpt_advisor', true ); ?></p>
-				<?php endif; ?>
-					<?php echo get_post_meta( $post->ID, 'ecpt_job_research', true ); ?>
-			</article>
+						<p><strong>Fields:</strong>&nbsp;<?php echo get_post_meta( $post->ID, 'ecpt_fields', true ); ?></p>
+					<?php endif; ?>
+
+					<?php if ( has_term( 'job-market-candidate', 'role' ) ) : ?>
+						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
+							<?php echo get_post_meta( $post->ID, 'ecpt_bio', true ); ?>
+						<?php endif; ?>
+					<?php endif; ?>
+
+
+					<!--JMC Content End -->
+				</article>
 					<?php
 		endwhile;
 endif;
