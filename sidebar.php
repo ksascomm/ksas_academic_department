@@ -185,7 +185,9 @@ endif;
 						while ( $jump_menu_query->have_posts() ) :
 							$jump_menu_query->the_post();
 							?>
-							<option value="<?php the_permalink(); ?>"><?php the_title(); ?></option>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
+									<option value="<?php the_permalink(); ?>"><?php the_title(); ?></option>
+								<?php endif; ?>
 						<?php endwhile; ?>
 					</select>
 				</div>
