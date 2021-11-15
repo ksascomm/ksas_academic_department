@@ -599,3 +599,6 @@ h2.tribe-events-related-events-title {
   font-family: $font-stack-semibold !important;
   font-weight: $font-stack-semibold-weight !important;
 }
+.tribe-block__events-link .tribe-block__btn--link:before {
+  display: none;
+}

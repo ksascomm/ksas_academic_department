@@ -53,7 +53,6 @@ Description: Used to style the content editor in posts and pages
   max-width: none;
 }
 
-
 body {
   font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
@@ -163,15 +162,18 @@ h6 {
   color: #31261d;
 }
 
-.wp-block-quote__citation:before, .wp-block-quote__citation:before {
+.wp-block-quote__citation:before,
+.wp-block-quote__citation:before {
   content: "— ";
 }
 
-.wp-block-quote.is-large, .wp-block-quote.is-style-large {
-  border-left: 0.25em solid #31261D;
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+  border-left: 0.25em solid #31261d;
 }
 
-.wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
   font-style: normal;
 }
 
@@ -180,17 +182,29 @@ h6 {
 }
 
 /* Event Calendar Plugin */
-.tribe-editor__subtitle .tribe-editor__btn--label, .tribe-editor__event-price__price, .tribe-editor__venue .tribe-editor__venue__name h3.tribe-editor__venue__name-heading, .tribe-editor__organizer__details p {
+.tribe-editor__subtitle .tribe-editor__btn--label,
+.tribe-editor__event-price__price,
+.tribe-editor__venue
+  .tribe-editor__venue__name
+  h3.tribe-editor__venue__name-heading,
+.tribe-editor__organizer__details p {
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
 }
 
-.tribe-editor__venue__address, .tribe-editor__venue__phone, .tribe-editor__venue__website, .tribe-editor__event-website__label-text input, .tribe-editor__events-link .tribe-editor__btn--link input, .block-editor-url-input__input[type=text] {
+.tribe-editor__venue__address,
+.tribe-editor__venue__phone,
+.tribe-editor__venue__website,
+.tribe-editor__event-website__label-text input,
+.tribe-editor__events-link .tribe-editor__btn--link input,
+.block-editor-url-input__input[type="text"] {
   font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
 }
 
-.tribe-editor__organizer__details p, .tribe-editor__events-link .tribe-editor__btn--link input, .tribe-editor__venue__address a {
+.tribe-editor__organizer__details p,
+.tribe-editor__events-link .tribe-editor__btn--link input,
+.tribe-editor__venue__address a {
   color: #002d72;
 }
 
@@ -199,14 +213,15 @@ h6 {
   border-color: #002d72;
 }
 
-.tribe-editor__event-website__url .block-editor-url-input__input[type=text] {
+.tribe-editor__event-website__url .block-editor-url-input__input[type="text"] {
   font-size: 1.25rem;
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
   color: #002d72;
 }
 
-.tribe-editor__btn--link.tribe-events-ical svg path, .tribe-editor__btn--link.tribe-events-gcal svg path {
+.tribe-editor__btn--link.tribe-events-ical svg path,
+.tribe-editor__btn--link.tribe-events-gcal svg path {
   fill: #002d72;
 }
 
@@ -234,45 +249,117 @@ h2.tribe-editor__subtitle__headline {
 .tribe-editor__featured-image .components-placeholder__instructions {
   font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
-  color: #4A484C;
+  color: #4a484c;
 }
 
-
 /* Fields converted from Classic to Block Editor */
-.tribe-editor__btn--label strong, .tribe-editor__event-details .tribe-editor__meta-group .tribe-editor__events-section__headline input, .tribe-editor__block strong, .tribe-editor__block p strong {
+.tribe-editor__btn--label strong,
+.tribe-editor__event-details
+  .tribe-editor__meta-group
+  .tribe-editor__events-section__headline
+  input,
+.tribe-editor__block strong,
+.tribe-editor__block p strong {
   color: #31261d;
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
 }
 
-.tribe-editor__block, .tribe-editor__block p, .block-editor .block-editor-plain-text, .tribe-editor__btn--label, .tribe-editor__soc__input {
+.tribe-editor__block,
+.tribe-editor__block p,
+.block-editor .block-editor-plain-text,
+.tribe-editor__btn--label,
+.tribe-editor__soc__input {
   font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 300;
 }
 
-.tribe-editor__subtitle__headline-date, .tribe-editor__separator, .tribe-editor__subtitle .tribe-editor__event-cost span {
+.tribe-editor__subtitle__headline-date,
+.tribe-editor__separator,
+.tribe-editor__subtitle .tribe-editor__event-cost span {
   font-size: 1.25rem;
 }
 
-.tribe-editor__block, .tribe-editor__block p {
+.tribe-editor__block,
+.tribe-editor__block p {
   font-size: 1rem;
 }
 
-.block-editor-block-list__block.wp-block.is-selected input.tribe-editor__date-input {
+.block-editor-block-list__block.wp-block.is-selected
+  input.tribe-editor__date-input {
   font-size: 1.25rem;
   color: #31261d;
   font-family: "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 600;
 }
 
-
-p.block-editor-rich-text__editable, ul.block-editor-rich-text__editable li, ol.block-editor-rich-text__editable li {
+p.block-editor-rich-text__editable,
+ul.block-editor-rich-text__editable li,
+ol.block-editor-rich-text__editable li {
   box-shadow: inset 0 0 0 1px #e5e2e0 !important;
-  padding: .25rem;
+  padding: 0.25rem;
   line-height: 1.5;
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
 
-ul.block-editor-rich-text__editable li, ol.block-editor-rich-text__editable li {
-  margin: .25rem 0;
+ul.block-editor-rich-text__editable li,
+ol.block-editor-rich-text__editable li {
+  margin: 0.25rem 0;
+}
+
+.publication h4.publication-category {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.publication p.publication-title,
+.publication p.publication-date {
+  font-family: gentona-semibold, "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
+  margin-bottom: 0px;
+  font-size: 1rem;
+}
+
+.publication h3.article-title {
+  font-family: gentona-bold, "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.publication h3.article-title a {
+  color: #002d72;
+  border: none;
+  border-bottom: 0.125em solid;
+  border-bottom-color: #d6d6d6;
+  background-color: transparent;
+  border-radius: 0;
+  transition: border-color, background-color, color;
+  transition-duration: 250ms, 250ms, 250ms;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+}
+
+.publication h3.article-title a:hover {
+  color: #31261d;
+  border-bottom: 0.125em solid;
+  border-bottom-color: #4a484c;
+}
+
+.publication p.article-author {
+  font-size: 1rem;
+}
+
+.publication .publication-cover {
+  position: relative;
+  max-height: 60%;
+  box-sizing: border-box;
+}
+
+.publication .publication-cover img {
+  max-width: 150px;
+  height: auto;
+}
+
+.publication:not(:last-child) {
+  border-right: 1px solid #e5e2e0;
 }
