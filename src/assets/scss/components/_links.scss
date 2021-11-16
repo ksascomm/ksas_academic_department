@@ -101,7 +101,7 @@ article.page a, .textwidget p a, .textwidget ul li a, .ecpt-page-sidebar a {
   }
 }
 
-.reveal, .tabs-panel {
+.reveal, .tabs-panel, .wp-block-file {
   a {
     @include link;
   }

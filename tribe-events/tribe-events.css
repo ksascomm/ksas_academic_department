@@ -89,26 +89,21 @@ span.tribe-events-schedule__separator.tribe-events-schedule__separator--date {
 
 .tribe-events-single.tribe-blocks-editor p a {
   color: #002d72;
-  border-bottom-width: 2px;
-  border-style: dashed;
-  --tw-border-opacity: 1;
-  border-color: rgba(229, 226, 224, var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  text-decoration: none;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  border-bottom: 0.125em solid;
+  border-bottom-color: #d6d6d6;
+  background-color: transparent;
+  border-radius: 0;
+  transition: border-color, background-color, color;
+  transition-duration: 250ms, 250ms, 250ms;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+  color: #002d72 !important;
 }
 
 .tribe-events-single.tribe-blocks-editor p a:hover {
-  border-bottom-width: 2px;
-  border-style: solid;
-  --tw-border-opacity: 1;
-  border-color: rgba(74, 72, 76, var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  color: rgba(49, 38, 29, var(--tw-text-opacity));
+  color: #31261d;
+  border-bottom: 0.125 em solid;
+  border-bottom-color: #4a484c;
 }
 
 .tribe-events-single.tribe-blocks-editor .tribe-events-notices {
