@@ -58,8 +58,8 @@ $slider_query = new WP_Query(
 				'taxonomy' => 'slider_type',
 				'field'    => 'slug',
 				'terms'    => 'research',
-			)
-		)
+			),
+		),
 	)
 );
 if ( $slider_query->have_posts() ) :
@@ -149,7 +149,7 @@ if ( $slider_query->have_posts() ) :
 			</div>
 			<?php endif; ?>
 
-	<div class="main-container">
+	<div class="main-container" role="complementary">
 		<div class="main-grid homepage">
 			<div class="main-content homepage-news">
 
