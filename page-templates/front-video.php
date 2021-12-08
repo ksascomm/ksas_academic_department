@@ -50,7 +50,7 @@ get_header(); ?>
 		$count            = count( get_field( 'explore_the_department' ) );
 		$featured_sidebar = is_active_sidebar( 'homepage-featured-sb' );
 		?>
-	<div class="bucket-area">
+	<div class="bucket-area" role="complementary">
 		<div class="buckets">
 			<?php $heading = get_field_object( 'explore_the_department' ); ?>
 			<div class="grid-x grid-padding-x">
@@ -101,7 +101,7 @@ get_header(); ?>
 		</div>
 	</div>
 	<?php endif; ?>
-	<div class="main-container">
+	<div class="main-container" role="complementary">
 		<div class="main-grid homepage">
 			<div class="main-content homepage-news">
 

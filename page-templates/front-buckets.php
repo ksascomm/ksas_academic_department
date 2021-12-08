@@ -55,7 +55,7 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 			?>
 			<?php
 			if ( function_exists( 'get_field' ) && get_field( 'studyfield' ) ) :
-			?>
+				?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
 			<?php endif; ?>
 			<?php
@@ -76,7 +76,7 @@ if ( WP_DEBUG || false === ( $hero_query = get_transient( 'hero_query' ) ) ) {
 			<?php endif; ?>
 			<?php
 			if ( function_exists( 'get_field' ) && get_field( 'studyfield' ) ) :
-			?>
+				?>
 					<?php get_template_part( 'template-parts/study-field-api' ); ?>
 			<?php endif; ?>
 		</div>
@@ -102,14 +102,14 @@ while ( have_posts() ) :
 <?php endwhile; ?>
 <?php do_action( 'ksasacademic_after_content' ); ?>
 <?php
-	if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
-?>
-<?php
-if ( have_rows( 'explore_the_department' ) ) :
-	$count            = count( get_field( 'explore_the_department' ) );
-	$featured_sidebar = is_active_sidebar( 'homepage-featured-sb' );
+if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
 	?>
-<div class="bucket-area" id="explore-bucket">
+	<?php
+	if ( have_rows( 'explore_the_department' ) ) :
+		$count            = count( get_field( 'explore_the_department' ) );
+		$featured_sidebar = is_active_sidebar( 'homepage-featured-sb' );
+		?>
+<div class="bucket-area" id="explore-bucket" role="complementary">
 	<div class="buckets">
 		<?php $heading = get_field( 'buckets_heading' ); ?>
 		<!--Print Heading if there-->
@@ -156,7 +156,7 @@ if ( have_rows( 'explore_the_department' ) ) :
 				</article>
 			</div>
 		<?php endwhile; ?>
-			<?php if ( $featured_sidebar ) : ?>
+				<?php if ( $featured_sidebar ) : ?>
 				<!--Show Featured Widget-->
 				<div class="cell">
 					<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
@@ -165,9 +165,9 @@ if ( have_rows( 'explore_the_department' ) ) :
 			</div>
 	</div>
 </div>
+	<?php endif; ?>
 <?php endif; ?>
-<?php endif; ?>
-<div class="main-container">
+<div class="main-container" role="complementary">
 	<div class="main-grid homepage">
 		<div class="main-content homepage-news">
 

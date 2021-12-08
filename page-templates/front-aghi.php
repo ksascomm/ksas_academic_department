@@ -63,7 +63,7 @@ get_header(); ?>
 	</div>
 	<?php do_action( 'ksasacademic_after_content' ); ?>
 
-	<div class="main-container">
+	<div class="main-container" role="complementary">
 		<div class="main-grid homepage">
 			<div class="humanities-highlights" role="region" aria-label="Humanities Highlights">
 				<div class="homepage-news">
