@@ -42,10 +42,19 @@ get_header(); ?>
 				</div>
 			</div>
 		</main>
+		<?php $featured_sidebar = is_active_sidebar( 'homepage-featured-sb' ); ?>
+		<?php if ( $featured_sidebar ) : ?>
+			<div class="grid-x grid-padding-x grid-container">
+				<!--Show Featured Widget-->
+				<div class="small-12 cell home-featured-widget-area">
+					<?php dynamic_sidebar( 'homepage-featured-sb' ); ?>
+				</div>
+			</div>
+			<?php endif; ?>
 	<?php endwhile; ?>
 	<?php do_action( 'ksasacademic_after_content' ); ?>
 
-	<div class="main-container">
+	<div class="main-container" role="complementary">
 		<div class="main-grid homepage">
 			<div class="main-content homepage-news">
 
