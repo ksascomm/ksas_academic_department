@@ -1,8 +1,6 @@
 <?php
 /**
- * The default template for displaying content
- *
- * Used for single.
+ * Template partial for displaying Faculty Books CPT
  *
  * @package KSASAcademicDepartment
  * @since KSASAcademicDepartment 1.0.0

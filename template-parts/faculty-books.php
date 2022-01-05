@@ -1,3 +1,15 @@
+<?php
+/**
+ * The default template for faculty books tab in Single-People.php
+ *
+ * Used for single.
+ *
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
+ */
+
+?>
+
 <div class="tabs-panel" id="booksTab">
 	<?php
 		$author_id          = get_the_ID();
