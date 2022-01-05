@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Faculty Books
- * The template for Faculty Books taxonomy
+ * The template for Faculty Books custom post type
  *
  * @package KSASAcademicDepartment
  * @since KSASAcademicDepartment 1.0.0
@@ -24,6 +24,10 @@ get_header(); ?>
 						'post_type'      => 'faculty-books',
 						'category_name'  => 'books',
 						'posts_per_page' => 100,
+						'meta_key'       => 'ecpt_pub_date',
+						'orderby'        => 'meta_value',
+						'order'          => 'DESC',
+
 					)
 				);
 				if ( $faculty_book_query->have_posts() ) :
@@ -87,6 +91,7 @@ get_header(); ?>
 						</li>
 					</ul>
 						<?php the_content(); ?>
+						<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>
 						<hr>
 						</article>
 						<?php
