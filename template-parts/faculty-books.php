@@ -3,9 +3,10 @@
 		$author_id          = get_the_ID();
 		$single_books_query = new WP_Query(
 			array(
-				'post_type'      => 'post',
+				'post_type'      => 'faculty-books',
 				'category_name'  => 'books',
 				'posts_per_page' => 50,
+				'orderby'        => 'date',
 				'meta_query'     => array(
 					'relation' => 'OR',
 					array(
