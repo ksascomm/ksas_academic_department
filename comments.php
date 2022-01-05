@@ -10,10 +10,10 @@
  */
 
 if ( have_comments() ) :
-	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
-?>
+	if ( ( is_page() || is_single() ) && ( ! is_home() && ! is_front_page() ) ) :
+		?>
 	<section id="comments">
-    <?php
+		<?php
 
 
 		wp_list_comments(
@@ -39,8 +39,8 @@ if ( have_comments() ) :
 
 		?>
 
- 	</section>
-<?php
+	 </section>
+		<?php
 	endif;
 endif;
 ?>
@@ -54,8 +54,8 @@ endif;
 
 	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'ksasacademic' ) );
 
-	if ( post_password_required() ) {
-    ?>
+if ( post_password_required() ) {
+	?>
 	<section id="comments">
 	<div class="notice">
 	<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'ksasacademic' ); ?></p>
@@ -63,13 +63,13 @@ endif;
 	</section>
 	<?php
 	return;
-	}
+}
 ?>
 
 <?php
 if ( comments_open() ) :
-	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
-?>
+	if ( ( is_page() || is_single() ) && ( ! is_home() && ! is_front_page() ) ) :
+		?>
 <section id="respond">
 	<h3>
 		<?php
@@ -81,17 +81,18 @@ if ( comments_open() ) :
 		?>
 	</h3>
 	<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
-	<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
+		<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
 	<p>
-		<?php
+			<?php
 			/* translators: %s: login url */
 			printf(
-                __(
-				'You must be <a href="%s">logged in</a> to post a comment.', 'ksasacademic'
-                ),
+				__(
+					'You must be <a href="%s">logged in</a> to post a comment.',
+					'ksasacademic'
+				),
 				wp_login_url( get_permalink() )
 			);
-		?>
+			?>
 	</p>
 	<?php else : ?>
 	<form action="<?php echo get_option( 'siteurl' ); ?>/wp-comments-post.php" method="post" id="commentform">
@@ -100,42 +101,43 @@ if ( comments_open() ) :
 			<?php
 				/* translators: %1$s: site url, %2$s: user identity  */
 				printf(
-                    __(
-					'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'ksasacademic'
-                    ),
+					__(
+						'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.',
+						'ksasacademic'
+					),
 					get_option( 'siteurl' ),
 					$user_identity
 				);
 			?>
-             <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'ksasacademic' ); ?>"><?php _e( 'Log out &raquo;', 'ksasacademic' ); ?></a>
+			 <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'ksasacademic' ); ?>"><?php _e( 'Log out &raquo;', 'ksasacademic' ); ?></a>
 		</p>
 		<?php else : ?>
 		<p>
 			<label for="author">
 				<?php
 					_e( 'Name', 'ksasacademic' ); if ( $req ) {
-_e( ' (required)', 'ksasacademic' ); }
-				?>
+					_e( ' (required)', 'ksasacademic' ); }
+					?>
 			</label>
 			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1"
-                                                                                        <?php
-            if ( $req ) {
+																						<?php
+																						if ( $req ) {
 																																						echo "aria-required='true'"; }
-?>
+																						?>
 >
 		</p>
 		<p>
 			<label for="email">
 				<?php
 					_e( 'Email (will not be published)', 'ksasacademic' ); if ( $req ) {
-_e( ' (required)', 'ksasacademic' ); }
-				?>
+					_e( ' (required)', 'ksasacademic' ); }
+					?>
 			</label>
 			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2"
-                                                                                      <?php
-            if ( $req ) {
+																					  <?php
+																						if ( $req ) {
 																																						echo "aria-required='true'"; }
-?>
+																						?>
 >
 		</p>
 		<p>
@@ -157,7 +159,7 @@ _e( ' (required)', 'ksasacademic' ); }
 		</p>
 		<p id="allowed_tags" class="small"><strong>XHTML:</strong>
 			<?php
-				_e( 'You can use these tags:','ksasacademic' );
+				_e( 'You can use these tags:', 'ksasacademic' );
 			?>
 			<code>
 				<?php echo allowed_tags(); ?>
@@ -169,6 +171,6 @@ _e( ' (required)', 'ksasacademic' ); }
 	</form>
 	<?php endif; // If registration required and not logged in. ?>
 </section>
-<?php
+		<?php
 	endif; // If you delete this the sky will fall on your head.
 	endif; // If you delete this the sky will fall on your head.

@@ -13,14 +13,10 @@ get_header();
 	<div class="main-grid">
 		<main class="main-content-full-width">
 			<?php
-            while ( have_posts() ) :
-the_post();
-?>
-				<?php if ( in_category('books') ) : ?>
-					<?php get_template_part( 'template-parts/content', 'books' ); ?>
-			<?php else : ?>
+			while ( have_posts() ) :
+				the_post();
+				?>
 				<?php get_template_part( 'template-parts/content', '' ); ?>
-			<?php endif; ?>
 			<?php endwhile; ?>
 		</main>
 	</div>

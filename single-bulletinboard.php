@@ -11,9 +11,9 @@ get_header(); ?>
 	<div class="main-grid">
 		<main class="main-content">
 			<?php
-            while ( have_posts() ) :
-the_post();
-?>
+			while ( have_posts() ) :
+				the_post();
+				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
 						<h1 class="entry-title"><?php the_title(); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single Spotlight Profiles
+ * The template for displaying all single Faculty Books
  *
  * @package KSASAcademicDepartment
  * @since KSASAcademicDepartment 1.0.0
@@ -16,7 +16,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<?php get_template_part( 'template-parts/content-profile', '' ); ?>
+				<?php get_template_part( 'template-parts/faculty-books-singular' ); ?>
 			<?php endwhile; ?>
 		</main>
 	</div>

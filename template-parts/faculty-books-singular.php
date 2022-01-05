@@ -1,54 +1,33 @@
 <?php
 /**
- * Template Name: Faculty Books
- * The template for Faculty Books custom post type
+ * Template partial for displaying Faculty Books CPT in single-faculty-books.php
  *
  * @package KSASAcademicDepartment
  * @since KSASAcademicDepartment 1.0.0
  */
 
-get_header(); ?>
+?>
+<?php
+$faculty_post_id  = get_post_meta( $post->ID, 'ecpt_pub_author', true );
+$faculty_post_id2 = get_post_meta( $post->ID, 'ecpt_pub_author2', true );
+?>
 
-<div class="main-container" id="page">
-	<div class="main-grid">
-		<main class="main-content">
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-			<?php endwhile; ?>
-			<?php
-				$faculty_book_query = new WP_Query(
-					array(
-						'post_type'      => 'faculty-books',
-						'category_name'  => 'books',
-						'posts_per_page' => 100,
-						'meta_key'       => 'ecpt_pub_date',
-						'orderby'        => 'meta_value',
-						'order'          => 'DESC',
-					)
-				);
-				if ( $faculty_book_query->have_posts() ) :
-					while ( $faculty_book_query->have_posts() ) :
-						$faculty_book_query->the_post();
-						?>
-				<article class="faculty-book" aria-labelledby="post-<?php the_ID(); ?>">
-						<?php if ( has_post_thumbnail() ) { ?>
-							<?php
-							the_post_thumbnail(
-								'medium',
-								array(
-									'class' => 'float-left',
-									'alt'   => esc_html( get_the_title() ),
-								)
-							);
-							?>
-						<?php } ?>
-					<h2 itemprop="headline" id="post-<?php the_ID(); ?>">
-						<?php the_title(); ?>
-					</h2>
-					<ul class="no-bullet">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-singular faculty-book' ); ?>>
+		<header>
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+		</header>
+		<div class="entry-content single-book">
+				<?php
+				$title = get_the_title();
+					the_post_thumbnail(
+						'medium',
+						array(
+							'class' => 'float-left',
+							'alt'   => esc_html( get_the_title() ),
+						)
+					);
+					?>
+				<ul class="no-bullet">
 						<?php
 							$faculty_post_id  = get_post_meta( $post->ID, 'ecpt_pub_author', true );
 							$faculty_post_id2 = get_post_meta( $post->ID, 'ecpt_pub_author2', true );
@@ -90,17 +69,7 @@ get_header(); ?>
 							<?php endif; ?>
 						</li>
 					</ul>
-						<?php the_content(); ?>
-						<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>
-						<hr>
-				</article>
-						<?php
-						endwhile;
-endif;
-				?>
-		</main>
-		<?php get_sidebar(); ?>
-	</div>
-</div>
-<?php
-get_footer();
+			<?php the_content(); ?>
+			<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>
+		</div>
+</article>
