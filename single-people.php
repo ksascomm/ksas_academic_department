@@ -83,9 +83,6 @@ get_header(); ?>
 								<?php if ( get_post_meta( $post->ID, 'ecpt_google_id', true ) ) : ?>
 								<span class="fab fa-google"></span> <a href="http://scholar.google.com/citations?user=<?php echo get_post_meta( $post->ID, 'ecpt_google_id', true ); ?>" target="_blank">Google Scholar Profile</a><br>
 								<?php endif; ?>
-								<?php if ( get_post_meta( $post->ID, 'ecpt_microsoft_id', true ) ) : ?>
-								<span class="fab fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta( $post->ID, 'ecpt_microsoft_id', true ); ?>" target="_blank"> Microsoft Academic Profile</a><br>
-									<?php endif; ?>
 								<?php if ( get_post_meta( $post->ID, 'ecpt_orcid_id', true ) ) : ?>
 								<span class="fas fa-user"></span> <a href="http://orcid.org/<?php echo get_post_meta( $post->ID, 'ecpt_orcid_id', true ); ?>" target="_blank">ORCID Profile</a><br>
 								<?php endif; ?>
