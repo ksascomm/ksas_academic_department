@@ -24,6 +24,11 @@ get_header(); ?>
 							)
 						);
 				?>
+			<?php
+			if ( get_field( 'studyfield' ) ) :
+				?>
+					<?php get_template_part( 'template-parts/study-field-api' ); ?>
+			<?php endif; ?>
 				</div>
 			</div>
 		</header>
