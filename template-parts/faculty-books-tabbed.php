@@ -16,7 +16,6 @@
 		$single_books_query = new WP_Query(
 			array(
 				'post_type'      => 'faculty-books',
-				'category_name'  => 'books',
 				'posts_per_page' => 50,
 				'orderby'        => 'date',
 				'meta_query'     => array(
