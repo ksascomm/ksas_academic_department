@@ -7,6 +7,7 @@ This theme is built off [FoundationPress](https://github.com/olefredrik/Foundati
 ## Quickstart
 
 ### 1. Clone the repository and install with npm
+
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
 $ git clone https://github.com/ksascomm/ksas_academic_department.git
@@ -28,26 +29,21 @@ When building for production, the CSS and JS will be minified. To minify the ass
 $ npm run build
 ```
 
-#### To create a .zip file of your theme, run:
-
-```
-$ npm run package
-```
-
-Running this command will build and minify the theme's assets and place a .zip archive of the theme in the `packaged` directory. This excludes the developer files/directories from your theme like `/node_modules`, `/src`, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
-
 ### 4. Configuration ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
 #### YAML config file
+
 The `config.yml` file is ignored by git so that each environment can use a different configuration with the same git repo.
 
 At the start of the build process a check is done to see if a `config.yml` file exists. If `config.yml` exists, the configuration will be loaded from `config.yml`. If `config.yml` does not exist, `config-default.yml` will be used as a fallback.
 
 #### Browsersync setup
+
 If you want to take advantage of [Browsersync](https://www.browsersync.io/), simply open your `config.yml` file after creating it in the previous step, and put your local dev-server address and port (e.g http://localhost:8888) in the `url` property under the `BROWSERSYNC` object.
 
 #### Static asset hashing / cache breaker
-If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your `config.yml`, set ``REVISIONING: true;``. Hashing will work on the ``npm run build`` and ``npm run dev`` commands. It will not be applied on the start command with browsersync. This is by design.  Hashing will only change if there are actual changes in the files.
+
+If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your `config.yml`, set `REVISIONING: true;`. Hashing will work on the `npm run build` and `npm run dev` commands. It will not be applied on the start command with browsersync. This is by design. Hashing will only change if there are actual changes in the files.
 
 ### Project structure ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
@@ -57,17 +53,17 @@ The `/page-templates` folder contains templates that can be selected in the Page
 
 ### Styles and Sass Compilation
 
- * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
+- `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
 
- * `src/assets/scss/app.scss`: Make imports for all your styles here
- * `src/assets/scss/global/*.scss`: Global settings
- * `src/assets/scss/components/*.scss`: Buttons etc.
- * `src/assets/scss/modules/*.scss`: Topbar, footer etc.
- * `src/assets/scss/templates/*.scss`: Page template styling
+- `src/assets/scss/app.scss`: Make imports for all your styles here
+- `src/assets/scss/global/*.scss`: Global settings
+- `src/assets/scss/components/*.scss`: Buttons etc.
+- `src/assets/scss/modules/*.scss`: Topbar, footer etc.
+- `src/assets/scss/templates/*.scss`: Page template styling
 
- * `dist/assets/css/app.css`: This file is loaded in the `<head>` section of your document, and contains the compiled styles for your project.
+- `dist/assets/css/app.css`: This file is loaded in the `<head>` section of your document, and contains the compiled styles for your project.
 
-If you're new to Sass, please note that you need to have Gulp running in the background (``npm start``), for any changes in your scss files to be compiled to `app.css`.
+If you're new to Sass, please note that you need to have Gulp running in the background (`npm start`), for any changes in your scss files to be compiled to `app.css`.
 
 ### JavaScript Compilation ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
@@ -78,10 +74,11 @@ If you're unfamiliar with modules and module bundling, check out [this resource 
 Foundation modules are loaded in the `src/assets/js/app.js` file. By default all components are loaded. You can also pick and choose which modules to include. Just follow the instructions in the file.
 
 If you need to output additional JavaScript files separate from `app.js`, do the following:
-* Create new `custom.js` file in `src/assets/js/`. If you will be using jQuery, add `import $ from 'jquery';` at the top of the file.
-* In `config.yml`, add `src/assets/js/custom.js` to `PATHS.entries`.
-* Build (`npm start`)
-* You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
+
+- Create new `custom.js` file in `src/assets/js/`. If you will be using jQuery, add `import $ from 'jquery';` at the top of the file.
+- In `config.yml`, add `src/assets/js/custom.js` to `PATHS.entries`.
+- Build (`npm start`)
+- You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
 
 ## Requirements ([Copied from FoundationPress](https://github.com/olefredrik/FoundationPress))
 
