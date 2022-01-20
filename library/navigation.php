@@ -75,5 +75,39 @@ if ( ! function_exists( 'ksasacademic_add_menuclass' ) ) {
 	add_filter( 'wp_nav_menu', 'ksasacademic_add_menuclass' );
 }
 
-// remove menu-item-id from <li> in navigation. ksasaca_css_attributes_filter is in ksas_global_functions.php plugin.
+
+/**
+ * Remove unneccessary classes for navigation menus
+ * ksasaca_css_attributes_filter used to be in ksas_global_functions.php plugin
+ */
+function ksasaca_css_attributes_filter( $var ) {
+	$newnavclasses = is_array( $var ) ? array_intersect(
+		$var,
+		array(
+			'current_page_item',
+			'current_page_parent',
+			'current_page_ancestor',
+			'first',
+			'last',
+			'vertical',
+			'horizontal',
+			'children',
+			'logo',
+			'external',
+			'hide',
+			'hide-for-small',
+			'show-for-small',
+			'home',
+			'exclude',
+			'menu-item-has-children',
+			'authenticate',
+		)
+	) : '';
+	return $newnavclasses;
+}
+// remove nav_menu_css_class from <li> in navigation.
+add_filter( 'nav_menu_css_class', 'ksasaca_css_attributes_filter', 100, 1 );
+// remove page_css_class.
+add_filter( 'page_css_class', 'ksasaca_css_attributes_filter', 100, 1 );
+// remove menu-item-id from <li> in navigation.
 add_filter( 'nav_menu_item_id', 'ksasaca_css_attributes_filter', 100, 1 );
