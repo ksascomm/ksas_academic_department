@@ -1,7 +1,7 @@
 {
   "name": "ksas_academic_department",
   "title": "KSAS Academic Department",
-  "version": "5.0.0",
+  "version": "7.0.0",
   "description": "For academic departments, program, centers, and institutes that are housed within the Krieger School. Built off FoundationPress.",
   "homepage": "https://krieger.jhu.edu",
   "license": "MIT",
@@ -11,9 +11,7 @@
     "start": "gulp",
     "dev": "gulp build --dev",
     "build": "gulp build --production",
-    "package": "gulp package --production",
-    "phpcs": "gulp phpcs",
-    "phpcbf": "gulp phpcbf"
+    "package": "gulp package --production"
   },
   "keywords": [
     "WordPress",
@@ -24,7 +22,7 @@
     "responsive"
   ],
   "dependencies": {
-    "foundation-sites": "6.7.3",
+    "foundation-sites": "6.7.4",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
@@ -32,14 +30,14 @@
     "what-input": "^5.2.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/register": "^7.16.0",
+    "@babel/core": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/register": "^7.16.9",
     "ansi-colors": "^4.1.1",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
-    "fancy-log": "^1.3.3",
+    "fancy-log": "^2.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
@@ -48,24 +46,25 @@
     "gulp-concat": "^2.6.1",
     "gulp-extname": "^0.2.2",
     "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin": "^8.0.0",
     "gulp-load-plugins": "^2.0.7",
     "gulp-phpcbf": "^0.1.2",
     "gulp-phpcs": "^3.1.0",
     "gulp-rev": "^9.0.0",
-    "gulp-sass": "^4.1.1",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
     "js-yaml": "^4.1.0",
+    "node-sass": "^7.0.1",
     "panini": "^1.7.2",
     "rimraf": "^3.0.2",
-    "sass": "^1.43.4",
+    "sass": "^1.49.0",
     "style-sherpa": "^1.0.2",
     "vinyl-named": "^1.1.0",
-    "webpack": "^5.61.0",
+    "webpack": "^5.66.0",
     "webpack-stream": "^7.0.0",
-    "yargs": "^17.2.1"
+    "yargs": "^17.3.1"
   },
   "browserslist": [
     "defaults"

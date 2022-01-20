@@ -12,6 +12,9 @@ import webpack2 from "webpack";
 import named from "vinyl-named";
 import log from "fancy-log";
 import colors from "ansi-colors";
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+var sass = require('gulp-sass')(require('sass'));
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -22,7 +25,7 @@ const PRODUCTION = !!yargs.argv.production;
 // Check for --development flag unminified with sourcemaps
 const DEV = !!yargs.argv.dev;
 
-// Load settings from settings.yml
+// Load settings from config.yml
 const { BROWSERSYNC, COMPATIBILITY, REVISIONING, PATHS } = loadConfig();
 
 // Check if file exists synchronously
@@ -80,14 +83,15 @@ function copy() {
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
-function sass() {
-  return gulp
+function styles() {
+  return (
+    gulp
     .src("src/assets/scss/app.scss")
     .pipe($.sourcemaps.init())
     .pipe(
-      $.sass({
+      sass({
         includePaths: PATHS.sass,
-      }).on("error", $.sass.logError)
+      }).on("error", sass.logError)
     )
     .pipe($.autoprefixer())
 
@@ -102,8 +106,10 @@ function sass() {
       )
     )
     .pipe(gulp.dest(PATHS.dist + "/assets/css"))
-    .pipe(browser.reload({ stream: true }));
+    .pipe(browser.reload({ stream: true }))
+  );
 }
+exports.styles   = styles;
 
 // Combine JavaScript into one file
 // In production, the file is minified
@@ -266,7 +272,7 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp
-    .watch("src/assets/scss/**/*.scss", sass)
+    .watch("src/assets/scss/**/*.scss", styles)
     .on("change", (path) =>
       log("File " + colors.bold(colors.magenta(path)) + " changed.")
     )
@@ -287,7 +293,7 @@ function watch() {
 // Build the "dist" folder by running all of the below tasks
 gulp.task(
   "build",
-  gulp.series(clean, gulp.parallel(sass, "webpack:build", images, copy))
+  gulp.series(clean, gulp.parallel(styles, "webpack:build", images, copy))
 );
 
 // Build the site, run the server, and watch for file changes
