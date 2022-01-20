@@ -66,9 +66,15 @@ get_header(); ?>
 								if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) :
 									$email = get_post_meta( $post->ID, 'ecpt_email', true );
 									?>
-								<span class="fa fa-envelope" aria-hidden="true"></span> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge( $email ); ?>">
-
-									<?php echo email_munge( $email ); ?> </a><br>
+								<span class="fa fa-envelope" aria-hidden="true"></span>
+									<?php if ( function_exists( 'email_munge' ) ) : ?>
+									<a class="munge" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge( $email ); ?>">
+										<?php echo email_munge( $email ); ?>
+									</a>
+									<?php else : ?>
+									<a href="<?php echo esc_url( 'mailto:' . $email ); ?>"><?php echo esc_html( $email ); ?></a>
+									<?php endif; ?>
+									<br>
 								<?php endif; ?>
 								<?php if ( get_post_meta( $post->ID, 'ecpt_cv', true ) ) : ?>
 								<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta( $post->ID, 'ecpt_cv', true ); ?>">Curriculum Vitae</a><br>
@@ -92,7 +98,7 @@ get_header(); ?>
 							</p>
 					</div>
 				</div>
-				<?php if ( has_term( '', 'role' ) && ! has_term( 'job-market-candidate', 'role' ) ) : ?>
+					<?php if ( has_term( '', 'role' ) && ! has_term( 'job-market-candidate', 'role' ) ) : ?>
 				<ul class="tabs margin10" data-tabs id="profile-tabs">
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 					<li class="tabs-title is-active"><a href="#bioTab">Biography</a></li>
