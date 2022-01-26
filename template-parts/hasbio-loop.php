@@ -32,10 +32,10 @@
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h3>
 			<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
-				<h4><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?></h4>
+				<h4><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?></h4>
 			<?php endif; ?>
 			<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
-				<h5><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></h5>
+				<h5><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></h5>
 			<?php endif; ?>
 			<ul class="contact">
 				<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
