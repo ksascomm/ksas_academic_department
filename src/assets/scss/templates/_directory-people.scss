@@ -20,7 +20,7 @@
     }
     img {
       margin-right: 1rem;
-      padding-left: 1rem;
+      /*padding-left: 1rem;*/
     }
     .media-object {
       @include breakpoint(medium) {
@@ -31,7 +31,7 @@
         max-width: rem-calc(125px);
       }      
       @include breakpoint(medium up) {
-        max-width: rem-calc(150px);
+        max-width: rem-calc(200px);
       }
     }
     }
