@@ -197,6 +197,9 @@ p {
   @include breakpoint(small only) {
     width: 250px;
   }
+  @include breakpoint(medium) {
+    width: 300px;
+  }
 }
 
 .post-singular, .post-listing {
