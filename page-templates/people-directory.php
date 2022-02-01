@@ -1,23 +1,29 @@
 <?php
-/*
-Template Name: People Directory
-*/
+/**
+ * Template Name: People Directory
+ * The default template for displaying the People CPT
+ * with filters and sorting capabilities.
+ *
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
+ */
+
 get_header(); ?>
 <?php
-	$theme_option     = flagship_sub_get_global_options();
-	$ids_to_exclude   = array();
-	$roles_to_exclude = get_terms(
+	$theme_option         = flagship_sub_get_global_options();
+	$ids_to_exclude       = array();
+	$positions_to_exclude = get_terms(
 		'role',
 		array(
 			'fields' => 'ids',
 			'slug'   => array( 'graduate', 'job-market-candidate', 'graduate-student', 'research' ),
 		)
 	);
-	// convert the role slug to corresponding IDs
-	if ( ! is_wp_error( $roles_to_exclude ) && count( $roles_to_exclude ) > 0 ) {
-		$ids_to_exclude = $roles_to_exclude;
+	// Convert the role slug to corresponding IDs.
+	if ( ! is_wp_error( $positions_to_exclude ) && count( $positions_to_exclude ) > 0 ) {
+		$ids_to_exclude = $positions_to_exclude;
 	}
-	$roles        = get_terms(
+	$positions      = get_terms(
 		'role',
 		array(
 			'orderby'    => 'ID',
@@ -26,7 +32,7 @@ get_header(); ?>
 			'exclude'    => $ids_to_exclude,
 		)
 	);
-	$filters      = get_terms(
+	$filters        = get_terms(
 		'filter',
 		array(
 			'orderby'    => 'name',
@@ -34,12 +40,12 @@ get_header(); ?>
 			'hide_empty' => true,
 		)
 	);
-	$role_slugs   = array();
-	$filter_slugs = array();
-	foreach ( $roles as $role ) {
-		$role_slugs[] = $role->slug;
+	$position_slugs = array();
+	$filter_slugs   = array();
+	foreach ( $positions as $position ) {
+		$position_slugs[] = $position->slug;
 	}
-	$role_classes = implode( ' ', $role_slugs );
+	$position_classes = implode( ' ', $position_slugs );
 	foreach ( $filters as $filter ) {
 		$filter_slugs[] = $filter->slug;
 	}
@@ -66,19 +72,19 @@ get_header(); ?>
 			<?php if ( $theme_option['flagship_sub_role_search'] == true || $theme_option['flagship_sub_research_search'] == true || $theme_option['flagship_sub_directory_search'] == '1' ) : ?>
 				<div class="directory-search callout lightgrey" role="region" aria-label="Filters">
 					<?php
-					// ROLE FILTER BUTTONS
+					// ROLE FILTER BUTTONS.
 					if ( $theme_option['flagship_sub_role_search'] == true ) :
 						?>
 						<?php
 
-						$count_roles = count( $roles );
+						$count_roles = count( $positions );
 						if ( $count_roles > 0 ) :
 							?>
 					<p>Filter by Title:</p>
 					<ul class="filter-list menu role-group" data-filter-group="role">
-							<?php foreach ( $roles as $role ) : ?>
+							<?php foreach ( $positions as $position ) : ?>
 						<li class="role-filter">
-							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $role->slug; ?>" class="selected" aria-label="<?php echo $role->name; ?> Research Area Filter"><?php echo $role->name; ?></a>
+							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo esc_html( $position->slug ); ?>" class="selected" aria-label="<?php echo esc_html( $position->name ); ?> Research Area Filter"><?php echo esc_html( $position->name ); ?></a>
 						</li>
 						<?php endforeach; ?>
 					</ul>
@@ -87,7 +93,7 @@ get_header(); ?>
 endif;
 					?>
 					<?php
-					// SEARCH BOX
+					// SEARCH BOX.
 					if ( $theme_option['flagship_sub_directory_search'] == '1' ) :
 						?>
 					<div class="grid-x search-sort">
@@ -105,7 +111,7 @@ endif;
 					</div>
 					<?php endif; ?>
 					<?php
-					// RESEARCH AREA/EXPERTISE FILTER BUTTONS
+					// RESEARCH AREA/EXPERTISE FILTER BUTTONS.
 					if ( $theme_option['flagship_sub_research_search'] == true ) :
 						?>
 					<p>Filter all by Research Area:</p>
@@ -116,7 +122,7 @@ endif;
 					<ul class="filter-list menu expertise-group" data-filter-group="expertise">
 							<?php foreach ( $filters as $filter ) : ?>
 						<li class="role-filter">
-							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo $filter->slug; ?>"><?php echo $filter->name; ?></a>
+							<a class="button capitalize" href="javascript:void(0)" data-filter=".<?php echo esc_html( $filter->slug ); ?>"><?php echo esc_html( $filter->name ); ?></a>
 						</li>
 						<?php endforeach; ?>
 					</ul>
@@ -129,25 +135,25 @@ endif;
 			<div id="isotope-list" class="people-directory loading" role="region" aria-label="Results">
 				<ul class="directory">
 					<?php
-					foreach ( $roles as $role ) {
-						$role_slug = $role->slug;
-						$role_name = $role->name;
+					foreach ( $positions as $position ) {
+						$position_slug = $position->slug;
+						$position_name = $position->name;
 
 						$people_query = new WP_Query(
 							array(
 								'post_type'      => 'people',
-								'role'           => $role_slug,
+								'role'           => $position_slug,
 								'meta_key'       => 'ecpt_people_alpha',
 								'orderby'        => 'meta_value',
 								'order'          => 'ASC',
-								'posts_per_page' => 250,
+								'posts_per_page' => 150,
 							)
 						);
 
 						if ( $people_query->have_posts() ) :
 							?>
-							<li class="person sub-head quicksearch-match <?php echo $role->slug; ?>">
-								<h2 class="black capitalize"><?php echo $role_name; ?> </h2>
+							<li class="person sub-head quicksearch-match <?php echo esc_html( $position->slug ); ?>">
+								<h2 class="black capitalize"><?php echo esc_html( $position_name ); ?> </h2>
 							</li>
 							<?php
 							while ( $people_query->have_posts() ) :

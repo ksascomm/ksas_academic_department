@@ -101,6 +101,7 @@ function ksasaca_css_attributes_filter( $var ) {
 			'exclude',
 			'menu-item-has-children',
 			'authenticate',
+			'custom-post-type',
 		)
 	) : '';
 	return $newnavclasses;

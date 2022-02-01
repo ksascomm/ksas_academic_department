@@ -1,12 +1,18 @@
 <?php
-/*
-Template Name: Research Staff Directory
-*/
+/**
+ * Template Name: Research Staff Directory
+ * The template for displaying the People CPT
+ * categorized as Research Staff.
+ *
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
+ */
+
 get_header(); ?>
 
 <?php
-if ( false === ( $research_staff_query = get_transient( 'research_staff_query' ) ) ) :
-	// It wasn't there, so regenerate the data and save the transient
+if ( WP_DEBUG || false === ( $research_staff_query = get_transient( 'research_staff_query' ) ) ) :
+	// It wasn't there, so regenerate the data and save the transient.
 	$research_staff_query = new WP_Query(
 		array(
 			'post_type'      => 'people',
@@ -14,7 +20,7 @@ if ( false === ( $research_staff_query = get_transient( 'research_staff_query' )
 			'meta_key'       => 'ecpt_people_alpha',
 			'orderby'        => 'meta_value',
 			'order'          => 'ASC',
-			'posts_per_page' => 250,
+			'posts_per_page' => 100,
 		)
 	);
 	set_transient( 'research_staff_query', $research_staff_query, 345600 );
@@ -61,71 +67,16 @@ endif;
 					while ( $research_staff_query->have_posts() ) :
 						$research_staff_query->the_post();
 						?>
-
-					<li class="item person <?php echo get_the_directory_filters( $post ); ?> <?php echo get_the_roles( $post ); ?>">
-						<div class="media-object">
-												<?php if ( has_post_thumbnail() ) { ?>
-							<div class="media-object-section">
-													<?php
-													$title = get_the_title();
-													the_post_thumbnail( 'directory', array( 'alt' => $title ) );
-													?>
-							</div>
-							<?php } ?>
-							<div class="media-object-section">
-												<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
-								<h3>
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</h3>
-							<?php else : ?>
-								<h3><?php the_title(); ?></h3>
-							<?php endif; ?>
-												<?php if ( array( get_post_meta( $post->ID, 'ecpt_position', true ) || get_post_meta( $post->ID, 'ecpt_degrees', true ) ) ) : ?>
-								<h4>
-													<?php echo get_post_meta( $post->ID, 'ecpt_position', true ); ?>
-
-										<br>
-
-													<?php echo get_post_meta( $post->ID, 'ecpt_degrees', true ); ?>
-								</h4>
-							<?php endif; ?>
-												<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
-								<ul class="contact">
-													<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
-										<li><span class="fa fa-phone-square"></span> <?php echo get_post_meta( $post->ID, 'ecpt_phone', true ); ?></li>
-									<?php endif; ?>
-													<?php if ( get_post_meta( $post->ID, 'ecpt_fax', true ) ) : ?>
-										<li><span class="fa fa-fax"></span> <?php echo get_post_meta( $post->ID, 'ecpt_fax', true ); ?></li>
-									<?php endif; ?>
-													<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
-										<li><span class="fa fa-envelope"></span> <a href="mailto:<?php echo get_post_meta( $post->ID, 'ecpt_email', true ); ?>"> <?php echo get_post_meta( $post->ID, 'ecpt_email', true ); ?></a></li>
-									<?php endif; ?>
-													<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
-										<li><span class="fa fa-map-marker-alt"></span> <?php echo get_post_meta( $post->ID, 'ecpt_office', true ); ?></li>
-									<?php endif; ?>
-													<?php if ( get_post_meta( $post->ID, 'ecpt_website', true ) ) : ?>
-											<li><span class="fa fa-globe"></span>
-												<a href="<?php echo get_post_meta( $post->ID, 'ecpt_website', true ); ?>" target="_blank" aria-label="<?php the_title(); ?>'s Personal Website">Personal Website</a>
-											</li>
-										<?php endif; ?>
-													<?php if ( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ) : ?>
-										<li><span class="fa fa-globe"></span>
-											<a href="<?php echo get_post_meta( $post->ID, 'ecpt_lab_website', true ); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo get_post_meta( $post->ID, 'ecpt_lab_website', true ); ?>')" target="_blank" aria-label="<?php the_title(); ?>'s Group/Lab Website">Group/Lab Website</a>
-										</li>
-									<?php endif; ?>
-													<?php if ( get_post_meta( $post->ID, 'ecpt_expertise', true ) ) : ?>
-										<p class="expertise">
-											<strong>Research Interests:&nbsp;</strong><?php echo get_post_meta( $post->ID, 'ecpt_expertise', true ); ?>
-										</p>
-									<?php endif; ?>
-								</ul>
-								<?php endif; ?>
-							</div>
-						</div>
-					</li>
-										<?php
+						<?php
+						if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) :
+							get_template_part( 'template-parts/hasbio-loop' );
+						else :
+							get_template_part( 'template-parts/nobio-loop' );
+						endif;
+						?>
+						<?php
 					endwhile;
-endif;
+				endif;
 				wp_reset_postdata();
 				?>
 					<div id="noResult">

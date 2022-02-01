@@ -3,14 +3,24 @@
  * Block Name: Testimonials
  *
  * This is the template that displays the testimonials loop block.
+ *
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 7.0.0
  */
 
-$argType = get_field( 'loop_argument_type' );
-if ( $argType == 'count' ) :
+$arg_type         = get_field( 'loop_argument_type' );
+$testimonial_type = get_field( 'testimonial_type' );
+if ( $arg_type == 'count' ) :
 	$args = array(
-		'orderby'        => 'title',
+		'orderby'        => 'rand',
 		'post_type'      => 'testimonial',
 		'posts_per_page' => get_field( 'testimonial_count' ),
+		'tax_query'      => array(
+			array(
+				'taxonomy' => 'testimonialtype',
+				'terms'    => $testimonial_type,
+			),
+		),
 	);
 else :
 	$testimonials = get_field( 'select_testimonials' );
@@ -21,12 +31,27 @@ else :
 	);
 endif;
 
+$class_name = 'testimonial';
+
+if ( ! empty( $block['className'] ) ) {
+	$class_name .= ' ' . $block['className'];
+}
+if ( ! empty( $block['align'] ) ) {
+	$class_name .= ' align' . $block['align'];
+}
+if ( $is_preview ) {
+	$class_name .= ' is-admin';
+}
+
 $the_query = new WP_Query( $args );
 
-if ( $the_query->have_posts() ) :
+if ( $the_query->have_posts() ) : ?>
+<div class="container">
+	<?php
 	while ( $the_query->have_posts() ) :
-		$the_query->the_post(); ?>
-	<div class="testimonials block card">
+		$the_query->the_post();
+		?>
+	<div class="testimonials block">
 		<?php
 		if ( has_post_thumbnail() ) {
 				the_post_thumbnail(
@@ -38,20 +63,34 @@ if ( $the_query->have_posts() ) :
 				);
 		}
 		?>
-		<div class="card-section">
-		<h3><?php the_title(); ?></h3>
-		<?php if ( get_post_meta( get_the_ID(), 'ecpt_job', true ) ) : ?>
-			<h4><?php echo esc_html( get_post_meta( get_the_ID(), 'ecpt_job', true ) ); ?></h4>
-		<?php endif; ?>
-		<?php the_content(); ?>
-		<?php if ( get_post_meta( get_the_ID(), 'ecpt_internship', true ) ) : ?>
-			<p><?php echo esc_html( get_post_meta( get_the_ID(), 'ecpt_internship', true ) ); ?></p>
-		<?php endif; ?>
-		<?php if ( get_post_meta( get_the_ID(), 'ecpt_class', true ) ) : ?>
-				<p>Class of <?php echo esc_html( get_post_meta( get_the_ID(), 'ecpt_class', true ) ); ?></p>
-		<?php endif; ?>
+		<div class="content-section">
+			<h3><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h3>
+			<h4>
+			<?php if ( get_post_meta( get_the_ID(), 'ecpt_job', true ) ) : ?>
+				<?php echo esc_html( get_post_meta( get_the_ID(), 'ecpt_job', true ) ); ?><br>
+			<?php endif; ?>
+			<?php if ( get_post_meta( get_the_ID(), 'ecpt_internship', true ) ) : ?>
+				<?php echo esc_html( get_post_meta( get_the_ID(), 'ecpt_internship', true ) ); ?><br>
+			<?php endif; ?>
+			<?php if ( get_post_meta( get_the_ID(), 'ecpt_class', true ) ) : ?>
+				Class of <?php echo esc_html( get_post_meta( get_the_ID(), 'ecpt_class', true ) ); ?>
+			<?php endif; ?>
+			</h4>
+			<p>
+			<?php
+			global $post;
+			if ( get_post_meta( $post->ID, 'ecpt_pull_quote', true ) ) :
+				?>
+				<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_pull_quote', true ) ); ?>
+			<?php elseif ( get_post_meta( $post->ID, 'ecpt_quote', true ) ) : ?>
+				<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_quote', true ) ); ?>
+			<?php else : ?>
+				<?php the_excerpt(); ?>
+			<?php endif; ?>
+			</p>
 		</div>
 	</div>
 
 	<?php endwhile; ?>
+	</div>
 <?php endif; ?>
