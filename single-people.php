@@ -60,8 +60,14 @@ get_header(); ?>
 									<?php endif; ?>
 									<br>
 								<?php endif; ?>
-								<?php if ( get_post_meta( $post->ID, 'ecpt_cv', true ) ) : ?>
-								<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_cv', true ) ); ?>">Curriculum Vitae</a><br>
+								<?php if ( get_field( 'ecpt_cv' ) ) : ?>
+								<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php the_field( 'ecpt_cv' ); ?>">Curriculum Vitae</a><br>
+								<?php endif; ?>
+								<?php
+								$file = get_field( 'cv_file' );
+								if ( $file ) :
+									?>
+								<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo esc_url( $file['url'] ); ?>">Curriculum Vitae</a><br>
 								<?php endif; ?>
 								<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
 								<span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_office', true ) ); ?><br>
@@ -151,38 +157,39 @@ get_header(); ?>
 					<?php endif; ?>
 
 						<?php if ( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ) : ?>
-					<div class="tabs-panel" id="extra2Tab"><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ); ?></div>
+					<div class="tabs-panel" id="extra2Tab"><?php echo apply_filters( 'the_content', wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ) ); ?></div>
 					<?php endif; ?>
 				</div>
 				<?php endif; ?>
+
 				<!--JMC Content Start -->
 					<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
 						<p><strong>Main Advisor:</strong>&nbsp;<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_advisor', true ) ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
-						<p><strong>Thesis Title:</strong> "<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_thesis', true ) ); ?>"</p>
+						<p>
+							<strong>Thesis Title:</strong> "<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_thesis', true ) ); ?>"
+							<?php if ( get_field( 'ecpt_job_abstract' ) ) : ?>
+								<a href="<?php the_field( 'ecpt_job_abstract' ); ?>">(Download Abstract)</a> <span class="fas fa-file-pdf" aria-hidden="true"></span>
+								<?php endif; ?>
+						</p>
 					<?php endif; ?>
-
-					<?php
-					if ( get_post_meta( $post->ID, 'ecpt_job_abstract', true ) ) :
-						?>
-						&nbsp;-
-					<a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_job_abstract', true ) ); ?>">Download Abstract</a> (PDF)</p>
-					<?php endif; ?>
-
 					<?php if ( get_post_meta( $post->ID, 'ecpt_fields', true ) ) : ?>
 						<p><strong>Fields:</strong>&nbsp;<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_fields', true ) ); ?></p>
 					<?php endif; ?>
-
+					<?php if ( ! get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
+						<?php if ( get_field( 'ecpt_job_abstract' ) ) : ?>
+								<p><span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php the_field( 'ecpt_job_abstract' ); ?>">Thesis Abstract</a></p>
+						<?php endif; ?>
+					<?php endif; ?>
 					<?php if ( has_term( 'job-market-candidate', 'role' ) ) : ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_bio', true ) ); ?>
 						<?php endif; ?>
 					<?php endif; ?>
-
-
 					<!--JMC Content End -->
+
 				</article>
 					<?php
 		endwhile;
