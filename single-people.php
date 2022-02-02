@@ -40,10 +40,10 @@ get_header(); ?>
 						<div class="small-12 medium-10 cell">
 					<?php endif; ?>
 					<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
-							<h2><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?></h2>
+							<h2><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?></h2>
 					<?php endif; ?>
 					<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
-							<h3><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></h3>
+							<h3><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></h3>
 					<?php endif; ?>
 							<p class="listing">
 								<?php
@@ -140,11 +140,7 @@ get_header(); ?>
 
 						<?php if ( get_post_meta( $post->ID, 'ecpt_publications', true ) ) : ?>
 					<div class="tabs-panel" id="publicationsTab">
-							<?php
-							if ( get_post_meta( $post->ID, 'ecpt_publications', true ) ) :
-								echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_publications', true ) );
-						endif;
-							?>
+							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_publications', true ) ); ?>
 					</div>
 					<?php endif; ?>
 						<?php
@@ -153,12 +149,12 @@ get_header(); ?>
 					endif;
 						?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_extra_tab', true ) ) : ?>
-					<div class="tabs-panel"  id="extraTab"><?php echo apply_filters( 'the_content', wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab', true ) ) ); ?></div>
-					<?php endif; ?>
+						<div class="tabs-panel"  id="extraTab"><?php echo apply_filters( 'the_content', wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab', true ) ) ); ?></div>
+						<?php endif; ?>
 
 						<?php if ( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ) : ?>
-					<div class="tabs-panel" id="extra2Tab"><?php echo apply_filters( 'the_content', wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ) ); ?></div>
-					<?php endif; ?>
+						<div class="tabs-panel" id="extra2Tab"><?php echo apply_filters( 'the_content', wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ) ); ?></div>
+						<?php endif; ?>
 				</div>
 				<?php endif; ?>
 
