@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( is_page_template( 'page-templates/courses-undergrad.php' ) || is_page_template( 'page-templates/courses-graduate.php' ) ) : ?>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 	<script type="text/javascript" defer src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 	<script>
 	jQuery(document).ready( function($) {
@@ -30,7 +30,7 @@
 <?php endif; ?>
 
 <?php if ( is_page_template( 'page-templates/courses-undergrad-all.php' ) ) : ?>
-	<link rel="stylesheet" type="text/css" href="hhttps://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.4.0/css/searchPanes.dataTables.min.css"/>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
