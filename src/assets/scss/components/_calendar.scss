@@ -591,14 +591,35 @@ h2.tribe-events-related-events-title {
   color: $black;
 }
 
-.tribe-events-cal-links .tribe-events-gcal, .tribe-events-cal-links .tribe-events-ical {
+.tribe-events-cal-links .tribe-events-button.tribe-events-gcal,
+.tribe-events-cal-links .tribe-events-button.tribe-events-ical,
+.tribe-events-cal-links .tribe-events-button.tribe-events-ics {
   @include button;
   background-color: $blue !important;
   color: $white !important;
   margin-left: 1rem;
   font-family: $font-stack-semibold !important;
   font-weight: $font-stack-semibold-weight !important;
+  &:hover {
+    background-color: $spiritblue !important;
+  }
 }
 .tribe-block__events-link .tribe-block__btn--link:before {
   display: none;
+}
+
+.tribe-events-cal-links .tribe-events-gcal, .tribe-events-cal-links .tribe-events-ical {
+  background: none;
+}
+
+h2.tribe-events-related-events-title,
+.tribe-related-events .tribe-related-events-title .tribe-event-url {
+  font-family: $font-stack-bold;
+  font-weight: $font-stack-bold-weight;
+}
+
+.tribe-related-events .tribe-related-event-info .tribe-event-date-start,
+.tribe-related-events .tribe-related-event-info .tribe-event-time {
+  font-family: $font-stack;
+  font-weight: $font-stack-weight;
 }
