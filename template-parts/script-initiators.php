@@ -119,3 +119,10 @@ if ( is_page_template( 'page-templates/courses-undergrad-all.php' ) ) :
 	});
 	</script>
 <?php endif; ?>
+
+
+<script>
+	jQuery(document).ready( function($) {
+		$('ul.sub-menu.submenu.is-drilldown-submenu.invisible').addClass('quicklinks-menu');
+	});
+</script>
