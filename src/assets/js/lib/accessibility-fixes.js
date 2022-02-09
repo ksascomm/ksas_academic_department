@@ -5,5 +5,6 @@ jQuery(document).ready( function($) {
 	$('.quicklinks ul li').removeAttr('role', 'treeitem');
 	//remove empty <p> from [sidebar-title]Heading Name[/sidebar-title]
 	$('div#custom-sidebar-content p:empty').remove();
+	$('ul.sub-menu.submenu.is-drilldown-submenu.invisible li.is-submenu-item.is-drilldown-submenu-item a').addClass('quicklinks-link');
 });
 
