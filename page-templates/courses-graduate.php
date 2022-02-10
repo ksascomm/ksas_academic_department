@@ -9,8 +9,6 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
-
 <?php
 	// Load Zebra Curl.
 	require get_template_directory() . '/library/Zebra_cURL.php';
