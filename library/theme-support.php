@@ -71,6 +71,9 @@ function custom_ksasacademic_page_title( $title ) {
 		global $post;
 		$title = get_the_author_meta( 'display_name', $post->post_author ) . ' Author Archives | ' . get_bloginfo( 'name' ) . ' | Johns Hopkins University';
 		return $title;
+	} elseif ( is_post_type_archive( 'tribe_events' ) ) {
+		$title = 'Events Calendar | ' . get_bloginfo( 'name' ) . ' | Johns Hopkins University';
+		return $title;
 	} elseif ( is_archive() ) {
 		$title = single_cat_title( '', false ) . ' | ' . get_bloginfo( 'name' ) . ' | Johns Hopkins University';
 		return $title;
