@@ -21,9 +21,10 @@
 		<?php
 			/* translators: %1$s: new post url */
 			printf(
-                __(
-				'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'ksasacademic'
-                ),
+				__(
+					'Ready to publish your first post? <a href="%1$s">Get started here</a>.',
+					'ksasacademic'
+				),
 				admin_url( 'post-new.php' )
 			);
 		?>
@@ -32,12 +33,12 @@
 	<?php elseif ( is_search() ) : ?>
 
 	<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ksasacademic' ); ?></p>
-	<?php get_search_form(); ?>
+		<?php get_search_form(); ?>
 
 	<?php else : ?>
 
 	<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ksasacademic' ); ?></p>
-	<?php get_search_form(); ?>
+		<?php get_search_form(); ?>
 
 	<?php endif; ?>
 </div>

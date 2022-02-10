@@ -10,7 +10,7 @@
 
 ?>
 
-<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-singular single-post'); ?>>
+<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class( 'post-singular single-post' ); ?>>
 		<header>
 		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
@@ -20,33 +20,34 @@
 			<ul class="no-bullet meta">
 				<li>Posted on: <?php ksasacademic_entry_meta(); ?></li>
 				<li>Posted in: <strong><span class="capitalize">
-                <?php
-                $categories = get_the_category();
+				<?php
+				$categories        = get_the_category();
 						$separator = ', ';
-						$output = '';
-							if ( ! empty( $categories ) ) {
+						$output    = '';
+				if ( ! empty( $categories ) ) {
 					foreach ( $categories as $category ) {
 						$output .= $category->name . $separator;
 					}
 					echo trim( $output, $separator );
-							}
-						if (has_tag('gallery') ) :
-				?>
+				}
+				if ( has_tag( 'gallery' ) ) :
+					?>
 				, Image Gallery<?php endif; ?>
 						</span></strong>
 				</li>
 			</ul>
 		</header>
 		<div class="entry-content">
-			<?php if ( ! has_tag('gallery') ) : ?>
+			<?php if ( ! has_tag( 'gallery' ) ) : ?>
 				<?php
-                the_post_thumbnail(
-                    'medium', [
+				the_post_thumbnail(
+					'medium',
+					array(
 						'class' => 'image-left',
-						'alt' => 'Featured image',
-					]
-                    );
-?>
+						'alt'   => 'Featured image',
+					)
+				);
+				?>
 			<?php endif; ?>
 			<?php the_content(); ?>
 			<?php edit_post_link( __( '(Edit)', 'ksasacademic' ), '<span class="edit-link">', '</span>' ); ?>

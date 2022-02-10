@@ -22,13 +22,16 @@ get_header(); ?>
 
 		<?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 
-			<h1 class="page-title"><?php echo $term->name;?> Exhibits</h1>
-			<p>Explore all of our <?php echo $term->name;?> Exhibits</p>
+			<h1 class="page-title"><?php echo $term->name; ?> Exhibits</h1>
+			<p>Explore all of our <?php echo $term->name; ?> Exhibits</p>
 
 			<?php if ( have_posts() ) : ?>
 				<div class="grid-x grid-padding-x small-up-2 medium-up-3">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 					<?php get_template_part( 'template-parts/content-exhibits', 'card' ); ?>
 				<?php endwhile; ?>
 

@@ -10,7 +10,7 @@
 
 ?>
 
-<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class('post-listing news-article single-search-result'); ?>>
+<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class( 'post-listing news-article single-search-result' ); ?>>
 	<header>
 		<h3>
 			<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>">
@@ -20,10 +20,6 @@
 	</header>
 
 	<div class="entry-content">
-		<?php
-        $content = get_the_content();
-  		$trimmed_content = wp_trim_words( $content, 60, '[...]' );
-        ?>
-  		<p><?php echo $trimmed_content; ?></p>
+		<?php the_excerpt(); ?>
 	</div>
 </article>

@@ -13,7 +13,9 @@ get_header();
 	<div class="main-grid">
 		<main class="main-content-full-width">
 			<?php
-            while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) :
+				the_post();
+				?>
 				<?php get_template_part( 'template-parts/content-exhibits', 'single' ); ?>
 			<?php endwhile; ?>
 		</main>
