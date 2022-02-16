@@ -16,8 +16,10 @@ if ( has_post_thumbnail( $post->ID ) ) : ?>
 	// Check if photoshelter creds defined.
 elseif ( defined( 'PHOTOSHELTER_USER' ) ) :
 	$url           = 'https://www.photoshelter.com/psapi/v3/mem/authenticate?api_key=2yrk5yDYpec&email=' . PHOTOSHELTER_USER . '&password=' . PHOTOSHELTER_PASS . '&mode=token';
-	$transient_key = 'photoshelter-api';
-	$request       = get_transient( $transient_key );
+	// Name transient on each page that calls API.
+	$transient_name = 'photoshelter-api: ' . get_the_title();
+	$transient_key  = $transient_name;
+	$request        = get_transient( $transient_key );
 	if ( false === $request ) {
 		$request = wp_remote_get( $url );
 
@@ -26,8 +28,8 @@ elseif ( defined( 'PHOTOSHELTER_USER' ) ) :
 			set_transient( $transient_key, $request, MINUTE_IN_SECONDS * 15 );
 			return false;
 		}
-		// Success, cache for 24 hours.
-		set_transient( $transient_key, $request, DAY_IN_SECONDS * 1 );
+		// Success, cache for 6 hours.
+		set_transient( $transient_key, $request, HOUR_IN_SECONDS * 6 );
 	}
 
 	if ( is_wp_error( $request ) ) {
