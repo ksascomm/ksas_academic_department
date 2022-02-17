@@ -30,6 +30,10 @@ p {
   }
 }
 
+u { 
+  text-decoration: none;
+}
+
 .main-container {
   @include xy-grid-container;
 }
