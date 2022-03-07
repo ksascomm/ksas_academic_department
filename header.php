@@ -82,12 +82,12 @@
 					</div>
 					<div class="white">
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University">
+							<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/university.logo.white.png" alt="Johns Hopkins University" loading="lazy">
 						</a>
 					</div>
 						<?php elseif ( 'custom' === $shield ) : ?>
 						<a href="http://www.jhu.edu/" title="Johns Hopkins University">
-							<img width="300" height="87" src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University">
+							<img width="300" height="87" src="<?php echo esc_url( $theme_option['flagship_sub_shield_location'] ); ?>" alt="Johns Hopkins University" loading="lazy">
 						</a>
 					<?php else : ?>
 						<a href="<?php echo esc_url( network_site_url( '/' ) ); ?>" rel="home">
@@ -95,7 +95,7 @@
 								<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.blue.svg" alt="KSAS Shield" loading="lazy">
 							</div>
 							<div class="white">
-								<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield">
+								<img width="300" height="87" src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/krieger.white.svg" alt="KSAS Shield" loading="lazy">
 							</div>
 						</a>
 					<?php endif; ?>
