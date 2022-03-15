@@ -49,10 +49,11 @@
 				</ul>
 			</div>
 			<div class="small-12 large-3 cell social-media">
-				<a href="http://facebook.com/JHUArtsSciences"><span class="fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a>
-				<a href="https://www.instagram.com/JHUArtsSciences/"><span class="fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a>
-				<a href="https://twitter.com/JHUArtsSciences"><span class="fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a>
-				<a href="https://www.youtube.com/jhuartssciences"><span class="fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a>
+				<a href="http://facebook.com/JHUArtsSciences"><span class="fa-brands fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a>
+				<a href="https://www.instagram.com/JHUArtsSciences/"><span class="fa-brands fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a>
+				<a href="https://twitter.com/JHUArtsSciences"><span class="fa-brands fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a>
+				<a href="https://www.youtube.com/jhuartssciences"><span class="fa-brands fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a>
+				<a href="https://www.tiktok.com/@jhuartssciences"><span class="fa-brands fa-tiktok fa-2x"></span><span class="screen-reader-text">TikTok</span></a>
 			</div>
 		</div>
 		<div class="grid-x">
@@ -70,6 +71,14 @@
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 	</div><!-- Close off-canvas content -->
 <?php endif; ?>
+<?php
+$siteimprove_analytics = $theme_option['flagship_sub_siteimprove_analytics'];
+if ( $siteimprove_analytics === 1 ) :
+	?>
+	<script async src="https://siteimproveanalytics.com/js/siteanalyze_11464.js"></script>
+	<?php
+endif;
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

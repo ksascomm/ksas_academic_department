@@ -166,8 +166,10 @@ table thead {
   &.next:after, &.previous:before {
     text-align: left;
     font-size: .8rem;
+    display: inline-block;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
+    font: var(--fa-font-solid);
     font-weight: 900;
     content: "\f053";
     position: absolute;

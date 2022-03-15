@@ -84,7 +84,7 @@ get_header(); ?>
 						<li>
 							<?php if ( get_post_meta( $post->ID, 'ecpt_pub_link', true ) ) : ?>
 							<a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_pub_link', true ) ); ?>" aria-label="Purchase Online">
-								Purchase Online <span class="fas fa-external-link-square-alt"></span>
+								Purchase Online <span class="fa-solid fa-square-arrow-up-right"></span>
 							</a>
 							<?php endif; ?>
 						</li>

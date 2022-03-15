@@ -91,7 +91,7 @@ get_header(); ?>
 endif;
 					?>
 					<article class="archive-link" aria-label="Humanities Highlights Archive Link">
-						<a class="button news-archive" href="<?php echo esc_url( site_url() ); ?>/category/highlights/">See all Humanities Highlights <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
+						<a class="button news-archive" href="<?php echo esc_url( site_url() ); ?>/category/highlights/">See all Humanities Highlights <span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span>
 							</a>
 					</article>
 				</div>
@@ -135,7 +135,7 @@ endif;
 				<article class="homepage-news-archive" aria-label="<?php echo esc_html( $theme_option['flagship_sub_feed_name'] ); ?>">
 
 					<a class="button news-archive" href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="button" id="newsarchive">
-							<?php echo esc_html( $theme_option['flagship_sub_feed_name'] ); ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
+							<?php echo esc_html( $theme_option['flagship_sub_feed_name'] ); ?> Archive <span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span>
 					</a>
 
 				</article>

@@ -27,7 +27,7 @@
     "what-input": "^5.2.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.4",
+    "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/register": "^7.17.0",
@@ -51,7 +51,7 @@
     "gulp-uglify": "^3.0.2",
     "js-yaml": "^4.1.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.49.7",
+    "sass": "^1.49.9",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.69.1",
     "webpack-stream": "^7.0.0",

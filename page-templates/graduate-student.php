@@ -14,15 +14,15 @@ get_header(); ?>
 		the_post();
 		?>
 
-	  <article <?php post_class(); ?> aria-label="<?php the_title(); ?>">
-		  <header>
-			  <h1 class="entry-title"><?php the_title(); ?></h1>
-		  </header>
-		  <?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
-		  <div class="entry-content">
-			  <?php the_content(); ?>
-		  </div>
-	  </article>
+	<article <?php post_class(); ?> aria-label="<?php the_title(); ?>">
+		<header>
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+		</header>
+		<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div>
+	</article>
 
 	<?php endwhile; ?>
 	<?php
@@ -47,13 +47,13 @@ get_header(); ?>
 		while ( $graduate_student_query->have_posts() ) :
 			$graduate_student_query->the_post();
 			?>
-			<li class="callout person <?php echo get_the_roles( $post ); ?>">
+			<li class="callout person <?php echo esc_html( get_the_roles( $post ) ); ?>">
 				<div class="media-object">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<div class="media-object-section">
 							<?php
-							$title = get_the_title();
-								the_post_thumbnail( 'directory', array( 'alt' => $title ) );
+							$alttitle = get_the_title();
+								the_post_thumbnail( 'directory', array( 'alt' => $alttitle ) );
 							?>
 						</div>
 					<?php endif; ?>
@@ -67,38 +67,49 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
 							<h4>
-								<?php echo get_post_meta( $post->ID, 'ecpt_degrees', true ); ?>
+							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?>
 							</h4>
 						<?php endif; ?>
-						<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
+						<?php
+						// Check if email field exists. If yes, show other fields.
+						if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : 
+							?>
 						<ul class="contact">
-							<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
-								<li><span class="fa fa-phone-square"></span> <?php echo get_post_meta( $post->ID, 'ecpt_phone', true ); ?></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_fax', true ) ) : ?>
-								<li><span class="fa fa-fax"></span> <?php echo get_post_meta( $post->ID, 'ecpt_fax', true ); ?></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
-								<li><span class="fa fa-envelope"></span> <a href="mailto:<?php echo get_post_meta( $post->ID, 'ecpt_email', true ); ?>"> <?php echo get_post_meta( $post->ID, 'ecpt_email', true ); ?></a></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
-								<li><span class="fas fa-map-marker-alt"></span> <?php echo get_post_meta( $post->ID, 'ecpt_office', true ); ?></li>
-							<?php endif; ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_website', true ) ) : ?>
-							<li><span class="fa fa-globe"></span><a href="<?php echo get_post_meta( $post->ID, 'ecpt_website', true ); ?>" target="_blank" aria-label="<?php the_title(); ?>'s Personal Website">Personal Website</a>
-							<?php endif; ?>
-						</ul>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
+									<li><span class="fa-solid fa-phone-office"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_phone', true ) ); ?></li>
+								<?php endif; ?>
+								<?php
+								if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) :
+									$email = get_post_meta( $post->ID, 'ecpt_email', true );
+									?>
+									<li><span class="fa-solid fa-envelope"></span>
+									<?php if ( function_exists( 'email_munge' ) ) : ?>
+									<a class="munge" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge( $email ); ?>">
+										<?php echo email_munge( $email ); ?>
+									</a>
+									<?php else : ?>
+									<a href="<?php echo esc_url( 'mailto:' . $email ); ?>"><?php echo esc_html( $email ); ?></a>
+									<?php endif; ?>
+									</li>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
+									<li><span class="fa-solid fa-location-dot"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_office', true ) ); ?></li>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_website', true ) ) : ?>
+								<li><span class="fa-solid fa-earth-americas"></span><a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_website', true ) ); ?>" target="_blank" aria-label="<?php the_title(); ?>'s Personal Website">Personal Website</a>
+								<?php endif; ?>
+							</ul>
 						<?php endif; ?>
 						<?php
 						if ( get_post_meta( $post->ID, 'ecpt_expertise', true ) ) :
 							?>
 							<p><strong>Research Interests:&nbsp;</strong>
-								<?php echo get_post_meta( $post->ID, 'ecpt_expertise', true ); ?>
+								<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?>
 							<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
 							<br><strong>Advisor:&nbsp;</strong>
 								<?php
-								echo get_post_meta( $post->ID, 'ecpt_advisor', true );
-endif;
+								echo esc_html( get_post_meta( $post->ID, 'ecpt_advisor', true ) );
+							endif;
 							?>
 							</p>
 						<?php endif; ?>

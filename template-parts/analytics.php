@@ -9,7 +9,7 @@
 ?>
 
 <?php
-$theme_option       = flagship_sub_get_global_options();
+$theme_option     = flagship_sub_get_global_options();
 	$analytics_id = $theme_option['flagship_sub_google_analytics'];
 ?>
 
@@ -32,22 +32,5 @@ $theme_option       = flagship_sub_get_global_options();
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-PSQVBF6');</script>
 <!-- End Google Tag Manager -->
-
-<?php
-$siteimprove_analytics = $theme_option['flagship_sub_siteimprove_analytics'];
-if ( $siteimprove_analytics === 1 ) :
-	?>
-<script type="text/javascript">
-/*<![CDATA[*/
-(function() {
-var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-sz.src = '//siteimproveanalytics.com/js/siteanalyze_11464.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
-})();
-/*]]>*/
-</script>
-	<?php
-endif;
-?>
 
 <meta name="facebook-domain-verification" content="s1lj448peh4wqw24bgcc5f2t6n23tc" />

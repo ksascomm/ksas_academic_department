@@ -276,7 +276,10 @@
       margin: 0;
     }
     &[type="submit"] {
-      font-family: $font-awesome;
+      display: inline-block;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font: var(--fa-font-light);
     }
   }
   .top-bar-left {

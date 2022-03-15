@@ -42,7 +42,7 @@ if ( ! function_exists( 'ksasacademic_scripts' ) ) :
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/dist/assets/js/' . ksasacademic_asset_path( 'app.js' ), array( 'jquery' ), '4.2.0', true );
 
 		// Enqueue FontAwesome from CDN.
-		wp_register_script( 'fontawesome', 'https://kit.fontawesome.com/ed22ca715b.js', array(), '5.15.2', false );
+		wp_register_script( 'fontawesome', 'https://kit.fontawesome.com/72c92fef89.js', array(), '6.0.0', false );
 		wp_enqueue_script( 'fontawesome' );
 		wp_script_add_data( 'fontawesome', array( 'crossorigin' ), array( 'anonymous' ) );
 

@@ -60,16 +60,16 @@
 			<?php endif; ?>
 			<ul class="contact">
 				<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
-					<li><span class="fa fa-envelope"></span> <a href="<?php echo esc_url( 'mailto:' . get_post_meta( $post->ID, 'ecpt_email', true ) ); ?>"> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_email', true ) ); ?></a></li>
+					<li><span class="fa-solid fa-envelope"></span> <a href="<?php echo esc_url( 'mailto:' . get_post_meta( $post->ID, 'ecpt_email', true ) ); ?>"> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_email', true ) ); ?></a></li>
 				<?php endif; ?>
 				<?php if ( get_post_meta( $post->ID, 'ecpt_office', true ) ) : ?>
-					<li><span class="fa fa-map-marker-alt"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_office', true ) ); ?></li>
+					<li><span class="fa-solid fa-location-dot"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_office', true ) ); ?></li>
 				<?php endif; ?>
 				<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
-					<li><span class="fa fa-phone-square"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_phone', true ) ); ?></li>
+					<li><span class="fa-solid fa-phone-office"></span> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_phone', true ) ); ?></li>
 				<?php endif; ?>
 				<?php if ( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ) : ?>
-					<li><span class="fa fa-globe"></span> <a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo esc_url( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ); ?>')" target="_blank" aria-label="<?php the_title(); ?>'s Group/Lab Website">Group/Lab Website</a></li>
+					<li><span class="fa-solid fa-earth-americas"></span> <a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ); ?>" onclick="ga('send', 'event', 'People Directory', 'Group/Lab Website', '<?php the_title(); ?> | <?php echo esc_url( get_post_meta( $post->ID, 'ecpt_lab_website', true ) ); ?>')" target="_blank" aria-label="<?php the_title(); ?>'s Group/Lab Website">Group/Lab Website</a></li>
 				<?php endif; ?>
 				<?php if ( get_post_meta( $post->ID, 'ecpt_expertise', true ) ) : ?>
 					<li><strong>Research Interests:&nbsp;</strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?></li>

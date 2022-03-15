@@ -419,7 +419,10 @@
 		}
 		.playbutton {
 		    &:before {
-				font-family: $font-awesome;
+				display: inline-block;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				font: var(--fa-font-light);
 			    font-size: 4rem;
 			    font-style: normal;
 			    font-weight: inherit;
@@ -499,7 +502,10 @@
 			overflow:auto;
 			a {
 				&:before {
-					font-family: $font-awesome;
+					display: inline-block;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					font: var(--fa-font-light);
 			    	content: '\f1ea';
 			    	padding-right: .25rem;
 				}
@@ -567,7 +573,10 @@
     font-weight: 600;
     font-size: .9rem;
     &::after{
-    font-family: "Font Awesome 5 Free", "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+		display: inline-block;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font: var(--fa-font-solid);
       padding-left: .2rem;
       font-weight: 900;
       content: "\f138";
@@ -874,7 +883,10 @@ h3.tribe-events-widget-events-list__event-title.tribe-common-h7 {
     font-size: .9rem;
     color: $white !important;
     &::after{
-    font-family: "Font Awesome 5 Free", "gentona-semibold", "Helvetica Neue", Roboto, sans-serif;
+		display: inline-block;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font: var(--fa-font-solid);
       padding-left: .2rem;
       font-weight: 900;
       content: "\f138";

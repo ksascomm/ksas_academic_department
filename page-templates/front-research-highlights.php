@@ -205,7 +205,7 @@ if ( $slider_query->have_posts() ) :
 				<article class="homepage-news-archive" aria-label="<?php echo esc_html( $theme_option['flagship_sub_feed_name'] ); ?>">
 
 					<a class="button news-archive" href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?> " class="button" id="newsarchive">
-					<?php echo esc_html( $theme_option['flagship_sub_feed_name'] ); ?> Archive <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
+					<?php echo esc_html( $theme_option['flagship_sub_feed_name'] ); ?> Archive <span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span>
 					</a>
 
 				</article>
