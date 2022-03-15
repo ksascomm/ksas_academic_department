@@ -74,8 +74,8 @@ if ( $slider_query->have_posts() ) :
 					<div class="media-object">
 						<div class="media-object-section">
 							<span class="fa-stack fa-2x hide-for-small-only">
-								<span class="fa fa-circle fa-stack-2x"></span>
-								<span class="fa fa-flask fa-stack-1x fa-inverse" aria-hidden="true"></span>
+								<span class="fa-solid fa-circle fa-stack-2x"></span>
+								<span class="fa-regular fa-flask fa-stack-1x fa-inverse" aria-hidden="true"></span>
 							</span>
 						</div>
 						<div class="media-object-section">
