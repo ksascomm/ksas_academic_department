@@ -395,3 +395,7 @@ img.article {
   color: $dark-gray;
   font-size: 1rem;
 }
+
+blockquote, blockquote p, .cite-block, cite {
+  color: $dark-gray;
+}
