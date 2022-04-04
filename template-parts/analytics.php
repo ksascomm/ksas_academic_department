@@ -9,8 +9,9 @@
 ?>
 
 <?php
-$theme_option     = flagship_sub_get_global_options();
-	$analytics_id = $theme_option['flagship_sub_google_analytics'];
+$theme_option = flagship_sub_get_global_options();
+$analytics_id = $theme_option['flagship_sub_google_analytics'];
+
 ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -22,6 +23,11 @@ $theme_option     = flagship_sub_get_global_options();
 
 	gtag('config', 'UA-40512757-1');
 	gtag('config', '<?php echo $analytics_id; ?>');
+	<?php
+	if ( isset( $theme_option['flagship_sub_ga4_analytics'] ) ) :
+		?>
+		gtag('config', '<?php echo $theme_option['flagship_sub_ga4_analytics']; ?>');
+	<?php endif; ?>
 </script>
 <!-- End Google Analytics -->
 
