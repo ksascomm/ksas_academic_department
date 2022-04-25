@@ -3,7 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   height: rem-calc(100);
-
+  min-height: rem-calc(100);
   @include breakpoint(medium) {
     height: rem-calc(200);
   }

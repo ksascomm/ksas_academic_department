@@ -8,7 +8,7 @@
 		</video>
 		<div class="controls">
 			<button class="caption" data-tooltip tabindex="1" title="<?php the_field( 'video_caption_summary' ); ?>">
-				<span class="fa-solid fa-square-arrow-up-right"></span>
+				<span class="fa-solid fa-circle-info"></span>
 			</button>
 			<div class="screen-reader-text" id="video-summary">
 				<p>Montage of Video Clips:<?php the_field( 'video_caption_summary' ); ?></p>

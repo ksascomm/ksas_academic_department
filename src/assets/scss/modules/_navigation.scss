@@ -93,6 +93,7 @@
   &.main-navigation {
     @include xy-grid-container;
     @include breakpoint(medium) {
+      min-height: 50px;
       //border-top: solid;
       //border-color: $white;
       //border-width: 1px;
@@ -326,6 +327,7 @@
 }
 
 .site-desktop-title {
+  min-height: 66px;
   @include breakpoint(small only) {
     //background: $blue;
     .top-bar-title {
@@ -444,6 +446,7 @@
   background-color: $white;
   border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
+  min-height: 30px;
   a {
     color: $black;
   }

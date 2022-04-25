@@ -313,7 +313,6 @@
   background-color: transparent;
   color: transparent;
   font-size: 2.5rem;
-
   .toggle-playback, .caption {
     width: 1em;
     height: 1em;
@@ -330,6 +329,10 @@
     }
   }
   .caption {
+    color: $blue;
+    &:hover {
+      color: $spiritblue;
+    }
     &.has-tip {
       border-bottom: none;
     }
@@ -429,6 +432,7 @@
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-light);
     content: '\f144';
+    font-size: 2.5rem;
   }
   &.pause:before {
     display: inline-block;
@@ -436,6 +440,7 @@
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-light);
     content: '\f28b';
+    font-size: 2.5rem;
   }
 }
 
