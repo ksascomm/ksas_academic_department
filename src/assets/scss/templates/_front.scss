@@ -57,6 +57,15 @@
   }
 }
 
+@media screen and (min-width: 1900px ) {
+  .background-bluejaysblue {
+    padding: 2rem 0;
+  }
+  .intro .seo-intro p {
+    font-size: 1.5rem;
+  }
+}
+
 // Section divider
 .section-divider {
   @include xy-grid-container;
