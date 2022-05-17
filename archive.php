@@ -34,6 +34,8 @@ get_header();
 				<?php
 				if ( is_category( 'highlights' ) ) :
 					get_template_part( 'template-parts/content', 'humanities-highlights' );
+				elseif ( is_post_type_archive( 'faculty-books' ) ) :
+					get_template_part( 'template-parts/content', 'faculty-books' );
 				else :
 					get_template_part( 'template-parts/content', get_post_format() );
 				endif;
