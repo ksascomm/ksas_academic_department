@@ -143,42 +143,6 @@ function dequeue_css() {
 }
 add_action( 'wp_print_styles', 'dequeue_css', 100 );
 
-/** Deregister Modern Tribe Styles */
-add_action( 'wp_enqueue_scripts', 'deregister_tribe_styles' );
-
-function deregister_tribe_styles() {
-	if ( is_singular( array( 'people', 'profile', 'testimonial', 'bulletinboard', 'ksasexhibits' ) ) ) {
-		wp_deregister_style( 'tribe-events-pro-views-v2-skeleton' );
-		wp_deregister_style( 'tribe-events-pro-views-v2-full' );
-		wp_deregister_style( 'tribe-events-views-v2-skeleton' );
-		wp_deregister_style( 'tribe-events-views-v2-full' );
-		wp_deregister_style( 'tribe-common-skeleton-style' );
-		wp_deregister_style( 'tribe-common-full-style' );
-		wp_deregister_style( 'tribe-common-skeleton-style' );
-		wp_deregister_style( 'tribe-tooltip' );
-	}
-	if ( is_page_template( array( 'page-templates/people-research-staff.php', 'page-templates/graduate-student.php', 'page-templates/job-market-candidate' ) ) ) {
-		wp_deregister_style( 'tribe-events-pro-views-v2-skeleton' );
-		wp_deregister_style( 'tribe-events-pro-views-v2-full' );
-		wp_deregister_style( 'tribe-events-views-v2-skeleton' );
-		wp_deregister_style( 'tribe-events-views-v2-full' );
-		wp_deregister_style( 'tribe-common-skeleton-style' );
-		wp_deregister_style( 'tribe-common-full-style' );
-		wp_deregister_style( 'tribe-common-skeleton-style' );
-		wp_deregister_style( 'tribe-tooltip' );
-	}
-	if ( is_page( 'people' ) ) {
-		wp_deregister_style( 'tribe-events-pro-views-v2-skeleton' );
-		wp_deregister_style( 'tribe-events-pro-views-v2-full' );
-		wp_deregister_style( 'tribe-events-views-v2-skeleton' );
-		wp_deregister_style( 'tribe-events-views-v2-full' );
-		wp_deregister_style( 'tribe-common-skeleton-style' );
-		wp_deregister_style( 'tribe-common-full-style' );
-		wp_deregister_style( 'tribe-common-skeleton-style' );
-		wp_deregister_style( 'tribe-tooltip' );
-	}
-}
-
 /** Disable/Clean Inline Styles */
 function clean_post_content( $content ) {
 	// Remove inline styling.
