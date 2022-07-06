@@ -24,7 +24,7 @@ get_header(); ?>
 						'post_type'      => 'faculty-books',
 						'posts_per_page' => 100,
 						'meta_key'       => 'ecpt_pub_date',
-						'orderby'        => 'meta_value',
+						'orderby'        => 'meta_value date',
 						'order'          => 'DESC',
 					)
 				);
