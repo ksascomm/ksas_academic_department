@@ -153,3 +153,9 @@ a.tribe-events-gmap:hover {
 a.tribe-events-gmap {
   display: inline-block !important;
 }
+
+.single-tribe_events main.tribe-events-pg-template {
+  margin: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
