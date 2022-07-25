@@ -62,7 +62,8 @@ get_header(); ?>
 					$level   = $course->{'Level'};
 					$parent  = 'Undergraduate';
 
-					if ( strpos( $level, $parent ) !== false || ( $level === '' ) !== false ) {
+					if ( $section !== '88' && (
+						strpos( $level, $parent ) !== false || ( $level === '' ) !== false ) ) {
 						$number       = $course->{'OfferingName'};
 						$clean_number = preg_replace( '/[^A-Za-z0-9\-]/', '', $number );
 						$dirty_term   = $course->{'Term_IDR'};
