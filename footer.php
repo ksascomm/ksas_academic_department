@@ -41,14 +41,14 @@
 
 			</div>
 			<div class="small-12 large-6 cell">
-				<ul id="menu-footer-links" class="menu" role="menu">
+				<ul id="menu-footer-links" class="menu" role="menu" aria-label="University Policies">
 					<li role="menuitem"><a href="<?php echo esc_url( get_site_url() ); ?>/sitemap/" target="_blank">Sitemap</a></li>
 					<li role="menuitem"><a href="https://accessibility.jhu.edu/" target="_blank">Accessibility</a></li>
 					<li role="menuitem"><a href="https://jobs.jhu.edu/" target="_blank">Careers</a></li>
 					<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement" target="_blank">Privacy Statement</a></li>
 				</ul>
 			</div>
-			<div class="small-12 large-3 cell social-media">
+			<div class="small-12 large-3 cell social-media" aria-label="Social Media Accounts">
 				<a href="http://facebook.com/JHUArtsSciences"><span class="fa-brands fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a>
 				<a href="https://www.instagram.com/JHUArtsSciences/"><span class="fa-brands fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a>
 				<a href="https://twitter.com/JHUArtsSciences"><span class="fa-brands fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a>
