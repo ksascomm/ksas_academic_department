@@ -122,21 +122,21 @@ if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
 		<?php endif; ?>
 		<!--Show Columns Dynamically-->
 		<?php if ( $count == 2 && $featured_sidebar ) : ?>
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="large">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 		<?php elseif ( $count == 3 && $featured_sidebar ) : ?>
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-4" data-equalizer data-equalize-on="large">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-4">
 		<?php elseif ( $count == 3 && ! $featured_sidebar ) : ?>
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="large">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 		<?php elseif ( $count == 2 && ! $featured_sidebar ) : ?>
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-2" data-equalizer data-equalize-on="large">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-2">
 		<?php endif; ?>
 		<?php
 		while ( have_rows( 'explore_the_department' ) ) :
 			the_row();
 			?>
 			<!--Loop through each repeater field-->
-			<div class="cell " aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
-				<article class="bucket"  data-equalizer-watch aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
+			<div class="cell" aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
+				<article class="bucket"  aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 					<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>">
 						<?php
 						$image = get_sub_field( 'explore_bucket_image' );
