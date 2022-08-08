@@ -306,6 +306,16 @@
   .orbit-previous, .orbit-next {
     color: $black;
   }
+  .orbit-bullets {
+    button {
+      &.is-active {
+        background-color: $black;
+      }
+      &:focus {
+        outline: 3px solid $spiritblue;
+      }
+    }
+  }
 }
 
 //Video Template
@@ -459,7 +469,7 @@
 
 button.jquery-background-video-pauseplay.play, button.jquery-background-video-pauseplay.pause {
   &:focus {
-    outline: -webkit-focus-ring-color auto 5px !important;
+    outline: #005FCC auto 5px !important;
   }
 }
 .bucket-area {
