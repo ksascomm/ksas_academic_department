@@ -37,6 +37,7 @@
 			<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
 				<h5><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></h5>
 			<?php endif; ?>
+			<?php if ( ! empty( get_post_meta( $post->ID, 'ecpt_email', true ) ) ) : ?>
 			<ul class="contact">
 				<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
 					<li><span class="fa-solid fa-envelope"></span> <a href="<?php echo esc_url( 'mailto:' . get_post_meta( $post->ID, 'ecpt_email', true ) ); ?>"> <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_email', true ) ); ?></a></li>
@@ -54,6 +55,7 @@
 					<li><strong>Research Interests:&nbsp;</strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?></li>
 				<?php endif; ?>
 			</ul>
+			<?php endif; ?>
 		</div>
 	</div>
 </li>
