@@ -8,8 +8,11 @@
  */
 
 // If a featured image is set, insert into layout.
-if ( has_post_thumbnail( $post->ID ) ) : ?>
-	<header class="featured-hero uploaded hide-for-print show-for-medium" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'full' ); ?>, x-large]" aria-label="Featured Image">
+if ( has_post_thumbnail( $post->ID ) ) :
+	$thumbnail_id  = get_post_thumbnail_id( $post->ID );
+	$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
+	?>
+	<header class="featured-hero uploaded hide-for-print show-for-medium" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'full' ); ?>, x-large]" aria-label="<?php echo esc_html( $thumbnail_alt ); ?>">
 </header>
 
 	<?php
@@ -34,7 +37,7 @@ else :
 
 	?>
 
-<header class="featured-hero default hide-for-print show-for-medium" role="banner" style="background-image: url('<?php echo esc_url( $selected_image ); ?>');" aria-label="Featured Image">
+<header class="featured-hero default hide-for-print show-for-medium" role="banner" style="background-image: url('<?php echo esc_url( $selected_image ); ?>');">
 </header>
 	<?php
 endif;
