@@ -1,9 +1,32 @@
 <?php
-/*
-Template Name: Graduate Student Listing
-*/
-get_header(); ?>
+/**
+ * Template Name: Graduate Student Listing
+ * The template for displaying the Graduate Student role,
+ * the People custom post type's role taxonomy
+ *
+ * @package KSASAcademicDepartment
+ * @since KSASAcademicDepartment 1.0.0
+ */
 
+get_header(); ?>
+<?php
+// Check if the transient exists.
+$graduate_student_query = get_transient( 'graduate_student_query' );
+// If the transient does not exist, then run the query and set the transient for the $graduate_student_query query. The next time this query is run, $graduate_student_query will exist as a transient and will not run a new query, but use the cached query instead.
+if ( false === $graduate_student_query ) {
+	$graduate_student_query = new WP_Query(
+		array(
+			'post_type'      => 'people',
+			'role'           => array( 'graduate-student', 'ma-student' ),
+			'meta_key'       => 'ecpt_people_alpha',
+			'orderby'        => 'meta_value',
+			'order'          => 'ASC',
+			'posts_per_page' => 100,
+		)
+	);
+	set_transient( 'graduate_student_query', $graduate_student_query, 345600 );
+}
+?>
 <div class="main-container" id="page">
 	<div class="main-grid">
 		<main class="main-content">
@@ -26,20 +49,6 @@ get_header(); ?>
 
 	<?php endwhile; ?>
 	<?php
-	if ( false === ( $graduate_student_query = get_transient( 'graduate_student_query' ) ) ) {
-		// It wasn't there, so regenerate the data and save the transient
-		$graduate_student_query = new WP_Query(
-			array(
-				'post_type'      => 'people',
-				'role'           => array( 'graduate-student', 'ma-student' ),
-				'meta_key'       => 'ecpt_people_alpha',
-				'orderby'        => 'meta_value',
-				'order'          => 'ASC',
-				'posts_per_page' => 100,
-			)
-		);
-		set_transient( 'graduate_student_query', $graduate_student_query, 345600 );
-	}
 	if ( $graduate_student_query->have_posts() ) :
 		?>
 		<ul class="directory">
@@ -65,6 +74,11 @@ get_header(); ?>
 						<?php else : ?>
 							<h3><?php the_title(); ?></h3>
 						<?php endif; ?>
+						<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
+							<h4>
+								<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?>
+							</h4>
+						<?php endif; ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
 							<h4>
 							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?>
@@ -72,7 +86,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php
 						// Check if email field exists. If yes, show other fields.
-						if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : 
+						if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) :
 							?>
 						<ul class="contact">
 								<?php if ( get_post_meta( $post->ID, 'ecpt_phone', true ) ) : ?>
@@ -105,13 +119,21 @@ get_header(); ?>
 							?>
 							<p><strong>Research Interests:&nbsp;</strong>
 								<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?>
-							<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
-							<br><strong>Advisor:&nbsp;</strong>
-								<?php
-								echo esc_html( get_post_meta( $post->ID, 'ecpt_advisor', true ) );
-							endif;
-							?>
 							</p>
+						<?php endif; ?>
+						<?php if ( get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
+							<p><strong>Thesis Title:</strong> "<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_thesis', true ) ); ?>"
+							<?php if ( get_post_meta( $post->ID, 'ecpt_job_abstract', true ) ) : ?>
+								&nbsp;- <a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_job_abstract', true ) ); ?>">Download Abstract  <span class="fa-solid fa-file-pdf" aria-hidden="true"></span></a>
+							<?php endif; ?>
+							</p>
+						<?php endif; ?>
+
+						<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
+							<p><strong>Main Adviser: </strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_advisor', true ) ); ?></p>
+						<?php endif; ?>
+						<?php if ( get_post_meta( $post->ID, 'ecpt_fields', true ) ) : ?>
+							<p><strong>Fields: </strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_fields', true ) ); ?></p>
 						<?php endif; ?>
 					</div>
 				</div>

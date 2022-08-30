@@ -129,6 +129,46 @@ get_header(); ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 					<div class="tabs-panel is-active" id="bioTab" itemprop="articleBody">
 							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_bio', true ) ); ?>
+						<!--Graduate Student Content Start -->
+							<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
+								<p><strong>Main Advisor:</strong>&nbsp;<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_advisor', true ) ); ?></p>
+							<?php endif; ?>
+							<!-- If there's 'ecpt_thesis', echo 'ecpt_job_abstract' or '' immediately adjacent -->
+							<?php if ( get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
+							<p>
+							<strong>Thesis Title:</strong> "<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_thesis', true ) ); ?>"
+								<!-- This is original file, or plain text link  -->
+								<?php if ( get_field( 'ecpt_job_abstract' ) ) : ?>
+								<a href="<?php the_field( 'ecpt_job_abstract' ); ?>">(Download Abstract)</a> <span class="fa-solid fa-file-pdf" aria-hidden="true"></span>
+								<?php endif; ?>
+								<!-- ACF File Upload Here  -->
+								<?php
+								$abstract_file = get_field( 'abstract_file' );
+								if ( $abstract_file ) :
+									?>
+								<a href="<?php echo esc_url( $abstract_file['url'] ); ?>">(Download Abstract)</a> <span class="fa-solid fa-file-pdf" aria-hidden="true"></span>
+								<?php endif; ?>
+							</p>
+							<?php endif; ?>
+							<!-- If there's no 'ecpt_thesis', just echo file  -->
+							<?php if ( ! get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
+								<!-- This is original file, or plain text link  -->
+								<?php if ( get_field( 'ecpt_job_abstract' ) ) : ?>
+								<p><a href="<?php the_field( 'ecpt_job_abstract' ); ?>">Download Thesis Abstract</a> <span class="fa-solid fa-file-pdf" aria-hidden="true"></span></p>
+								<?php endif; ?>
+								<!-- ACF File Upload Here  -->
+								<?php
+								$abstract_file = get_field( 'abstract_file' );
+								if ( $abstract_file ) :
+									?>
+								<p><a href="<?php echo esc_url( $abstract_file['url'] ); ?>">Download Thesis Abstract</a> <span class="fa-solid fa-file-pdf" aria-hidden="true"></span></p>
+								<?php endif; ?>
+							<?php endif; ?>
+							<?php if ( get_post_meta( $post->ID, 'ecpt_fields', true ) ) : ?>
+								<p><strong>Fields:</strong>&nbsp;<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_fields', true ) ); ?></p>
+							<?php endif; ?>
+					<?php endif; ?>
+					<!--Graduate Student Content End -->
 					</div>
 					<?php endif; ?>
 
@@ -158,35 +198,6 @@ get_header(); ?>
 						<div class="tabs-panel" id="extra2Tab"><?php echo apply_filters( 'the_content', wp_kses_post( get_post_meta( $post->ID, 'ecpt_extra_tab2', true ) ) ); ?></div>
 						<?php endif; ?>
 				</div>
-				<?php endif; ?>
-
-				<!--JMC Content Start -->
-					<?php if ( get_post_meta( $post->ID, 'ecpt_advisor', true ) ) : ?>
-						<p><strong>Main Advisor:</strong>&nbsp;<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_advisor', true ) ); ?></p>
-					<?php endif; ?>
-
-					<?php if ( get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
-						<p>
-							<strong>Thesis Title:</strong> "<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_thesis', true ) ); ?>"
-							<?php if ( get_field( 'ecpt_job_abstract' ) ) : ?>
-								<a href="<?php the_field( 'ecpt_job_abstract' ); ?>">(Download Abstract)</a> <span class="fa-solid fa-file-pdf" aria-hidden="true"></span>
-								<?php endif; ?>
-						</p>
-					<?php endif; ?>
-					<?php if ( get_post_meta( $post->ID, 'ecpt_fields', true ) ) : ?>
-						<p><strong>Fields:</strong>&nbsp;<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_fields', true ) ); ?></p>
-					<?php endif; ?>
-					<?php if ( ! get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
-						<?php if ( get_field( 'ecpt_job_abstract' ) ) : ?>
-								<p><span class="fa-solid fa-file-pdf" aria-hidden="true"></span> <a href="<?php the_field( 'ecpt_job_abstract' ); ?>">Thesis Abstract</a></p>
-						<?php endif; ?>
-					<?php endif; ?>
-					<?php if ( has_term( 'job-market-candidate', 'role' ) ) : ?>
-						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
-							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_bio', true ) ); ?>
-						<?php endif; ?>
-					<?php endif; ?>
-					<!--JMC Content End -->
 
 				</article>
 					<?php
