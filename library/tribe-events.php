@@ -18,3 +18,16 @@ function tribe_get_event_website_link_label_default( $label ) {
 
 	return $label;
 }
+
+/** Inject the list of categories after the title */
+add_action(
+	'tribe_template_before_include:events/v2/list/event/venue',
+	function() {
+		global $post;
+		?>
+	<ul class='tribe-event-categories'>
+		<?php echo tribe_get_event_taxonomy( $post->ID ); ?>
+	</ul>
+		<?php
+	}
+);
