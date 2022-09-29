@@ -55,9 +55,6 @@ if ( is_page() ) {
 			</div>
 
 			<?php
-			if ( strpos( $test_menu, '<li id' ) !== false ) :
-				echo esc_html( $test_menu );
-			endif;
 			// If there are one or more display a menu of siblings.
 		} elseif ( count( $ancestors ) == 1 ) {
 			$parent_page = get_post( $post->post_parent );
