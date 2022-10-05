@@ -26,6 +26,12 @@ Description: Used to style the content editor in posts and pages
   font-display: swap;
 }
 
+:root {
+  --tec-font-family-sans-serif: "gentona-light", "Helvetica Neue", Roboto, sans-serif;
+  --tec-color-text-primary: #31261d;
+  --tec-color-link-primary: #002d72;
+}
+
 /* Main column width */
 .wp-block {
   max-width: 85%;
@@ -350,4 +356,8 @@ ol.block-editor-rich-text__editable li {
 
 .publication:not(:last-child) {
   border-right: 1px solid #e5e2e0;
+}
+
+.components-button.components-dropdown-menu__menu-item.is-icon-only.has-icon[aria-label="Heading 1"]{
+  display: none;
 }
