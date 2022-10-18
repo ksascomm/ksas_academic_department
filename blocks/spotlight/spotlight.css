@@ -1,0 +1,93 @@
+.spotlight-block {
+	background-color: rgba(104, 172, 229, .55);
+	border-radius: 0.25rem;
+	margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.spotlight-block {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.spotlight-blockquote {
+		grid-column: span 2 / span 2;
+	}
+}
+
+
+.spotlight-block blockquote {
+	border-left: 0;
+}
+
+.spotlight-block blockquote .spotlight-text::before {
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font: var(--fa-font-solid);
+	content: '\f10e';
+	font-size: 2rem;
+	color: #31261D;
+	line-height: 1;
+}
+
+/* If there's support, erase the indent and use the property instead */
+@supports (hanging-punctuation: first) {
+	.spotlight-block blockquote {
+		text-indent: 0;
+		hanging-punctuation: first;
+	}
+}
+
+.spotlight-text,
+.spotlight-author {
+	font-family: 'gentona-bold', 'Helvetica Neue', Roboto, sans-serif;
+	font-weight: 700;
+}
+
+.spotlight-role {
+	font-family: 'quadon-extrabold', 'Helvetica Neue', Roboto, sans-serif;
+	font-weight: 700;
+	color: #31261D;
+	font-size: 1rem;
+}
+
+.spotlight-role ul li {
+	margin-bottom: 0 !important;
+}
+
+.spotlight-text p {
+	color: #31261D;
+	line-height: 1.5;
+	font-size: 1.25rem;
+}
+
+.spotlight-author a {
+	color: #002d72;
+	font-size: 1.5rem;
+	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	border-bottom: 0.125em solid;
+	border-bottom-color: currentcolor;
+	border-bottom-color: #d6d6d6;
+	background-color: transparent;
+	border-radius: 0;
+	transition: border-color, background-color, color;
+	transition-duration: 0s, 0s, 0s;
+	transition-timing-function: ease, ease, ease;
+	transition-duration: 250ms, 250ms, 250ms;
+	transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+}
+
+.spotlight-author a:hover {
+	color: #31261D;
+	border-bottom: 0.125em solid;
+	border-bottom-color: currentcolor;
+	border-bottom-color: #4A484C;
+}
+
+.is-admin .spotlight-text::before {
+	display: none !important;
+}

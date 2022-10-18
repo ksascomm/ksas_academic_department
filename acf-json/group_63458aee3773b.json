@@ -1,0 +1,88 @@
+{
+    "key": "group_63458aee3773b",
+    "title": "Custom Profile Fields",
+    "fields": [
+        {
+            "key": "field_6345911629e05",
+            "label": "Custom Profile Fields",
+            "name": "custom_profile_fields",
+            "type": "repeater",
+            "instructions": "Enter any custom title and content fields below. Suggestions include Profile title\/affiliation (alumni, class, major) or profile detail (job title, internship location, applied experience location, etc). \r\n\r\nYou can add a new set of custom fields by clicking the \"Add New Fields\" button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add New Fields",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6345912f29e06",
+                    "label": "Custom Title",
+                    "name": "custom_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Class Of",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6345911629e05"
+                },
+                {
+                    "key": "field_6345913f29e07",
+                    "label": "Custom Content",
+                    "name": "custom_content",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 2022,
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6345911629e05"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "profile"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1665513553
+}

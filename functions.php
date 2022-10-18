@@ -81,24 +81,7 @@ require_once 'library/favicons.php';
 
 
 // Register Custom Blocks
-add_action( 'acf/init', 'my_register_blocks' );
-function my_register_blocks() {
-
-	// check function exists.
-	if ( function_exists( 'acf_register_block_type' ) ) {
-
-		// register a testimonial block.
-		acf_register_block_type(
-			array(
-				'name'            => 'testimonials',
-				'title'           => __( 'Testimonials' ),
-				'description'     => __( 'A custom testimonial block.' ),
-				'render_template' => 'template-parts/blocks/testimonials/block.php',
-				'category'        => 'formatting',
-				'icon'            => 'admin-comments',
-				'keywords'        => array( 'testimonials' ),
-				'enqueue_style'   => get_template_directory_uri() . '/template-parts/blocks/testimonials/testimonials.css',
-			)
-		);
-	}
+add_action( 'init', 'register_acf_blocks' );
+function register_acf_blocks() {
+    register_block_type( __DIR__ . '/blocks/spotlight' );
 }

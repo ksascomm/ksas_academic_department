@@ -20,26 +20,20 @@ get_header(); ?>
 <div class="main-container" id="page">
 	<div class="main-grid sidebar-right">
 		<main class="main-content">
-			<?php if ( is_tax( 'profiletype', 'spotlight' ) ) { ?>
-				<h1 class="page-title">Spotlights</h1>
-			<?php } elseif ( is_tax( 'profiletype', 'undergraduate-profile' ) ) { ?>
-				<h1 class="page-title">Undergraduate Profiles</h1>
-			<?php } elseif ( is_tax( 'profiletype', 'graduate-profile' ) ) { ?>
-				<h1 class="page-title">Graduate Profiles</h1>
-			<?php } ?>
+				<h1 class="page-title"><?php echo single_term_title(); ?></h1>
 		<?php if ( have_posts() ) : ?>
 			<?php /* Start the Loop */ ?>
-
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 			<?php
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<?php get_template_part( 'template-parts/content', 'profile' ); ?>
+				<?php get_template_part( 'template-parts/content', 'profile-card' ); ?>
 			<?php endwhile; ?>
 
 			<?php else : ?>
 				<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
+			</div>
 			<?php endif; // End have_posts() check. ?>
 
 			<?php /* Display navigation to next/previous pages when applicable */ ?>
