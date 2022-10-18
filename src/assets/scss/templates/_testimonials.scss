@@ -78,3 +78,20 @@ $testimonial-container-image-size: rem-calc(190);
     letter-spacing: -.2px;
   }
 }
+
+.profile {
+  .profile-headshot {
+    height: 20rem;
+    background-size: cover;
+    border-radius: .25rem;
+  }
+  .profile-bio {
+    text-align: left;
+    h2 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}

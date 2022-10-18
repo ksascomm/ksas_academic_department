@@ -10,9 +10,9 @@
 
 <div class="cell profile testimonial-container">
 
-	<div class="profile-headshot" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
+	<div class="profile-headshot" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?>)">
 	</div>
-	<div class="testimonial-bio">
+	<div class="profile-bio testimonial-bio">
 		<h2><a href="<?php echo esc_url( get_permalink() ); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a></h2>
 		<?php if ( have_rows( 'custom_profile_fields' ) ) : ?>
 			<?php
