@@ -35,7 +35,6 @@ $event_classes = tribe_get_post_class( array( 'tribe-events-widget-events-list__
 				</header>
 
 				<?php $this->do_entry_point( 'event_meta' ); ?>
-				<?php the_excerpt(); ?>
 			</div>
 		</article>
 	</div>
