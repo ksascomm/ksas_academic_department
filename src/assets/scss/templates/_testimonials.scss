@@ -90,6 +90,10 @@ $testimonial-container-image-size: rem-calc(190);
     h2 {
       font-size: 1.25rem;
     }
+    h3 {
+      @include font-stack-semibold;
+      font-size: 1.125rem;
+    }
     p {
       font-size: 1rem;
     }
