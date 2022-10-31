@@ -10,7 +10,7 @@
 
 ?>
 
-<article class="faculty-book" aria-labelledby="post-<?php the_ID(); ?>">
+<article <?php post_class( 'faculty-book' ); ?>" aria-labelledby="post-<?php the_ID(); ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
 		<?php
 		the_post_thumbnail(
