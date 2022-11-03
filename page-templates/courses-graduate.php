@@ -18,7 +18,8 @@ get_header(); ?>
 	$department_unclean = $theme_option['flagship_sub_isis_name'];
 	$department         = str_replace( ' ', '%20', $department_unclean );
 	$department         = str_replace( '&', '%26', $department );
-	$fall             = 'fall%202022';
+	$fall               = 'fall%202022';
+	$spring             = 'spring%202023';
 	$open               = 'open';
 	$approval           = 'approval%20required';
 	$closed             = 'closed';
@@ -38,7 +39,7 @@ get_header(); ?>
 	$course_curl->cache( get_template_directory() . '/sis-cache/', 1209600 );
 
 	// Create API Url calls.
-	$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $fall . '&Department=AS%20' . $department . '&status=' . $open . '&status=' . $approval . '&status=' . $waitlist . '&status=' . $reserved_open;
+	$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Department=AS%20' . $department . '&status=' . $open . '&status=' . $approval . '&status=' . $waitlist . '&status=' . $reserved_open;
 
 	$course_data = array();
 	$output      = '';
@@ -134,7 +135,7 @@ get_header(); ?>
 						<?php get_template_part( 'template-parts/content', 'page' ); ?>
 				<?php endwhile; ?>
 				<ul class="tabs" data-tabs id="courses-tabs">
-					<li class="tabs-title is-active"><a href="#fall">Fall 2022</a></li>
+					<li class="tabs-title is-active"><a href="#fall">Spring 2023</a></li>
 				</ul>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					<div class="tabs-panel is-active" id="fall">

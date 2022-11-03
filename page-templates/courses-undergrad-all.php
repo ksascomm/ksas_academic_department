@@ -20,7 +20,7 @@ get_header(); ?>
 	$department         = str_replace( '&', '%26', $department );
 	$fall               = 'fall%202022';
 	$summer             = 'summer%202022';
-	$spring             = 'spring%202022';
+	$spring             = 'spring%202023';
 	$open               = 'open';
 	$approval           = 'approval%20required';
 	$closed             = 'closed';
@@ -55,7 +55,6 @@ get_header(); ?>
 			if ( ( is_array( $result ) && ! empty( $result ) ) || is_object( $result ) ) {
 
 				$result->body = ! is_array( $result->body ) ? json_decode( html_entity_decode( $result->body ) ) : $result->body;
-
 				foreach ( $result->body as $course ) {
 
 					$section = $course->{'SectionName'};
