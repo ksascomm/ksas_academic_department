@@ -53,6 +53,10 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 						echo '<li><a href="' . $home_url . '/profiletype/undergraduate-profile/">Undergraduate Profiles</a></li>';
 					} elseif ( has_term( 'graduate-profile', 'profiletype' ) ) {
 						echo '<li><a href="' . $home_url . '/profiletype/graduate-profile/">Graduate Profiles</a></li>';
+					} elseif ( has_term( 'alumni', 'profiletype' ) ) {
+						echo '<li><a href="' . $home_url . '/profiletype/alumni/">Alumni Profiles</a></li>';
+					} elseif ( has_term( 'internship', 'profiletype' ) ) {
+						echo '<li><a href="' . $home_url . '/profiletype/internship/">Internship Experiences</a></li>';
 					}
 				} elseif ( is_singular( 'testimonial' ) ) {
 					if ( has_term( 'alumni', 'testimonialtype' ) ) {
