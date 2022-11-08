@@ -70,9 +70,16 @@ if ( false === $graduate_student_query ) {
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) ) : ?>
 							<h3>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+									<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+								<?php endif; ?>
 							</h3>
 						<?php else : ?>
-							<h3><?php the_title(); ?></h3>
+							<h3><?php the_title(); ?>
+							<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+								<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+							<?php endif; ?>
+							</h3>
 						<?php endif; ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
 							<h4>

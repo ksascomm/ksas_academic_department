@@ -20,7 +20,9 @@ get_header(); ?>
 					?>
 			<article aria-labelledby="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="article-header">
-					<h1 class="entry-title single-title" itemprop="headline" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h1>
+					<h1 class="entry-title single-title" itemprop="headline" id="post-<?php the_ID(); ?>"><?php the_title(); ?>	<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+							<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+					<?php endif; ?> </h1>
 				</header>
 				<div class="grid-x grid-margin-x bio">
 					<?php if ( has_post_thumbnail() ) : ?>

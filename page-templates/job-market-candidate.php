@@ -14,20 +14,20 @@ get_header(); ?>
 		the_post();
 		?>
 
-	  <article <?php post_class(); ?> aria-label="<?php the_title(); ?>">
-		  <header>
-			  <h1 class="entry-title"><?php the_title(); ?></h1>
-		  </header>
-		  <?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
-		  <div class="entry-content">
-			  <?php the_content(); ?>
-		  </div>
-	  </article>
+	<article <?php post_class(); ?> aria-label="<?php the_title(); ?>">
+		<header>
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+		</header>
+		<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div>
+	</article>
 
 	<?php endwhile; ?>
 	<?php
 	if ( false === ( $job_market_query = get_transient( 'job_market_query' ) ) ) {
-		   // It wasn't there, so regenerate the data and save the transient
+		// It wasn't there, so regenerate the data and save the transient
 		$job_market_query = new WP_Query(
 			array(
 				'post_type'      => 'people',
@@ -61,9 +61,16 @@ get_header(); ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_bio', true ) || get_post_meta( $post->ID, 'ecpt_thesis', true ) ) : ?>
 							<h3>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+									<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+								<?php endif; ?>
 							</h3>
 						<?php else : ?>
-							<h3><?php the_title(); ?></h3>
+							<h3><?php the_title(); ?>
+							<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+									<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+								<?php endif; ?>
+							</h3>
 						<?php endif; ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
 							<h4>

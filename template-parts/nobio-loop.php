@@ -48,8 +48,14 @@
 				<a href="<?php echo esc_url( get_post_meta( $post->ID, 'ecpt_website', true ) ); ?>" aria-label="<?php the_title(); ?>'s website" target="_blank">
 					<?php the_title(); ?>
 				</a>
+				<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+					<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+				<?php endif; ?>
 			<?php else : ?>
 				<?php the_title(); ?>
+				<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+					<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+				<?php endif; ?>
 			<?php endif; ?>
 			</h3>
 			<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>

@@ -30,6 +30,9 @@
 		<div class="media-object-section">
 			<h3>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<?php if ( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ) : ?>
+					<small>(<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_pronoun', true ) ); ?>)</small>
+				<?php endif; ?>
 			</h3>
 			<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
 				<h4><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?></h4>

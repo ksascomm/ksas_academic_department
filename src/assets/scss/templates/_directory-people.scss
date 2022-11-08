@@ -210,3 +210,8 @@ ul.expander > li {
 }
 
 /**** disabling Isotope CSS3 transitions ****/
+
+.people h1.entry-title small, .directory li.person h3 small {
+  color: $black;
+  font-family: $font-stack-bold;
+}
