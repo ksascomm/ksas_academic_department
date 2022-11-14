@@ -181,3 +181,11 @@ Segoe UI, sans-serif;
 .tribe-events-calendar-list .tribe-event-categories li:hover a {
   color: #002d72 !important;
 }
+
+.tribe-related-event-info {
+  padding: .5rem .75rem !important;
+}
+
+.tribe-related-events-title {
+  line-height: 1.25 !important;
+}
