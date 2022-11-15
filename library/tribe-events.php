@@ -24,10 +24,13 @@ add_action(
 	'tribe_template_before_include:events/v2/list/event/venue',
 	function() {
 		global $post;
+		$event_categories = tribe_get_event_taxonomy( $post->ID );
 		?>
-	<ul class='tribe-event-categories'>
-		<?php echo tribe_get_event_taxonomy( $post->ID ); ?>
-	</ul>
+		<?php if ( ! empty( $event_categories ) ) : ?>
+			<ul class='tribe-event-categories'>
+				<?php echo tribe_get_event_taxonomy( $post->ID ); ?>
+			</ul>
+		<?php endif; ?>
 		<?php
 	}
 );
