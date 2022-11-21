@@ -9,7 +9,10 @@
  */
 
 ?>
-<li class="item person  <?php echo esc_html( get_the_directory_filters( $post ) ); ?> <?php echo esc_html( get_the_roles( $post ) ); ?>">
+<li class="item person <?php echo esc_html( get_the_directory_filters( $post ) ); ?> <?php echo esc_html( get_the_roles( $post ) ); ?> <?php
+if ( empty( get_post_meta( $post->ID, 'ecpt_email', true ) ) ) :
+	?>
+	no-email<?php endif; ?>">
 	<div class="media-object">
 		<?php if ( has_post_thumbnail() ) { ?> 
 			<div class="media-object-section hide-for-print">
