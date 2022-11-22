@@ -87,7 +87,9 @@ span.tribe-events-schedule__separator.tribe-events-schedule__separator--date {
   color: #31261d;
 }
 
-.tribe-events-single.tribe-blocks-editor p a {
+.tribe-events-single.tribe-blocks-editor p a,
+.tribe-events-single.tribe-blocks-editor ol li a,
+.tribe-events-single.tribe-blocks-editor ul li a {
   color: #002d72;
   border: none;
   border-bottom: 0.125em solid;
@@ -100,7 +102,9 @@ span.tribe-events-schedule__separator.tribe-events-schedule__separator--date {
   color: #002d72 !important;
 }
 
-.tribe-events-single.tribe-blocks-editor p a:hover {
+.tribe-events-single.tribe-blocks-editor p a:hover,
+.tribe-events-single.tribe-blocks-editor ol li a:hover
+.tribe-events-single.tribe-blocks-editor ul li a:hover {
   color: #31261d;
   border-bottom: 0.125 em solid;
   border-bottom-color: #4a484c;
@@ -188,4 +192,8 @@ Segoe UI, sans-serif;
 
 .tribe-related-events-title {
   line-height: 1.25 !important;
+}
+
+.tribe-events-schedule__timezone {
+  color: #31261d;
 }
