@@ -28,6 +28,8 @@ function meta_open_graph() {
 		echo '<meta property="og:description" content="' . esc_html( $excerpt ) . '"/>';
 		echo '<meta property="og:type" content="article"/>';
 		echo '<meta property="og:url" content="' . esc_url( get_permalink() ) . '"/>';
+		echo '<meta property="article:published_time" content="' . get_the_date( 'c' ) . '"/>';
+		echo '<meta property="article:modified_time" content="' . get_the_modified_date( 'c' ) . '"/>';
 		echo '<meta name="twitter:card" content="summary" />';
 		echo '<meta name="twitter:site" content="@JHUArtsSciences" />';
 
@@ -53,9 +55,9 @@ function meta_open_graph_archive() {
 	global $post;
 	$theme_option = flagship_sub_get_global_options();
 	if ( is_home() ) {
-		echo '<meta name="description" content="Read the latest posts from the ' . esc_html( get_bloginfo( 'description' ) ) . '&nbsp;' . esc_html( get_bloginfo( 'title' ) ) . '"/>';
+		echo '<meta name="description" content="Read the latest posts from the ' . esc_html( get_bloginfo( 'description' ) ) . ' ' . esc_html( get_bloginfo( 'title' ) ) . '"/>';
 		echo '<meta property="og:title" content="' . $theme_option['flagship_sub_feed_name'] . ' | ' . get_bloginfo( 'title' ) . '"/>';
-		echo '<meta property="og:description" content="Read the latest posts from the ' . esc_html( get_bloginfo( 'description' ) ) . '&nbsp;' . esc_html( get_bloginfo( 'title' ) ) . '"/>';
+		echo '<meta property="og:description" content="Read the latest posts from the ' . esc_html( get_bloginfo( 'description' ) ) . ' ' . esc_html( get_bloginfo( 'title' ) ) . '"/>';
 		echo '<meta property="og:type" content="article"/>';
 		echo '<meta property="og:url" content="' . esc_url( get_permalink() )  . '"/>';
 		echo '<meta property="og:image" content="' . esc_url( get_template_directory_uri() ) . '/dist/assets/images/homepage-slider-hero.jpg' . '"/>';
