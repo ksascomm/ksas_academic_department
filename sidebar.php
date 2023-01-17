@@ -150,7 +150,7 @@ if ( is_page() ) {
 					);
 				?>
 			</div>
-			<?php if ( has_term( '', 'role' ) && ! has_term( 'job-market-candidate', 'role' ) ) : ?>
+			<?php if ( has_term( 'faculty', 'role' ) ) : ?>
 				<div class="sidebar-menu faculty-bio-jump" aria-labelledby="jump-menu">
 					<label for="jump">
 						<h1 id="jump-menu">Jump to Faculty Member</h1>
