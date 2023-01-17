@@ -60,7 +60,7 @@ require_once 'library/responsive-images.php';
 
 /** Theme support options */
 require_once 'library/directory.php';
-require_once 'library/transients.php';
+// require_once 'library/transients.php';
 require_once 'library/theme-options.php';
 require_once 'library/theme-options-init.php';
 require_once 'library/page-metabox.php';
@@ -83,5 +83,5 @@ require_once 'library/favicons.php';
 // Register Custom Blocks
 add_action( 'init', 'register_acf_blocks' );
 function register_acf_blocks() {
-    register_block_type( __DIR__ . '/blocks/spotlight' );
+	register_block_type( __DIR__ . '/blocks/spotlight' );
 }
