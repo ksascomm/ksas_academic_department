@@ -46,6 +46,8 @@ if ( ! function_exists( 'ksasacademic_breadcrumb' ) ) {
 					echo '<li><a href="' . $home_url . '/events/">Events</a></li>';
 				} elseif ( is_singular( 'ksasexhibits' ) ) {
 					echo '<li><a href="' . $home_url . '/exhibitions">Exhibitions</a></li>';
+				} elseif ( is_singular( 'ksasresearchprojects' ) ) {
+					echo '<li><a href="' . $home_url . '/writing-toolkit">Writing Toolkit</a></li>';
 				} elseif ( is_singular( 'profile' ) ) {
 					if ( has_term( 'spotlight', 'profiletype' ) ) {
 						echo '<li><a href="' . $home_url . '/profiletype/spotlight">Spotlights</a></li>';
