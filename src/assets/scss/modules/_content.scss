@@ -16,7 +16,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-    @include font-stack-semibold;
+  @include font-stack-semibold;
 }
 
 ul {
@@ -86,6 +86,11 @@ u {
 
     @include breakpoint(medium) {
       @include xy-cell(8);
+    }
+    &.no-homepage-sb {
+      @include breakpoint(medium) {
+        @include xy-cell(10);
+      }
     }
   }
 
@@ -174,8 +179,6 @@ u {
       ul, ol {
         padding-top: 1rem;
         margin-bottom: 1rem;
-        li {
-        }
       }
     }
     ul ul {
