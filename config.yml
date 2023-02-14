@@ -7,9 +7,6 @@ BROWSERSYNC:
 COMPATIBILITY:
   - "last 2 versions"
 
-# Set to true if you want static asset revisioning, helpful for cache busting
-REVISIONING: false
-
 # Gulp will reference these paths when it copies files
 PATHS:
   # Path to dist folder

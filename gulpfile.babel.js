@@ -26,7 +26,7 @@ const PRODUCTION = !!yargs.argv.production;
 const DEV = !!yargs.argv.dev;
 
 // Load settings from config.yml
-const { BROWSERSYNC, COMPATIBILITY, REVISIONING, PATHS } = loadConfig();
+const { BROWSERSYNC, COMPATIBILITY, PATHS } = loadConfig();
 
 // Check if file exists synchronously
 function checkFileExists(filepath) {
@@ -97,14 +97,6 @@ function styles() {
 
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: "ie9" })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe($.if((REVISIONING && PRODUCTION) || (REVISIONING && DEV), $.rev()))
-    .pipe(gulp.dest(PATHS.dist + "/assets/css"))
-    .pipe(
-      $.if(
-        (REVISIONING && PRODUCTION) || (REVISIONING && DEV),
-        $.rev.manifest()
-      )
-    )
     .pipe(gulp.dest(PATHS.dist + "/assets/css"))
     .pipe(browser.reload({ stream: true }))
   );
@@ -154,16 +146,8 @@ const webpack = {
           })
         )
       )
-      .pipe($.if((REVISIONING && PRODUCTION) || (REVISIONING && DEV), $.rev()))
       .pipe(gulp.dest(PATHS.dist + "/assets/js"))
-      .pipe(
-        $.if(
-          (REVISIONING && PRODUCTION) || (REVISIONING && DEV),
-          $.rev.manifest()
-        )
-      )
-      .pipe(gulp.dest(PATHS.dist + "/assets/js"));
-  },
+    },
 
   watch() {
     const watchConfig = Object.assign(webpack.config, {
