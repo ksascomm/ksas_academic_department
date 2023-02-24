@@ -11,9 +11,9 @@
 <?php
 if ( is_page_template( 'page-templates/courses-undergrad.php' ) || is_page_template( 'page-templates/courses-graduate.php' ) ) :
 
-	wp_enqueue_style( 'data-tables', '//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css', array(), true );
+	wp_enqueue_style( 'data-tables', '//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css', array(), true );
 
-	wp_enqueue_script( 'data-tables', '//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js', array(), '1.12.1', false );
+	wp_enqueue_script( 'data-tables', '//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js', array(), '1.13.2', false );
 	wp_script_add_data( 'data-tables', 'defer', true );
 	?>
 
@@ -38,16 +38,16 @@ if ( is_page_template( 'page-templates/courses-undergrad.php' ) || is_page_templ
 <?php
 if ( is_page_template( 'page-templates/courses-undergrad-all.php' ) ) :
 
-	wp_enqueue_style( 'data-tables', '//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css', array(), true );
-	wp_enqueue_style( 'data-tables-searchpanes', '//cdn.datatables.net/searchpanes/2.0.1/css/searchPanes.dataTables.min.css', array(), true );
+	wp_enqueue_style( 'data-tables', '//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css', array(), true );
+	wp_enqueue_style( 'data-tables-searchpanes', '//cdn.datatables.net/searchpanes/2.1.1/css/searchPanes.dataTables.min.css', array(), true );
 
-	wp_enqueue_script( 'data-tables', '//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js', array(), '1.12.1', false );
+	wp_enqueue_script( 'data-tables', '//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js', array(), '1.13.2', false );
 	wp_script_add_data( 'data-tables', 'defer', true );
 
-	wp_enqueue_script( 'data-tables-searchpanes', '//cdn.datatables.net/searchpanes/2.0.1/js/dataTables.searchPanes.min.js', array(), '2.0.1', false );
+	wp_enqueue_script( 'data-tables-searchpanes', '//cdn.datatables.net/searchpanes/2.1.1/js/dataTables.searchPanes.min.js', array(), '2.1.1', false );
 	wp_script_add_data( 'data-tables-searchpanes', 'defer', true );
 
-	wp_enqueue_script( 'data-tables-select', '//cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js', array(), '1.4.0', false );
+	wp_enqueue_script( 'data-tables-select', '//cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js', array(), '1.6.0', false );
 	wp_script_add_data( 'data-tables-select', 'defer', true );
 	?>
 
@@ -64,15 +64,15 @@ if ( is_page_template( 'page-templates/courses-undergrad-all.php' ) ) :
 			"language": {
 				"emptyTable": "Courses have a status of Closed, or are unavailable at this time. Please try again later."
 			},
+			searchPanes: {
+					preSelect: [{
+						rows:['Spring 2023'],
+						column: 5
+					}],
+				},
 			columnDefs: [
 			{
-				searchPanes: {
-					show: true,
-					preSelect: ['Fall 2022']
-				},
-				targets: [5]
-			},
-			{
+				//This hides all but Term pane from search/filter
 				searchPanes: {
 					show: false
 				},
