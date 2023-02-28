@@ -169,7 +169,11 @@ if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
 <?php endif; ?>
 <div class="main-container" role="complementary">
 	<div class="main-grid homepage">
-		<div class="main-content homepage-news">
+		<div class="main-content homepage-news 	
+		<?php
+		if ( ! is_active_sidebar( 'homepage-sb' ) ) :
+			?>
+		no-homepage-sb <?php endif; ?>">
 
 			<?php
 			$theme_option    = flagship_sub_get_global_options();
@@ -238,10 +242,12 @@ if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
 			endif;
 		?>
 		</div>
+		<?php if ( is_active_sidebar( 'homepage-sb' ) ) : ?>
 		<div class="homepage sidebar">
 			<?php dynamic_sidebar( 'homepage-sb' ); ?>
 		</div>
+		<?php endif; ?>
 	</div>
 </div>
-<?php
-get_footer();
+			<?php
+			get_footer();
