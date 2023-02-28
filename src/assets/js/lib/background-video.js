@@ -52,7 +52,7 @@
 			var video = $video[0]; // DOM node
 			var poster = $video.attr('poster') || '';
 			var $container = $video.parent();
-			var $pauseplay = $('<button class="jquery-background-video-pauseplay pause"><span>Pause</span></button>');
+			var $pauseplay = $('<button class="jquery-background-video-pauseplay play"><span>Play</span></button>');
 			var start_time; // We'll set this when it starts playing
 
 
