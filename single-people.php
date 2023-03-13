@@ -49,9 +49,6 @@ get_header(); ?>
 								if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) :
 									$email = get_post_meta( $post->ID, 'ecpt_email', true );
 									?>
-									<?php if ( get_post_meta( $post->ID, 'ecpt_leave', true ) ) : ?>
-									<span class="fa-solid fa-calendar-circle-exclamation" aria-hidden="true"></span> <strong>On Leave: <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_leave', true ) ); ?></strong><br>
-								<?php endif; ?>
 								<span class="fa-solid fa-envelope" aria-hidden="true"></span>
 									<?php if ( function_exists( 'email_munge' ) ) : ?>
 									<a class="munge" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge( $email ); ?>">
@@ -61,6 +58,9 @@ get_header(); ?>
 									<a href="<?php echo esc_url( 'mailto:' . $email ); ?>"><?php echo esc_html( $email ); ?></a>
 									<?php endif; ?>
 									<br>
+								<?php endif; ?>
+								<?php if ( get_post_meta( $post->ID, 'ecpt_leave', true ) ) : ?>
+									<span class="fa-solid fa-calendar-circle-exclamation" aria-hidden="true"></span> <strong>On Leave: <?php echo esc_html( get_post_meta( $post->ID, 'ecpt_leave', true ) ); ?></strong><br>
 								<?php endif; ?>
 								<?php if ( get_field( 'ecpt_cv' ) ) : ?>
 								<span class="fa-solid fa-file-pdf" aria-hidden="true"></span> <a href="<?php the_field( 'ecpt_cv' ); ?>">Curriculum Vitae</a><br>
