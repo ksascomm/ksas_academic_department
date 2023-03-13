@@ -49,7 +49,10 @@
         @include breakpoint(medium) {
           font-size: 1.125rem;
         }
-      } 
+      }
+      strong {
+        @include font-stack-semibold
+      }
     }
   &.job-market-candidate, &.graduate-student {
     .media-object {
@@ -116,6 +119,9 @@
         max-width: rem-calc(250px);
       }
     }
+  }
+  h2 {
+    font-size: 1.375rem;
   }
   p.listing {
     a {

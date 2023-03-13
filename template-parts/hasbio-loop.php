@@ -40,9 +40,6 @@ if ( empty( get_post_meta( $post->ID, 'ecpt_email', true ) ) ) :
 			<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
 				<h4><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?></h4>
 			<?php endif; ?>
-			<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
-				<h5><?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></h5>
-			<?php endif; ?>
 			<?php if ( ! empty( get_post_meta( $post->ID, 'ecpt_email', true ) ) ) : ?>
 			<ul class="contact">
 				<?php if ( get_post_meta( $post->ID, 'ecpt_email', true ) ) : ?>
@@ -60,7 +57,11 @@ if ( empty( get_post_meta( $post->ID, 'ecpt_email', true ) ) ) :
 				<?php if ( get_post_meta( $post->ID, 'ecpt_expertise', true ) ) : ?>
 					<li><strong>Research Interests:&nbsp;</strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?></li>
 				<?php endif; ?>
+				<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
+				<li><strong>Education:</strong> <?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></li>
+			<?php endif; ?>
 			</ul>
+
 			<?php endif; ?>
 		</div>
 	</div>
