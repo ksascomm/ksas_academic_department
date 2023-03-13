@@ -111,7 +111,7 @@ get_header(); ?>
 								<?php endif; ?>
 							</p>
 							<?php if ( get_post_meta( $post->ID, 'ecpt_expertise', true ) ) : ?>
-								<p><strong>Research Interests:&nbsp;</strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?></p>
+								<p class="capitalize"><strong>Research Interests:&nbsp;</strong><?php echo esc_html( get_post_meta( $post->ID, 'ecpt_expertise', true ) ); ?></p>
 							<?php endif; ?>
 								<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
 									<p><strong>Education:</strong> <?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?></p>
