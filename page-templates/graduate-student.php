@@ -81,11 +81,6 @@ if ( false === $graduate_student_query ) {
 							<?php endif; ?>
 							</h3>
 						<?php endif; ?>
-						<?php if ( get_post_meta( $post->ID, 'ecpt_position', true ) ) : ?>
-							<h4>
-								<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_position', true ) ); ?>
-							</h4>
-						<?php endif; ?>
 						<?php if ( get_post_meta( $post->ID, 'ecpt_degrees', true ) ) : ?>
 							<h4>
 							<?php echo wp_kses_post( get_post_meta( $post->ID, 'ecpt_degrees', true ) ); ?>
