@@ -197,3 +197,7 @@ Segoe UI, sans-serif;
 .tribe-events-schedule__timezone {
   color: #31261d;
 }
+
+.tribe-events-schedule__separator.tribe-events-schedule__separator--time {
+  font-size: 20px;
+}
