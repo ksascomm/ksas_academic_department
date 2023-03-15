@@ -52,7 +52,7 @@
     "rimraf": "^3.0.2",
     "sass": "^1.58.1",
     "vinyl-named": "^1.1.0",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.0",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.6.2"
   },
