@@ -201,3 +201,7 @@ Segoe UI, sans-serif;
 .tribe-events-schedule__separator.tribe-events-schedule__separator--time {
   font-size: 20px;
 }
+
+.tribe-events-event-image img[alt=""], .tribe-events-event-image img:not([alt]) {
+ display: none;
+}
