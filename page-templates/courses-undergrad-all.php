@@ -37,7 +37,8 @@ get_header(); ?>
 		)
 	);
 	// Cache for 14 days.
-	$course_curl->cache( get_template_directory() . '/sis-cache/', 1209600 );
+	$site_name = get_site()->path;
+	$course_curl->cache( get_template_directory() . '/sis-cache/' . $site_name, 1209600 );
 
 	// Create API Url calls.
 	$courses_all_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Term=' . $summer . '&Term=' . $fall . '&Department=AS%20' . $department . '&status=' . $open . '&status=' . $approval . '&status=' . $waitlist . '&status=' . $reserved_open;
@@ -104,7 +105,7 @@ get_header(); ?>
 			$dates               = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[0]->{'Dates'};
 			$postag              = ' ';
 			$sectiondetails      = $result->body[0]->{'SectionDetails'}[0];
-			$tags                = [];
+			$tags                = array();
 
 			if ( isset( $sectiondetails->{'PosTags'} ) ) {
 				if ( ! empty( $sectiondetails->{'PosTags'} ) ) {
@@ -121,7 +122,7 @@ get_header(); ?>
 
 			$output .= '<td><button class="button course-details" data-open="course-' . $clean_course_number . $section_number . $clean_term . '">Course Details<span class="show-for-sr">-' . $title . '-' . $section_number . '</span></button></td></tr>';
 
-			$output .= '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $clean_term . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $clean_term . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings .  '&nbsp;' . $dates . ' </li><li><strong>Instructor:</strong> ' . $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . ' </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li><li><strong>PosTag(s):</strong> ' . $print_tags . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
+			$output .= '<div class="reveal course-description" id="course-' . $clean_course_number . $section_number . $clean_term . '" aria-labelledby="' . $clean_term . $course_number . '-' . $section_number . '" data-reveal><h1 id="' . $clean_term . $course_number . '-' . $section_number . '">' . $title . '<br><small>' . $course_number . '&nbsp;(' . $section_number . ')</small></h1><p>' . $description . '<ul><li><strong>Credits:</strong> ' . $credits . '</li><li><strong>Level:</strong> ' . $course_level . ' </li><li><strong>Days/Times:</strong> ' . $meetings . '&nbsp;' . $dates . ' </li><li><strong>Instructor:</strong> ' . $instructor . ' </li><li><strong>Room:</strong> ' . $room . '&nbsp;' . $roomnumber . ' </li><li><strong>Status:</strong> ' . $status . '</li><li><strong>Seats Available:</strong> ' . $seatsavailable . '</li><li><strong>PosTag(s):</strong> ' . $print_tags . '</li></ul></p><button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button></div>';
 		}
 	);
 

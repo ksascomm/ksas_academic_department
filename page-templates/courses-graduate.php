@@ -1,6 +1,6 @@
 <?php
 /**
- *Template Name: SIS Courses (Graduate)
+ * Template Name: SIS Courses (Graduate)
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -36,7 +36,8 @@ get_header(); ?>
 		)
 	);
 	// Cache for 14 days.
-	$course_curl->cache( get_template_directory() . '/sis-cache/', 1209600 );
+	$site_name = get_site()->path;
+	$course_curl->cache( get_template_directory() . '/sis-cache/' . $site_name, 1209600 );
 
 	// Create API Url calls.
 	$courses_fall_url = 'https://sis.jhu.edu/api/classes?key=' . $key . '&School=Krieger%20School%20of%20Arts%20and%20Sciences&Term=' . $spring . '&Department=AS%20' . $department . '&status=' . $open . '&status=' . $approval . '&status=' . $waitlist . '&status=' . $reserved_open;
@@ -102,7 +103,7 @@ get_header(); ?>
 			$roomnumber          = $result->body[0]->{'SectionDetails'}[0]->{'Meetings'}[0]->{'Room'};
 			$postag              = ' ';
 			$sectiondetails      = $result->body[0]->{'SectionDetails'}[0];
-			$tags                = [];
+			$tags                = array();
 
 			if ( isset( $sectiondetails->{'PosTags'} ) ) {
 				if ( ! empty( $sectiondetails->{'PosTags'} ) ) {
