@@ -53,10 +53,10 @@
 		<?php
 		if ( get_post_meta( $post->ID, 'ecpt_author_cond', true ) == 'on' ) {
 			?>
-			<a href="<?php echo esc_url( get_permalink( $faculty_post_id2 ) ); ?>">
+			<span class="second-author"><a href="<?php echo esc_url( get_permalink( $faculty_post_id2 ) ); ?>">
 				<?php echo esc_html( get_the_title( $faculty_post_id2 ) ); ?>,
 				<?php echo esc_html( get_post_meta( $post->ID, 'ecpt_pub_role2', true ) ); ?>
-			</a>
+			</a></span>
 		<?php } ?>
 		</li>
 		<li>
