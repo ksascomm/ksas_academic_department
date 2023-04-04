@@ -43,11 +43,11 @@
 				?>
 			</div>
 			<div class="cell small-12 medium-7 large-9">
-				<?php echo wp_strip_all_tags( get_the_excerpt() ); ?>
+				<?php echo esc_html( wp_trim_words( get_the_excerpt(), 55, '...' ) ); ?>
 			</div>
 		<?php else : ?>
 			<div class="cell small-12">
-				<?php echo wp_strip_all_tags( get_the_excerpt() ); ?>
+			<?php echo esc_html( wp_trim_words( get_the_excerpt(), 55, '...' ) ); ?>
 			</div>
 		<?php endif; ?>
 		</div>
