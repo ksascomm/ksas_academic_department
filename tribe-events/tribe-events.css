@@ -73,6 +73,15 @@ a.tribe-events-calendar-latest-past__event-title-link.tribe-common-anchor-thin:h
 
 /* Single Event View */
 
+/* Single Event View */
+@media print, screen and (min-width: 40em) {
+  #tribe-events-pg-template, .tribe-events-pg-template {
+    max-width: 87.5rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    }
+  }
+
 .tribe-events-single.tribe-blocks-editor h2.tribe-events-schedule__datetime {
   font-family: "gentona-semibold", system-ui, BlinkMacSystemFont, -apple-system,
     Segoe UI, sans-serif;
