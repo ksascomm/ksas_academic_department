@@ -499,6 +499,9 @@ h2.tribe-events-related-events-title {
   @include breakpoint(medium) {
     @include xy-cell(10);
     padding-left: 1rem;
+    max-width: 87.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

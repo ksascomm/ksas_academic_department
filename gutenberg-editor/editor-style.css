@@ -361,3 +361,9 @@ ol.block-editor-rich-text__editable li {
 .components-button.components-dropdown-menu__menu-item.is-icon-only.has-icon[aria-label="Heading 1"]{
   display: none;
 }
+
+/** === Cover Block === */
+.wp-block-cover .wp-block-cover__background.has-background-dim {
+  background-color: transparent;
+  opacity: 1 !important;
+}
