@@ -135,7 +135,7 @@ if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
 			the_row();
 			?>
 			<!--Loop through each repeater field-->
-			<div class="cell" aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
+			<div class="cell">
 				<article class="bucket"  aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 					<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>">
 						<?php
