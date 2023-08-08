@@ -136,7 +136,7 @@ get_header(); ?>
 						<?php get_template_part( 'template-parts/content', 'page' ); ?>
 				<?php endwhile; ?>
 				<ul class="tabs" data-tabs id="courses-tabs">
-					<li class="tabs-title is-active"><a href="#fall">Spring 2023</a></li>
+					<li class="tabs-title is-active"><a href="#fall">Fall 2023</a></li>
 				</ul>
 				<div class="tabs-content course-listings" data-tabs-content="courses-tabs">
 					<div class="tabs-panel is-active" id="fall">
