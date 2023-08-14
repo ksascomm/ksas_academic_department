@@ -292,3 +292,8 @@ border-bottom: .125em solid;
   border-bottom-color: currentcolor;
 border-bottom-color: #4a484c;
 }	
+
+/* Hide Flyers or Images without alt text! */
+.tribe-events-single img[alt=""], .tribe-events-single img:not([alt]) {
+  display: none;
+}
