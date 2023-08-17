@@ -294,6 +294,9 @@ border-bottom-color: #4a484c;
 }	
 
 /* Hide Flyers or Images without alt text! */
-.tribe-events-single img[alt=""], .tribe-events-single img:not([alt]) {
+.tribe-events-single img[alt=""],
+.tribe-events-single img:not([alt]),
+img.tribe-events-calendar-latest-past__event-featured-image[alt=""],
+img.tribe-events-calendar-latest-past__event-featured-image:not([alt]) {
   display: none;
 }
