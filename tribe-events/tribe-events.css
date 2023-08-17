@@ -297,6 +297,10 @@ border-bottom-color: #4a484c;
 .tribe-events-single img[alt=""],
 .tribe-events-single img:not([alt]),
 img.tribe-events-calendar-latest-past__event-featured-image[alt=""],
-img.tribe-events-calendar-latest-past__event-featured-image:not([alt]) {
+img.tribe-events-calendar-latest-past__event-featured-image:not([alt]),
+img.tribe-events-calendar-day__event-featured-image-link[alt=""],
+img.tribe-events-calendar-day__event-featured-image-link:not([alt]),
+img.tribe-events-calendar-list__event-featured-image[alt=""],
+img.tribe-events-calendar-list__event-featured-image:not([alt]) {
   display: none;
 }
