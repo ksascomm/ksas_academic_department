@@ -146,6 +146,10 @@ span.tribe-events-schedule__separator.tribe-events-schedule__separator--date {
   color: var(--tec-color-text-primary) !important;
 }
 
+.tribe-block__venue {
+  border: none;
+}
+
 span.tribe-block__venue__website a,
 a.tribe-events-gmap {
   color: #002d72;
