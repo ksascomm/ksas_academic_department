@@ -147,7 +147,7 @@ span.tribe-events-schedule__separator.tribe-events-schedule__separator--date {
 }
 
 .tribe-block__venue {
-  border: none;
+  border: none !important;
 }
 
 span.tribe-block__venue__website a,
