@@ -12,7 +12,6 @@
  * @link {INSERT_ARTCILE_LINK_HERE}
  *
  * @version 4.7
- *
  */
 
 $event_id = $this->get( 'post_id' );
@@ -23,7 +22,7 @@ if ( ! empty( $event_id ) && function_exists( 'tribe_is_recurring_event' ) ) {
 	$is_recurring = tribe_is_recurring_event( $event_id );
 }
 ?>
-<div id="page" class="block-editor-enabled">
+<main id="page" class="block-editor-enabled">
 
 	<div id="tribe-events-content" class="tribe-events-single tribe-blocks-editor">
 		<?php $this->template( 'single-event/notices' ); ?>
@@ -34,4 +33,4 @@ if ( ! empty( $event_id ) && function_exists( 'tribe_is_recurring_event' ) ) {
 		<?php $this->template( 'single-event/content' ); ?>
 	</div>
 
-</div>
+</main>
