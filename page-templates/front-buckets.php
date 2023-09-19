@@ -115,7 +115,7 @@ if ( function_exists( 'get_field' ) && get_field( 'explore_the_department' ) ) :
 		<!--Print Heading if there-->
 		<?php if ( $heading ) : ?>
 		<div class="grid-x grid-padding-x">
-			<header class="cell explore-title" aria-label="<?php the_field( 'buckets_heading' ); ?>">
+			<header class="cell explore-title">
 				<h2><?php echo esc_html( $heading ); ?></h2>
 			</header>
 		</div>

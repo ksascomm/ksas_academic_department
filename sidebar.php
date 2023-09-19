@@ -151,7 +151,7 @@ if ( is_page() ) {
 				?>
 			</div>
 			<?php if ( has_term( 'faculty', 'role' ) ) : ?>
-				<div class="sidebar-menu faculty-bio-jump" aria-labelledby="jump-menu">
+				<div class="sidebar-menu faculty-bio-jump">
 					<label for="jump">
 						<h1 id="jump-menu">Jump to Faculty Member</h1>
 					</label>
