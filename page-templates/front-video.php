@@ -71,7 +71,7 @@ get_header(); ?>
 			while ( have_rows( 'explore_the_department' ) ) :
 				the_row();
 				?>
-				<div class="cell " aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
+				<div class="cell">
 					<article class="bucket"  data-equalizer-watch aria-label="<?php the_sub_field( 'explore_bucket_heading' ); ?>">
 						<a href="<?php the_sub_field( 'explore_bucket_link' ); ?>">
 							<?php
