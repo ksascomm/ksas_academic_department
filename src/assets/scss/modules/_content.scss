@@ -302,11 +302,9 @@ u {
     width: 20rem;
     height: auto;
     padding: 0 2rem 2rem 0;
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+  }
+  img[alt=""], img:not([alt]) {
+    display: none;
   }
 }
 

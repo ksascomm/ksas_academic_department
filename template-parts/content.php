@@ -44,7 +44,6 @@
 					'medium',
 					array(
 						'class' => 'image-left',
-						'alt'   => 'Featured image',
 					)
 				);
 				?>
