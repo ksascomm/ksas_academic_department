@@ -7,7 +7,7 @@
 			<source src="<?php the_field( 'source_ogg' ); ?>" type="video/ogg">
 		</video>
 		<div class="controls">
-			<button class="caption" data-tooltip tabindex="1" title="<?php the_field( 'video_caption_summary' ); ?>">
+			<button class="caption" data-tooltip title="<?php the_field( 'video_caption_summary' ); ?>">
 				<span class="fa-solid fa-circle-info"></span>
 			</button>
 			<div class="screen-reader-text" id="video-summary">
