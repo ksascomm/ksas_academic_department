@@ -38,7 +38,7 @@ endif;
 			?>
 
 		<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-			<header aria-label="<?php the_title(); ?>">
+			<header>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
 			<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
