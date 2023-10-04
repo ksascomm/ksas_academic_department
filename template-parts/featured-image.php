@@ -22,7 +22,6 @@ else :
 	$bg    = array(
 		$theme . '/dist/assets/images/header-images/deptThemeStandard01.jpg',
 		$theme . '/dist/assets/images/header-images/deptThemeStandard02.jpg',
-		$theme . '/dist/assets/images/header-images/deptThemeStandard03.jpg',
 		$theme . '/dist/assets/images/header-images/deptThemeStandard04.jpg',
 		$theme . '/dist/assets/images/header-images/deptThemeStandard05.jpg',
 		$theme . '/dist/assets/images/header-images/deptThemeStandard06.jpg',
