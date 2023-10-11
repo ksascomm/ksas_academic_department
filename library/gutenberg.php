@@ -27,13 +27,14 @@ add_filter(
 	function( $template ) {
 		$template = array(
 			array( 'tribe/event-datetime' ),
+			array( 'tribe/featured-image' ),
 			array(
 				'core/paragraph',
 				array(
 					'placeholder' => __( 'Add Event Description...', 'the-events-calendar' ),
 				),
 			),
-			array( 'tribe/featured-image' ),
+			array( 'tribe/event-organizer' ),
 			array( 'tribe/event-venue' ),
 			array(
 				'tribe/event-links',
