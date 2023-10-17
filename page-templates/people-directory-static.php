@@ -69,7 +69,7 @@ get_header(); ?>
 				the_post();
 				?>
 			<article <?php post_class(); ?> aria-label="<?php the_title(); ?>">
-				<header aria-label="<?php the_title(); ?>">
+				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
 				<?php do_action( 'ksasacademic_page_before_entry_content' ); ?>
