@@ -46,13 +46,13 @@ endif;
 				<?php the_content(); ?>
 				<div class="study-fields callout lightgrey" role="region" aria-label="Filters">
 					<label for="id_search">
-						<h4>Search our Research Staff:</h4>
+						<h4>Search our Research Scientists:</h4>
 					</label>
 					<div class="input-group">
 						<span class="input-group-label">
 							<span class="fa-solid fa-magnifying-glass"></span>
 						</span>
-							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search Research Staff" placeholder="Search by name, title, and research interests"  />
+							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search Research Scientists" placeholder="Search by name, title, and research interests"  />
 					</div>
 				</div>
 			</div>
