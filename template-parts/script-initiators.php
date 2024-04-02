@@ -66,7 +66,7 @@ if ( is_page_template( 'page-templates/courses-undergrad-all.php' ) ) :
 			},
 			searchPanes: {
 					preSelect: [{
-						rows:['Fall 2023'],
+						rows:['Fall 2024'],
 						column: 5
 					}],
 				},
